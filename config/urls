@@ -1,5 +1,11 @@
-
 https://crystal-lang.org/feed.xml official
+
+https://fosstodon.org/@CrystalLanguage.rss official
+
+https://crystal-lang.org/releases/feed.xml "~Releases" ! releases
+"query:Releases:tags # \"releases\"" and articleindex <= 1"
+
+"query:Recent Discussions:tags # \"community\" and age <= 3"
 
 # Blogs
 "query:Blogs:tags # \"blog\"""
@@ -8,6 +14,8 @@ https://crystal-lang.org/feed.xml official
 https://medium.com/feed/tag/crystal-lang ! blog
 https://dev.to/feed/tag/crystal ! blog
 
+https://manas.tech/blog/tagged/crystal ! blog
+
 # Personal Blogs
 https://lbarasti.com/tags/crystal/index.xml ! blog
 
@@ -15,3 +23,8 @@ https://lbarasti.com/tags/crystal/index.xml ! blog
 
 # @CrystalLanguage
 https://www.youtube.com/feeds/videos.xml?channel_id=UCpnpflEW6zeCUv-RzaK2DIg "~Crystal Language" official yt
+
+# Community
+https://old.reddit.com/r/crystal_programming/.rss "~r/crystal_programming" community
+https://forum.crystal-lang.org/latest.rss "~Forum" community
+https://stackoverflow.com/feeds/tag?tagnames=crystal-lang&sort=newest "~SO" community
