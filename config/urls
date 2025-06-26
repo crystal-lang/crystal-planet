@@ -1,11 +1,12 @@
-https://crystal-lang.org/feed.xml official
+https://crystal-lang.org/feed.xml "~Crystal Blog" official
 
-https://fosstodon.org/@CrystalLanguage.rss official
+https://fosstodon.org/@CrystalLanguage.rss "~@CrystalLanguage" official
 
-https://crystal-lang.org/releases/feed.xml "~Releases" ! releases
-"query:Releases:tags # \"releases\"" and articleindex <= 1"
+https://crystal-lang.org/releases/feed.xml "~Releases" releases
 
 "query:Recent Discussions:tags # \"community\" and age <= 3"
+
+https://hnrss.org/newest?q=Crystal "HN" hn
 
 # Blogs
 "query:Blogs:tags # \"blog\"""
