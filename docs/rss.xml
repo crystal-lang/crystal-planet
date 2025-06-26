@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>Applying the Presenter Pattern in Marten</title><link>https://dev.to/treagod/applying-the-presenter-pattern-in-marten-37cf</link><author>Marvin Ahlgrimm</author><category>blog</category><pubDate>Mon, 23 Jun 2025 14:54:22 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[I recently ran into a problem in one of my Marten projects. My  model — originally quite simple — ended up bloated with methods like , , sidebar data prep and more. Nearly every view needed these calculations, so my model was being polluted with logic that didn’t belong there. Marten templates doesn't allow complex calculations, so I had to do these calculations in my models and access it in my template. But this made the model huge and hard to maintain. It felt wrong to mix UI logic with data persistence.I wanted to keep my models clean and focused on their primary role: representing data in the database. But I also needed a way to prepare data for my templates without cluttering the model with view-specific logic.To solve this, I borrowed a pattern from Rails and other ecosystems: the . Instead of stuffing the  model, I moved view-specific logic into a  class. I then plugged that into my handlers so my templates could work cleanly with journey.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>Upcoming release 1.17.0</title><link>https://forum.crystal-lang.org/t/upcoming-release-1-17-0/8184</link><author>straight-shoota</author><category>community</category><pubDate>Thu, 26 Jun 2025 10:54:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The next Crystal release,  is scheduled for .As usual, this is precluded by a two-week feature , starting . We’ll be using this time until the release to consolidate the changes and fix bugs. only on TTY by defaultNew compiler tool Stabilized execution contextsThere will be further additions to these resources as we merge additional changes.The nightly builds serve as previews of the upcoming release. Please test your code base against nightly builds and report any regressions ]]></content:encoded></item><item><title>About openssl signature</title><link>https://forum.crystal-lang.org/t/about-openssl-signature/8183</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 26 Jun 2025 08:21:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a authenticity check for my package manager, where I will check a package signature.What do you suggest me about it? What parameter should I use to generate a very secure private key ?]]></content:encoded></item><item><title>Applying the Presenter Pattern in Marten</title><link>https://dev.to/treagod/applying-the-presenter-pattern-in-marten-37cf</link><author>Marvin Ahlgrimm</author><category>blog</category><pubDate>Mon, 23 Jun 2025 14:54:22 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[I recently ran into a problem in one of my Marten projects. My  model — originally quite simple — ended up bloated with methods like , , sidebar data prep and more. Nearly every view needed these calculations, so my model was being polluted with logic that didn’t belong there. Marten templates doesn't allow complex calculations, so I had to do these calculations in my models and access it in my template. But this made the model huge and hard to maintain. It felt wrong to mix UI logic with data persistence.I wanted to keep my models clean and focused on their primary role: representing data in the database. But I also needed a way to prepare data for my templates without cluttering the model with view-specific logic.To solve this, I borrowed a pattern from Rails and other ecosystems: the . Instead of stuffing the  model, I moved view-specific logic into a  class. I then plugged that into my handlers so my templates could work cleanly with journey.
   
   
   Extracting a Presenter for my  model
@@ -10,7 +10,7 @@ I wanted a quick way to make journey available in my templates, so I built this 
   
   
   Using the Presenter in a Real Handler
-Here’s an example handler that includes the mix-in:By including , this handler automatically injects a fully prepared  into the templates context.Models stay focused on persistence — no mix of UI logicTemplates call {{ journey.travel_period }} or {{ journey.total_costs }} directlyPresenter class is testable in isolationHandlers are lean and declarativeMacros generate safe, compile-time delegationsNo global state, no hidden context—everything is explicitEverything just works, and it’s easy to extend or test.]]></content:encoded></item><item><title>Writing Inline Assembly in the Crystal Programming Language</title><link>https://dev.to/kojix2/writing-inline-assembly-in-the-crystal-programming-language-d9a</link><author>kojix2</author><category>blog</category><pubDate>Fri, 20 Jun 2025 04:17:04 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[When you want to make your code run significantly faster, or just want to explore how computers work at a lower level, you might find yourself curious about writing instructions directly for the CPU. In Crystal, you can do this using .Crystal is a programming language built on top of the LLVM compiler infrastructure. Thanks to this, it can access many of LLVM's powerful features. For low-level programming, Crystal provides both  functions and the  syntax.Crystal supports writing inline assembly using the  keyword.asm("template" : outputs : inputs : clobbers : flags)
+Here’s an example handler that includes the mix-in:By including , this handler automatically injects a fully prepared  into the templates context.Models stay focused on persistence — no mix of UI logicTemplates call {{ journey.travel_period }} or {{ journey.total_costs }} directlyPresenter class is testable in isolationHandlers are lean and declarativeMacros generate safe, compile-time delegationsNo global state, no hidden context—everything is explicitEverything just works, and it’s easy to extend or test.]]></content:encoded></item><item><title>ToCry a fancy ToDo/Kanban web app</title><link>https://forum.crystal-lang.org/t/tocry-a-fancy-todo-kanban-web-app/8181</link><author>ralsina</author><category>community</category><pubDate>Mon, 23 Jun 2025 00:39:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I got sick of limitations in a ToDO app I was using and thought “this can’t be too hard, can it?” and it wasn’t.Will in the future make it multiboard/multiuser but is currently “Just Enough App®️” for me]]></content:encoded></item><item><title>Writing Inline Assembly in the Crystal Programming Language</title><link>https://dev.to/kojix2/writing-inline-assembly-in-the-crystal-programming-language-d9a</link><author>kojix2</author><category>blog</category><pubDate>Fri, 20 Jun 2025 04:17:04 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[When you want to make your code run significantly faster, or just want to explore how computers work at a lower level, you might find yourself curious about writing instructions directly for the CPU. In Crystal, you can do this using .Crystal is a programming language built on top of the LLVM compiler infrastructure. Thanks to this, it can access many of LLVM's powerful features. For low-level programming, Crystal provides both  functions and the  syntax.Crystal supports writing inline assembly using the  keyword.asm("template" : outputs : inputs : clobbers : flags)
  — Assembly code using LLVM’s integrated assembler syntax — Registers that may be modified — Optional flags (e.g., )This colon-separated syntax is quite unusual in Crystal and comes from GCC's inline assembly syntax.Let’s look at some examples.
   
   
@@ -37,7 +37,31 @@ This is often used internally in Crystal’s  or  implementations. — Read the 
   
   Bit Manipulation Intrinsics
 , , , , , , , , , , , , , , , , , , , Crystal still lacks extensive documentation in many languages, but DeepWiki is a reliable source for answers to most questions. This article is based on what I’ve learned from DeepWiki, and all code examples have been tested to ensure they work correctly. I highly recommend it.That’s all for now — happy hacking with Crystal!This post was translated from Japanese to English by ChatGPT. 
-Click here to see the original post.]]></content:encoded></item><item><title>TRON Hits 2M Users—What’s Next for TRX Price?</title><link>https://dev.to/crypto_sara/tron-hits-2m-users-whats-next-for-trx-price-272m</link><author>crypto sara</author><category>blog</category><pubDate>Mon, 16 Jun 2025 10:11:06 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[TRON (TRX) continues to demonstrate resilience in a volatile crypto market. Despite minor price fluctuations, seasoned investors closely watch its on-chain activity and ecosystem strength. As of now, the TRON price stands at $0.2717, slightly down 0.28% over the past 24 hours. But beneath the surface, there's a story that could influence its  in the coming months.
+Click here to see the original post.]]></content:encoded></item><item><title>Upload image failed use HTTP::Client but test with postman work</title><link>https://forum.crystal-lang.org/t/upload-image-failed-use-http-client-but-test-with-postman-work/8171</link><author>zw963</author><category>community</category><pubDate>Thu, 19 Jun 2025 04:54:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Following is my code (I need form_data to upload a file, but for now,  test with a source:  "https://image_url" is enough.post "/api/upload" do
+    # file_path = params.from_multipart.last["source"].path
+
+    io = IO::Memory.new
+
+    form_data = HTTP::FormData::Builder.new(io)
+    form_data.field("key", "my_key")
+    form_data.field("source", "https://avatars.githubusercontent.com/u/549126?s=96&v=4")
+
+    response = HTTP::Client.post(
+      url: "https://freeimage.host/api/1/upload",
+      headers: HTTP::Headers{"Content-Type" => "multipart/form-data"},
+      form: io
+    )
+
+    pp! response
+    if response.success?
+      image_url = JSON.parse(response.body).dig("image", "display_url")
+      json({image_url: image_url}, HTTP::Status::OK)
+    else
+      json(HTTP::Status::BAD_REQUEST)
+    end
+  end
+When I upload,  I always get error like this:{\"status_code\":400,\"error\":{\"message\":\"Invalid API v1 key.\",\"code\":100},\"status_txt\":\"Bad Request\"}"
+But if i test use a tool like postman, it works (check following screenshot)Following is the screenshot of API pageEither a image URL or a base64 encoded image string. You can also use FILES[“source”] in your request.What is the means of FILES["source"] in your request, how to do that use ?16 posts - 5 participants]]></content:encoded></item><item><title>Mixing Crystal with Go and Exlixr</title><link>https://forum.crystal-lang.org/t/mixing-crystal-with-go-and-exlixr/8169</link><author>jzakiya</author><category>community</category><pubDate>Wed, 18 Jun 2025 17:53:49 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[At Mozi, we needed to connect a new Elixir Phoenix LiveView app to an existing Go backend. This is how we did it.  …]]></content:encoded></item><item><title>Why Crystal is not more adopted in your opinion?</title><link>https://old.reddit.com/r/crystal_programming/comments/1lejf1d/why_crystal_is_not_more_adopted_in_your_opinion/</link><author>/u/fenugurod</author><category>community</category><pubDate>Wed, 18 Jun 2025 15:03:42 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[The language looks amazing, but still very very niche with very little adoption. At the same time you see languages like Go, Rust, and Elixir increasing in popularity every day. I don't want to get into a language comparison but from a high level point of view Crystal is pretty much comparable with these 3 languages in expressiveness, performance, and code correctness. ]]></content:encoded></item><item><title>My shard: Crab (CrabCLI) Make more colorful Command Line Interfaces!</title><link>https://old.reddit.com/r/crystal_programming/comments/1ld4aw9/my_shard_crab_crabcli_make_more_colorful_command/</link><author>/u/TheJuipoJaguei</author><category>community</category><pubDate>Mon, 16 Jun 2025 20:49:31 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[Hello there!, I really like Command Line Interfaces and I really love learning Crystal, so I searched for any shards to make CLIs, I didn't found exactly what I was looking for so, I made mine!, A simple documentation is at my Github Repo, I have been working on this for some time, (but mostly focused on uni) and I finally got it to a stage I'm pretty proud of.Hope you all like it and tell me how to improve! ]]></content:encoded></item><item><title>TRON Hits 2M Users—What’s Next for TRX Price?</title><link>https://dev.to/crypto_sara/tron-hits-2m-users-whats-next-for-trx-price-272m</link><author>crypto sara</author><category>blog</category><pubDate>Mon, 16 Jun 2025 10:11:06 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[TRON (TRX) continues to demonstrate resilience in a volatile crypto market. Despite minor price fluctuations, seasoned investors closely watch its on-chain activity and ecosystem strength. As of now, the TRON price stands at $0.2717, slightly down 0.28% over the past 24 hours. But beneath the surface, there's a story that could influence its  in the coming months.
   
   
   On-Chain Strength and Network Utility
@@ -50,4 +74,247 @@ TRON’s 50-day SMA sits at $0.2669, while its 200-day SMA is at $0.2514—both 
   
   
   Regulatory Overhang: Tether's Freeze Raises Eyebrows
-The recent freeze of $12.3 million in USDT on the TRON blockchain by Tether reignites concerns around compliance and regulation. Though no official reason was provided, it's likely tied to anti-money laundering enforcement and OFAC sanctions monitoring. Tether also froze $27 million on the Russian exchange Garantex earlier this year.: Despite such moves, over $15 million in Garantex-linked reserves remain active, per Global Ledger.While the regulatory actions raise caution, TRON’s fundamentals continue to strengthen. Investors may see temporary dips as buying opportunities, with a long-term price prediction leaning bullish if adoption and utility sustain momentum.]]></content:encoded></item></channel></rss>
+The recent freeze of $12.3 million in USDT on the TRON blockchain by Tether reignites concerns around compliance and regulation. Though no official reason was provided, it's likely tied to anti-money laundering enforcement and OFAC sanctions monitoring. Tether also froze $27 million on the Russian exchange Garantex earlier this year.: Despite such moves, over $15 million in Garantex-linked reserves remain active, per Global Ledger.While the regulatory actions raise caution, TRON’s fundamentals continue to strengthen. Investors may see temporary dips as buying opportunities, with a long-term price prediction leaning bullish if adoption and utility sustain momentum.]]></content:encoded></item><item><title>A blog post about using Google Sheets API with Crystal</title><link>https://forum.crystal-lang.org/t/a-blog-post-about-using-google-sheets-api-with-crystal/8157</link><author>Maroo-b</author><category>community</category><pubDate>Fri, 13 Jun 2025 16:58:24 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I just published a new blog post on using the Google Sheets API with Crystal — it covers the basics of setting things up, handling authentication, and some example code to read/write data.I’d appreciate your feedback on the code and structure. I’m particularly interested in best practices for Crystal code.Thanks in advance — always looking to learn and refine! ]]></content:encoded></item><item><title>Install on MacOS 10.13 (High Sierra)</title><link>https://forum.crystal-lang.org/t/install-on-macos-10-13-high-sierra/8155</link><author>procursor</author><category>community</category><pubDate>Fri, 13 Jun 2025 16:31:37 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[What is the last known Crystal version that works under High Sierra?So that I just download precompiled binary from releases which is probably my best option.Is it possible to build the latest and greatest preferably from MacPorts (since I have already downloaded and built all toolchain and libraries needed except for Crystal itself)?]]></content:encoded></item><item><title>Do channels need to be manually closed?</title><link>https://forum.crystal-lang.org/t/do-channels-need-to-be-manually-closed/8151</link><author>syeopite</author><category>community</category><pubDate>Thu, 12 Jun 2025 18:47:07 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A bit of a dumb question but should channels be explicitly closed after you’re done using them, or is that something the GC will take care of? My instincts are telling me yes but I also do frequently see code that doesn’t explicitly close any of the channels it creates.]]></content:encoded></item><item><title>Catch on nested macros</title><link>https://forum.crystal-lang.org/t/catch-on-nested-macros/8150</link><author>wolfgang371</author><category>community</category><pubDate>Thu, 12 Jun 2025 18:01:22 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Dear all, I just had a little surprise (at least to me) that for macro nesting you don’t need to have a  inside a  definition, but this is enough already…{% if true %}
+
+# this also counts as a nested macro and needs escaping!
+macro uint64_from_letters(str)
+    \{% value = 0_u64 %}
+    \{% for c in str.chars %}
+        \{% value = (value << 8) | (c.ord) %}
+    \{% end %}
+    \{{ value }}
+end
+
+{% end %}
+
+p uint64_from_letters("12345678")
+… and needs escaping. If you don’t - you get misleading error messages likeIn x.cr:15:17
+
+ 15 | {% for c in str.chars %}
+                  ^--
+Error: undefined macro variable 'str'
+No big deal, just unexpected…]]></content:encoded></item><item><title>Process.run Question</title><link>https://forum.crystal-lang.org/t/process-run-question/8149</link><author>robmullr</author><category>community</category><pubDate>Thu, 12 Jun 2025 15:23:15 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m trying to use the javascript mermaid command line utility to generate svg graphs from text. From the windows powershell command line,"graph TD
+>> A[Start] --> B{Is it working?}
+>> B -- Yes --> C[Great!]
+>> B -- No --> D[Fix it]
+>> D --> B" | mmdc -i - -o - | echo
+When I run the following code (mostly generated by ChatGPT)),heredoc = <<-MERMAID
+graph TD
+A[Start] --> B{Is it working?}
+B -- Yes --> C[Great!]
+B -- No --> D[Fix it]
+D --> B
+MERMAID
+
+stdin_io = IO::Memory.new
+stdout_io = IO::Memory.new
+stderr_io = IO::Memory.new
+stdin_io.puts heredoc
+command = "mmdc"
+args = ["-i","-","-o","-"] of String
+
+Process.run(command, args: args, input: stdin_io, output: stdout_io, error: stderr_io)
+
+puts "STDOUT:"
+puts stdout_io.to_s
+unless stderr_io.to_s.empty?
+  puts "STDERR:"
+  puts stderr_io.to_s
+end
+I get an error: Unhandled exception: Error executing process: ‘mmdc -i - -o -’: The system cannot find the file specified. (File::NotFoundError).How should I be formatting and organizing these STDIN and STDOUT to get this working from within Crystal?14 posts - 4 participants]]></content:encoded></item><item><title>Generate a simple digits captcha image</title><link>https://forum.crystal-lang.org/t/generate-a-simple-digits-captcha-image/8148</link><author>zw963</author><category>community</category><pubDate>Thu, 12 Jun 2025 10:55:30 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[There are some generate PNG shards. but i don’t know how to make image with text in it.I found some example code in pixie shards works for what i need,  but the example code not work on my Arch Linux, check this issue.Right now, I just want to make a small, simple picture with some numbers on it. It will be used as a simple check when people sign up on my website.]]></content:encoded></item><item><title>Most likely to stay alive web framework?</title><link>https://old.reddit.com/r/crystal_programming/comments/1l9cmpi/most_likely_to_stay_alive_web_framework/</link><author>/u/__talanton</author><category>community</category><pubDate>Thu, 12 Jun 2025 03:42:14 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[I'm looking at building something out in Crystal, but I'm a bit torn on what to use. It looks like Lucky, Kemal, and Marten are the remaining active frameworks. I'm from a C++ background so I'm alright with reinventing a few wheels, but is there any web framework that looks like it'll go the distance? I tend to see Amber recommended but it hasn't been updated in half a year and seems dead. Marten looks the healthiest?]]></content:encoded></item><item><title>Kemal: is it possible to do the rails equivalent of constraints subdomain?</title><link>https://forum.crystal-lang.org/t/kemal-is-it-possible-to-do-the-rails-equivalent-of-constraints-subdomain/8145</link><author>omgponies</author><category>community</category><pubDate>Wed, 11 Jun 2025 21:11:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[First off, I normally only think of posting here for things specific to strictly only Crystal itself and not projects that  of Crystal (ala Kemal) - but also I have seen others ask Kemal specific questions here. My justification beyond that is perhaps the answer is more Crystal generic and not strictly relevant to Kemal.
+Apologies if this is rude to ask here.get "/whatever" do
+   # my boring code
+end
+That allows me to run my boring code when someone goes to http://www.mysite.blah/whatever - very normal route.
+Kemal does exactly the same - awesome, very easy, thank you.In Rails, I can then say I want api.mysite.blah/whatever to return a JSON payload and www.mysite.blah/whatever to return the HTML payload via constraints and subdomain…It is not obvious to me if it is possible to do that in Kemal or if there is any reason in Crystal that would prevent the equivalent functionality?My web app can function just fine only doing it the basic way and if I really need a separate api-only domain just use a different process - but it would be convenient to handle it all via the routes. It is just not obvious to me how to do that in Kemal and I don’t see any examples close enough that make it clear to me.And I specifically am interested in using Kemal and I don’t want a “heavier” framework like Rails - but I do like that one thing from Rails and would love to use it in Kemal/Crystal.]]></content:encoded></item><item><title>Is there another still working shard search website except shards.info?</title><link>https://forum.crystal-lang.org/t/is-there-another-still-working-shard-search-website-except-shards-info/8143</link><author>zw963</author><category>community</category><pubDate>Wed, 11 Jun 2025 13:18:15 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Is there another still working shard search website except shards.info?]]></content:encoded></item><item><title>Crystal Build error issue with libgc on Mac OS 15.5</title><link>https://forum.crystal-lang.org/t/crystal-build-error-issue-with-libgc-on-mac-os-15-5/8140</link><author>mswieboda</author><category>community</category><pubDate>Tue, 10 Jun 2025 18:56:39 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I posted a question on StackOverflow, but figured I’d probably get more visibility here, as I see the mailings, etc.here’s my question and context:ran an into an error, compiling or running a  with  web framework getting started app:$ crystal build --link-flags="~/.asdf/shims/crystal/embedded/lib/libgc.a" src/early-registration-api-cr.cr
+clang: error: no such file or directory: '/Users/matt.swieboda@tastytrade.com/.asdf/shims/crystal/embedded/lib/libgc.a'
+Error: execution of command failed with exit status 1: cc "${@}" -o /Users/matt.swieboda@tastytrade.com/.cache/crystal/Users-matt.swieboda@tastytrade.com-.asdf-installs-crystal-1.16.3-src-ecr-process.cr/macro_run ~/.asdf/shims/crystal/embedded/lib/libgc.a -rdynamic -lgc -liconv
+I’m on Mac OS 15.5 Sequoia, on a work laptop, but permissions should be decently set (via  they are fine.  has full permissions, as does the  directory my project is in. I’m using iTerm 2, and . If anyone needs more context/info, I can happily provide it.something with  is the issue.using  and  outputs:$ where crystal
+/Users/matt***/.asdf/shims/crystal
+also this is on a work laptop with , and to my knowledge no other  is installed via my  for ex, but perhaps from  command line tools, etc maybe.can anyone help? Trying to get  over at the company I work for (Tastytrade, USA, based in Chicago, and parent company is IG in London, UK), to speed up the backend, and other interesting use-cases.Thanks so much, in advance! I love the crystal community a lot, and happy to help contribute more and more to it.11 posts - 4 participants]]></content:encoded></item><item><title>Crystal Build error issue with libgc on Mac OS 15.5</title><link>https://stackoverflow.com/questions/79660994/crystal-build-error-issue-with-libgc-on-mac-os-15-5</link><author>mswieboda</author><category>community</category><pubDate>Tue, 10 Jun 2025 18:49:00 +0000</pubDate><source url="https://stackoverflow.com/questions/tagged/?tagnames=crystal-lang&amp;sort=newest">SO</source><content:encoded><![CDATA[ran an into an error, compiling or running a  with  web framework getting started app:$ crystal build --link-flags="~/.asdf/shims/crystal/embedded/lib/libgc.a" src/early-registration-api-cr.cr
+clang: error: no such file or directory: '/Users/matt.swieboda@tastytrade.com/.asdf/shims/crystal/embedded/lib/libgc.a'
+Error: execution of command failed with exit status 1: cc "${@}" -o /Users/matt.swieboda@tastytrade.com/.cache/crystal/Users-matt.swieboda@tastytrade.com-.asdf-installs-crystal-1.16.3-src-ecr-process.cr/macro_run ~/.asdf/shims/crystal/embedded/lib/libgc.a -rdynamic -lgc -liconv
+I'm on Mac OS 15.5 Sequoia, on a work laptop, but permissions should be decently set (via  they are fine.  has full permissions, as does the  directory my project is in. I'm using iTerm 2, and . If anyone needs more context/info, I can happily provide it.something with  is the issue.using  and  outputs:$ where crystal
+/Users/matt***/.asdf/shims/crystal
+also this is on a work laptop with , and to my knowledge no other  is installed via my  for ex, but perhaps from  command line tools, etc maybe.can anyone help? I'll try to link this in the official Crystal forum too. Trying to get crystal over at the company I work for, to speed up the backend, and other interesting use-cases.Thanks so much, in advance! I love the crystal community a lot, and happy to help contribute more and more to it. Sorry, not sorry, I know that thank you's are against the rules ;)]]></content:encoded></item><item><title>Class Method Error</title><link>https://forum.crystal-lang.org/t/class-method-error/8135</link><author>Ferguson</author><category>community</category><pubDate>Sun, 8 Jun 2025 19:07:40 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m executing some tests on crystal interactive with one module and struct and have error calling one class method as below:crystal i
+Crystal interpreter 1.16.3 (2025-05-12).
+EXPERIMENTAL SOFTWARE: if you find a bug, please consider opening an issue in
+https://github.com/crystal-lang/crystal/issues/new/
+icr:1>  module Space
+icr:2>    struct Age
+icr:3>      ORBITALS = {
+icr:4>        "Mercury" => 0.2408467,
+icr:5>        "Venus"   => 0.61519726,
+icr:6>        "Earth"   => 1.0,
+icr:7>        "Mars"    => 1.8808158,
+icr:8>        "Jupiter" => 11.862615,
+icr:9>        "Saturn"  => 29.447498,
+icr:10>       "Uranus"  => 84.016846,
+icr:11>       "Neptune" => 164.79132,
+icr:12>     }
+icr:13> 
+icr:14>     EARTH_YEAR = 31_557_600
+icr:15>     @@age : Int64 = 0
+icr:16> 
+icr:17>     def self.from_seconds(sec : Int64)
+icr:18>       @@age = sec
+icr:19>     end
+icr:20> 
+icr:21>     def self.age_on_earth
+icr:22>       (@@age/EARTH_YEAR).round(2)
+icr:23>     end
+icr:24> 
+icr:25>     def self.age_on_mercury
+icr:26>       (@@age/EARTH_YEAR/ORBITALS["Mercury"]).round(2)
+icr:27>     end
+icr:28> 
+icr:29>     def self.age_on_venus
+icr:30>       (@@age/EARTH_YEAR/ORBITALS["Venus"]).round(2)
+icr:31>     end
+icr:32> 
+icr:33>     def self.age_on_mars
+icr:34>       (@@age/EARTH_YEAR/ORBITALS["Mars"]).round(2)
+icr:35>     end
+icr:36> 
+icr:37>     def self.age_on_jupiter
+icr:38>       (@@age/EARTH_YEAR/ORBITALS["Jupiter"]).round(2)
+icr:39>     end
+icr:40> 
+icr:41>     def self.age_on_saturn
+icr:42>       (@@age/EARTH_YEAR/ORBITALS["Neptune"]).round(2)
+icr:43>     end
+icr:44>   end
+icr:45> end
+ => nil
+icr:46> Space::Age.from_seconds(1000000000).age_on_earth
+error in line 1
+Error: undefined method 'age_on_earth' for Int64
+Please I need help because don’t understand that error. To me nothing incorrect on module and class.]]></content:encoded></item><item><title>Should this be a shard? A BakedFileHandler for Kemal</title><link>https://forum.crystal-lang.org/t/should-this-be-a-shard-a-bakedfilehandler-for-kemal/8133</link><author>ralsina</author><category>community</category><pubDate>Fri, 6 Jun 2025 21:47:40 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[It’s what it says in the topic: a thing that lets you serve files baked into the binary using Kemal.I wrote it for myself and it’s small, but it  be useful in general? Not sure.11 posts - 4 participants]]></content:encoded></item><item><title>Rewrite the ruby version of rbtris(which use ruby2d gem) use sdl.cr, the screen refresh doesn&apos;t seem to work correctly</title><link>https://forum.crystal-lang.org/t/rewrite-the-ruby-version-of-rbtris-which-use-ruby2d-gem-use-sdl-cr-the-screen-refresh-doesnt-seem-to-work-correctly/8132</link><author>zw963</author><category>community</category><pubDate>Fri, 6 Jun 2025 08:48:29 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>C-bindings on windows</title><link>https://forum.crystal-lang.org/t/c-bindings-on-windows/8129</link><author>lemmuh</author><category>community</category><pubDate>Thu, 5 Jun 2025 11:39:10 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I have a DLL which provides several functions which I want to call inside my crystal app.Does the C-binding work on windows ?Can anybody recommend a shards as an example ?]]></content:encoded></item><item><title>Check if a string is a number</title><link>https://forum.crystal-lang.org/t/check-if-a-string-is-a-number/8121</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 4 Jun 2025 07:13:48 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have just one stupid question. I didn’t find in the documentation ( maybe I missed something?).How can I check if a string is a number or just a text ?]]></content:encoded></item><item><title>New &quot;meta&quot; shard</title><link>https://forum.crystal-lang.org/t/new-meta-shard/8120</link><author>zw963</author><category>community</category><pubDate>Tue, 3 Jun 2025 16:10:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[All honors belong to the original author @asteriteI use it locally often, but I’m just too lazy and haven’t released it as a shard before.the original forum duscusstion is hereFor how to use it, check the spec directly.]]></content:encoded></item><item><title>Prefered way to profile memory usage of a Crystal program?</title><link>https://forum.crystal-lang.org/t/prefered-way-to-profile-memory-usage-of-a-crystal-program/8118</link><author>Fijxu</author><category>community</category><pubDate>Mon, 2 Jun 2025 03:47:51 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Title, there is a preferred way to check the memory usage of each part of the program? Does tools like  just work as is for memory profiling or there is something better for Crystal due to the use of GC?]]></content:encoded></item><item><title>How to express &quot;pointer to this instance&quot;?</title><link>https://forum.crystal-lang.org/t/how-to-express-pointer-to-this-instance/8117</link><author>AlexR</author><category>community</category><pubDate>Sun, 1 Jun 2025 18:36:12 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[How do I express  in code?class ColorSampler
+  ...
+
+  def handle_mouse_up()
+    ev = LibSDL::Event.new
+    ...
+    ev.user.data1 = pointerof(self)
+    ...
+
+    LibSDL.push_event(pointerof(ev))
+  end
+end
+| ev.user.data1 = pointerof(self)
+Error: can't take address of self
+]]></content:encoded></item><item><title>There might be cases where the openssl version detection does not work correctly in MinGW</title><link>https://forum.crystal-lang.org/t/there-might-be-cases-where-the-openssl-version-detection-does-not-work-correctly-in-mingw/8115</link><author>kojix2</author><category>community</category><pubDate>Sun, 1 Jun 2025 04:32:28 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I am having trouble compiling the sample program with MinGW, and I suspect (but am not certain) that the openssl version detection is not working in src/openssl/lib_ssl.cr.I should break the problem down a bit more to identify it, but I’m too lazy to report it, so I’ll just note it here.D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: _main.o0.obj: in function `__crystal_main':
+D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/lib_ssl.cr:304:(.text+0x3e9): undefined reference to `SSL_library_init'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/lib_ssl.cr:304:(.text+0x3ee): undefined reference to `SSL_load_error_strings'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/lib_ssl.cr:304:(.text+0x3f3): undefined reference to `OPENSSL_add_all_algorithms_noconf'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/lib_ssl.cr:304:(.text+0x3f8): undefined reference to `ERR_load_crypto_strings'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D-igest5858M-D-5.o0.obj: in function `new_evp_mt_ctx':
+D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/digest.cr:26:(.text+0xec): undefined reference to `EVP_MD_CTX_create'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D-igest5858M-D-5.o0.obj: in function `finalize':
+D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/digest.cr:38:(.text+0x179): undefined reference to `EVP_MD_CTX_destroy'
+D:/a/_temp/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/15.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: D-igest5858M-D-5.o0.obj: in function `digest_size':
+D:\a\_temp\msys64\mingw64\share\crystal\src\openssl/digest.cr:77:(.text+0x8bd): undefined reference to `EVP_MD_size'
+]]></content:encoded></item><item><title>SDL Event and UserEvent questions</title><link>https://forum.crystal-lang.org/t/sdl-event-and-userevent-questions/8114</link><author>AlexR</author><category>community</category><pubDate>Sat, 31 May 2025 18:41:48 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[This (SDL client) code will not compile. How to fix it?# app.cr
+class ColorPicker
+  property color : UInt32
+  def initialize(@color)
+  end
+end
+
+picker = ColorPicker.new(0xFF0000FF)
+
+enum UserEventType
+  COLOR_PICKED
+  DRAWING_CREATED
+end
+
+event = LibSDL::UserEvent.new(
+  type: user_event_type,
+  code: UserEventType::COLOR_PICKED,
+  data1: pointerof(picker.color),
+  data2: nil)
+
+LibSDL.push_event(pointerof(event))
+$ crystal app.cr
+
+# In app.cr
+
+# data1: pointerof(picker.color),
+# Error: can't take address of picker.color
+
+# LibSDL.push_event(pointerof(event))
+# Error: argument 'event' of 'LibSDL#push_event' must be Pointer(LibSDL::Event), not Pointer(LibSDL::UserEvent)
+# shard.yml
+name: SDL
+version: 0.1.0
+dependencies:
+  sdl-crystal-bindings:
+    github: Hadeweka/SDL-Crystal-Bindings
+    branch: sdl2v0_2_1
+# sdl-crystal-bindings.cr
+# ...
+union Event
+  type : UInt32
+  common : CommonEvent
+  display : DisplayEvent
+  window : WindowEvent
+  ...
+  user : UserEvent
+  ...
+end
+# ...
+struct UserEvent
+  type : UInt32
+  timestamp : UInt32
+  window_id : UInt32
+  code : Int32
+  data1 : Void*
+  data2 : Void*
+end
+# ...
+fun push_event = SDL_PushEvent(event : Event*) : LibC::Int
+# ...
+12 posts - 3 participants]]></content:encoded></item><item><title>Impact of `--release` vs `-O3`</title><link>https://forum.crystal-lang.org/t/impact-of-release-vs-o3/8113</link><author>jgaskins</author><category>community</category><pubDate>Sat, 31 May 2025 17:31:28 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m trying to iterate quickly on an app I’m working on in production. Deploying it was taking 5-6 minutes every time I made a change, which is actually pretty decent for continuous deployment but I’m impatient.Since the  option is just , I decided to check how the impact of  had vs the plain  on this app for both compilation and runtime. I know LLVM can perform more optimizations if you put it all into a single module, but I’ve never seen what the magnitude of that is on the kinds of apps I write (usually web services and infrastructure tooling). Ary showed some numbers here, which are great, but his examples aren’t the kinds of apps that I work on, so I wasn’t sure how impactful it would be.Using  instead of  brought my build times on GitHub Actions from 5-6 minutes on paid runners to below 3 minutes (builds and deploys are not yet being gated behind CI — I’m running specs locally):Build times this fast are worth a moderate tradeoff in runtime performance, especially since this app is relatively new. Latency between my house and the server makes generating synthetic load difficult (it takes a  of concurrency to saturate the gaps created by that latency), so I ran it against the app running locally. I copied a request as a  command from my browser dev tools and converted it to , hitting an endpoint for an authenticated user that shows all organizations the user is a member of, which makes queries to both Redis and Postgres. I have live data in my local DB, so these are realistic requests.$ wrk 'http://localhost:3201/organizations' \
+  [HEADERS REMOVED FOR BREVITY]
+Running 10s test @ http://localhost:3201/github_organizations
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.10ms  314.42us   6.54ms   98.37%
+    Req/Sec     4.63k   131.63     4.81k    75.74%
+  93073 requests in 10.10s, 456.41MB read
+Requests/sec:   9214.29
+Transfer/sec:     45.18MB
+Over 9k requests per second is pretty solid, especially for requests that are running several real Redis and Postgres queries. I was like “wait, how much better could  be?”Turns out, it’s pretty significant:$ wrk 'http://localhost:3202/organizations' \
+  [HEADERS OMITTED FOR BREVITY]
+Running 10s test @ http://localhost:3202/github_organizations
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   560.38us    1.53ms  40.94ms   97.71%
+    Req/Sec    11.76k   692.11    12.68k    89.11%
+  236375 requests in 10.10s, 1.13GB read
+Requests/sec:  23402.55
+Transfer/sec:    114.76MB
+About 2.5x as fast for a web app running real database queries just by adding . I knew LLVM performed some great optimizations, but that’s quite a bit more than I expected. I assumed it would be around 50% faster, which still would’ve been worth it for apps that need the performance, but 2.5x is incredible.]]></content:encoded></item><item><title>How to check for existance of instance method?</title><link>https://forum.crystal-lang.org/t/how-to-check-for-existance-of-instance-method/8111</link><author>AlexR</author><category>community</category><pubDate>Fri, 30 May 2025 13:29:07 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Working with abstract classes and their descendants, is it possible to check for the existence of an instance variable or method at runtime ?]]></content:encoded></item><item><title>Compiling and Packaging Crystal GTK4 apps for Windows</title><link>https://forum.crystal-lang.org/t/compiling-and-packaging-crystal-gtk4-apps-for-windows/8110</link><author>GeopJr</author><category>community</category><pubDate>Wed, 28 May 2025 12:45:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Crystal's Windows support has been steadily getting more and more usable and with that comes the comm...]]></content:encoded></item><item><title>Zip a multidimensional array with itself</title><link>https://forum.crystal-lang.org/t/zip-a-multidimensional-array-with-itself/8109</link><author>jideelgh</author><category>community</category><pubDate>Tue, 27 May 2025 17:14:40 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I have a chain where, at some point, .map returns a two-dimensional array, like this:...
+.transpose
+.map(&.sort!)
+The output would looks like [[1,3][2,4].
+I would like to directly zip the first sub-array with the second one:.transpose
+.map(&.sort!)[0].zip(zip with what ? &.[1] ?)  Doesn't work.
+That would be a bit like using .tap.tap { |a| = a[0].zip(a[1]) }
+but with the .tap block returning the modified value and not self (which, obviously, is not what .tap is intended for).
+I tried playing with ‘itself’ also without success.
+And (of course) all of this without using intermediary variables, the chain should continue after the ‘zipping’.
+Is it achievable ?]]></content:encoded></item><item><title>Http client tutorial</title><link>https://forum.crystal-lang.org/t/http-client-tutorial/8108</link><author>Fulgurance</author><category>community</category><pubDate>Tue, 27 May 2025 10:22:01 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I just wanted to ask if someone know a good tutorial/introduction to network protocols ? Because basically I am really good for backend, but I know almost nothing about networking, and I would like to fix this.Basically after this, I would like to be able to use the crystal http client]]></content:encoded></item><item><title>Chart of projects</title><link>https://forum.crystal-lang.org/t/chart-of-projects/8102</link><author>ralsina</author><category>community</category><pubDate>Mon, 26 May 2025 17:46:21 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I used to keep a chart of all the software projects I worked on and how they connected to each other. I just automated it for my crystal projects and … it’s a thing!Dotted lines means “planned”, ovals are forks of other people’s projects, round are the ones I started, flag-shaped ones are websites.]]></content:encoded></item><item><title>Convert PG::Interval to Crystal-Lang Time::Span</title><link>https://stackoverflow.com/questions/79627195/convert-pginterval-to-crystal-lang-timespan</link><author>Tyler</author><category>community</category><pubDate>Sun, 18 May 2025 06:22:25 +0000</pubDate><source url="https://stackoverflow.com/questions/tagged/?tagnames=crystal-lang&amp;sort=newest">SO</source><content:encoded><![CDATA[I have a Postgres table with a column that is type , and I'd like to idiomatically convert it to a .TimeChecker = NamedTuple(
+  id: UUID,
+  time_to_something: PG::Interval, # I want this type Time::Span
+)
+
+results = conn.query_all("select id,time_to_something from my_table", as: {UUID, PG::Interval})
+
+results.each do |id, time_to_something|
+  time_checker = TimeChecker.new(
+    id: id, 
+    time_to_something: time_to_something.idiomatic_to_span, # i dont want to regex parse, etc
+  )
+end
+It's probably straightforward to craft some regular expression, but I'm looking for something a little cleaner. Does anyone know a good way to convert a  to a  Crystal ?]]></content:encoded></item></channel></rss>
