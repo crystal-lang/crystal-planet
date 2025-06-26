@@ -9,7 +9,7 @@ https://crystal-lang.org/releases/feed.xml "~Releases" releases
 https://hnrss.org/newest?q=Crystal "HN" hn
 
 # Blogs
-"query:Blogs:tags # \"blog\"""
+"query:Blogs:tags # \"blog\""
 
 # Blog platforms
 https://medium.com/feed/tag/crystal-lang ! blog
