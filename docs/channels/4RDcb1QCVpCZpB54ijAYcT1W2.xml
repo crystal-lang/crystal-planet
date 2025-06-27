@@ -1,1 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Upcoming release 1.17.0</title><link>https://forum.crystal-lang.org/t/upcoming-release-1-17-0/8184</link><author>straight-shoota</author><category>community</category><pubDate>Thu, 26 Jun 2025 10:54:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The next Crystal release,  is scheduled for .As usual, this is precluded by a two-week feature , starting . We’ll be using this time until the release to consolidate the changes and fix bugs. only on TTY by defaultNew compiler tool Stabilized execution contextsThere will be further additions to these resources as we merge additional changes.The nightly builds serve as previews of the upcoming release. Please test your code base against nightly builds and report any regressions ]]></content:encoded></item><item><title>About openssl signature</title><link>https://forum.crystal-lang.org/t/about-openssl-signature/8183</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 26 Jun 2025 08:21:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a authenticity check for my package manager, where I will check a package signature.What do you suggest me about it? What parameter should I use to generate a very secure private key ?]]></content:encoded></item><item><title>ToCry a fancy ToDo/Kanban web app</title><link>https://forum.crystal-lang.org/t/tocry-a-fancy-todo-kanban-web-app/8181</link><author>ralsina</author><category>community</category><pubDate>Mon, 23 Jun 2025 00:39:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I got sick of limitations in a ToDO app I was using and thought “this can’t be too hard, can it?” and it wasn’t.Will in the future make it multiboard/multiuser but is currently “Just Enough App®️” for me]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Sepia: a object-hierarchy-to-disk serializer shard</title><link>https://forum.crystal-lang.org/t/sepia-a-object-hierarchy-to-disk-serializer-shard/8187</link><author>ralsina</author><category>community</category><pubDate>Fri, 27 Jun 2025 03:07:04 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I have not seen this around but it’s a pattern I use a lot in my own coding:I want data structured in a hierarchyI want to save it to diskI don’t want to use a database, I want to use plain old files and directoriesBecause I don’t want to lock the user in.Because I want to manipulate the data using unixy toolsBecause I want to version-control itSo, that’s Sepia. You lightly annotate your classes, and write how they can be turned to/from a string.  Then you can roundtrip from/to your data tree to a directory tree.require "sepia"
+
+# Configure Sepia to use a local directory for storage.
+Sepia::Storage::INSTANCE.path = "./_data"
+
+# A Postit is a simple Serializable object.
+class Postit
+  include Sepia::Serializable
+
+  property text : String
+
+  def initialize(@text); end
+  def initialize; @text = ""; end
+
+  # The to_sepia method defines the content of the serialized file.
+  def to_sepia : String
+    @text
+  end
+
+  # The from_sepia class method defines how to deserialize the object.
+  def self.from_sepia(sepia_string : String) : self
+    new(sepia_string)
+  end
+end
+
+# A Board is a Container that can hold other Boards and Postits.
+class Board
+  include Sepia::Container
+
+  property boards : Array(Board)
+  property postits : Array(Postit)
+
+  def initialize(@boards = [] of Board, @postits = [] of Postit); end
+end
+
+# --- Create and Save ---
+
+# A top-level board for "Work"
+work_board = Board.new
+work_board.sepia_id = "work_board"
+
+# A nested board for "Project X"
+project_x_board = Board.new
+project_x_board.sepia_id = "project_x" # This ID is only used for top-level objects
+
+# Create some Post-its
+postit1 = Postit.new("Finish the report")
+postit1.sepia_id = "report_postit"
+postit2 = Postit.new("Review the code")
+postit2.sepia_id = "code_review_postit"
+
+# Assemble the structure
+project_x_board.postits << postit2
+work_board.boards << project_x_board
+work_board.postits << postit1
+
+# Save the top-level board. This will recursively save all its contents.
+work_board.save
+
+# --- Load ---
+
+loaded_work_board = Board.load("work_board").as(Board)
+
+puts loaded_work_board.postits[0].text # => "Finish the report"
+puts loaded_work_board.boards[0].postits[0].text # => "Review the code"
+And it produces this tree on disk:./_data
+├── Board
+│   └── work_board
+│       ├── boards
+│       │   └── project_x
+│       │       └── postits
+│       │           └── 0 -> ./_data/Postit/code_review_postit
+│       └── postits
+│             └── 0 -> ./_data/Postit/report_postit
+└── Postit
+    ├── code_review_postit
+    └── report_postit
+You can nest containers all you want, some bits are to be implemented (like preserving order when roundtripping an array) and files with data are deduplicated (they have a canonical location and are symlinked to all the places where they are referenced)]]></content:encoded></item><item><title>The true cost of parsing Crystal source code</title><link>https://forum.crystal-lang.org/t/the-true-cost-of-parsing-crystal-source-code/8185</link><author>HertzDevil</author><category>community</category><pubDate>Thu, 26 Jun 2025 21:03:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Passing  to Crystal when building or running any source code gives you a list of compilation stages and their times elapsed, the first stage being . Most of the time, this stage takes less than 1 , even when rebuilding a large codebase like the compiler itself. This is naturally impossible, no matter how fast your computer runs.The reason here is that the scope of the stage is very small. It measures only the time taken to parse the entry points given on the command line, not the time taken for required files; they are parsed as  nodes are visited by the top-level visitor, meaning all that elapsed time counts towards the  stage instead. Knowing that all the parsing goes through , here is a rudimentary patch that prints the total time taken for all invocations of that method:module Crystal
+  class Parser
+    class_property elapsed = Time::Span.zero
+
+    def parse
+      t0 = Time.monotonic
+      begin
+        previous_def
+      ensure
+        t1 = Time.monotonic
+        Parser.elapsed += t1 - t0
+      end
+    end
+  end
+
+  class Compiler
+    private def print_codegen_stats(units)
+      return unless @progress_tracker.stats?
+      puts "Parse total: #{Parser.elapsed}"
+      previous_def
+    end
+  end
+end
+We then build an empty file with , meaning the prelude is solely responsible for all the parsing. On Windows, a typical run looks like this:Parse:                             00:00:00.000625400 (   1.16MB)
+Semantic (top level):              00:00:00.371690400 ( 129.64MB)
+Semantic (new):                    00:00:00.001411500 ( 129.64MB)
+Semantic (type declarations):      00:00:00.022352500 ( 129.64MB)
+Semantic (abstract def check):     00:00:00.008010900 ( 145.64MB)
+Semantic (restrictions augmenter): 00:00:00.006648800 ( 145.64MB)
+Semantic (ivars initializers):     00:00:00.095378200 ( 145.70MB)
+Semantic (cvars initializers):     00:00:00.003065200 ( 145.70MB)
+Semantic (main):                   00:00:00.212487200 ( 193.82MB)
+Semantic (cleanup):                00:00:00.000268600 ( 193.82MB)
+Semantic (recursive struct check): 00:00:00.000578700 ( 193.82MB)
+Codegen (crystal):                 00:00:00.199303900 ( 193.82MB)
+Codegen (bc+obj):                  00:00:00.182948200 ( 209.82MB)
+Codegen (linking):                 00:00:00.714077300 ( 209.82MB)
+Parse total: 00:00:00.268039300
+0.27 second, or over 70% of the top-level phase, is spent on parsing source code. It may seem little compared to the main and codegen phases, but definitely contributes to the slowless perceived by some newcomers running their first Hello World program and other short scripts. It also dominates compiler components that only require the top-level semantic pass, like the docs generator and the hierarchy tool. Below is a flame graph showing the same symptom: (this is done on Debian WSL)The graph is focused on the outermost stack frame involving the top-level visitor, and all the highlighted frames are instance methods of . They indeed occupy the majority of the top-level phase.Traditionally, much of the work on improving compilation times has been directed at the codegen phases, and there was little attention to the parser. There are probably many missed optimization opportunities here, and we may want better reporting facilities for  too, not least because the stages of interest are not perfectly sequential, i.e. parsing could happen in the middle of the main phase too for macro methods referring to the  macro variable.]]></content:encoded></item><item><title>Upcoming release 1.17.0</title><link>https://forum.crystal-lang.org/t/upcoming-release-1-17-0/8184</link><author>straight-shoota</author><category>community</category><pubDate>Thu, 26 Jun 2025 10:54:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The next Crystal release,  is scheduled for .As usual, this is precluded by a two-week feature , starting . We’ll be using this time until the release to consolidate the changes and fix bugs. only on TTY by defaultNew compiler tool Stabilized execution contextsThere will be further additions to these resources as we merge additional changes.The nightly builds serve as previews of the upcoming release. Please test your code base against nightly builds and report any regressions ]]></content:encoded></item><item><title>About openssl signature</title><link>https://forum.crystal-lang.org/t/about-openssl-signature/8183</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 26 Jun 2025 08:21:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a authenticity check for my package manager, where I will check a package signature.What do you suggest me about it? What parameter should I use to generate a very secure private key ?]]></content:encoded></item></channel></rss>
