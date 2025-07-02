@@ -1,1 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Upcoming release 1.17.0</title><link>https://forum.crystal-lang.org/t/upcoming-release-1-17-0/8184</link><author>straight-shoota</author><category>community</category><pubDate>Thu, 26 Jun 2025 10:54:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The next Crystal release,  is scheduled for .As usual, this is precluded by a two-week feature , starting . We’ll be using this time until the release to consolidate the changes and fix bugs. only on TTY by defaultNew compiler tool Stabilized execution contextsThere will be further additions to these resources as we merge additional changes.The nightly builds serve as previews of the upcoming release. Please test your code base against nightly builds and report any regressions ]]></content:encoded></item><item><title>About openssl signature</title><link>https://forum.crystal-lang.org/t/about-openssl-signature/8183</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 26 Jun 2025 08:21:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a authenticity check for my package manager, where I will check a package signature.What do you suggest me about it? What parameter should I use to generate a very secure private key ?]]></content:encoded></item><item><title>ToCry a fancy ToDo/Kanban web app</title><link>https://forum.crystal-lang.org/t/tocry-a-fancy-todo-kanban-web-app/8181</link><author>ralsina</author><category>community</category><pubDate>Mon, 23 Jun 2025 00:39:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I got sick of limitations in a ToDO app I was using and thought “this can’t be too hard, can it?” and it wasn’t.Will in the future make it multiboard/multiuser but is currently “Just Enough App®️” for me]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Kagi Search is Hiring</title><link>https://forum.crystal-lang.org/t/kagi-search-is-hiring/8194</link><author>nobodywasishere</author><category>community</category><pubDate>Tue, 1 Jul 2025 23:36:30 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Description As a member of the Backend team, you will be a graceful conductor of all the data flowing through the Kagi system. We are the beating drum that keeps everything running like clockwork a...]]></content:encoded></item><item><title>Question about running stripping process</title><link>https://forum.crystal-lang.org/t/question-about-running-stripping-process/8193</link><author>Fulgurance</author><category>community</category><pubDate>Tue, 1 Jul 2025 15:40:00 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually trying to fin a good way to strip a file list.I tried into a process, but the problem is if one stripping fail (for example because it’s a Dir), it stop the stripping. Have you got any suggestion to  bypass this ? You need to keep in mind that I need performance, and I can’t pay the cost to use a process for every single file.My software handle the use of the bit SUID if you wonder.Actually my program is using this method, but most of the file are not stripped.def stripFileListNoChroot(fileList : Array(String))
+
+            requestedCommands = <<-CMD
+            strip --strip-unneeded #{fileList.join("\" || true\nstrip --strip-unneeded \"")} || true
+            CMD
+
+            process = Process.run(requestedCommands, shell: true)
+
+            rescue
+end
+]]></content:encoded></item><item><title>Help on a Google OAuth login working example? (I tried with multi_auth, it work with Github, but not with Google)</title><link>https://forum.crystal-lang.org/t/help-on-a-google-oauth-login-working-example-i-tried-with-multi-auth-it-work-with-github-but-not-with-google/8192</link><author>zw963</author><category>community</category><pubDate>Tue, 1 Jul 2025 08:51:35 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi, Can anyone help on give me a Google OAuth2 login working example? only email address is required.I tried with multi_auth shard, but failed with a message:The caller does not have permission to request “people/me”. Request requires one of the following scopes: [profile]. GET /multi_auth/google/callback?code=4%2F0AVMBsJjvssA-eqjJQ-8EXtIeOy23ZmYMe4Iid9q4loqw7L1JL8KHVnHZn_Q-yTxEYxwpXQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+  ▸  MultiAuth::Exception
+      The caller does not have permission to request "people/me". Request requires one of the following scopes: [profile].
+     Backtrace
+      lib/multi_auth/src/multi_auth/providers/google.cr:87:15 in 'build_user'
+      lib/multi_auth/src/multi_auth/providers/google.cr:59:5 in 'user'
+      lib/multi_auth/src/multi_auth/engine.cr:30:5 in 'user'
+      /src/actions/sign_ups/oauth/callback.cr:4:3 in 'action_call_body'
+      /src/actions/sign_ups/oauth/callback.cr:4:3 in 'call'
+      lib/lucky/src/lucky/renderable.cr:130:16 in 'perform_action'
+      lib/lucky/src/lucky/route_handler.cr:10:7 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/remote_ip_handler.cr:26:5 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/error_handler.cr:15:5 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/log_handler.cr:34:9 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/http_method_override_handler.cr:11:5 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/force_ssl_handler.cr:37:7 in 'call'
+      Crystal/share/crystal/src/http/server/handler.cr:30:7 in 'call_next'
+      lib/lucky/src/lucky/request_id_handler.cr:24:5 in 'call'
+      Crystal/share/crystal/src/http/server/request_processor.cr:51:11 in 'process'
+      Crystal/share/crystal/src/http/server.cr:521:5 in 'handle_client'
+      Crystal/share/crystal/src/http/server.cr:451:5 in '->'
+      Crystal/share/crystal/src/fiber.cr:170:11 in 'run'
+      Crystal/share/crystal/src/fiber.cr:105:3 in '->'
+I create a issue there too.]]></content:encoded></item><item><title>How do you get the location name of the local timezone?</title><link>https://forum.crystal-lang.org/t/how-do-you-get-the-location-name-of-the-local-timezone/8191</link><author>syeopite</author><category>community</category><pubDate>Tue, 1 Jul 2025 04:44:00 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[For some reason I can only get  as the output rather than something like  within Crystal.Time::Location.local.name # => "Local"
+Time.local.location.name # => "Local"
+Time.local.to_s("%Z") # => "Local"
+]]></content:encoded></item><item><title>High memory usage copying data from a `HTTP::FormData::Part` into a `IO::Memory`</title><link>https://forum.crystal-lang.org/t/high-memory-usage-copying-data-from-a-http-part-into-a-io-memory/8190</link><author>Fijxu</author><category>community</category><pubDate>Mon, 30 Jun 2025 21:10:48 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi, I have been scratching my head when it comes with this piece of code:require "http"
+
+server = HTTP::Server.new do |context|
+  name = nil
+  file = nil
+
+  HTTP::FormData.parse(context.request) do |part|
+    io = IO::Memory.new
+    if body = part.body
+      IO.copy(body, io)
+    end
+
+    file = File.tempfile("upload") do |file|
+      IO.copy(io, file)
+    end
+  end
+  if file
+    context.response << file.path
+  end
+end
+
+server.bind_tcp 8085
+server.listen
+The problem is that when the  from the part is copied into the , the memory usage increases by the double the size of the file being uploaded on the form, so if I upload a 25MB file using curl -F "file=@/home/user/somefile.mp4" http://localhost:8085/, the memory usage increases up to ~50MB (double the file size).The exact same thing happens when I do:  HTTP::FormData.parse(context.request) do |part|
+    part.body.getb_to_end
+    file = File.tempfile("upload") do |file|
+      IO.copy(part.body, file)
+    end
+  end
+However, when I use this instead:HTTP::FormData.parse(context.request) do |part|
+    file = File.tempfile("upload") do |file|
+      IO.copy(part.body, file)
+    end
+  end
+It uses 0 additional memory.I would like to understand why Crystal uses double the memory when using:io = IO::Memory.new
+if body = part.body
+  IO.copy(body, io)
+end
+]]></content:encoded></item><item><title>Do you think this would be a good language to build a realtime imageboard with?</title><link>https://old.reddit.com/r/crystal_programming/comments/1lnw23t/do_you_think_this_would_be_a_good_language_to/</link><author>/u/Admirable_Cap_9693</author><category>community</category><pubDate>Mon, 30 Jun 2025 02:13:02 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[Hi, I'm currently on the hunt for a language / framework that I can build a realtime imageboard with. If you don't know what I mean by realtime, I mean you can see people typing before they submit their post to the forum. Since concurrency is a must for this type of thing, I've had to leave PHP. Go is too annoying to look at. Elixir is too far of a leap for me considering I'm not used to functional languages. And I'm just not to keen on learning Rust. Do you think the web frameworks that exist for this language are mature enough to handle something like this? ]]></content:encoded></item><item><title>IDE support in 2025?</title><link>https://old.reddit.com/r/crystal_programming/comments/1lndfil/ide_support_in_2025/</link><author>/u/vmcrash</author><category>community</category><pubDate>Sun, 29 Jun 2025 12:24:22 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[What is the IDE you are using for Crystal? Does it support code completion, simple navigation to definition and usages, building and debugging? Does it work on all 3 major platforms? Where to find a documentation how to set it up?]]></content:encoded></item></channel></rss>
