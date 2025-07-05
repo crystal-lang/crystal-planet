@@ -1,1 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Upcoming release 1.17.0</title><link>https://forum.crystal-lang.org/t/upcoming-release-1-17-0/8184</link><author>straight-shoota</author><category>community</category><pubDate>Thu, 26 Jun 2025 10:54:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The next Crystal release,  is scheduled for .As usual, this is precluded by a two-week feature , starting . We’ll be using this time until the release to consolidate the changes and fix bugs. only on TTY by defaultNew compiler tool Stabilized execution contextsThere will be further additions to these resources as we merge additional changes.The nightly builds serve as previews of the upcoming release. Please test your code base against nightly builds and report any regressions ]]></content:encoded></item><item><title>About openssl signature</title><link>https://forum.crystal-lang.org/t/about-openssl-signature/8183</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 26 Jun 2025 08:21:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a authenticity check for my package manager, where I will check a package signature.What do you suggest me about it? What parameter should I use to generate a very secure private key ?]]></content:encoded></item><item><title>ToCry a fancy ToDo/Kanban web app</title><link>https://forum.crystal-lang.org/t/tocry-a-fancy-todo-kanban-web-app/8181</link><author>ralsina</author><category>community</category><pubDate>Mon, 23 Jun 2025 00:39:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I got sick of limitations in a ToDO app I was using and thought “this can’t be too hard, can it?” and it wasn’t.Will in the future make it multiboard/multiuser but is currently “Just Enough App®️” for me]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Process: keep the colored output</title><link>https://forum.crystal-lang.org/t/process-keep-the-colored-output/8203</link><author>Fulgurance</author><category>community</category><pubDate>Fri, 4 Jul 2025 18:10:39 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. When I use Process.run, can it be possible to keep the command output color ?For example, if I run this, the ouput is only black and white. But normally ls have a colored output:Process.run("ls", shell: true, output: Process::Redirect::Inherit)
+]]></content:encoded></item><item><title>Compiling Crystal from Github Master Branch - PKGBUILD x86_64/arm64v8/aarch64</title><link>https://forum.crystal-lang.org/t/compiling-crystal-from-github-master-branch-pkgbuild-x86-64-arm64v8-aarch64/8202</link><author>Ferguson</author><category>community</category><pubDate>Fri, 4 Jul 2025 18:02:16 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[After some time I get the PKGBUILD to compile to Arch Linux(arm64v8-aarch64) from master branch:pkgname=crystal-git-master
+pkgver=1.17.0
+pkgrel=1
+pkgdesc="The Crystal Programming Language"
+arch=('x86_64' 'aarch64')
+url="http://crystal-lang.org"
+license=('Apache')
+depends=('gc' 'pcre2' 'libevent')
+makedepends=('git' 'libxml2' 'llvm' 'crystal')
+checkdepends=('libyaml' 'libxml2' 'gmp' 'git' 'inetutils')
+optdepends=('shards: To make the crystal deps command work'
+            'libyaml: For YAML support'
+            'gmp: For BigInt support'
+            'libxml2: For XML support')
+conflicts=('crystal')
+provides=('crystal')
+source=("git+https://github.com/crystal-lang/crystal.git#branch=master")
+
+prepare() {
+  cd "$srcdir/${pkgname/-git/}"
+
+  if [ "$CARCH" = "aarch64" ]; then
+    export EXPORT_CC="CC=cc" # prevent lld usage, broken on  aarch64
+  fi
+}
+
+build() {
+  cd "$srcdir/${pkgname/-git/}"
+
+  make release=1 FLAGS="--no-debug" \
+       CRYSTAL_PATH="$srcdir/${pkgname/-git/}/src:$srcdir/${pkgname/-git}/lib" \
+       CRYSTAL_CACHE_DIR="/tmp/crystal"
+  make docs CRYSTAL_CACHE_DIR="/tmp/crystal"
+}
+
+check() {
+  cd "$srcdir/${pkgname/-git/}"
+
+  make -j1 compiler_spec std_spec \
+       CRYSTAL_PATH="$srcdir/${pkgname/-git/}/src:$srcdir/${pkgname/-git}/lib" \
+       CRYSTAL_CONFIG_VERSION="$pkgver" \
+       CRYSTAL_CACHE_DIR="/tmp/crystal"
+}
+
+package() {
+  cd "$srcdir/${pkgname/-git/}"
+
+  make install install_docs PREFIX="$pkgdir/usr"
+  install -Dm644 src/llvm/ext/llvm_ext.o "$pkgdir/usr/share/crystal/src/llvm/ext/llvm_ext.o"
+  cp -av lib/ "$pkgdir/usr/share/crystal/lib/"
+}
+
+sha256sums=('SKIP')
+I tested that on Orange PI 5 Max with BredOS(arm64v8):crystal-git/src/crystal$ bin/crystal -v
+Using compiled compiler at .build/crystal
+Crystal 1.17.0-dev [f8877f850c] (2025-07-04)
+
+LLVM: 20.1.7
+Default target: aarch64-unknown-linux-gnu
+
+Some features is not enabled as interactive interface.]]></content:encoded></item><item><title>Issue with having to compile all shards when compile the application</title><link>https://forum.crystal-lang.org/t/issue-with-having-to-compile-all-shards-when-compile-the-application/8201</link><author>Haddock</author><category>community</category><pubDate>Fri, 4 Jul 2025 09:18:53 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I happened to read this article:“Incremental compilation for Crystal - Part 3”This is an interesting problem. Scala (some alternative language for the JVM) also heavily relies on type inference. Types in signatures of public methods in Scala may also not have types declared, but there is no problem in Scala that Scala libraries that are imported also need to be compiled. But Scala is different as being a JVM language that uses a VM that interpretes intermediate byte code (and creates machine code on the fly). Secondly, Java aka the JVM is build on type erasure, that is the type information is thrown away once the intermediate byte code was genereated by the Java or Scala compiler that is interpreted by the VM.Maybe one solution would be also to have some intermediate code and binding it to the hardware is only done on the first invocation when starting up everything. This is also what the Microsoft languages do (Visual Basic, C#, F#). But I’m a “normal” application developer with little knowledge about compiler construction. Just my 5 cents. Would be so nice this problem in Crystal could be solved.]]></content:encoded></item><item><title>Kagi Search is Hiring</title><link>https://forum.crystal-lang.org/t/kagi-search-is-hiring/8194</link><author>nobodywasishere</author><category>community</category><pubDate>Tue, 1 Jul 2025 23:36:30 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Description As a member of the Backend team, you will be a graceful conductor of all the data flowing through the Kagi system. We are the beating drum that keeps everything running like clockwork a...]]></content:encoded></item></channel></rss>
