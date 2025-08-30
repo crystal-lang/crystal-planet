@@ -1,16 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Inquiry About Contributing to Korean Crystal Documentation</title><link>https://forum.crystal-lang.org/t/inquiry-about-contributing-to-korean-crystal-documentation/8333</link><author>hahwul</author><category>community</category><pubDate>Mon, 11 Aug 2025 00:53:33 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Could anyone provide information about the correct repository linked to the kr domain or point me to the right resources for contributing to the Korean translation?Additionally, based on the URL, it appears that the repository might be a personal one. I think it would be better to manage it under an organization account, similar to https://github.com/crystal-french, for better collaboration and maintenance. Any thoughts on this? Thank you!]]></content:encoded></item><item><title>Should &apos;embedded Crystal&apos; be Crystal?</title><link>https://forum.crystal-lang.org/t/should-embedded-crystal-be-crystal/8330</link><author>Barney</author><category>community</category><pubDate>Sat, 9 Aug 2025 15:21:08 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I recently noticed that  files are read as  by github’s linguist, and subsequently by Go-Enry, which is based on linguist.This results in pure crystal projects with config files using embedded crystal listing HTML on code forges.I opened an issue to change  recognition to crystal, but I’m curious what you think.]]></content:encoded></item><item><title>Field study of fiber-local storage</title><link>https://forum.crystal-lang.org/t/field-study-of-fiber-local-storage/8325</link><author>straight-shoota</author><category>community</category><pubDate>Sat, 9 Aug 2025 09:46:37 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We’re planning to add a stdlib API for fiber-local storage, which is a critical component for concurrent applications.With the need for such a feature and the absence of an official API, Crystal libraries have adopted several custom implementations in order to get things working. But they’re often subpar (in general; they might be fine for the specific use case).The goal is to implement a solid and efficient standard API to replace all currently used makeshift alternatives.In order to understand  Crystal libraries use fiber local storage, I digged through publicly available sources and I’m going to list my findings here. It’s actually quite a large amount of shards using some form of fiber-local storage.I’ve looked for some specific patterns which are commonly associated with fiber-local storage implementations. It’s likely that I missed some more unique implementations. Please add missing use cases in a comment!
-I appreciate any comments on the exploration and classification. Do you think it makes sense?This study is intended to inform an RFC about fiber-local storage API for Crystal’s standard library.All implementations I found use one of two base mechanism. Of course, each individual implementation may add different amounts of convenience wrapper around.class Fiber
-  property my_fls : String?
-end
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Enumerating `Time::Location`</title><link>https://forum.crystal-lang.org/t/enumerating-time-location/8389</link><author>jgaskins</author><category>community</category><pubDate>Fri, 29 Aug 2025 02:23:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[If I want to present a list of time zones to a user, how might I get a list of supported ones? There’s , which lets us get timezone info when we already know the name of a timezone, but how do I find the list of strings to give that method?I think what I’m looking for is something like a . Before I go implementing my own, is there another way to do this?]]></content:encoded></item><item><title>RFC 14: Cancelable timers</title><link>https://forum.crystal-lang.org/t/rfc-14-cancelable-timers/8386</link><author>ysbaddaden</author><category>community</category><pubDate>Thu, 28 Aug 2025 13:40:25 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We’ve been able to put a fiber to sleep for a long time now, but a sleep can’t be interrupted, which means that the sleep’s timer always expires and we can’t cancel it and resume the fiber early —technically we can, but then the fiber will be resumed . The sync shard for example, can’t implement some simple timeouts, like a timed wait on a condition variable, or a timeout on pool checkouts.Hence RFC 0014 that proposes  and a cancellation mechanism. The RFC already went through a first set of reviews and is ready for more general review ]]></content:encoded></item><item><title>Using use_libiconv on Mac with MacPorts</title><link>https://forum.crystal-lang.org/t/using-use-libiconv-on-mac-with-macports/8384</link><author>jkridner</author><category>community</category><pubDate>Thu, 28 Aug 2025 07:00:34 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[My question is: How are flags meant to be persistent, at least for host_flags?I’ve compiled Crystal 1.17.1 with clang-20 from MacPorts. The MacPorts provided libiconv uses the libiconv function names, rather than iconv. This seems to be already well-handled by the Crystal standard library, but I’m having run-time problems.progress = 1
+threads = 8
+verbose = 1
+interpreter = 1
+FLAGS = --verbose -Duse_libiconv
+LDFLAGS = -rpath /opt/local/lib -rpath /opt/local/libexec/llvm-20/lib
+export LDFLAGS
+LLVM_CONFIG = /opt/local/bin/llvm-config-mp-20
+export LLVM_CONFIG
+CC = /opt/local/bin/clang-mp-20
+export CC
+LD = /opt/local/bin/lld-link-mp-20
+export LD
+The resulting  fails on basic I/O tests that require iconv due to the “use_libiconv” flag not being set when the compiler runs.Example failure in :  1) ARGV accepts UTF-8 command-line arguments
+     Failure/Error: fail "Compiler command `#{compiler} #{args.join(" ")}` failed with status #{status}.#{"\n" if output}#{output}"
 
-Fiber.current.my_fls = "foo"
-Monkey patching additional properties into  is not ideal. There’s no direct danger besides name clashes with other libraries which do the same. But it’s also not a clean solution.This is equivalent to a class variable, so there’s no direct  mapping.
+       Compiler command `bin/crystal build -o /var/folders/t8/fscs9s514y50wy52_d38qrlc0000gn/T/cr-spec-31c17fe7/kernel/executable_file /var/folders/t8/fscs9s514y50wy52_d38qrlc0000gn/T/cr-spec-31c17fe7/kernel/source_file` failed with status 1.
+       Using compiled compiler at .build/crystal
+       ld: Undefined symbols:
+         _iconv, referenced from:
+             _*Crystal::Iconv#convert<Pointer(Pointer(UInt8)), Pointer(UInt64), Pointer(Pointer(UInt8)), Pointer(UInt64)>:UInt64 in C-rystal5858I-conv.o0.o
+         _iconv_close, referenced from:
+             _*Crystal::Iconv#close:Nil in C-rystal5858I-conv.o0.o
+         _iconv_open, referenced from:
+             _*Crystal::Iconv#initialize<String, String, (Symbol | Nil)>:Nil in C-rystal5858I-conv.o0.o
+       clang: error: linker command failed with exit code 1 (use -v to see invocation)
+       Error: execution of command failed with exit status 1: /opt/local/bin/clang-mp-20 "${@}" -o /var/folders/t8/fscs9s514y50wy52_d38qrlc0000gn/T/cr-spec-31c17fe7/kernel/executable_file  -rdynamic -L/usr/local/bin/../lib/crystal -L/opt/local/lib -lgc -lpthread -liconv
+This can be demonstrated more simply from a simple command-line to evaluate the use_libconv flag:% crystal eval 'puts {{ flag?(:use_libiconv) }}'                    
+ld: Undefined symbols:
+  _iconv, referenced from:
+      _*Crystal::Iconv#convert<Pointer(Pointer(UInt8)), Pointer(UInt64), Pointer(Pointer(UInt8)), Pointer(UInt64)>:UInt64 in C-rystal5858I-conv.o0.o
+  _iconv_close, referenced from:
+      _*Crystal::Iconv#close:Nil in C-rystal5858I-conv.o0.o
+  _iconv_open, referenced from:
+      _*Crystal::Iconv#initialize<String, String, (Symbol | Nil)>:Nil in C-rystal5858I-conv.o0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Error: execution of command failed with exit status 1: cc "${@}" -o /Users/jkridner/.cache/crystal/crystal-run-eval.tmp  -rdynamic -L/usr/local/bin/../lib/crystal -L/opt/local/lib -lgc -lpthread -liconv
+% crystal eval -Duse_libiconv 'puts {{ flag?(:use_libiconv) }}' 
+true
+% crystal eval -Duse_libiconv 'puts {{ host_flag?(:use_libiconv) }}'
+false
+So, why doesn’t Crystal  that I want the compiler to use libiconv? How should I be running the tests?OK, now that I’ve posed the question, I did go and look at what the MacPorts maintainer did to build in the MacPorts distro. I’m personally not familiar with Portfile syntax or style, but what seems clear is:the dependency is in the  provided within the distro,they similarly fixed-up the rpath for ,they did  use the  flag,they copied src/lib_c/*-openbsd/c/iconv.cr to src/lib_c/*-darwin/c/iconv.cr.Not surprising, the OpenBSD iconv.cr uses the libiconv function names. This hardly seems like a suitable work-around, so how is this  to work? Should MacPorts have a new target that is not “-darwin” or should Crystal somehow be remembering use_libiconv?Finding these downstream hacks has become a real pet peeve for me, so I hope we can clear this up together.From the perspective of trying to create some more targets for Crystal, it would be just good for me to understand the mindset behind using flags, if they are always considered to be ephemeral, and what should really go into a lib_c target.For reference, my installed ports are:% port installed requested      
+The following ports are currently installed:
+  binaryen @123_0 (active)
+  bison @3.8.2_2+universal (active)
+  boehmgc @8.2.8_1 (active)
+  cargo @0.89.0_0 (active)
+  clang-20 @20.1.8_0+analyzer (active)
+  clang_select @2.4_0 (active)
+  cmake @3.31.7_0+universal (active)
+  coreutils @9.5_1 (active)
+  create-dmg @1.2.2_0 (active)
+  curl @8.13.0_0+brotli+darwinssl+http2+idn+psl+universal+zstd (active)
+  curl-ca-bundle @8.13.0_0 (active)
+  dfu-util @0.11_0 (active)
+  flex @2.6.4_0+universal (active)
+  gawk @5.3.2_0+universal (active)
+  glib2 @2.78.4_2+universal+x11 (active)
+  go @1.24.5_0 (active)
+  gptfdisk @1.0.9_1 (active)
+  harfbuzz @11.2.1_1 (active)
+  hidapi @0.12.0_0 (active)
+  ImageMagick @6.9.13-21_0+x11 (active)
+  libarchive @3.8.1_0+universal (active)
+  libiconv @1.17_0
+  llvm-20 @20.1.8_0 (active)
+  llvm-devel @20240308-6a0618a0_0 (active)
+  llvm_select @2_1 (active)
+  md4c @0.5.2_0+universal (active)
+  nasm @2.16.03_0 (active)
+  nbd @3.20_0 (active)
+  ninja @1.12.1_1+universal (active)
+  nmap @7.97_0+pcre+ssl (active)
+  opencv4-devel @4.9.0_5 (active)
+  openssh @10.0p2_2 (active)
+  pandoc @3.7.0.2_0 (active)
+  pkgconfig @0.29.2_0 (active)
+  py-hid @1.0.5_0 (active)
+  py-jupyter @1.0.0_3 (active)
+  py-pygraphviz @1.11_0 (active)
+  py27-tkinter @2.7.18_0 (active)
+  py27-virtualenv @20.15.1_0 (active)
+  py313-markupsafe @3.0.2_0 (active)
+  py313-pygraphviz @1.11_0 (active)
+  py313-setuptools @80.9.0_0 (active)
+  python27 @2.7.18_10+lto+optimizations+universal (active)
+  qemu @10.0.2_0+cocoa+curses+spice+spice_protocol+target_arm+target_i386+target_x86_64+usb+vnc (active)
+  rust @1.88.0_0 (active)
+  swig @4.3.1_0 (active)
+  swig-python @4.3.1_0 (active)
+  tio @3.9_0 (active)
+  tree @2.2.1_0 (active)
+  wasm3 @0.5.0_0 (active)
+  wget @1.25.0_1+gnutls (active)
 
-List of implementations (click for more details)Hash mapping  instances to valuesfibers = Hash(Fiber, String).new.compare_by_identity
-
-MyFLS.fibers[Fiber.current] = "foo"
-The hash can be a class or instance property. The latter allows  mappings which is necessary for some use cases (such as connection pools).Some hashes use  instead of the  instance as the key. I’m not sure what’s the point of that. Maybe this predates ?
-List of implementations (click for more details)Extra: Thread Local StorageThe different use cases can be classified into several categories:I think there are two different modes of how fiber local variables are used:A fixed property assigned to a fiber. It has exactly one value per fiber (or none through lazy initialization) and that value is unique per fiber. It must not be inherited by child fibers (structured concurrency).
-Example: Pool checkouts, transactions, recursion detectionA scoped property which may change over time. Assignments are usually scoped to a specific range of execution, and may be inherited by child fibers (structured concurrency)
-Example: observability contexts, configurationA challenge for the stdlib API is how to suit the needs for both of these modes.It’s also important to clarify what are  appropriate use case for fiber-local storage.
-I think it is primarily intended for matters of code structure (such as a DB transaction is checked out to one specific strain of execution, i.e. a fiber).12 posts - 5 participants]]></content:encoded></item><item><title>Ambiguous use of `Time::Span` for duration and monotonic clock</title><link>https://forum.crystal-lang.org/t/ambiguous-use-of-time-span-for-duration-and-monotonic-clock/8324</link><author>straight-shoota</author><category>community</category><pubDate>Fri, 8 Aug 2025 17:09:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[In the discussion of RFC0014 it became apparent that the  type can lead to confusion. Its primary purpose is to represent a duration of time. But we also use it for a reading of the monotonic clock (). This makes some sense because the monotonic clock is just the time elapsed since some arbitrary point in time.But this double use leads to problems when specifying some kind of timeout or delay: A duration represents a relative distance from the current instant. A monotonic clock reading represents an absolute instant. Either semantic is valid. And the type system makes it impossible to tell them apart.The first proposal for a monotonic clock was actually for  (#3826), but somehow - after intricate discussions about involving  and whether monotonic readings are even necessary on their own - we ended up piggy-bagging  on  (#5108). I believe it was mostly for the sake of simplicity?Maybe it’s time to rethink that? Having a separate type to represent a monotonic clock reading would be very helpful for use cases such as : A  argument represents a relative duration, a  (working title) argument represents an absolute instant.The only affected stdlib API would be . It would be relatively easy to deprecate that and replace it with, for example , or .]]></content:encoded></item><item><title>Extension Methods in Crystal</title><link>https://forum.crystal-lang.org/t/extension-methods-in-crystal/8323</link><author>Haddock</author><category>community</category><pubDate>Fri, 8 Aug 2025 12:30:54 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m new to Crystal and from what I’ve seen so far Crystal does not have them like Ruby.Java does not have them, either. This has resulted in Java in tons of static helper methods being created in separate utility classes, which is quite annoying as it breaks OO thinking and you have to know by heard about all those static utility methods and where the are located.So “foo(bar(a))” could also be written as “a.bar().foo()“My question is whether that would be an idea for Crystal as well. Maybe it would not be that hard to tweak the Crystal compiler to implement a similar solution. I don’t know - just a question ;-).12 posts - 8 participants]]></content:encoded></item><item><title>Ld: warning: object file was built for newer macOS version than being linked</title><link>https://forum.crystal-lang.org/t/ld-warning-object-file-was-built-for-newer-macos-version-than-being-linked/8319</link><author>michaels</author><category>community</category><pubDate>Thu, 7 Aug 2025 22:27:56 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Sorry, I wanted to reply to the other post, but being a new user I was limited to 3 replies on that topic, so I’ve raised a new one to reply.In that other post I was reporting why when doing ‘crystal run ..’ I would see so many of the following warnings:ld: warning: object file (…o0.o) was built for newer macOS version (15.0) than being linked (11.0)it was suggested by @ysbaddaden that I might need to set the env var $MACOSX_DEPLOYMENT_TARGET and I did set it to “15.5”, and reran, and found that the warnings were suppressed, which is great. However as a new crystal user, I think this is not very intuitive and wonder about the need to see those messages. Why would it be necessary to set this var? Is it possible to invert the situation so those are suppressed by default and enable a var or flag to show those? Thanks.]]></content:encoded></item></channel></rss>
+]]></content:encoded></item></channel></rss>
