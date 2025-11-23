@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>A Practical Guide to Parallel Programming in Crystal (2025)</title><link>https://dev.to/kojix2/a-practical-guide-to-parallel-programming-in-crystal-2025-1lbg</link><author>kojix2</author><category>blog</category><pubDate>Fri, 21 Nov 2025 07:24:48 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This article is based on content created by kojix2 (a human) alternately calling DeepWiki and ChatGPT, but kojix2 (a human) has reviewed, edited, and proofread the entire text. The article was translated from Japanese to English using Claude. If you find any mistakes, . Thank you.Crystal's parallel processing is based on a hybrid model that primarily uses Fiber (cooperative and lightweight) and utilizes  when necessary., which has been rapidly developed since around 2024-2025, provides a new abstraction layer for safely spreading Fibers across multiple threads.This article organizes the latest parallel execution model in Crystal.
+  
+  
+  Building with Parallel Execution Enabled
+As of November 19, 2025, you need to use the following two flags:: Enables parallel execution of Fibers: Enables the use of ExecutionContext
+crystal build  program.cr 
+While Crystal's parallel execution is in preview, it has been over 6 years since its release and works without issues in many cases.
+  
+  
+  Overview of Crystal's Concurrency and Parallelism
+Crystal has five major execution models:Fiber (lightweight thread)Cooperative, automatic switching on I/O, lightweightExecutionContext::ConcurrentSequential execution on 1 thread (concurrent)ExecutionContext::ParallelExecution on multiple threads (parallel)ExecutionContext::Isolated1 Fiber + 1 dedicated threadFor GUI loops and blocking FFI callsFor handling low-level operationsThe standard design is as follows:Use  only where parallelism is needed
+  
+  
+  Cooperative Scheduling of Fiber and I/O
+Fiber is a cooperative execution model that has existed for a while. By default (when parallel execution is disabled), switching occurs only when:are triggered. ( is called and the Fiber is suspended.)The basic approach in Crystal is to put I/O-bound processing on Fibers.Each Fiber has its own stack memory. The stack has a virtual size of 8MiB, but it's only reserved, and actual memory usage starts from 4KiB.
+  
+  
+  What is a "Stack" in Crystal?
+When reading Crystal documentation, you'll encounter the word "stack." Note that this differs from the general meaning of "stack" - it refers to a "memory region that behaves like a stack," which is actually memory allocated from the OS heap.What is placed on the stack:Value types: , , , etc.Primitive types: , , , , etc.Pointers to reference types: , , etc. (The reference type objects themselves are placed on the heap, but the pointers to them are placed on the stack)Values placed on the stack are not directly targeted by GC, but they are scanned during GC execution to prevent heap objects referenced by stack variables from being mistakenly collected.As described later, the key point is that when captured by closures like , the above value types are exceptionally placed on the heap and become accessible from other threads.
+  
+  
+  Background Knowledge: Thread / Scheduler / Fiber
+In Crystal, each thread has its own  that manages the fibers to be executed.
+  
+  
+  Main Thread Creation and Initialization
+The main thread is automatically created by the OS when the program starts. Subsequently, when  is called, a Thread object for the main thread is created. The stack address of the main thread is obtained with the  method. This is the actual thread stack allocated by the OS when the process starts.When the  object is initialized, the main Fiber is created simultaneously. The main Fiber uses a special constructor Fiber.new(stack : Void*, thread) to utilize the OS thread stack. Unlike normal Fibers,  is not called, and it uses the already running context.
+  
+  
+  Lazy Initialization of Scheduler
+The main thread's scheduler is initialized when  is called. The scheduler has:: Platform-specific event loop: Fiber stack reuse pool: Queue of runnable fibers: Thread's main fiber
+  
+  
+  Default Thread Configuration
+Without using  and , only the main thread exists. The main thread has its own  instance, which manages all fibers.
+  
+  
+  Stack Allocation for New Fibers
+When a new Fiber is created, stack memory is obtained from Fiber::StackPool. When a Fiber terminates, its stack is returned to the pool through StackPool.release for reuse by the next Fiber. Stack allocation reserves 8MiB of virtual address space. Only the bottom page of the stack (4KiB) is committed to physical memory. When the stack grows and reaches a guard page, that page's guard status is removed and a new guard page is committed. This continues until reserved pages run out.
+  
+  
+  Parallel Execution with ExecutionContext
+ExecutionContext is a "virtual thread group" that executes Fibers together.
+  
+  
+  ExecutionContext::Concurrent
+This is the same concurrent execution as traditional Fibers. It's safe and easy to handle.Only one Fiber executes at a time within the contextTherefore, access contention to shared variables doesn't occur (however, using Mutex/Atomic is considered safer as "recommended safety")Suitable when parallelization is unnecessary but you want to use Fibers.
+  
+  
+  ExecutionContext::Parallel
+Parallel execution on multiple threads.Changing parallel size during execution:Each thread runs its own scheduler
+
+The scheduler is an instance of the Fiber::ExecutionContext::Parallel::Scheduler class, responsible for executing individual Fibers. It has a local queue and manages runnable Fibers. It searches for and executes Fibers in the main loop (run_loop).Fibers within the context are moved to and executed on arbitrary threads
+
+When a Fiber moves between threads, only the execution context (registers and stack pointer) actually moves. The Fiber's stack memory (heap from the OS perspective) does not move. This memory region is fixed during the Fiber's lifetime. When a Fiber resumes on a new thread, the saved stack pointer is loaded and points to the original stack memory region.Due to parallelism,  /  is mandatory for shared mutable state.
+
+Local variables and instance variables (pointers) captured from the closure that spawns the Fiber are placed in a closure data structure allocated on the heap, and that pointer moves with the Fiber. This means that value type local variables (like StaticArray) that would normally be allocated on the stack are exceptionally allocated on the heap.Parallel is the central feature of Crystal's goal of "safe and fast parallel execution."
+  
+  
+  ExecutionContext::Isolated
+1 Fiber = 1 dedicated threadA single Fiber monopolizes an OS threadSafe to use blocking I/O (e.g., GUI event loops, blocking FFI calls)Cannot add additional spawns within the context (they are forced to go to the default context)Suitable for main loops of GUI applications and FFI that calls C functions with I/O bundle blocking.
+  
+  
+  Default Fiber Without Using ExecutionContext
+When ExecutionContext is not specified, Fibers execute in the default ExecutionContext (Fiber::ExecutionContext.default). The default ExecutionContext is Parallel, but since the initial parallelism is set to 1, it behaves the same as Concurrent.
+  
+  
+  Basic Patterns of Channel and WaitGroup
+Crystal's parallel processing is based on a  pattern similar to Go.
+  
+  
+  Producer-Consumer (Parallel)
+Communication via ChannelSynchronization via WaitGroupSafe updates of shared state via AtomicThis is the basic form of parallel execution in Crystal.32 consumer Fibers executing in parallel atomically add 1024 integer values (0-1023) received from the channel and calculate their sum (523776)
+  
+  
+  Protection of Shared Variables in Concurrent
+Concurrent is serial execution so contention doesn't occur, but Crystal officially states that using  /  is preferable.
+  
+  
+  Atomic / Mutex / SpinLock
+A variable that can safely read and write values even when accessed simultaneously from multiple threads, a basic synchronization primitive for preventing race conditions.Directly mapped to LLVM atomic instructionscompare_and_set, add, sub, get, setSame memory orders as C/C++: Acquire / Release / Relaxed, etc.Types that cannot be used with Atomic include value types such as structures () and .A lock that protects code regions (critical sections) that must not be executed simultaneously by multiple Fibers, controlling so that only one Fiber can execute at a time.Three modes: Checked / Reentrant / UncheckedRe-entry prohibited by default (safe)
+Example of manually locking/unlocking:A lightweight lock specialized for very short-term locks. It continues to use CPU while waiting (spinning), so it's unsuitable for long-term locks.For very short critical sectionsOnly effective with preview_mt / win32SpinLock is used in implementations such as , Crystal::ThreadLocalValue, , , , , and . There are almost no scenarios where users would directly use SpinLock in code.
+  
+  
+  Areas to Be Careful About in the Standard Library
+The following are areas in the Crystal standard library that may not guarantee complete thread safety and require caution.
+  
+  
+  What Qualifies as a Shared Variable Subject to Contention?
+While we've used the term "shared variable," Crystal doesn't have user-accessible global variables, so the most typical shared variable is a class variable.Class variables: Always shared variables (determined by variable type)Instance variables and local variables: Determined by whether they are referenced from multiple Fibers or threads when spawnedIf captured by spawn, local variables can also become shared variables.The safety of Unix's getenv/setenv/unsetenv is environment-dependentParallel modification is not recommendedThis is also discussed in the Crystal Forum:In Crystal, you can use the  annotation to make class variables thread-local.In this case, each thread has an independent copy of , so changing the value in one thread doesn't affect other threads.Class variables without  are shared. In this case, you need to use  /  for parallel updates.
+  
+  
+  IO (File, Socket, STDOUT/ERR)
+Safety may not be guaranteed when simultaneously operating on the same IO from multiple threads.Logger also uses IO internally. Writing to the same Logger from multiple threads may not be safe.
+  
+  
+  Report Any Issues You Find
+Crystal is a programming language with far fewer users compared to languages like Python and Java. User reports are very valuable and precious. It's important to continue improving the language and libraries by actively reporting bugs to Crystal Forum and GitHub issues.
+  
+  
+  Cases Where Thread Should Be Used
+Thread directly represents the OS's native thread. It can be used when low-level control is needed.There are almost no cases where you should use Thread directly without using ExecutionContext.
+It may be an option in cases such as:Want to parallelize compute-intensive tasksFFI is blocking and cannot suspend Fiber (however, if the FFI function is CPU-intensive processing, blocking is considered desirable behavior)C library requires thread-local initializationUsing Thread::Channel enables safe communication between threads.
+  
+  
+  FFI (C Library Calls) and Parallel Execution
+Since C libraries are not necessarily thread-safe, following patterns like these is considered safe:Isolate in ExecutionContext::Isolated contextDedicated Thread + Thread::ChannelCrystal's parallel execution is currently in the midst of major evolution. In addition to , which has been used for concurrent execution in I/O-bound processing, ExecutionContext::Parallel now enables full-fledged parallel processing. Using  /  /  / , you can build safe parallel processing similar to Go.  is effective for GUI / FFI.  can be used in special cases where OS threads need to be handled directly. Note that there are ambiguous parts regarding thread safety in the standard library.
+  
+  
+  Practical Guidelines for Parallel Execution in Crystal
+Leave I/O to No special action needed as Crystal's I/O model is tightly integrated with .Use Parallel or Thread for CPU-bound tasks
+
+ExecutionContext::Parallel is the first choice.Protect shared state with  or Treat gray zones like  and  conservativelyTest explicitly using  and This concludes the article. Thank you for reading to the end.]]></content:encoded></item><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
   
   
   ⚠️ Take These Benchmarks with a Grain of Salt
