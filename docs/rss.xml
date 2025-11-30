@@ -1,7 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper</title><link>https://forum.crystal-lang.org/t/gatekeeper/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>⚡ Dartalyst: A New Full-Stack SSR Framework That Just Hit 30,937 Requests Per Second</title><link>https://dev.to/shaquelkothari/dartalyst-a-new-full-stack-ssr-framework-that-just-hit-30937-requests-per-second-3m2d</link><author>Shaquel Kothari</author><category>blog</category><pubDate>Fri, 28 Nov 2025 04:13:39 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[
+Over the past year, I’ve been building a new full-stack web framework from the ground up — one that doesn’t rely on Node.js, Webpack, or the typical JavaScript ecosystem. Instead, it’s built on two compiled languages working together: for the frontend for the backendThe combined framework is called , and based on internal benchmarks, it now ranks among the fastest SSR frameworks currently measured.This post breaks down the numbers, the comparisons, and why this architecture works — with public testing opening in 3 weeks.Dartalyst was tested across four workloads:No caching.
+No pre-rendering.Below is a comparison using publicly available SSR benchmark ranges (not raw HTTP benchmarks).
+  
+  
+  🥇 Top-Tier SSR (20,000+ req/s)Dartalyst lands at the .
+  
+  
+  🥈 High-Performance SSR (5,000–15,000 req/s)
+  
+  
+  🥉 Mainstream SSR (1,000–5,000 req/s)2,000–7,000 
+  
+  
+  ⛔ Low-End SSR (< 1,000 req/s)
+Based strictly on available data:Dartalyst is currently in the top 3 fastest SSR frameworks measured — competitive with Qwik and Bun SSR, and faster than most mainstream SSR frameworks (Next.js, Nuxt, Remix, SvelteKit, Angular, etc).This is , not HTTP echo servers.Because the entire stack is , not interpreted.Hydration only where neededRails-inspired routing + modelsDartalyst (Full-Stack Layer)The result: very high throughput under load.The first public release (v0.1.0) will be available between December 15–22, 2024.You’ll be able to benchmark it yourself.v1.0.0 release (Jan 2025)Most web frameworks today are slowed down by:Dartalyst shows what’s possible when you remove all of that and build a full-stack SSR system from .If you want to follow the release or run benchmarks yourself, keep an eye out — early access drops in 3 weeks.]]></content:encoded></item><item><title>Setup Vite with Kemal!</title><link>https://dev.to/galacthd/how-to-setup-vite-kemal-p6o</link><author>GalactHD</author><category>blog</category><pubDate>Thu, 27 Nov 2025 19:54:39 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[Kemal is a minimalist Crystal web framework, inspired by Sinatra from Ruby. Its main difference from Sinatra is its speed, due to Crystal’s native compilation.Meanwhile, in the front end world, Vite appeared as an alternative to bundlers, and quickly gained attention.But what if we could combine both Vite and Kemal in the same application and use any modern UI framework, or even just simple HTML with some libraries, without manually copying  files?That is why this article exists!
+  
+  
+  How to combine Vite and Kemal?
+First, install Crystal (if you do not have it) and Node.js (or Bun). After that, create a Crystal project:crystal init app app
+app
+Then, edit your  and add Kemal as a dependency. Here is an example:Use  to install the dependencies.Write this in  (or in your main project file):In short, this code sets up CORS to accept all requests while in development, and configures responses to be sent as JSON, except for the  route, which will return HTML. The response reads from the  directory, where the Vite output will be stored.Start a Vite project inside the Crystal project. I will use Svelte, but any template supported by Vite works:npm create vite@latest client  svelte
+Update client/vite.config.js | ts (or your front end file) with these example settings. This allows a better development environment:In short,  allows Vite during  to assume the API URL is , which is very useful to avoid long URLs. The  is configured to the Kemal  folder, where it will serve the files as if it were a production server.Edit your client. In my case it is Svelte:Important message:To start the Vite development server, it is simple:To deploy or test, it is simple. Just do this in the terminal:client
+npm run build
+ ..
+crystal src/app.cr 
+This tutorial was inspired by the gist showing how to do something similar in this article, but using Sinatra.]]></content:encoded></item><item><title>Nicolino, a static site generator</title><link>https://forum.crystal-lang.org/t/nicolino-a-static-site-generator/8557</link><author>ralsina</author><category>community</category><pubDate>Tue, 25 Nov 2025 01:19:49 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Yes, there are hundreds of these, and yes, there is no reason to use this specific one. I have not even migrated  site!]]></content:encoded></item><item><title>Snow Crystal Habits</title><link>https://www.eoas.ubc.ca/courses/atsc113/snow/met_concepts/07-met_concepts/07kl-snow-crystal-habits/</link><author>gsf_emergency_6</author><category>HN</category><category>hn</category><pubDate>Mon, 24 Nov 2025 04:56:27 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[Learning Goal 7k. Identify different snow crystal habits by sight.
+Learning Goal 7l. Give reasons why snow crystal habits form differently.Snow that has fallen on the ground is made up of many small crystals
+of ice. These crystals take on many different shapes or ,
+and usually measure just a few millimetres across. However, the largest
+single snow crystal ever actually photographed was 10.1 mm (Fig.
+7kl.1). Fig. 7kl.1 - The largest single snow crystal ever
+photographed, 10.1 mm from tip to tip (Credit: Libbrecht).The snowflake pictured above is known as a fernlike stellar
+dendrite,
+which is just one of the many varieties of snow crystal. For your
+interest, there is a table showing many examples of snow crystal habit
+in the Xinfo section at the bottom of the page. You are not required to
+remember all variations, but here are some other common types of snow
+crystal which you  required to know about......, probably the most recognizable type of
+snow crystal...Fig. 7kl.2 - Stellar dendrites. (Credit: Libbrecht)..., also common but not as easy to find.
+Columns are more columnar i.e. thicker, and needles are longer and
+thinner...Fig. 7kl.3 - Columns and needles. (Credit: Libbrecht)..., these are not as common as dendrites,
+columns, and needles...Fig. 7kl.3 - Capped columns. (Credit: Libbrecht)...and , the smallest snow crystals that glisten
+in the sun, usually found in extreme cold weather.Fig. 7kl.4 - Diamond dust. (Credit: Libbrecht)Why do we care about snow crystal habit?Aside from being beautiful to look at, it is helpful to know about
+the shape of snowflakes as this affects the density of the snowpack on
+the ground (see Learning Goal 7b).
+This is important in the context of avalanches as different snow
+crystal shapes create layers of snow with different densities. This is
+covered more in detail in Learning Goal 7f.Fig. 7kl.5 - Snow crystal
+morphology diagram which shows how snow crystal shape or habit changes
+with temperature and humidity. (Credit: Libbrecht)Fig. 7kl.5 gives you an idea about what kind of snowflakes form at
+different temperatures and humidities. Don't be intimidated by the
+diagram. The two important things to remember are:As temperature decreases below 0°C, from left to right in the
+figure, snow crystal formation changes type  times. From
+flat plates, to long columns or needles, back to plates again, and then
+to columns and plates.As humidity increases, the snow crystals tend to get bigger.
+Also, they tend to get more branches or  on them.The diagram just provides a visual aid to help you remember this.
+The snow crystal photographs above are from Kenneth Libbrecht's Guide
+to Snowflakes.
+Dr. Libbrecht is a professor at California Institute of Technology and
+has studied snow crystals in great detail, even growing them himself in
+his laboratory. You might be wondering how some of the weirder shapes
+are formed. Temperature and humidity can change a lot along the path of a
+falling snow crystal. This path may extend from near the top of the
+troposphere to the ground. As an example, maybe a snow crystal falls
+for a short time through a layer of air at about -15°C; according to
+Fig. 7kl.5, the crystal will grow outwards into a small flat plate. The
+next layer of air that the snowflake passes through is warmer at about
+-7°C. The crystal begins to grow in the direction perpendicular to the
+flat plate, creating a solid prism. The next layer of air is colder
+again, at -13°C, and so the ends of the prism begin to grow outwards in
+the other direction, the same direction as the original plate. This is
+how a  is formed, which looks like two wheels at
+each end of an axle (Fig. 7kl.3).And that is just one example. If you can imagine the endless
+possible combinations of temperature and humidity, then you will start
+to grasp the infinite possibilities of snow crystal shape and size. For
+a more in depth discussion on the science of snowflakes, see the link
+and YouTube video in the Xinfo section below.So far we have essentially covered plate-shaped and column-shaped
+snowflakes. There are two other processes that can occur which can be
+important.When a snow crystal falls through the atmosphere, it can grow by
+colliding with tiny water droplets that freeze and stick to it. This
+process is called , and the following movie
+demonstrates it nicely:Fig. 7kl.6 - Ice crystal growth by accretion, or
+riming. (Credit: COMET/UCAR)The new snow crystals that form are called . They
+look
+like rounded but rough white ice pellets (Fig. 7kl.7). They are round
+and frozen and look like hail, but hail tends to be clearer and forms
+by a very different process (in thunderstorms, usually in the warm
+season). Graupel on the ground is unstable on slopes — they tend to
+roll downhill like marbles — and thicker layers can form a weak layer,
+presenting a risk of avalanches (see Learning Goal 7f).Fig. 7kl.7 - Graupel on the ground at Peyto
+Lake, AB, Canada (Credit: West).A snow crystal can also grow by . This is when
+ice crystals stick to other ice crystals, forming irregular shapes
+referred to as "aggregates" (Fig. 7kl.8). Fig. 7kl.8 - An aggregate of ice crystals.
+(Credit: Garrett)Key words: habits, stellar dendrites, columns and
+needles, capped columns, diamond dust, graupel, aggregation: Rosie Howard: Greg West: Roland Stull: The source of this material is the COMET® Website at
+http://meted.ucar.edu/ of the University Corporation for Atmospheric
+Research (UCAR), sponsored in part through cooperative agreement(s)
+with the National Oceanic and Atmospheric Administration (NOAA), U.S.
+Department of Commerce (DOC). ©1997-2016 University Corporation for
+Atmospheric Research. All Rights Reserved.: Images courtesy of National Oceanic and Atmospheric
+Administration/Department of Commerce, www.noaa.gov: Images courtesy of National Aeronautics and Space
+Administration, www.nasa.gov: Map data (c) 2016 Google Kenneth Libbrecht, SnowCrystals.comProfessor
+Tim Garrett, University of Utah]]></content:encoded></item><item><title>📦 New Shard: crystal-text-splitter v0.1.0</title><link>https://old.reddit.com/r/crystal_programming/comments/1p56s3d/new_shard_crystaltextsplitter_v010/</link><author>/u/Bitter_Detective_416</author><category>community</category><pubDate>Mon, 24 Nov 2025 03:43:03 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Milka: a polyrepo managment tool</title><link>https://forum.crystal-lang.org/t/milka-a-polyrepo-managment-tool/8556</link><author>kglt</author><category>community</category><pubDate>Sun, 23 Nov 2025 12:19:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Built on top of git, it allows you to manage multiple repositories conveniently.
+I’m waiting for criticism and what can be improved, first experience with crystal]]></content:encoded></item><item><title>A Practical Guide to Parallel Programming in Crystal</title><link>https://forum.crystal-lang.org/t/a-practical-guide-to-parallel-programming-in-crystal/8555</link><author>kojix2</author><category>community</category><pubDate>Fri, 21 Nov 2025 07:41:49 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[本記事は人間であるkojix2が、DeepWikiとChatGPTに交互に呼び出して作成した内容をベースにしていますが、人間であるkojix2が全文に目を通した上で編集や校正を行っています。（内容の正しさを保証するものではありません） Crystal の並列処理は ...]]></content:encoded></item><item><title>A Practical Guide to Parallel Programming in Crystal (2025)</title><link>https://dev.to/kojix2/a-practical-guide-to-parallel-programming-in-crystal-2025-1lbg</link><author>kojix2</author><category>blog</category><pubDate>Fri, 21 Nov 2025 07:24:48 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This article is based on content created by kojix2 (a human) alternately calling DeepWiki and ChatGPT, but kojix2 (a human) has reviewed, edited, and proofread the entire text. The article was translated from Japanese to English using Claude. If you find any mistakes, . Thank you.Crystal's parallel processing is based on a hybrid model that primarily uses Fiber (cooperative and lightweight) and utilizes  when necessary., which has been rapidly developed since around 2024-2025, provides a new abstraction layer for safely spreading Fibers across multiple threads.This article organizes the latest parallel execution model in Crystal.
+  
+  
+  Building with Parallel Execution Enabled
+As of November 19, 2025, you need to use the following two flags:: Enables parallel execution of Fibers: Enables the use of ExecutionContext
+crystal build  program.cr 
+While Crystal's parallel execution is in preview, it has been over 6 years since its release and works without issues in many cases.
+  
+  
+  Overview of Crystal's Concurrency and Parallelism
+Crystal has five major execution models:Fiber (lightweight thread)Cooperative, automatic switching on I/O, lightweightExecutionContext::ConcurrentSequential execution on 1 thread (concurrent)ExecutionContext::ParallelExecution on multiple threads (parallel)ExecutionContext::Isolated1 Fiber + 1 dedicated threadFor GUI loops and blocking FFI callsFor handling low-level operationsThe standard design is as follows:Use  only where parallelism is needed
+  
+  
+  Cooperative Scheduling of Fiber and I/O
+Fiber is a cooperative execution model that has existed for a while. By default (when parallel execution is disabled), switching occurs only when:are triggered. ( is called and the Fiber is suspended.)The basic approach in Crystal is to put I/O-bound processing on Fibers.Each Fiber has its own stack memory. The stack has a virtual size of 8MiB, but it's only reserved, and actual memory usage starts from 4KiB.
+  
+  
+  What is a "Stack" in Crystal?
+When reading Crystal documentation, you'll encounter the word "stack." Note that this differs from the general meaning of "stack" - it refers to a "memory region that behaves like a stack," which is actually memory allocated from the OS heap.What is placed on the stack:Value types: , , , etc.Primitive types: , , , , etc.Pointers to reference types: , , etc. (The reference type objects themselves are placed on the heap, but the pointers to them are placed on the stack)Values placed on the stack are not directly targeted by GC, but they are scanned during GC execution to prevent heap objects referenced by stack variables from being mistakenly collected.As described later, the key point is that when captured by closures like , the above value types are exceptionally placed on the heap and become accessible from other threads.
+  
+  
+  Background Knowledge: Thread / Scheduler / Fiber
+In Crystal, each thread has its own  that manages the fibers to be executed.
+  
+  
+  Main Thread Creation and Initialization
+The main thread is automatically created by the OS when the program starts. Subsequently, when  is called, a Thread object for the main thread is created. The stack address of the main thread is obtained with the  method. This is the actual thread stack allocated by the OS when the process starts.When the  object is initialized, the main Fiber is created simultaneously. The main Fiber uses a special constructor Fiber.new(stack : Void*, thread) to utilize the OS thread stack. Unlike normal Fibers,  is not called, and it uses the already running context.
+  
+  
+  Lazy Initialization of Scheduler
+The main thread's scheduler is initialized when  is called. The scheduler has:: Platform-specific event loop: Fiber stack reuse pool: Queue of runnable fibers: Thread's main fiber
+  
+  
+  Default Thread Configuration
+Without using  and , only the main thread exists. The main thread has its own  instance, which manages all fibers.
+  
+  
+  Stack Allocation for New Fibers
+When a new Fiber is created, stack memory is obtained from Fiber::StackPool. When a Fiber terminates, its stack is returned to the pool through StackPool.release for reuse by the next Fiber. Stack allocation reserves 8MiB of virtual address space. Only the bottom page of the stack (4KiB) is committed to physical memory. When the stack grows and reaches a guard page, that page's guard status is removed and a new guard page is committed. This continues until reserved pages run out.
+  
+  
+  Parallel Execution with ExecutionContext
+ExecutionContext is a "virtual thread group" that executes Fibers together.
+  
+  
+  ExecutionContext::Concurrent
+This is the same concurrent execution as traditional Fibers. It's safe and easy to handle.Only one Fiber executes at a time within the contextTherefore, access contention to shared variables doesn't occur (however, using Mutex/Atomic is considered safer as "recommended safety")Suitable when parallelization is unnecessary but you want to use Fibers.
+  
+  
+  ExecutionContext::Parallel
+Parallel execution on multiple threads.Changing parallel size during execution:Each thread runs its own scheduler
+
+The scheduler is an instance of the Fiber::ExecutionContext::Parallel::Scheduler class, responsible for executing individual Fibers. It has a local queue and manages runnable Fibers. It searches for and executes Fibers in the main loop (run_loop).Fibers within the context are moved to and executed on arbitrary threads
+
+When a Fiber moves between threads, only the execution context (registers and stack pointer) actually moves. The Fiber's stack memory (heap from the OS perspective) does not move. This memory region is fixed during the Fiber's lifetime. When a Fiber resumes on a new thread, the saved stack pointer is loaded and points to the original stack memory region.Due to parallelism,  /  is mandatory for shared mutable state.
+
+Local variables and instance variables (pointers) captured from the closure that spawns the Fiber are placed in a closure data structure allocated on the heap, and that pointer moves with the Fiber. This means that value type local variables (like StaticArray) that would normally be allocated on the stack are exceptionally allocated on the heap.Parallel is the central feature of Crystal's goal of "safe and fast parallel execution."
+  
+  
+  ExecutionContext::Isolated
+1 Fiber = 1 dedicated threadA single Fiber monopolizes an OS threadSafe to use blocking I/O (e.g., GUI event loops, blocking FFI calls)Cannot add additional spawns within the context (they are forced to go to the default context)Suitable for main loops of GUI applications and FFI that calls C functions with I/O bundle blocking.
+  
+  
+  Default Fiber Without Using ExecutionContext
+When ExecutionContext is not specified, Fibers execute in the default ExecutionContext (Fiber::ExecutionContext.default). The default ExecutionContext is Parallel, but since the initial parallelism is set to 1, it behaves the same as Concurrent.
+  
+  
+  Basic Patterns of Channel and WaitGroup
+Crystal's parallel processing is based on a  pattern similar to Go.
+  
+  
+  Producer-Consumer (Parallel)
+Communication via ChannelSynchronization via WaitGroupSafe updates of shared state via AtomicThis is the basic form of parallel execution in Crystal.32 consumer Fibers executing in parallel atomically add 1024 integer values (0-1023) received from the channel and calculate their sum (523776)
+  
+  
+  Protection of Shared Variables in Concurrent
+Concurrent is serial execution so contention doesn't occur, but Crystal officially states that using  /  is preferable.
+  
+  
+  Atomic / Mutex / SpinLock
+A variable that can safely read and write values even when accessed simultaneously from multiple threads, a basic synchronization primitive for preventing race conditions.Directly mapped to LLVM atomic instructionscompare_and_set, add, sub, get, setSame memory orders as C/C++: Acquire / Release / Relaxed, etc.Types that cannot be used with Atomic include value types such as structures () and .A lock that protects code regions (critical sections) that must not be executed simultaneously by multiple Fibers, controlling so that only one Fiber can execute at a time.Three modes: Checked / Reentrant / UncheckedRe-entry prohibited by default (safe)
+Example of manually locking/unlocking:A lightweight lock specialized for very short-term locks. It continues to use CPU while waiting (spinning), so it's unsuitable for long-term locks.For very short critical sectionsOnly effective with preview_mt / win32SpinLock is used in implementations such as , Crystal::ThreadLocalValue, , , , , and . There are almost no scenarios where users would directly use SpinLock in code.
+  
+  
+  Areas to Be Careful About in the Standard Library
+The following are areas in the Crystal standard library that may not guarantee complete thread safety and require caution.
+  
+  
+  What Qualifies as a Shared Variable Subject to Contention?
+While we've used the term "shared variable," Crystal doesn't have user-accessible global variables, so the most typical shared variable is a class variable.Class variables: Always shared variables (determined by variable type)Instance variables and local variables: Determined by whether they are referenced from multiple Fibers or threads when spawnedIf captured by spawn, local variables can also become shared variables.The safety of Unix's getenv/setenv/unsetenv is environment-dependentParallel modification is not recommendedThis is also discussed in the Crystal Forum:In Crystal, you can use the  annotation to make class variables thread-local.In this case, each thread has an independent copy of , so changing the value in one thread doesn't affect other threads.Class variables without  are shared. In this case, you need to use  /  for parallel updates.
+  
+  
+  IO (File, Socket, STDOUT/ERR)
+Safety may not be guaranteed when simultaneously operating on the same IO from multiple threads.Logger also uses IO internally. Writing to the same Logger from multiple threads may not be safe.
+  
+  
+  Report Any Issues You Find
+Crystal is a programming language with far fewer users compared to languages like Python and Java. User reports are very valuable and precious. It's important to continue improving the language and libraries by actively reporting bugs to Crystal Forum and GitHub issues.
+  
+  
+  Cases Where Thread Should Be Used
+Thread directly represents the OS's native thread. It can be used when low-level control is needed.There are almost no cases where you should use Thread directly without using ExecutionContext.
+It may be an option in cases such as:Want to parallelize compute-intensive tasksFFI is blocking and cannot suspend Fiber (however, if the FFI function is CPU-intensive processing, blocking is considered desirable behavior)C library requires thread-local initializationUsing Thread::Channel enables safe communication between threads.
+  
+  
+  FFI (C Library Calls) and Parallel Execution
+Since C libraries are not necessarily thread-safe, following patterns like these is considered safe:Isolate in ExecutionContext::Isolated contextDedicated Thread + Thread::ChannelCrystal's parallel execution is currently in the midst of major evolution. In addition to , which has been used for concurrent execution in I/O-bound processing, ExecutionContext::Parallel now enables full-fledged parallel processing. Using  /  /  / , you can build safe parallel processing similar to Go.  is effective for GUI / FFI.  can be used in special cases where OS threads need to be handled directly. Note that there are ambiguous parts regarding thread safety in the standard library.
+  
+  
+  Practical Guidelines for Parallel Execution in Crystal
+Leave I/O to No special action needed as Crystal's I/O model is tightly integrated with .Use Parallel or Thread for CPU-bound tasks
+
+ExecutionContext::Parallel is the first choice.Protect shared state with  or Treat gray zones like  and  conservativelyTest explicitly using  and This concludes the article. Thank you for reading to the end.]]></content:encoded></item><item><title>I built a Solfeggio frequency mixer using 10 hi-def crystal bowl recordings</title><link>https://play.google.com/store/apps/details?id=com.jon.frequencystudio&amp;hl=en_US</link><author>jpdingdong</author><category>HN</category><category>hn</category><pubDate>Thu, 20 Nov 2025 19:30:26 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[🧘 End Sleepless Nights & Anxiety with Pure Sound Healing FrequenciesTired of synthetic, low-quality meditation music that doesn't work? Tibetan Bowls Solfeggio Studio is the definitive, ad-free tool for crafting powerful sound baths and custom zen meditation music.We provide high-definition, authentic recordings of Tibetan singing bowls and crystal singing bowls tuned to the therapeutic Solfeggio Frequencies. This powerful combination offers maximum control for mindfulness, stress relief, and frequency healing.✨ The Ultimate Solfeggio Frequency MixerTake complete control of your deep relaxation session. While other sound apps play one frequency at a time, Studio lets you layer and blend up to 10 frequencies simultaneously. Effortlessly create custom soundscapes by combining different Solfeggio tones with adjustable volume levels.🔑 Key Features for Healing Practitioners & Sleep Seekers:* Multi-Frequency Layering: Mix up to 10 Solfeggio tones to target complex healing intentions (e.g., 528 Hz for transformation, 417 Hz for undoing situations).* True Tibetan Bowls: Unlike apps that use synthesized tones, we provide genuine, high-fidelity recordings of singing bowls and gongs.* Integrated Meditation Timer: Set custom session lengths for your gong meditation and sound bath to ensure deep, uninterrupted sleep aid sounds.* Battery Saver Mode: Play screen-off to save your battery life during long meditation or deep sleep cycles.* Fully Supported & Free: App is completely free yet fully supported and advertising-free—a vital tool for your well-being.* Anyone seeking anxiety relief music and stress reduction.* Users looking for a high-quality, free sleep aid or sleep sounds.* Meditation students and practitioners who need a customizable frequency generator and gong sounds.* Creating a personalized soundtrack for deep relaxation and sound healing.]]></content:encoded></item><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper - Lightweight authorization middleware</title><link>https://forum.crystal-lang.org/t/gatekeeper-lightweight-authorization-middleware/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
 It doesn’t try to be a full security framework — instead, it focuses on one thing:Enforcing  for your routes, using whatever authentication mechanism  choose.It integrates into any Crystal HTTP handler chain, evaluates your rules, runs your authenticators, and returns  or  when needed.Simple  (regex path matching + optional HTTP methods)
 – sessions, JWT, API tokens, whatever fits your app with a built-in Optional Customize responses for
-Only ~125 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
+Only ~200 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
 
 class AppHandler
   include HTTP::Handler
@@ -21,30 +237,25 @@ end
 
 # Configure Gatekeeper
 Gatekeeper.config do |config|
-  # Called when no authenticator can produce a user
-  config.on_unauthenticated = ->(ctx : HTTP::Server::Context) do
+  config.on_unauthenticated = Gatekeeper::ContextHandler.new do |ctx|
     ctx.response.print "You must log in first."
   end
 
-  # Called when a user exists but lacks the required roles
-  config.on_unauthorized = ->(ctx : HTTP::Server::Context) do
+  config.on_unauthorized = Gatekeeper::ContextHandler.new do |ctx|
     ctx.response.print "You do not have permission."
   end
 
-  # Only allow users with role "admin" to access /admin
-  config.auth_rules << Gatekeeper::Rule.new(
-    /^\/admin/,
-    roles: ["admin"]
-  )
-
-  # Allow everyone to access everything else (no roles)
-  config.auth_rules << Gatekeeper::Rule.new(/^\//)
-
-  # Simple authenticator that always logs in an "admin" user
-  config.authenticators << ->(ctx : HTTP::Server::Context) : Gatekeeper::Identity? do
-    # In real code you’d look at cookies / headers / session etc.
+  # Simple authenticator example
+  config.authenticators << Gatekeeper.authenticator do |ctx|
     Gatekeeper::IdentityUser(Int32).new(1, Set{"admin"})
   end
+end
+
+Gatekeeper.rules do |r|
+  r.allow_get "/"                     # allow GET / (exact match)
+  r.allow_post "/login"               # allow POST /login
+  r.allow "/admin", roles: ["admin"]  # exact match
+  r.allow /^\/api/                    # prefix /api (regex as-is)
 end
 
 handlers = [
@@ -58,7 +269,7 @@ address = server.bind_tcp "0.0.0.0", 3000
 puts "Listening on http://#{address}"
 server.listen
 This is , but the API is stable, fully tested, and intentionally small.
-I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!Edit: Renamed kemal-guardian → GatekeeperEdit: Updated the example]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
+I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
   @[Get("/users")]
   def index
     "Listing all users"
@@ -171,7 +382,7 @@ However, that would still not be 100% safe because it cannot account for direct 
 This functionality seems reasonable and relevant.
 But instead of modifying the process’ environment, we could mock it using a fiber-local overlay in the  interface.
 In some cases, it might even be sufficient to just pass in configuration as explicit arguments.I’m not aware of any specific other use cases. But I could expect instances where you need to modify the environment for calling a library methods which are not using Crystal’s  interface and thus  to read from the actual process environment.
-That generally smells like bad design, but there might be some use cases.I’m posting this thread to ask for feedback and examples.29 posts - 10 participants]]></content:encoded></item><item><title>Yet another spin-off shard: ralsina/docopt-config</title><link>https://forum.crystal-lang.org/t/yet-another-spin-off-shard-ralsina-docopt-config/8528</link><author>ralsina</author><category>community</category><pubDate>Mon, 3 Nov 2025 15:44:59 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I like using docopt in my CLI tools because it means the docs are always correct. However once you want to support other means of config like config files and env vars, docopt has no support.UNTIL NOW with ralsina/docopt-config where you get it all for free. Just write your docopt and use docopt_config instead of docopt and It Just Works.Zero config. A simple flat yaml file with keys like your options. Env vars with a prefix and the same name as your options. All that is read and properly prioritized, keeping your docopt as the only source of truth for your app’s config.It’s not for every tool (git would not be a good fit!) but for reasonably simple things it should be nice and easy.]]></content:encoded></item><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
+That generally smells like bad design, but there might be some use cases.I’m posting this thread to ask for feedback and examples.35 posts - 11 participants]]></content:encoded></item><item><title>Yet another spin-off shard: ralsina/docopt-config</title><link>https://forum.crystal-lang.org/t/yet-another-spin-off-shard-ralsina-docopt-config/8528</link><author>ralsina</author><category>community</category><pubDate>Mon, 3 Nov 2025 15:44:59 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I like using docopt in my CLI tools because it means the docs are always correct. However once you want to support other means of config like config files and env vars, docopt has no support.UNTIL NOW with ralsina/docopt-config where you get it all for free. Just write your docopt and use docopt_config instead of docopt and It Just Works.Zero config. A simple flat yaml file with keys like your options. Env vars with a prefix and the same name as your options. All that is read and properly prioritized, keeping your docopt as the only source of truth for your app’s config.It’s not for every tool (git would not be a good fit!) but for reasonably simple things it should be nice and easy.]]></content:encoded></item><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
   
   
   ⚠️ Take These Benchmarks with a Grain of Salt
@@ -543,146 +754,4 @@ shard.yml         # shared library (types, utils)api/
 shard.yml         # depends on ../commonworker/
 shard.yml         # depends on ../commoncli/
 shard.yml         # minimal dependenciesIs this a scalable approach for developing and maintaining serious production applications in Crystal? If this does not work out, I will have to use Rust which I don’t prefer.Thanks for reading this long question. ]]></content:encoded></item><item><title>A Closer Look at Piezoelectric Crystal</title><link>https://www.samaterials.com/content/a-closer-look-at-stressed-piezo-crystals.html</link><author>pillars</author><category>HN</category><category>hn</category><pubDate>Wed, 22 Oct 2025 16:12:16 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[
-                        Last updated on {{lastDate}}                    ²]]></content:encoded></item><item><title>We&apos;re reaching for the stars! 🚀✨</title><link>https://fosstodon.org/@CrystalLanguage/115418209673688930</link><author></author><category>official</category><enclosure url="https://cdn.fosstodon.org/media_attachments/files/115/418/195/353/117/484/original/d2be7cb66f9956a5.png" length="" type="text/plain"/><pubDate>Wed, 22 Oct 2025 14:08:35 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We're reaching for the stars! 🚀✨Just as 1.18 is released, over 20k users have starred the Crystal repo on GitHub 🌟]]></content:encoded></item><item><title>Crystal 1.18.2 is released!</title><link>https://forum.crystal-lang.org/t/crystal-1-18-2-is-released/8504</link><author>Crys</author><category>community</category><pubDate>Tue, 21 Oct 2025 20:20:55 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.2 with two regressions fixed.]]></content:encoded></item><item><title>LSP implementation for Crystal on Windows</title><link>https://forum.crystal-lang.org/t/lsp-implementation-for-crystal-on-windows/8502</link><author>god</author><category>community</category><pubDate>Tue, 21 Oct 2025 12:02:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The tooling for Crystal on Windows is not good. I am working on a language server and VSCode extension that leverages the existing CLI tools available and incorporates them into an instant-response context so as to achieve features such as autocomplete, real-time error detection, etc… on Windows, since Crystalline and Scry seem to be for POSIX platforms only.Demo of its current capabilities can be observed hereSource code is here, you can build the vsix for the vscode extension with “npm run package”, and the server itself with “shards build”.]]></content:encoded></item><item><title>Crystal 1.18.2 is released!</title><link>https://crystal-lang.org/2025/10/21/1.18.2-released/</link><author>Johannes Müller</author><category>releases</category><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.2 with two regressions fixed.This release includes 3 changes since
-1.18.1
-by 3 contributors.  We thank all the contributors for all the effort put into
-improving the language! ❤️This patch release fixes a regression in the type restrictions of
- (#16231), and a bug in
-Fiber::ExecutionContext.default_workers_count (#16227) - both errors were
-introduced in 1.18.0.We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Optimization for nillable var check and code</title><link>https://forum.crystal-lang.org/t/optimization-for-nillable-var-check-and-code/8501</link><author>AlexR</author><category>community</category><pubDate>Mon, 20 Oct 2025 22:57:22 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Is there something terser than this:getter tex : LibSDL::Texture*?
-
-def render
-  tex = @tex
-  return unless tex
-  LibSDL.set_texture_alpha_mod(tex, 255)
-  ...
-end
-Original code, rejected by the compiler, being :getter tex : LibSDL::Texture*?
-
-def render
-  LibSDL.set_texture_alpha_mod(@tex.as(LibSDL::texture*), 255) if @tex
-  ...
-end
-
-# compilation error
-# Error: can't cast (Pointer(LibSDL::Texture) | Nil) to Pointer(LibSDL::Texture)
-]]></content:encoded></item><item><title>Crystal 1.18.1 is Released!</title><link>https://old.reddit.com/r/crystal_programming/comments/1obocwx/crystal_1181_is_released/</link><author>/u/Meatack</author><category>community</category><pubDate>Mon, 20 Oct 2025 17:32:54 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[   submitted by    /u/Meatack ]]></content:encoded></item><item><title>From Raw Crystal to Crystal Oscillator – Crystals Go to War in 1943</title><link>https://www.youtube.com/watch?v=duZlWWwxIPQ</link><author>akshatjiwan</author><category>HN</category><category>hn</category><pubDate>Mon, 20 Oct 2025 17:05:02 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Check if an array index exist</title><link>https://forum.crystal-lang.org/t/check-if-an-array-index-exist/8500</link><author>Fulgurance</author><category>community</category><pubDate>Sun, 19 Oct 2025 20:19:25 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a parser, and in my program I need to check if an index exist or not in the array. I did this, but when I try to run the code, crystal raise an error that my condition have  an index out of bound, why ?elsif Parser::ElseFilter.matches?(strippedLine)
-    if !elsePresence[currentIfLevel-1].nil? && elsePresence[currentIfLevel-1] || elsePresence[currentIfLevel-1].nil?
-        puts elsePresence.inspect
-        puts currentIfLevel-1
-        raise("Line #{index+1}\nFile: #{path}\nExtra else: #{line}\nAn extra \"else\" was declared.")
-    end
-Normally because I check if it is nil, I should not have problem with my condition no ?]]></content:encoded></item><item><title>Ruby controversy - Crystal opportunity</title><link>https://forum.crystal-lang.org/t/ruby-controversy-crystal-opportunity/8498</link><author>dsisnero</author><category>community</category><pubDate>Sat, 18 Oct 2025 17:41:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[@jgaskins With the recent controversy happening in ruby over Ruby Central and also DHH, it might be an opportunity for the more followed Crystal enthusiasts to re-introduce Crystal to the ruby world.10 posts - 6 participants]]></content:encoded></item><item><title>We&apos;ve just released Crystal 1.18.1 - a small bugfix version that solves two regressions.</title><link>https://fosstodon.org/@CrystalLanguage/115391082654527812</link><author></author><category>official</category><pubDate>Fri, 17 Oct 2025 19:09:49 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We've just released Crystal 1.18.1 - a small bugfix version that solves two regressions.]]></content:encoded></item><item><title>Crystal 1.18.1 is released!</title><link>https://crystal-lang.org/2025/10/17/1.18.1-released/</link><author>Matias Garcia Isaia</author><category>releases</category><pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.1 with two regressions fixed.This release includes 2 changes since
-1.18.0
-by 1 contributor.  We thank all the contributors for all the effort put into
-improving the language! ❤️This patch release fixes a regression in the  def parsing (#16217), and
-overly strict type restrictions in  (#16218) - both introduced
-in 1.18.0.We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Crystal 1.18.0 Is Released</title><link>https://crystal-lang.org/2025/10/14/1.18.0-released/</link><author>sdogruyol</author><category>HN</category><category>hn</category><pubDate>Wed, 15 Oct 2025 14:30:44 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.0 with several new features and bug
-fixes.This release includes 172 changes since
-1.17.1
-by 31 contributors. We thank all the contributors for all the effort put into
-improving the language! ❤️Below we list the most remarkable changes in the language, compiler and stdlib.
-For more details, visit the full
-changelog.We do not expect any breaking changes in existing code. If you notice any
-unexpected issues, please let us know in the issue tracker or forum.Execution contexts from RFC 0002 continue as a preview feature with opt-in
-with compiler flags -Dpreview_mt -Dexecution_context. It might move out of
-preview in the next release.The preview of synchronization primitives in  has seen some
-improvements as well.Deprecation warnings are now available on types and aliases (#15962) as well
-as individual method parameters (#15999).
-Deprecated types only trigger warnings when they are actually  (e.g.
-calling a class method), not when they’re just part of a type restriction, for
-example.
-Deprecated parameters only trigger a warning when the particular parameter is
-used in a call. Calls without this parameter are unaffected.The format of  has been adjusted slightly to align with the Internet
-Extended Date/Time Format (IXDTF) defined in RFC 9557 (#16039).Changes from the previous format:Replace  location by  offsetSkip zero nanoseconds entirely even when  is true (see https://github.com/crystal-lang/crystal/pull/16039#discussion_r2250863021)Remove whitespace between time and offsetWrap location in square brackets to indicate an IXDTF time-zone suffixSome examples show the differences:The local Windows system time zone now uses the canonical IANA name (#15967).The output of  got a wrapper to indicate
-the  type and differentiate from the wrapped type (#15979).
-The equivalent for  is still pending.The private constructors of  moved into the 
-hook (#16147). They’re now defined on the including types which is more robust
-in terms of  overload ordering. This also allows referring generic
-type variables inside converters. now uses scoped ANSI reset codes which only reset the respective
-property, instead of resetting  (#16052).We added type restrictions to many API methods. This improves the documentation.
-This is a semi-automatic effort, assisted by a tool that automatically extracts
-typing information from the semantic analysis of a program (#15682).Multi-line strings containing source code in compiler specs have had two
-different formats: Some of them were using regular string literals, others used
-heredocs. The latter was usually preferred in new code additions because
-line numbers and indents are more sensible. And with an appropriate heredoc
-identifier to denote the language, we even get nested syntax highlighting.
-In this release we’ve converted all compiler specs to use heredocs
-(#11291).With the help of , we’ve enabled and applied a couple more linter rules:
- (#16010),  (#16011), and
- (#16014).The compiler can dump type information to a JSON file when the environment
-variable  is set (#16027).Resolve types when guessing return type from class method overloads (#16118).In the following snippet, the compiler is able to infer ’s type to be , since both overloads of  have a return type of :Guess instance variable types from global method calls (#16119).This allows the following to compile:The call needs to be global; other than that, type guessing for top-level methods has the same limitations as for class methods.Hash literals are evaluated from left to right, fixing a regression from 1.6.0 (#16124).Temporary variables are now grouped by file name in order to increase the chance
-of reusing previous macro expansions (#16122).Fully exit the process on  from REPL (#16171)Fixed interpreter hanging on the signal pipe (#16167)Support for LLVM 21.1 and 22.0 (#16062)Update Unicode to 17.0.0 (#16160)We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Crystal 1.18.0 is released!</title><link>https://old.reddit.com/r/crystal_programming/comments/1o7ckdv/crystal_1180_is_released/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Wed, 15 Oct 2025 14:29:46 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Notes on Building CLI and GUI tools with Crystal</title><link>https://dev.to/kojix2/notes-on-building-cli-and-gui-tools-with-crystal-4pcd</link><author>kojix2</author><category>blog</category><pubDate>Wed, 15 Oct 2025 03:25:14 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This post is just me writing down some vague thoughts that are floating around in my head right now.Sorry if you came here expecting a well-structured tutorial — but you know, if I try to organize everything perfectly, I’ll never publish anything.Crystal originated from the Ruby community, so there are many people who want to build web applications with it.However, the Crystal programming language itself can be described as “a statically compiled language with a Ruby-like syntax and a garbage collector, somewhat like C with GC and type inference.”It’s not necessarily optimized for web applications.Personally, I wanted to use Crystal for command-line tools and GUI apps.For some reason, though, there don’t seem to be many people building CLI tools in Crystal.The ecosystem for building and distributing binaries wasn’t very well developed for a long time.That used to be a real pain, but after gradually solving those issues, I think we’re now at the point where most CLI tools I want can be built and distributed in Crystal without much trouble.On the GUI side, the situation is similar — there aren’t many libraries available.But this isn’t unique to Crystal. GUI programming, in general, depends heavily on opaque, platform-specific APIs, which don’t always play nicely with open-source development.Then I got curious about Tauri and Electron — the now-famous WebView-based app frameworks.Personally, I can barely read JavaScript, so I had no real interest in those at first, but their popularity made me curious.And as I mentioned earlier, web app development in the Crystal ecosystem is quite active.So I decided to give it a try.I learned that “WebView” isn’t a single library — each OS (Windows, Linux, macOS) provides its own.Projects like webview/webview and Tauri’s wry act as unifying layers over these platform-specific APIs.Tauri itself uses WebView under the hood while also providing a framework to handle security and integration with Rust backends.Maybe it’s possible to use TypeScript and other frontend tools with Crystal too, but personally, I prefer the more old-fashioned approach — something like Kemal + ECR, the “classic amateur” way.When I actually started building an app with Crystal + WebView, I discovered a few things.First, you need to pay attention to event loops and thread management.The WebView itself runs in a separate process, and at the same time you need to run a Kemal server.That means you often have to make it multithreaded and carefully manage your execution contexts or Fibers — otherwise, things simply won’t run correctly.Then there’s the build, linking, and packaging pain.I sent a few pull requests to the Crystal WebView project, which helped a bit, but building on MinGW is still rough.MSVC technically works, but it’s just too tedious to deal with, so I decided to stay away from it.Bundling shared libraries is also tricky.I’d prefer to lean toward static linking whenever possible, but depending on licensing and security update concerns, it’s sometimes better to link against system or bundled shared libraries.I discovered tools like fpm, which are really useful, but in the end, I still end up asking AI to help me write custom GitHub Actions YAML and shell scripts.And then, once you finally have a working binary, Windows or macOS antivirus software will happily flag it as suspicious.Maybe for people doing this professionally, all this doesn’t sound like a big deal, but as someone doing it for fun, it’s a lot of work.
-Even so, after all the pain, I’ve started to feel like — maybe, just maybe — this setup is actually pretty cool.This post was translated from the original Japanese version using ChatGPT.
-You can read the original post here [JA]]]></content:encoded></item><item><title>Extra, extra - Crystal 1.18.0 is out now!</title><link>https://fosstodon.org/@CrystalLanguage/115374378935720511</link><author></author><category>official</category><pubDate>Tue, 14 Oct 2025 20:21:51 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[Extra, extra - Crystal 1.18.0 is out now!]]></content:encoded></item><item><title>How a quartz crystal works in a microcontroller?</title><link>https://dev.to/carolineee/how-a-quartz-crystal-works-in-a-microcontroller-4lhf</link><author>Hedy</author><category>blog</category><pubDate>Tue, 14 Oct 2025 09:37:43 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This is a fundamental concept in microcontroller systems. Let's break down how a quartz crystal works in a microcontroller, from the basic physics to the practical circuit.The Core Concept: The Piezoelectric Effect
-At the heart of a quartz crystal is a physical phenomenon called the Piezoelectric Effect.Mechanical → Electrical: When you apply a physical stress (squeeze or bend) to a quartz crystal, it generates a small electrical voltage across its surfaces.Electrical → Mechanical: Conversely, when you apply an electrical voltage to a quartz crystal, it physically deforms (vibrates) slightly.This two-way street is the magic key.How It Creates a Clock Signal: ResonanceNatural Frequency: Every piece of quartz crystal has a natural resonant frequency—a specific frequency at which it "likes" to vibrate most efficiently. This frequency is determined primarily by its physical size, shape, and how it's cut. A thinner, smaller crystal vibrates at a higher frequency. This is why crystals for common microcontrollers (like 16 MHz, 20 MHz) are small, while crystals for real-time clocks (32.768 kHz) are larger and often cylindrical.The Oscillator Circuit: Inside the microcontroller, there is a specialized circuit called a Crystal Oscillator (often denoted as OSC1 and OSC2 pins). This circuit is designed to:Apply a constantly alternating voltage to the crystal.Listen to the tiny voltage generated by the crystal's vibration.Amplify that signal and feed it back to the crystal.The Self-Sustaining Loop (The "How It Works"):When you power on the circuit, electrical noise provides a tiny, random voltage kick to the crystal.The crystal vibrates in response, generating a tiny voltage at its natural resonant frequency.The oscillator circuit in the microcontroller picks up this tiny signal, amplifies it, and feeds it back to the crystal.This reinforced signal causes the crystal to vibrate more strongly.Within a few milliseconds, this feedback loop builds up into a strong, continuous, and perfectly stable oscillation at the crystal's precise natural frequency.The result is a clean, square-wave clock signal that drives the entire microcontroller.The Complete Picture: The Practical Circuit
-On your schematic and PCB, you don't just connect the crystal directly to the MCU. A typical crystal circuit looks like this:text
-
-         ---||---       ---||---
-OSC1 |---|     |---X---|     |---| OSC2
-     |    C1        |        C2   |
-     |              |             |
-     |-------------/ \------------|
-                   Rf (Internal)
-Illustration of a typical crystal oscillator circuitComponents and Their Roles:Quartz Crystal (X): The resonant element that sets the frequency.Load Capacitors (C1 and C2): These are absolutely critical.Purpose: They, along with the crystal's own internal capacitance, form a capacitive load that helps the crystal oscillate at its specified frequency.Value: The values (typically 10-22 pF for most MCUs) are chosen to match the crystal's specified load capacitance. Using the wrong values can make the oscillator unstable or cause the frequency to be slightly off.Internal Oscillator Circuit (inside MCU): Contains the amplifier and a feedback resistor (Rf), which biases the amplifier into its linear region so it can start and maintain oscillation.Why is the Clock Signal So Important?
-The clock signal is the "heartbeat" of the microcontroller. It synchronizes every operation:Core Execution: The CPU executes instructions in time with the clock ticks (each tick is one clock cycle).Peripheral Timing: Timers, PWM (Pulse Width Modulation), and communication interfaces like UART, SPI, and I2C all rely on the clock to generate precise baud rates and time intervals.Bus Operations: Reading from Flash memory, writing to RAM, and accessing peripherals are all coordinated by the clock.A simple analogy: Imagine an orchestra without a conductor. It would be chaotic. The crystal-generated clock signal is the conductor, ensuring every part of the microcontroller works in perfect synchrony.The Special 32.768 kHz "Watch Crystal"
-You often see a second, smaller crystal on boards (shaped like a tiny can). This is almost always a 32.768 kHz crystal.Why that number? 32,768 = 2¹⁵.A simple 15-stage binary divider circuit can easily divide this frequency down to exactly 1 Hz (one pulse per second), which is perfect for driving a Real-Time Clock (RTC) to keep track of time, even when the main microcontroller is in sleep mode.It's a resonator: The quartz crystal doesn't create a frequency out of nothing; it filters and stabilizes the oscillation to its precise natural frequency.Piezoelectric Effect is key: The mechanical-electrical feedback loop is what makes it work.It's a system: The crystal alone won't work. It needs the microcontroller's internal oscillator circuit and the external load capacitors to form a complete, functioning oscillator.Precision and Stability: Compared to internal RC oscillators, crystals are vastly more accurate and stable over temperature and voltage changes, which is essential for timing-critical applications and communication protocols.]]></content:encoded></item><item><title>Crystal 1.18.0 is released!</title><link>https://crystal-lang.org/2025/10/14/1.18.0-released/</link><author>Johannes Müller</author><category>releases</category><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.0 with several new features and bug
-fixes.This release includes 172 changes since
-1.17.1
-by 31 contributors. We thank all the contributors for all the effort put into
-improving the language! ❤️Below we list the most remarkable changes in the language, compiler and stdlib.
-For more details, visit the full
-changelog.We do not expect any breaking changes in existing code. If you notice any
-unexpected issues, please let us know in the issue tracker or forum.Execution contexts from RFC 0002 continue as a preview feature with opt-in
-with compiler flags -Dpreview_mt -Dexecution_context. It might move out of
-preview in the next release.The preview of synchronization primitives in  has seen some
-improvements as well.Deprecation warnings are now available on types and aliases (#15962) as well
-as individual method parameters (#15999).
-Deprecated types only trigger warnings when they are actually  (e.g.
-calling a class method), not when they’re just part of a type restriction, for
-example.
-Deprecated parameters only trigger a warning when the particular parameter is
-used in a call. Calls without this parameter are unaffected.The format of  has been adjusted slightly to align with the Internet
-Extended Date/Time Format (IXDTF) defined in RFC 9557 (#16039).Changes from the previous format:Replace  location by  offsetSkip zero nanoseconds entirely even when  is true (see https://github.com/crystal-lang/crystal/pull/16039#discussion_r2250863021)Remove whitespace between time and offsetWrap location in square brackets to indicate an IXDTF time-zone suffixSome examples show the differences:The local Windows system time zone now uses the canonical IANA name (#15967).The output of  got a wrapper to indicate
-the  type and differentiate from the wrapped type (#15979).
-The equivalent for  is still pending.The private constructors of  moved into the 
-hook (#16147). They’re now defined on the including types which is more robust
-in terms of  overload ordering. This also allows referring generic
-type variables inside converters. now uses scoped ANSI reset codes which only reset the respective
-property, instead of resetting  (#16052).We added type restrictions to many API methods. This improves the documentation.
-This is a semi-automatic effort, assisted by a tool that automatically extracts
-typing information from the semantic analysis of a program (#15682).Multi-line strings containing source code in compiler specs have had two
-different formats: Some of them were using regular string literals, others used
-heredocs. The latter was usually preferred in new code additions because
-line numbers and indents are more sensible. And with an appropriate heredoc
-identifier to denote the language, we even get nested syntax highlighting.
-In this release we’ve converted all compiler specs to use heredocs
-(#11291).With the help of , we’ve enabled and applied a couple more linter rules:
- (#16010),  (#16011), and
- (#16014).The compiler can dump type information to a JSON file when the environment
-variable  is set (#16027).Resolve types when guessing return type from class method overloads (#16118).In the following snippet, the compiler is able to infer ’s type to be , since both overloads of  have a return type of :Guess instance variable types from global method calls (#16119).This allows the following to compile:The call needs to be global; other than that, type guessing for top-level methods has the same limitations as for class methods.Hash literals are evaluated from left to right, fixing a regression from 1.6.0 (#16124).Temporary variables are now grouped by file name in order to increase the chance
-of reusing previous macro expansions (#16122).Fully exit the process on  from REPL (#16171)Fixed interpreter hanging on the signal pipe (#16167)Support for LLVM 21.1 and 22.0 (#16062)Update Unicode to 17.0.0 (#16160)We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item></channel></rss>
+                        Last updated on {{lastDate}}                    ²]]></content:encoded></item><item><title>We&apos;re reaching for the stars! 🚀✨</title><link>https://fosstodon.org/@CrystalLanguage/115418209673688930</link><author></author><category>official</category><enclosure url="https://cdn.fosstodon.org/media_attachments/files/115/418/195/353/117/484/original/d2be7cb66f9956a5.png" length="" type="text/plain"/><pubDate>Wed, 22 Oct 2025 14:08:35 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We're reaching for the stars! 🚀✨Just as 1.18 is released, over 20k users have starred the Crystal repo on GitHub 🌟]]></content:encoded></item><item><title>Crystal 1.18.2 is released!</title><link>https://forum.crystal-lang.org/t/crystal-1-18-2-is-released/8504</link><author>Crys</author><category>community</category><pubDate>Tue, 21 Oct 2025 20:20:55 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.2 with two regressions fixed.]]></content:encoded></item></channel></rss>
