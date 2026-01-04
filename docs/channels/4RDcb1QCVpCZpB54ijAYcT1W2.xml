@@ -1,82 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper</title><link>https://forum.crystal-lang.org/t/gatekeeper/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
-It doesn’t try to be a full security framework — instead, it focuses on one thing:Enforcing  for your routes, using whatever authentication mechanism  choose.It integrates into any Crystal HTTP handler chain, evaluates your rules, runs your authenticators, and returns  or  when needed.Simple  (regex path matching + optional HTTP methods)
-– sessions, JWT, API tokens, whatever fits your app with a built-in Optional Customize responses for
-Only ~125 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Any way to specify default -D options?</title><link>https://forum.crystal-lang.org/t/any-way-to-specify-default-d-options/8628</link><author>ralsina</author><category>community</category><pubDate>Fri, 2 Jan 2026 23:54:22 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I have some libraries that work differently depending on what -D flags you pass. In some programs that use them, only some combinations of -D flags work.I am currently doing this via makefiles and similar things.Would it make sense to add something like that to shard.yml somehow so “shards build” does the right thing?]]></content:encoded></item><item><title>Mixed memory model for Crystal</title><link>https://forum.crystal-lang.org/t/mixed-memory-model-for-crystal/8627</link><author>ComputerMage</author><category>community</category><pubDate>Fri, 2 Jan 2026 16:40:37 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[What do you think about the mixed memory model, where the compiler decides for itself what allocation to use for the variable: stack, slab ARC, atomic ARC, or, as a last resort, it will be GC?Will it strike your interest in the Crystal even more?
+May this feature give Crystal a competitive advantage, and will Go and Rust be sunset?Really love to hear your suggestions and cool ideas!]]></content:encoded></item><item><title>Favorite underrated Shard?</title><link>https://forum.crystal-lang.org/t/favorite-underrated-shard/8625</link><author>Kritoke</author><category>community</category><pubDate>Fri, 2 Jan 2026 03:03:48 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[What is an underrated shard you use in almost every project that more people should know about?]]></content:encoded></item><item><title>Crystal 2026 Predictions</title><link>https://forum.crystal-lang.org/t/crystal-2026-predictions/8624</link><author>matthewmcgarvey</author><category>community</category><pubDate>Thu, 1 Jan 2026 18:48:40 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The time has come to peer into the crystal ball and tell me your predictions for 2026. Do you think Crystal is going to pivot into a functional language? You think a major startup will adopt Crystal? Is this the year of the Crystal LSP? Or maybe you’ve got a project in the works that will come out this year. Here’s your chance to let us all know what you think.]]></content:encoded></item><item><title>Announcing CrImage - Pure Crystal Image Processing Library</title><link>https://forum.crystal-lang.org/t/announcing-crimage-pure-crystal-image-processing-library/8622</link><author>naqvis</author><category>community</category><pubDate>Thu, 1 Jan 2026 03:23:43 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m excited to share , a comprehensive image processing library written entirely in Crystal with zero external dependencies.A complete image toolkit that handles everything from basic format conversion to advanced effects, text rendering, and even QR code generation — all in pure Crystal. PNG, JPEG, GIF (animated!), BMP, TIFF, WebP, ICO Lines, circles, polygons, Bézier curves, gradients, anti-aliased rendering, chart helpers Resize (nearest/bilinear/bicubic/lanczos), rotate, crop, flip Blur, sharpen, edge detection, sepia, vignette, temperature adjustment Built-in TrueType/OpenType/WOFF font engine with kerning and ligatures — no FreeType needed QR codes, blurhash, smart crop, watermarks, thumbnails, EXIF reading, image comparison (SSIM/PSNR) Decompression bomb protection built-inrequire "crimage"
 
-class AppHandler
-  include HTTP::Handler
+img = CrImage.read("photo.jpg")
+    .resize(800, 600, method: :lanczos)
+    .brightness(10)
+    .sepia
 
-  def call(context)
-    case context.request.path
-    when "/"
-      context.response.print "Hello World!"
-    when "/admin"
-      context.response.print "Hello admin!"
-    else
-      context.response.status = HTTP::Status::NOT_FOUND
-      context.response.print "Not found"
-    end
-  end
-end
+CrImage::PNG.write("vintage.png", img)
 
-# Configure Gatekeeper
-Gatekeeper.config do |config|
-  # Called when no authenticator can produce a user
-  config.on_unauthenticated = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You must log in first."
-  end
+# Generate a QR code
+qr = CrImage.qr_code("https://crystal-lang.org")
+CrImage::PNG.write("qr.png", qr)
 
-  # Called when a user exists but lacks the required roles
-  config.on_unauthorized = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You do not have permission."
-  end
-
-  # Only allow users with role "admin" to access /admin
-  config.auth_rules << Gatekeeper::Rule.new(
-    /^\/admin/,
-    roles: ["admin"]
-  )
-
-  # Allow everyone to access everything else (no roles)
-  config.auth_rules << Gatekeeper::Rule.new(/^\//)
-
-  # Simple authenticator that always logs in an "admin" user
-  config.authenticators << ->(ctx : HTTP::Server::Context) : Gatekeeper::Identity? do
-    # In real code you’d look at cookies / headers / session etc.
-    Gatekeeper::IdentityUser(Int32).new(1, Set{"admin"})
-  end
-end
-
-handlers = [
-  Gatekeeper::AuthHandler.new,
-  AppHandler.new,
-]
-
-server = HTTP::Server.new(handlers)
-
-address = server.bind_tcp "0.0.0.0", 3000
-puts "Listening on http://#{address}"
-server.listen
-This is , but the API is stable, fully tested, and intentionally small.
-I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!Edit: Renamed kemal-guardian → GatekeeperEdit: Updated the example]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
-  @[Get("/users")]
-  def index
-    "Listing all users"
-  end
-
-  @[Get("/users/:id")]
-  def show(id : Int32)
-    "Showing user with ID: #{id}"
-  end
-
-  @[Post("/users", auth: true)]
-  def create(name : String, age : Int32, description : String?))
-    "Creating user with name: #{name}, age: #{age} and description: #{description}"
-  end
-
-  private def authenticate! : Bool
-    true
-  end
-end
-Not a single release yep, API isn’t stable but may not have radical changes, meanwhile I’m using it in a not yet released project to test the API.]]></content:encoded></item><item><title>Hot ECR Reloading in Your Area</title><link>https://old.reddit.com/r/crystal_programming/comments/1ozgsxh/hot_ecr_reloading_in_your_area/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Mon, 17 Nov 2025 13:51:10 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>OptionParser : conditional option</title><link>https://forum.crystal-lang.org/t/optionparser-conditional-option/8544</link><author>hutou</author><category>community</category><pubDate>Sun, 16 Nov 2025 18:43:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi,
-In OptionParser, would it be possible to have an option B depending on another option A, giving an error if option A is missing?]]></content:encoded></item></channel></rss>
+17 posts - 7 participants]]></content:encoded></item></channel></rss>
