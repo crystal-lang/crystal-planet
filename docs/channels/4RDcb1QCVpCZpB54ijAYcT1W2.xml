@@ -1,82 +1,268 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper</title><link>https://forum.crystal-lang.org/t/gatekeeper/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
-It doesn’t try to be a full security framework — instead, it focuses on one thing:Enforcing  for your routes, using whatever authentication mechanism  choose.It integrates into any Crystal HTTP handler chain, evaluates your rules, runs your authenticators, and returns  or  when needed.Simple  (regex path matching + optional HTTP methods)
-– sessions, JWT, API tokens, whatever fits your app with a built-in Optional Customize responses for
-Only ~125 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Crystal LSP implementation for Windows and Linux</title><link>https://old.reddit.com/r/crystal_programming/comments/1qa0eyg/crystal_lsp_implementation_for_windows_and_linux/</link><author>/u/No_1944</author><category>community</category><pubDate>Sun, 11 Jan 2026 14:17:01 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[Since Crystalline only supports some POSIX platforms, I wrote an LSP implementation which works cross platform.]]></content:encoded></item><item><title>Crystal spec is VERY slow and very high CPU usage when the first time run `crystal spec -O1`</title><link>https://forum.crystal-lang.org/t/crystal-spec-is-very-slow-and-very-high-cpu-usage-when-the-first-time-run-crystal-spec-o1/8646</link><author>zw963</author><category>community</category><pubDate>Sun, 11 Jan 2026 09:22:41 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Please check following screenshot.Why the first time run spec with -O1 is so slow?(15 min on a very little shard) I almost think about
+crystal spec is in the dead loop.]]></content:encoded></item><item><title>Vibe-coding in Crystal</title><link>https://forum.crystal-lang.org/t/vibe-coding-in-crystal/8645</link><author>renich</author><category>community</category><pubDate>Sun, 11 Jan 2026 00:52:26 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I know vibe-coding is, at the same time, a popular and unpopular topic among programmers. Many see it as some new kind of zero-code programming, others as a powerful “autocompletion on steroids” tool.In any case, I’d like to know what people here think about it. If you have used it and which problems have you faced.I’ve done it a lot, honestly. I have many projects in Crystal that I’ve tried to develop using opencode.ai and gemini-cli.My first paint point is that Crystal is not a mainstream language yet. That makes it complicated. Especially to use idiomatic crystal with agents.That said, I have some projects that have “taken off” meaning that they actually work, even if I use them myself only. Others have been just impossible to code.So, what’s up? Have you tried doing this? Is vibe-coding the devil in disguise? What have you stumbled upon?]]></content:encoded></item><item><title>Announcing CrymbleUI - a modern, native Crystal GUI framework</title><link>https://forum.crystal-lang.org/t/announcing-crymbleui-a-modern-native-crystal-gui-framework/8642</link><author>wolfgang371</author><category>community</category><pubDate>Sat, 10 Jan 2026 07:27:07 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[ever missed a Crystal native GUI framework? Maybe you want to check out CrymbleUI.A nice and fast GUI framework for Crystal. Declarative and reactive.
+Its name is a pun of Crystal and nimble 
+CrymbleUI’s first line of code emerged 2.11.2025, 19:46.
+Currently with SFML backend and for Linux. But easily portable to e.g. Windows.]]></content:encoded></item><item><title>RFC: Standard Image Types in Stdlib</title><link>https://forum.crystal-lang.org/t/rfc-standard-image-types-in-stdlib/8641</link><author>naqvis</author><category>community</category><pubDate>Fri, 9 Jan 2026 13:41:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Add standard image types (colors, pixel formats, color spaces) to Crystal’s standard library to provide a common foundation for the image processing ecosystem.This RFC is meant to start a discussion about standardizing image types in Crystal. If the community finds value in this approach, anyone interested can help move it forward.The Problem: Ecosystem FragmentationCrystal’s image ecosystem is fragmented. Each library defines its own incompatible types:struct RGBA
+  property r, g, b, a : UInt16
+end
+module Color
+  struct RGBA
+    property r, g, b, a : UInt8
+  end
+end
+struct Color
+  property r, g, b, a : UInt8
+end
+Developers must learn different APIs for each libraryNo shared understanding of color representationUnclear semantics (premultiplied? color space? bit depth?)Difficult to build tools that work across librariesEach library reinvents basic conceptsComparison to Other Languages - Standard library provides foundation:// In stdlib
+package image/color
 
-class AppHandler
-  include HTTP::Handler
+type RGBA struct {
+    R, G, B, A uint8
+}
 
-  def call(context)
-    case context.request.path
-    when "/"
-      context.response.print "Hello World!"
-    when "/admin"
-      context.response.print "Hello admin!"
-    else
-      context.response.status = HTTP::Status::NOT_FOUND
-      context.response.print "Not found"
+type RGBA64 struct {
+    R, G, B, A uint16
+}
+All Go image libraries use these types. - Community standard via  crate:pub trait Pixel {
+    type Subpixel: Primitive;
+    const CHANNEL_COUNT: u8;
+}
+
+pub struct Rgba<T>([T; 4]);
+pub struct Rgb<T>([T; 3]);
+Most Rust image libraries implement these traits. - PIL/Pillow provides foundation:from PIL import Image
+
+# Standard modes: "RGB", "RGBA", "L" (grayscale), etc.
+img = Image.new("RGB", (width, height))
+pixel = img.getpixel((x, y))  # Returns (r, g, b) tuple
+Most Python image libraries interoperate via PIL’s standard modes. - Java stdlib provides foundation:// In java.awt
+BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+int rgb = img.getRGB(x, y);  // Standard packed ARGB format
+Kotlin and Android use  or .A  that defines:Standard color types with clear semanticsStandard pixel format definitionsStandard buffer interfaceStandard color space definitionsThis allows libraries to:Share a common vocabularyBuild on a solid foundationWhen all libraries use the standard foundation, you have consistency:require "image"  # Standard foundation
+
+# All libraries use the same color types
+lib_a_color = Image::RGBA8.new(255, 0, 0, 255)
+lib_b_color = Image::RGBA8.new(255, 0, 0, 255)
+
+# Same type everywhere
+lib_a_color == lib_b_color  # true
+Build on the foundation instead of reinventing:require "image"
+
+module MyImageLib
+  class Canvas
+    @pixels : Slice(Image::RGBA8)
+    
+    def [](x, y) : Image::RGBA8
+      @pixels[y * @width + x]
     end
   end
 end
-
-# Configure Gatekeeper
-Gatekeeper.config do |config|
-  # Called when no authenticator can produce a user
-  config.on_unauthenticated = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You must log in first."
+Proposed Standard Library AdditionAdd  module to Crystal stdlib (or create minimal  shard):module Image
+  # 8-bit RGBA (premultiplied alpha)
+  struct RGBA8
+    getter r : UInt8
+    getter g : UInt8
+    getter b : UInt8
+    getter a : UInt8
+    
+    def initialize(@r, @g, @b, @a = 255_u8)
+    end
+    
+    # Premultiplied alpha semantics
+    # Valid range: 0 <= r,g,b <= a <= 255
   end
-
-  # Called when a user exists but lacks the required roles
-  config.on_unauthorized = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You do not have permission."
+  
+  # 8-bit RGBA (non-premultiplied alpha)
+  struct NRGBA8
+    getter r : UInt8
+    getter g : UInt8
+    getter b : UInt8
+    getter a : UInt8
+    
+    def initialize(@r, @g, @b, @a = 255_u8)
+    end
   end
-
-  # Only allow users with role "admin" to access /admin
-  config.auth_rules << Gatekeeper::Rule.new(
-    /^\/admin/,
-    roles: ["admin"]
-  )
-
-  # Allow everyone to access everything else (no roles)
-  config.auth_rules << Gatekeeper::Rule.new(/^\//)
-
-  # Simple authenticator that always logs in an "admin" user
-  config.authenticators << ->(ctx : HTTP::Server::Context) : Gatekeeper::Identity? do
-    # In real code you’d look at cookies / headers / session etc.
-    Gatekeeper::IdentityUser(Int32).new(1, Set{"admin"})
+  
+  # 16-bit RGBA (premultiplied alpha)
+  struct RGBA16
+    getter r : UInt16
+    getter g : UInt16
+    getter b : UInt16
+    getter a : UInt16
+    
+    def initialize(@r, @g, @b, @a = 65535_u16)
+    end
+  end
+  
+  # 16-bit RGBA (non-premultiplied alpha)
+  struct NRGBA16
+    getter r : UInt16
+    getter g : UInt16
+    getter b : UInt16
+    getter a : UInt16
+    
+    def initialize(@r, @g, @b, @a = 65535_u16)
+    end
+  end
+  
+  # 8-bit RGB (no alpha)
+  struct RGB8
+    getter r : UInt8
+    getter g : UInt8
+    getter b : UInt8
+    
+    def initialize(@r, @g, @b)
+    end
+  end
+  
+  # 8-bit grayscale
+  struct Gray8
+    getter y : UInt8
+    
+    def initialize(@y)
+    end
+  end
+  
+  # 16-bit grayscale
+  struct Gray16
+    getter y : UInt16
+    
+    def initialize(@y)
+    end
   end
 end
-
-handlers = [
-  Gatekeeper::AuthHandler.new,
-  AppHandler.new,
-]
-
-server = HTTP::Server.new(handlers)
-
-address = server.bind_tcp "0.0.0.0", 3000
-puts "Listening on http://#{address}"
-server.listen
-This is , but the API is stable, fully tested, and intentionally small.
-I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!Edit: Renamed kemal-guardian → GatekeeperEdit: Updated the example]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
-  @[Get("/users")]
-  def index
-    "Listing all users"
-  end
-
-  @[Get("/users/:id")]
-  def show(id : Int32)
-    "Showing user with ID: #{id}"
-  end
-
-  @[Post("/users", auth: true)]
-  def create(name : String, age : Int32, description : String?))
-    "Creating user with name: #{name}, age: #{age} and description: #{description}"
-  end
-
-  private def authenticate! : Bool
-    true
+module Image
+  # Standard color spaces
+  enum ColorSpace
+    # sRGB (IEC 61966-2-1) - default for most images
+    SRGB
+    
+    # Linear RGB - for compositing and blending
+    LinearRGB
+    
+    # Adobe RGB (1998) - wider gamut
+    AdobeRGB
+    
+    # Display P3 - modern wide gamut displays
+    DisplayP3
   end
 end
-Not a single release yep, API isn’t stable but may not have radical changes, meanwhile I’m using it in a not yet released project to test the API.]]></content:encoded></item><item><title>Hot ECR Reloading in Your Area</title><link>https://old.reddit.com/r/crystal_programming/comments/1ozgsxh/hot_ecr_reloading_in_your_area/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Mon, 17 Nov 2025 13:51:10 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>OptionParser : conditional option</title><link>https://forum.crystal-lang.org/t/optionparser-conditional-option/8544</link><author>hutou</author><category>community</category><pubDate>Sun, 16 Nov 2025 18:43:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi,
-In OptionParser, would it be possible to have an option B depending on another option A, giving an error if option A is missing?]]></content:encoded></item></channel></rss>
+module Image
+  # Describes pixel encoding in memory
+  enum PixelFormat
+    RGBA8      # 4 bytes: R, G, B, A (premultiplied)
+    NRGBA8     # 4 bytes: R, G, B, A (non-premultiplied)
+    RGB8       # 3 bytes: R, G, B
+    GRAY8      # 1 byte: Y
+    
+    RGBA16     # 8 bytes: R, G, B, A (premultiplied, little-endian)
+    NRGBA16    # 8 bytes: R, G, B, A (non-premultiplied, little-endian)
+    RGB16      # 6 bytes: R, G, B (little-endian)
+    GRAY16     # 2 bytes: Y (little-endian)
+    
+    def bytes_per_pixel : Int32
+      case self
+      in .rgba8?, .nrgba8? then 4
+      in .rgb8? then 3
+      in .gray8? then 1
+      in .rgba16?, .nrgba16? then 8
+      in .rgb16? then 6
+      in .gray16? then 2
+      end
+    end
+    
+    def premultiplied? : Bool
+      case self
+      in .rgba8?, .rgba16? then true
+      else false
+      end
+    end
+  end
+end
+module Image
+  # Axis-aligned rectangle
+  struct Rectangle
+    getter min : Point
+    getter max : Point
+    
+    def initialize(@min, @max)
+    end
+    
+    def width : Int32
+      max.x - min.x
+    end
+    
+    def height : Int32
+      max.y - min.y
+    end
+  end
+  
+  struct Point
+    getter x : Int32
+    getter y : Int32
+    
+    def initialize(@x, @y)
+    end
+  end
+end
+Buffer Interface (Minimal)module Image
+  # Minimal interface for pixel buffers
+  # Libraries can implement this or provide their own richer APIs
+  module Buffer
+    abstract def width : Int32
+    abstract def height : Int32
+    abstract def pixel_format : PixelFormat
+    abstract def color_space : ColorSpace
+    
+    # Optional: direct buffer access
+    # abstract def to_unsafe : Pointer(UInt8)
+    # abstract def stride : Int32
+  end
+end
+: Only essential types, not operations: Explicit about premultiplication, bit depth, endianness: Different types for different formats: Libraries can add their own typesWhat This Does NOT IncludeImage I/O (PNG, JPEG, etc.) - libraries handle thisImage operations (resize, filter, etc.) - libraries handle thisFormat conversion - libraries handle thisDrawing primitives - libraries handle thisThis is  - the building blocks.Libraries can adopt incrementally:: Use standard color types internally# In any library
+alias RGBA = Image::RGBA16  # Use standard type
+: Expose standard types in APIdef [](x, y) : Image::RGBA16
+: Implement standard interfacesclass Canvas
+  include Image::Buffer
+end
+: Adds types to standard library: Existing libraries must migrate: Doesn’t cover all pixel formats: Makes choices about representationWhy in stdlib (or minimal shard)?Always available, no dependenciesStable API, semantic versioningCommunity standard by defaultLike Go’s  packageMinimal shard alternative:Can be adopted before stdlib inclusionWhy these specific types?: Most common formatsPremultiplied vs non-premultiplied: Both needed, different use cases: Prevents confusionAlternative 1: Do nothingLet ecosystem remain fragmented.: Problem will worsen as more libraries emergeAlternative 2: Pick one library as standardMake everyone use one specific library’s types.: Creates monopoly, not neutralAlternative 3: Comprehensive image libraryBuild full-featured stdlib image library.: Too large for stdlib, limits innovationAlternative 4: Just protocols/interfacesDefine interfaces without concrete types.: Doesn’t solve the “every library has different RGBA” problempackage color
+
+type Color interface {
+    RGBA() (r, g, b, a uint32)
+}
+
+type RGBA struct {
+    R, G, B, A uint8
+}
+: All Go image libraries use these typespub trait Pixel {
+    type Subpixel;
+    const CHANNEL_COUNT: u8;
+}
+
+pub struct Rgba<T>([T; 4]);
+: De facto standard in Rust ecosystemfrom PIL import Image
+
+# Standard image modes
+img = Image.new("RGB", (width, height))
+img = Image.new("RGBA", (width, height))
+img = Image.new("L", (width, height))  # Grayscale
+: Standard modes used across Python image ecosystempublic class Color {
+    public Color(int r, int g, int b, int a)
+}
+: Standard in Java ecosystemStdlib or separate shard?Stdlib: More authoritative, always availableShard: Faster iteration, easier adoptionCurrent proposal: RGBA8, NRGBA8, RGBA16, NRGBA16, RGB8, Gray8, Gray16Missing: CMYK, YCbCr, HSV, LAB - add later?Enum sufficient or need more metadata?Assume little-endian or make explicit?Include in foundation or leave to libraries?How to encourage library adoption?Migration guide for existing librariesDocumentation and examplesImage operations (resize, filter, etc.)Format I/O (PNG, JPEG readers/writers)Color space conversion algorithmsstruct CMYK8
+struct YCbCr8
+struct HSV
+struct LAB
+module Image
+  def self.convert(color : RGBA8, to : ColorSpace) : RGBA8
+end
+module Image
+  class SimpleBuffer
+    include Buffer
+    # Reference implementation
+  end
+end
+module Image
+  def self.register_format(name : String, reader : FormatReader)
+end
+But these are  - start with minimal foundation.10 posts - 4 participants]]></content:encoded></item><item><title>Jelly VM - A BEAM clone, maybe better</title><link>https://old.reddit.com/r/crystal_programming/comments/1q7yo97/jelly_vm_a_beam_clone_maybe_better/</link><author>/u/Fabulous-Repair-8665</author><category>community</category><pubDate>Fri, 9 Jan 2026 04:32:30 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[Wrote it back in the May when I wanted to dive deeper into Erlang, continued it recently and turned out great, all it needs now is a programming language.It is stack based, supports fault tolerance primitives and lightweight processes, a lot more flexible and comfortable to debug than BEAM. It is not "battle tested" at all, that is up to you :P]]></content:encoded></item></channel></rss>
