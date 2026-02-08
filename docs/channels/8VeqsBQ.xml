@@ -1,19 +1,306 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Green Aventurine Pencil Tower: Meaning, Benefits &amp; How to Use It for Luck and Growth</title><link>https://medium.com/@nayakbarssa/green-aventurine-pencil-tower-meaning-benefits-how-to-use-it-for-luck-and-growth-580344ff014c?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Fri, 30 Jan 2026 08:50:43 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[The Green Aventurine Pencil Tower is a powerful crystal tool known for attracting luck, prosperity, emotional healing, and personal growth…]]></content:encoded></item><item><title>Lapis Lazuli Tower (Orgonite): Meaning, Benefits &amp; How It Amplifies Energy</title><link>https://medium.com/@nayakbarssa/lapis-lazuli-tower-orgonite-meaning-benefits-how-it-amplifies-energy-7be682e9e3a3?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Thu, 29 Jan 2026 11:52:59 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[The Lapis Lazuli Tower (Orgonite) is a powerful combination of ancient crystal wisdom and modern energy science. Known for enhancing…]]></content:encoded></item><item><title>SGC at $208.65: A Technical Look at Today’s Price Behavior</title><link>https://dev.to/shainu_aripaka_773eded726/sgc-at-20865-a-technical-look-at-todays-price-behavior-5ab4</link><author>shainu aripaka</author><category>blog</category><pubDate>Wed, 28 Jan 2026 18:19:08 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[Today’s market session places , following a sequence of sharp intraday movements and gradual pullbacks. From a technical perspective, this kind of price behavior highlights active participation rather than low-liquidity drift.The chart shows multiple short-lived upward pushes, each meeting resistance before retracing. This often indicates algorithmic trading, short-term speculation, or cautious re-entry by participants testing higher price acceptance.From a systems viewpoint, volatile sessions like this are valuable. They generate dense data points that improve market discovery and help define short-term support and resistance zones.For developers and analysts observing blockchain-based assets, price action is less about the number itself and more about how the number is reached. Today’s SGC movement reflects a market that is alive, reactive, and continuously adjusting.]]></content:encoded></item><item><title>From 4 Minutes to 3 Seconds: How Database Transaction Rollback Revolutionized Test Suite</title><link>https://dev.to/miry/from-4-minutes-to-3-seconds-how-database-transaction-rollback-revolutionized-test-suite-4olh</link><author>Michael Nikitochkin</author><category>blog</category><pubDate>Sat, 24 Jan 2026 16:15:32 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[In a single afternoon, I transformed my  test suite from a 4-minute ordeal into a 3-second sprint by replacing expensive database  with lightning-fast . This 98.8% performance improvement didn't just make developers happier—it fundamentally changed how I approach testing. 447 tests now run in  instead of —a  that makes test-driven development (TDD) practical again.
   
   
-  ⚠️ Take These Benchmarks with a Grain of Salt
-Not all frameworks are properly optimized - Some frameworks on the list may not be configured for optimal performance - Performance should be one consideration among many - Ecosystem, dev experience, and productivity are all more important than speed in most cases ☝️ - Lucky ticks all 3 boxes for me: February 9, 2021Originally published: February 08, 2021 • Last updated: February 09, 2021]]></content:encoded></item><item><title>Crystal Prime Deluxe 18000 Box of 10</title><link>https://dev.to/crystalprimedeluxe18000boxof10/crystal-prime-deluxe-18000-box-of-10-5gkf</link><author>Crystal Prime Deluxe 18000 Box of 10</author><category>blog</category><pubDate>Tue, 28 Oct 2025 16:09:54 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[VapeZone  offers premium vape products at competitive prices, based in the UK. Explore our wide range of high-quality vapes and accessories.]]></content:encoded></item><item><title>Notes on Building CLI and GUI tools with Crystal</title><link>https://dev.to/kojix2/notes-on-building-cli-and-gui-tools-with-crystal-4pcd</link><author>kojix2</author><category>blog</category><pubDate>Wed, 15 Oct 2025 03:25:14 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This post is just me writing down some vague thoughts that are floating around in my head right now.Sorry if you came here expecting a well-structured tutorial — but you know, if I try to organize everything perfectly, I’ll never publish anything.Crystal originated from the Ruby community, so there are many people who want to build web applications with it.However, the Crystal programming language itself can be described as “a statically compiled language with a Ruby-like syntax and a garbage collector, somewhat like C with GC and type inference.”It’s not necessarily optimized for web applications.Personally, I wanted to use Crystal for command-line tools and GUI apps.For some reason, though, there don’t seem to be many people building CLI tools in Crystal.The ecosystem for building and distributing binaries wasn’t very well developed for a long time.That used to be a real pain, but after gradually solving those issues, I think we’re now at the point where most CLI tools I want can be built and distributed in Crystal without much trouble.On the GUI side, the situation is similar — there aren’t many libraries available.But this isn’t unique to Crystal. GUI programming, in general, depends heavily on opaque, platform-specific APIs, which don’t always play nicely with open-source development.Then I got curious about Tauri and Electron — the now-famous WebView-based app frameworks.Personally, I can barely read JavaScript, so I had no real interest in those at first, but their popularity made me curious.And as I mentioned earlier, web app development in the Crystal ecosystem is quite active.So I decided to give it a try.I learned that “WebView” isn’t a single library — each OS (Windows, Linux, macOS) provides its own.Projects like webview/webview and Tauri’s wry act as unifying layers over these platform-specific APIs.Tauri itself uses WebView under the hood while also providing a framework to handle security and integration with Rust backends.Maybe it’s possible to use TypeScript and other frontend tools with Crystal too, but personally, I prefer the more old-fashioned approach — something like Kemal + ECR, the “classic amateur” way.When I actually started building an app with Crystal + WebView, I discovered a few things.First, you need to pay attention to event loops and thread management.The WebView itself runs in a separate process, and at the same time you need to run a Kemal server.That means you often have to make it multithreaded and carefully manage your execution contexts or Fibers — otherwise, things simply won’t run correctly.Then there’s the build, linking, and packaging pain.I sent a few pull requests to the Crystal WebView project, which helped a bit, but building on MinGW is still rough.MSVC technically works, but it’s just too tedious to deal with, so I decided to stay away from it.Bundling shared libraries is also tricky.I’d prefer to lean toward static linking whenever possible, but depending on licensing and security update concerns, it’s sometimes better to link against system or bundled shared libraries.I discovered tools like fpm, which are really useful, but in the end, I still end up asking AI to help me write custom GitHub Actions YAML and shell scripts.And then, once you finally have a working binary, Windows or macOS antivirus software will happily flag it as suspicious.Maybe for people doing this professionally, all this doesn’t sound like a big deal, but as someone doing it for fun, it’s a lot of work.
-Even so, after all the pain, I’ve started to feel like — maybe, just maybe — this setup is actually pretty cool.This post was translated from the original Japanese version using ChatGPT.
-You can read the original post here [JA]]]></content:encoded></item><item><title>How a quartz crystal works in a microcontroller?</title><link>https://dev.to/carolineee/how-a-quartz-crystal-works-in-a-microcontroller-4lhf</link><author>Hedy</author><category>blog</category><pubDate>Tue, 14 Oct 2025 09:37:43 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This is a fundamental concept in microcontroller systems. Let's break down how a quartz crystal works in a microcontroller, from the basic physics to the practical circuit.The Core Concept: The Piezoelectric Effect
-At the heart of a quartz crystal is a physical phenomenon called the Piezoelectric Effect.Mechanical → Electrical: When you apply a physical stress (squeeze or bend) to a quartz crystal, it generates a small electrical voltage across its surfaces.Electrical → Mechanical: Conversely, when you apply an electrical voltage to a quartz crystal, it physically deforms (vibrates) slightly.This two-way street is the magic key.How It Creates a Clock Signal: ResonanceNatural Frequency: Every piece of quartz crystal has a natural resonant frequency—a specific frequency at which it "likes" to vibrate most efficiently. This frequency is determined primarily by its physical size, shape, and how it's cut. A thinner, smaller crystal vibrates at a higher frequency. This is why crystals for common microcontrollers (like 16 MHz, 20 MHz) are small, while crystals for real-time clocks (32.768 kHz) are larger and often cylindrical.The Oscillator Circuit: Inside the microcontroller, there is a specialized circuit called a Crystal Oscillator (often denoted as OSC1 and OSC2 pins). This circuit is designed to:Apply a constantly alternating voltage to the crystal.Listen to the tiny voltage generated by the crystal's vibration.Amplify that signal and feed it back to the crystal.The Self-Sustaining Loop (The "How It Works"):When you power on the circuit, electrical noise provides a tiny, random voltage kick to the crystal.The crystal vibrates in response, generating a tiny voltage at its natural resonant frequency.The oscillator circuit in the microcontroller picks up this tiny signal, amplifies it, and feeds it back to the crystal.This reinforced signal causes the crystal to vibrate more strongly.Within a few milliseconds, this feedback loop builds up into a strong, continuous, and perfectly stable oscillation at the crystal's precise natural frequency.The result is a clean, square-wave clock signal that drives the entire microcontroller.The Complete Picture: The Practical Circuit
-On your schematic and PCB, you don't just connect the crystal directly to the MCU. A typical crystal circuit looks like this:text
+  The Problem: When Tests Become a Bottleneck
+The test suite was destroying developer productivity. Every pull request meant waiting, every bug fix meant coffee breaks. With truncation-based test isolation, the team was hemorrhaging time:UserTest#test_email_validation - 
+  
+  
+  The Root Cause: Truncation Hell
+The culprit was my test isolation strategy: . Before each test, I was:Dropping and recreating data across 20+ tablesPerforming expensive I/O operations that scaled with data sizeEach test was paying a  tax just to clean up after itself. With 447 tests, that's over 3 minutes of pure overhead.
+  
+  
+  The Solution: Transaction Rollback Strategy
+Instead of physically deleting data and resetting sequences, I could simply wrap each test in a database transaction and .  transactions are designed for exactly this—atomic operations that can be discarded instantly. - Database schema loading, migrations, etc.Only test data is transactional - All changes disappear instantly -  is just a memory operation - Each test gets a fresh slate automatically
+  
+  
+  Performance Transformation
 
-         ---||---       ---||---
-OSC1 |---|     |---X---|     |---| OSC2
-     |    C1        |        C2   |
-     |              |             |
-     |-------------/ \------------|
-                   Rf (Internal)
-Illustration of a typical crystal oscillator circuitComponents and Their Roles:Quartz Crystal (X): The resonant element that sets the frequency.Load Capacitors (C1 and C2): These are absolutely critical.Purpose: They, along with the crystal's own internal capacitance, form a capacitive load that helps the crystal oscillate at its specified frequency.Value: The values (typically 10-22 pF for most MCUs) are chosen to match the crystal's specified load capacitance. Using the wrong values can make the oscillator unstable or cause the frequency to be slightly off.Internal Oscillator Circuit (inside MCU): Contains the amplifier and a feedback resistor (Rf), which biases the amplifier into its linear region so it can start and maintain oscillation.Why is the Clock Signal So Important?
-The clock signal is the "heartbeat" of the microcontroller. It synchronizes every operation:Core Execution: The CPU executes instructions in time with the clock ticks (each tick is one clock cycle).Peripheral Timing: Timers, PWM (Pulse Width Modulation), and communication interfaces like UART, SPI, and I2C all rely on the clock to generate precise baud rates and time intervals.Bus Operations: Reading from Flash memory, writing to RAM, and accessing peripherals are all coordinated by the clock.A simple analogy: Imagine an orchestra without a conductor. It would be chaotic. The crystal-generated clock signal is the conductor, ensuring every part of the microcontroller works in perfect synchrony.The Special 32.768 kHz "Watch Crystal"
-You often see a second, smaller crystal on boards (shaped like a tiny can). This is almost always a 32.768 kHz crystal.Why that number? 32,768 = 2¹⁵.A simple 15-stage binary divider circuit can easily divide this frequency down to exactly 1 Hz (one pulse per second), which is perfect for driving a Real-Time Clock (RTC) to keep track of time, even when the main microcontroller is in sleep mode.It's a resonator: The quartz crystal doesn't create a frequency out of nothing; it filters and stabilizes the oscillation to its precise natural frequency.Piezoelectric Effect is key: The mechanical-electrical feedback loop is what makes it work.It's a system: The crystal alone won't work. It needs the microcontroller's internal oscillator circuit and the external load capacitors to form a complete, functioning oscillator.Precision and Stability: Compared to internal RC oscillators, crystals are vastly more accurate and stable over temperature and voltage changes, which is essential for timing-critical applications and communication protocols.]]></content:encoded></item></channel></rss>
+  
+  
+  Dramatic Individual Test Speedup
+Example: User::ValidateTest#test_email_validation
+  
+  
+  What This Means for Developers
+Before (Truncation Hell):"I'll run tests while grabbing coffee" - waiting kills productivity1.8 tests per minute - glacial feedback4+ minute feedback loop - context switching inevitable - testing becomes optionalAfter (Transaction Magic):"I'll run tests before every commit" - instant gratification9,450 tests per minute - blazing speed3-second feedback loop - you're still thinking about the code - testing becomes second nature
+  
+  
+  The Problem: Expensive Database Surgery
+Each test paid ~40-60ms of truncation overhead: 20-30ms (disk I/O) 10-15ms (catalog updates) 5-10msWith 447 tests, that's over 3 minutes of pure cleanup time.
+  
+  
+  The Solution: Instant Rollback
+Transaction rollback costs ~2-4ms per test (50-75% reduction): 1-2ms (memory allocation) 1-2ms (memory discard) Pure memory operation![IMAGE PLACEHOLDER: Prompt: Performance cost breakdown comparison chart. Left bar showing truncation costs: "TRUNCATE ops (20-30ms)" in red, "Sequence resets (10-15ms)" in orange, "Connection overhead (5-10ms)" in yellow, totaling 40-60ms per test. Right bar showing rollback costs: "Transaction start (1-2ms)" in light blue, "Rollback (1-2ms)" in dark blue, totaling 2-4ms per test. Include annotations: "50-75% reduction" and "Pure memory operation" for rollback. Style: modern bar chart with gradient colors, clear cost labels, benchmark comparison.]Override 's  method to wrap test execution in database transactions:Setup OUTSIDE transaction - Database schema and reference data loads once per test suite - Each test runs atomically and always rolls back - Clear caches (, converted models, email collectors, )Why Override  Instead of Using Standard Hooks?The core issue is how 's  works: uses  to execute code inside a transaction blockIt sets thread-local variables to track the active transaction connectionIndividual database operations check these thread variables to reuse the transaction connectionThis pattern requires wrapping the  from the outsideStandard  lifecycle hooks have a fatal limitation, as there is no  or wrapper mechanism.By overriding , we control the  of operations and can properly use :1. Setup (OUTSIDE transaction)     ← Reference data persists
+2. Begin transaction with yield
+3. Test code (INSIDE transaction)  ← Thread variables track connection
+4. Rollback transaction
+5. Teardown (OUTSIDE transaction)  ← Clear caches, email collectors
+
+  
+  
+  Related Articles in My CI/CD Optimization Journey
+This article is part of my ongoing challenge to optimize tests and CI/CD pipelines for  projects. If you're interested in the full optimization story, check out my previous articles:]]></content:encoded></item><item><title>Crystal Minitest and the Shutdown Order Problem</title><link>https://dev.to/miry/crystal-minitest-and-the-shutdown-order-problem-jcn</link><author>Michael Nikitochkin</author><category>blog</category><pubDate>Sat, 24 Jan 2026 11:26:17 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Optimizing  setup by moving initialization from  to module-level broke logging:  creates resources early, and they're cleaned up before tests run (which happens in ). Solution: use  for tests instead.
+  
+  
+  Story: The Optimization and Discovery
+When setting up a  application to work with , I moved all initialization instructions to  hooks:After tests were working reliably, I optimized: why run this repetitive setup for every test? If I moved it to module-level initialization, it would run once when test file loads:Tests passed initially. But when I ran with  to enable verbose output, something broke:1 crystal run /users_test.cr
+Channel::ClosedError: Channel is closed
+    /usr/share/crystal/src/channel.cr:142:8 in 'send'
+    /usr/share/crystal/src/log/dispatch.cr:55:7 in 'dispatch'
+The logging channel was closed. I reverted to  as a workaround, but I needed to understand: Why does  setup runs matter more than  it runs?
+  
+  
+  Investigation: The Key Discovery
+
+  
+  
+  Why Minitest Is Different
+ doesn't run tests during normal program execution. Instead:This creates a timing problem. With module-level setup: initialize a Log instance with  on booting spawns a background fiber with a channelMain program completes →  runtime cleanup beginsChannel may be closed by garbage collection (this is where my assumption lies) fires →  runs testsTests call  → channel already closed → With , setup happens inside , so the  instance is created during shutdown, not during normal execution.
+  
+  
+  How  Works
+During shutdown, garbage collection calls , which closes the channel. But  hooks run  some cleanup, creating the race condition.The issue isn't optimization itself—it's that  isn't suitable for code that runs before . The solution is to use a dispatcher without background resources for tests:For tests with module-level init,  is ideal.The optimization itself was sound—module-level initialization  faster. The issue was incompatibility with  in a shutdown context.More broadly, any code that relies on objects with finalize methods could be affected by garbage collection events and  timing—background resources created during normal execution may be cleaned up before tests run.The fix is simple (one configuration change) but reveals a broader principle:Test infrastructure must account for shutdown order and resource cleanup timing, regardless of framework. Some libraries use  handlers for cleanup in multi-threaded applications, and when tests run after these handlers, any finalized objects (channels, connections, files, caches) become inaccessible.]]></content:encoded></item><item><title>Optimizing Crystal Build time in Woodpecker CI: 415s to 196s with Caching</title><link>https://dev.to/miry/optimizing-crystal-build-time-in-woodpecker-ci-415s-to-196s-with-caching-1o5k</link><author>Michael Nikitochkin</author><category>blog</category><pubDate>Wed, 21 Jan 2026 06:10:11 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[ test builds in  were taking  to complete.
+Every pipeline run would recompile dependencies from scratch, even though most changes affected application code, not third-party libraries.'s compiler is thorough and safe, but recompiling everything on each  run was costly - especially when running tests multiple times per day.Persistent  cache storage was implemented using named volumes combined with a custom cache directory: Testing also included adding  but it provided no measurable improvement. The persistent cache is where the real optimization happens.
+  
+  
+  1. Custom Cache Directory
+By setting CRYSTAL_CACHE_DIR: /cache/crystal, the  compiler stores compiled artifacts in a predictable location instead of the default temporary directory.This provides control over where  stores:Compiled standard library modulesCompiled dependency (shard) modules intermediate representations
+  
+  
+  2. Named Volumes for Persistence
+ uses container volumes to persist data between pipeline runs. A named volume is mounted at the cache directory: Using  in the volume name maintains separate caches for different  versions (e.g.,  and ). This prevents cache conflicts when testing against multiple  versions in matrix builds.
+  
+  
+  3. What About tmpfs for /tmp?
+Initial assumptions suggested that adding  for  would help, since  might write temporary files there during compilation. Testing was performed: No measurable improvement (~196s with or without ).'s compilation model doesn't write much to temporary directories:Most I/O goes to  (which is already optimized with persistent volumes) keeps most compilation state in memoryThe compiler creates minimal intermediate temp filesContainer overlay filesystem is "good enough" for the small amount of  usage
+  
+  
+  4. Container Overlay Storage Optimization
+ agents using container overlay storage drivers (such as 's overlay2) benefit from efficient layer caching.
+The named volume persists between runs, and only changed files need to be written - combining with the container runtime's copy-on-write mechanism for optimal performance. Named volumes are local to each agent. If multiple  agents are running, each maintains its own separate cache. This means:First run on a new agent will be slow (cold cache)Subsequent runs on the same agent will be fast (warm cache)Pipelines may experience variable build times depending on which agent executes themFor shared caching across multiple agents, consider external cache storage solutions (, network volumes, or distributed cache systems).Before (no optimizations): 415 seconds per test buildAfter (persistent cache only): 196 seconds per test buildAfter (cache +  for ): ~196 seconds (no significant change) 2.1x faster (53% time reduction) ⚡
+  
+  
+  Why Persistent Cache Helps, But tmpfs Doesn't
+Persistent cache () - BIG WIN:✅ Avoids recompiling unchanged dependencies between builds✅ Speeds up subsequent builds dramatically (415s → 196s)✅ Survives across pipeline runs for  - Minimal Impact:⚠️  doesn't write much to  during compilation⚠️ Most I/O goes to  (already on persistent volume)⚠️ Modern container overlay filesystem is "good enough" for the small amount of temp files's compiler architecture is smart:Compiled artifacts go to cache directory - this is where the bulk of I/O happensTemporary files are minimal -  doesn't create many intermediate temp files - the compiler keeps most data structures in  during compilation - on warm cache, there's very little new compilation happeningThe persistent cache eliminated the  (hundreds of seconds). The remaining time is mostly:Running tests (database operations)Adding  for  doesn't help because there's simply not much disk I/O happening there.On the first run,  compiles everything:Standard library (~100MB of compiled code)Third-party shards (dependencies)On subsequent runs,  reuses:✅ Unchanged standard library modules✅ Unchanged dependency code✅ Unchanged application code❌ Only recompiles what changed
+  
+  
+  Matrix Builds: One Cache Per Version
+ testing runs against multiple  versions:Each version gets its own cache: - old version cache - stable version cache - nightly version cacheThis prevents cache corruption when compiler internals change between versions.
+  
+  
+  Complete Woodpecker Configuration
+
+  
+  
+  Repository Trust Requirement
+ Using  and  in  requires the repository to be marked as . - Allows mounting host volumes into containers, providing access to persistent storage - Allows mounting in-memory filesystems, requiring elevated container privilegesBoth features give containers more access to the host system.  restricts these features to prevent potentially malicious pipeline configurations from compromising the CI infrastructure.Navigate to repository settings in Enable the  checkboxOnly repository administrators can modify this setting Only enable trust for repositories with controlled access and reviewed pipeline configurations. Trusted pipelines can potentially access sensitive data on the CI host system.Named volumes survive pipeline runs - 's volume mounting is key for persistence - each  agent maintains its own cache, not shared across agentsRepository must be marked as "Trusted" - required for using  and  features - especially for projects with many dependencies - persistent cache is the killer feature for 
+  
+  
+  Potential Issues and Solutions
+
+  
+  
+  Problem: Cache grows too large
+ Periodically clean old caches or set retention policies in  agent configuration.
+  
+  
+  Problem: Cache corruption after  upgrade
+ The  suffix naturally creates new caches for new versions.
+  
+  
+  Problem: Multiple agents don't share caches
+ This is by design - named volumes are local to each agent. Each agent maintains its own cache, which means:First build on each agent will take the full 415 seconds (cold cache)Subsequent builds on the same agent will take ~196 seconds (warm cache) depending on which agent picks up the jobFor consistent performance across all agents, consider:Use agent labels to pin jobs to specific agentsImplement external cache storage (, , network volumes)Accept variable build times as a trade-off for distributed load
+  
+  
+  Problem: Volumes not mounting or permission errors
+ Verify the repository has  status enabled in  settings. Without trust,  and  directives are silently ignored or produce permission errors.
+  
+  
+  Comparison with Other CI Systems
+ with path /home/runner/.cache/crystal directive with key: ${CI_COMMIT_REF_SLUG}Named volumes with version-specific keys's approach is simpler - no cache upload/download steps, just persistent volumes.]]></content:encoded></item><item><title>Pyrite Stone for Wealth, Confidence &amp; Positive Energy</title><link>https://dev.to/shubhanjali_crystal/pyrite-stone-for-wealth-confidence-positive-energy-1j1c</link><author>Crystal</author><category>blog</category><pubDate>Sat, 10 Jan 2026 13:31:24 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[
+The  is widely valued for its association with wealth, confidence, and positive energy. Many people choose pyrite to support motivation, focus, and financial stability in daily life. This golden-toned crystal is also believed to protect against negative influences while encouraging a strong and confident mindset.At , pyrite stone products are carefully selected for their natural quality and authenticity. Each stone is chosen to maintain its natural energy, making it suitable for meditation, intention setting, or everyday use for those seeking balance and abundance.]]></content:encoded></item><item><title>Rolling Position Strategy: Code Implementation and Application for Risk-Takers</title><link>https://dev.to/chronosquant/rolling-position-strategy-code-implementation-and-application-for-risk-takers-3aa9</link><author>fmzquant</author><category>blog</category><pubDate>Fri, 9 Jan 2026 02:33:18 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[In the field of quantitative trading, the rolling position strategy is an attractive yet challenging topic. The core concept of this strategy is to reinvest realized profits back into trades during trending markets, achieving compound growth. This article will explore in depth how to transform the trading idea of rolling positions step by step into executable code logic, focusing on the thought process rather than technical details. It should be noted that while the rolling position strategy amplifies returns, it also amplifies risks. This article is intended for educational and discussion purposes only.
+  
+  
+  I. In-Depth Analysis of the Profit Logic Behind Rolling Position Strategies
+1.1 The Mathematical Essence of Rolling Positions
+The profit logic of the rolling position strategy is essentially a compound growth model. Let's understand this with a simplified example:Traditional single trade (3 consecutive 10% gains):Initial capital: 100 USDT, 3x leverageMarket gain: (1+10%) × (1+10%) × (1+10%) - 1 = 33.1%Profit: 100 × 3 × 33.1% = 99.3 USDTFinal: 199.3 USDTRolling position trade (3 consecutive 10% gains):Round 1: 100 USDT → Profit 30 USDT → Capital becomes 130 USDT
+Calculation: 100 × 3x leverage × 10% gain = 30Round 2: 130 USDT → Profit 39 USDT → Capital becomes 169 USDT
+Calculation: 130 × 3x leverage × 10% gain = 39Round 3: 169 USDT → Profit 50.7 USDT → Capital becomes 219.7 USDT
+Calculation: 169 × 3x leverage × 10% gain = 50.7
+Under the same market conditions of 3 consecutive 10% gains:Single trade: Profit of 99.3 USDTRolling position trade: Profit of 119.7 USDTCompounding advantage: 20.4 USDT (approximately 20.5% improvement)
+With the same 3 consecutive 10% gains, a single trade yields 99.3 USDT profit, while rolling positions yield 119.7 USDT profit. This difference is the power of compounding.Expressed mathematically:Traditional trading: Final capital = Initial capital × (1 + Leverage × Price change)
+Rolling position trading: Final capital = Initial capital × (1 + Leverage × Single price change) ^ Number of rolls
+This reveals the essence of rolling positions: transforming linear growth into exponential growth. However, it also exposes the risk: a single stop-loss can wipe out all previous compound gains.
+  
+  
+  1.2 Three Core Questions of Rolling Position Strategies
+Before writing any code, we need to answer three fundamental questions at the strategy level:Question 1: When to start? (Initial entry)This requires identifying the signal for the beginning of a trend.Question 2: When to continue? (Adding rolling positions)This is the core of rolling positions: how to determine whether the trend continues after taking profit?Question 3: When to stop? (Exit and observe)Active exit: Trend weakeningPassive exit: Stop-loss triggered
+These three questions determine the entire framework of the strategy. Below, we will transform each of them into code logic one by one.
+  
+  
+  II. Question One: When to Start? — Finding the Trigger Point for Entry
+2.1 Ideal vs. Reality of Rolling Position Strategies
+Let's first understand the ideal application scenario for rolling position strategies.Imagine if you could enter when SHIB started rising from $0.000001, or establish a position on the eve of an altcoin's explosive rally. Through consecutive rolling positions, 100 USDT could become 10,000 USDT or even more. This is the ultimate dream of the rolling position strategy—entering before a coin explodes and capturing ten-fold or even hundred-fold returns.But the problem is, how do you know which coin will surge? And when will it surge?If you're a project insider or have inside information, you might know positive news in advanceIf you're an ordinary trader, you can only rely on market signals to make judgments
+For most of us, trying to precisely capture such explosive moments is, frankly speaking, pure luck. We cannot predict the future; we can only use historical data and technical indicators to increase the probability of "getting lucky."2.2 From Ideal to Reality: Simulating Entry with Technical Indicators
+Since we cannot predict which coin will surge, what we can do is: establish an executable set of entry rules and use technical indicators to simulate "trend initiation" signals.It's like fishing in a vast ocean. Although we don't know where the big fish are, we can:Observe ripples on the surface (price fluctuations)Analyze the direction of currents (trend direction)Choose appropriate tools (technical indicators)
+When multiple signals converge, we believe a trend "might" be starting, so we enter and try. If we're right, we ride the trend and profit through rolling positions; if we're wrong, we cut losses promptly and exit.2.3 Technical Implementation of Entry Signals
+*Choosing technical tools: *We use a dual EMA system (EMA5 and EMA10) as our trend identification tool. The reasons for this choice are simple:Simple and intuitive, easy to verifyResponds quickly to price changesParameters balance sensitivity and stability
+*Capture trend turning points by detecting "golden crosses" (EMA5 crossing above EMA10) and "death crosses" (EMA5 crossing below EMA10):Golden cross → Long signalDeath cross → Short signal
+Code approach:
+1. Retrieve data from two consecutive candlesticks
+2. Calculate EMA5 and EMA10 for each
+3. Compare the change in their relative positions
+4. Detect crossover → Determine direction → Open position
+We won't delve into the details of golden and death crosses here, as these are fundamental concepts in trading. The key point is: we need a clear, quantifiable entry signal to trigger the starting point of rolling positions.
+  
+  
+  III. Question Two: When to Continue? — The Core Mechanism of Compound Rolling Positions
+**3.1 Understanding the Essence of Rolling Positions: A Rational **Adventurer's Game
+The rolling position strategy is essentially a rational adventurer's game. Let's understand it through a complete scenario:1. You take out 100 USDT from your exchange account as adventure capital
+2. This 100 USDT is managed independently, isolated from other funds in your account
+3. You start trading with this 100 USDT:
+
+  - Win → Profits are added to the capital pool, continue trading with larger capital (rolling)
+  - Lose → Stop-loss triggered, return to empty position
+
+4. Repeat this process until:
+
+  - Either you lose all 100 USDT (game over)
+  - Or you roll to a satisfactory amount (voluntary exit)
+The brilliance of this game lies in:Controlled risk: Maximum loss is 100 USDT, without affecting other funds in your accountUnlimited upside: If the trend cooperates, compounding can quickly double your capitalClear rules: Definite take-profit, stop-loss, and rolling position rules
+3.2 Capital Pool Design: The Key to Achieving Compound Growth
+This is the most crucial design concept in the rolling position strategy.Problems with the traditional approach:Suppose your exchange account has 1,000 USDT:First position opened with 100 USDTAfter profiting 30 USDT, account becomes 130 USDTHow much should you use for the second position? 100 or 130?How do you distinguish whether this is profit from the rolling strategy or from other operations?
+Create a virtual "strategy capital pool":
+
+Initialization:
+strategyCapital = 100  // Allocate 100 USDT from account
+
+1st trade:
+Position size = 100 USDT
+Profit after take-profit = 30 USDT
+strategyCapital = 100 + 30 = 130 USDT
+
+2nd trade (rolling):
+Position size = 130 USDT  // Automatically uses profit from 1st trade
+Profit after take-profit = 39 USDT
+strategyCapital = 130 + 39 = 169 USDT
+
+3rd trade (rolling):
+Position size = 169 USDT  // Continue compounding
+...
+Advantages of this design:Capital isolation: The strategy only uses the designated 100 USDT, without affecting other account fundsAutomatic compounding: Each profit is automatically added to the capital pool, naturally using larger amounts for the next positionControlled risk: Worst case scenario is losing 100 USDT, never exceeding expectationsClear tracking: You can precisely know how much the strategy has grown from 100 USDT
+3.3 Rolling Decision: Continue or Stop After Take-Profit?
+This is the soul of the rolling position strategy: after a take-profit order is filled, we must make a critical decision—continue rolling or stop?Suppose we're long on BTC:
+- Entry price: 45,000 USDT, opened position with 100 USDT
+- Take-profit price: 49,500 USDT (10% increase)
+- Take-profit filled, profit of 30 USDT
+- Current capital pool: 130 USDT
+
+Here's the question:
+Option A: Stop, exit with 130 USDT, return to empty position
+Option B: Continue, open another long position with 130 USDT (rolling)
+This decision cannot rely on "intuition"; it must have clear criteria. Our judgment logic is: Is the trend still continuing?At the moment the take-profit order is filled, recalculate the latest technical indicators (EMA):If the original direction is long:
+  Check if EMA5 is still above EMA10?
+    - Yes → Uptrend not broken → Continue long (rolling)
+    - No → Trend may be weakening → Stop, end this round
+
+If the original direction is short:
+  Check if EMA5 is still below EMA10?
+    - Yes → Downtrend not broken → Continue short (rolling)
+    - No → Trend may be weakening → Stop, end this round
+3.4 Rolling Position Execution FlowIf the decision is "continue rolling":1. Update capital pool
+   strategyCapital = Original capital + Current profit
+
+2. Reopen position based on new capital pool
+   New position size = strategyCapital × Leverage
+
+3. Place new take-profit order
+   New take-profit price = New entry price × (1 + Take-profit ratio)
+
+4. Set new stop-loss price
+   New stop-loss price = New entry price × (1 - Stop-loss ratio)
+
+5. Increment rolling counter
+   rolls = rolls + 1
+If the decision is "stop":1. Save statistics for this round
+   - Number of rolls
+   - Total profit
+   - How much 100 grew to
+   - Duration
+
+2. Retain capital pool amount
+   strategyCapital keeps current value
+
+3. Return to empty position
+   Wait for next entry signal
+Judge immediately after each take-profit, no delayJudgment criteria are objective (moving average relationship), not subjective speculationIf continuing, increase position size; if stopping, preserve gains
+3.5 The Power and Cost of Compounding
+Let's feel the power of compounding through a complete example:Initial capital: 100 USDT
+Take-profit ratio: 10%
+Leverage: 3x
+
+Round 1: 100 USDT → Profit 30 → Capital pool 130
+Round 2: 130 USDT → Profit 39 → Capital pool 169
+Round 3: 169 USDT → Profit 50.7 → Capital pool 219.7
+Round 4: 219.7 USDT → Profit 65.9 → Capital pool 285.6
+Round 5: 285.6 USDT → Profit 85.7 → Capital pool 371.3
+
+Rolling 5 consecutive times, 100 becomes 371.3, a 271% increase!
+
+Round 1: 100 USDT → Profit 30 → Capital pool 130
+Round 2: 130 USDT → Profit 39 → Capital pool 169
+Round 3: 169 USDT → Trend reverses → Stop-loss triggered
+Stop-loss ratio 5%, loss: 169 × 3 × 5% = 25.35 USDT
+Remaining capital: 169 - 25.35 = 143.65 USDT
+
+Originally rolled from 100 to 169, after one stop-loss only 143.65 remains
+This is the double-edged sword of rolling positions:When successful: Exponential growth, exhilaratingWhen failed: Rapid giveback, or even losses
+  
+  
+  IV. Question Three: When to Stop? — Stop-Loss Is the Last Line of Defense
+
+Active exit: Trend weakening
+— This situation was already addressed in "Question Two"—after take-profit, if the trend doesn't support continuation, we actively choose to stop. This is the ideal exit method, leaving with profits.Passive exit: Stop-loss triggered
+— This is what we need to focus on now—when the market moves against us, price hits the stop-loss line, and we're forced to close the position.4.2 The Necessity of Stop-Loss
+Many people dislike stop-losses because:Stop-loss means admitting you were wrongStop-loss results in actual lossesSometimes the price bounces back after a stop-loss
+But in the rolling position strategy, stop-loss is the lifeline for survival. Think about it:
+Without stop-loss:
+Round 1: 100 → Rolled to 169
+Round 2: 169 → Trend reverses, no stop-loss
+Price keeps falling: 169 → 150 → 120 → 80 → 50...
+Could eventually lose everything, or even get liquidated
+With stop-loss:
+Round 1: 100 → Rolled to 169
+Round 2: 169 → Trend reverses, stop-loss triggered
+Stop-loss 5%: Loss of 25.35
+Remaining: 143.65
+Although a loss occurred, most of the capital is preserved
+Can wait for the next opportunity
+The essence of stop-loss: Use small, certain losses to avoid large, uncertain risks.
+Remember the "rational adventurer's game" we mentioned? This game has clear ending conditions:Condition 1: Capital pool reaches zeroIf strategyCapital <= 0:
+  → Game over
+  → This adventure failed
+  → 100 USDT completely lost
+Condition 2: Voluntary exitIf strategyCapital >= Target amount (e.g., 500):
+  → Can choose to exit voluntarily
+  → Lock in profits
+  → Start a new round with 100 USDT
+Condition 3: Maximum rolling count reachedCan set a safety threshold:
+If consecutive rolls >= 10:
+  → Exit voluntarily even if trend continues
+  → Because duration is too long, risk accumulates
+  → Quit while you're ahead
+4.4 Balancing Risk and Reward
+The core of the entire rolling position strategy design is finding balance between risk and reward:Compound growth: Capital pool grows after each take-profitTrend capture: Continuous profits during uptrends/downtrendsNo ceiling: Theoretically can roll indefinitelyStop-loss protection: Maximum loss of X% of capital pool per tradeCapital isolation: Maximum loss of 100 USDTTrend judgment: Avoid frequent stop-losses in ranging marketsAnalysis of TRUMP_USDT Binance futures listing day backtest (January 20, 2025 to January 21, 2025):
+  
+  
+  V. The Essence and Limitations of the Strategy
+5.1 What Is This Strategy Simulating?
+Through the analysis above, we can clearly see that this strategy is essentially simulating:The trading behavior of a rational adventurer:Has clear entry rules (not impulsive trading)Has take-profit targets (not greedy)Has stop-loss discipline (doesn't hold losing positions stubbornly)Has rolling position judgment (knows how to utilize profits)Has capital limits (controls risk)Set aside fixed capital (100 USDT) to tryWhen encountering a trend, follow the trend to make moneyAfter making money, use profits to continue trading (compound interest)If the trend weakens, stop promptlyIf the judgment is wrong, cut losses quicklyContinue until capital is depleted or rolled to a satisfactory amount5.2 Limitations of the StrategyLimitation 1: Depends on trending marketsThis strategy performs poorly in ranging markets because:Frequent false breakouts occurPrice retraces after take-profit, unable to roll positionsRepeated stop-losses deplete the capital pool
+Limitation 2: Parameter sensitivityParameters like 10% take-profit and 5% stop-loss are not optimal:Different coins have different volatilitiesDifferent market conditions require different parametersFixed parameters cannot adapt to all situations
+Limitation 3: Cannot predict explosive momentsAs mentioned earlier, using technical indicators for entry is essentially "relying on luck":May miss truly significant movesMay enter on false breakoutsCannot position in advance like insiders5.3 Directions for Improvement
+Direction 1: Combine with workflows to screen coinsDon't just pick any random coin to rollFirst use workflows to screen for trending coins with strong explosive potentialFor example: surging social media discussions, abnormal trading volume, active on-chain data, etc.Using the rolling position strategy on these coins will have a higher success rate
+Direction 2: Dynamically adjust parametersAdjust take-profit and stop-loss ratios based on the coin's historical volatilityFor highly volatile coins, widen the stop-loss range appropriatelyFor less volatile coins, lower the take-profit target
+Direction 3: Multiple capital pools in parallelDon't put 100 USDT on a single coinInstead, split it into 5 pools of 20 USDT, rolling simultaneously on 5 potential coinsDiversify risk and increase the probability of "hitting the jackpot"Through the exploration of three core questions, we have fully demonstrated how to transform the trading idea of rolling positions into code logic. The essence of this process is: expressing a rational adventurer's trading mindset through precise rules and data structures.This is merely a simulated implementation of the rolling position concept. In reality, rolling positions is a trading strategy that requires significant market experience. This strategy is just a tool. When combined with workflows to identify trending or highly explosive coins in the future, using this tool may bring us more surprises.Maximum loss is 100 USDT, risk is controllableIf you're lucky enough to catch a major trend, you could multiply your capital several times or even tens of timesBut more often, it may be small wins and small losses, repeatedly testingThis is a game that requires patience and discipline
+There is no strategy that guarantees profits without losses—rolling positions is just a tool. What truly determines success or failure is whether you can:Find coins with potential (combined with workflow screening)Consistently execute stop-losses (don't hold stubbornly)Dare to roll positions when major trends arrive (don't exit too early)Stay rational (don't let emotions take control)
+Wishing everyone success in finding their own "big break" on the path of quantitative trading!]]></content:encoded></item></channel></rss>
