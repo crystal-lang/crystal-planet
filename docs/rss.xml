@@ -1,688 +1,289 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper</title><link>https://forum.crystal-lang.org/t/gatekeeper/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
-It doesn’t try to be a full security framework — instead, it focuses on one thing:Enforcing  for your routes, using whatever authentication mechanism  choose.It integrates into any Crystal HTTP handler chain, evaluates your rules, runs your authenticators, and returns  or  when needed.Simple  (regex path matching + optional HTTP methods)
-– sessions, JWT, API tokens, whatever fits your app with a built-in Optional Customize responses for
-Only ~125 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Crystal News Planet</title><link>https://planet.crystal-lang.org/</link><description>Liveboat RSS Feed</description><item><title>Similar to asyncio</title><link>https://forum.crystal-lang.org/t/similar-to-asyncio/8744</link><author>junetxp01</author><category>community</category><pubDate>Sun, 1 Mar 2026 22:44:47 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Does Crystal have a library similar to asyncio like in Python?]]></content:encoded></item><item><title>Redis protocol update</title><link>https://forum.crystal-lang.org/t/redis-protocol-update/8743</link><author>jgaskins</author><category>community</category><pubDate>Sun, 1 Mar 2026 21:38:32 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been wanting to update my Redis shard for the past few years to use the RESP3 format, which adds new data types and changes the output format of some existing commands. Details are in this issue. I originally kept it on RESP2 because, at the time, nothing was using RESP3. Even the modules owned by Redis Labs (now just called Redis, Inc) were still outputting RESP2 data types.The downside is that it’s a pretty breaking change, which is difficult for something like Redis where most applications aren’t using it directly and are instead using it through shards like  and . Both of those shards do dependency management well and would avoid this breaking change until they were ready to upgrade, but others might not.Anyway, if anyone’s willing to take a look and offer feedback, that would be helpful.]]></content:encoded></item><item><title>fast-http-server: Super fast, zero configuration command line HTTP Server</title><link>https://old.reddit.com/r/crystal_programming/comments/1rhrcu3/fasthttpserver_super_fast_zero_configuration/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Sun, 1 Mar 2026 07:46:17 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Blood Stone Pendant</title><link>https://medium.com/@nayakbarssa/blood-stone-pendant-e83657a0247d?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Sat, 28 Feb 2026 10:05:47 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Projects that shouldn&apos;t work: doomcr</title><link>https://forum.crystal-lang.org/t/projects-that-shouldnt-work-doomcr/8740</link><author>omarluq</author><category>community</category><pubDate>Sat, 28 Feb 2026 03:32:11 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I did a fun and useless thing: put Doom in the terminal with Crystal.
+Why did I do this? Because why not.
+Honestly I fully expected this to explode. It did not.shareware  (default)Freedoom ()docker run --rm -it doomcr:latest
+docker run --rm -it -e DOOM_WAD_SOURCE=freedoom doomcr:latest
+You can also mount your own IWAD if you already have one.If anyone wants to try it and roast the terminal rendering/input handling, I’m all ears.]]></content:encoded></item><item><title>Error: can&apos;t find file &apos;sanitize&apos;</title><link>https://forum.crystal-lang.org/t/error-cant-find-file-sanitize/8739</link><author>zw963</author><category>community</category><pubDate>Fri, 27 Feb 2026 09:01:34 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I run shards install on my project (which use  as development dependencies failed ╰──➤ $ shards install
+Resolving dependencies
+Fetching https://github.com/j8r/tail.cr.git
+Fetching https://github.com/crystal-ameba/ameba.git
+Fetching https://github.com/vici37/cr-source-typer.git
+Fetching https://github.com/petoem/inotify.cr.git
+Fetching https://github.com/i3oris/reply.git
+Fetching https://github.com/icyleaf/markd.git
+Installing inotify (1.2.0 at 77b9c80)
+Installing tail (0.3.1)
+Installing ameba (1.6.4)
+Postinstall of ameba: shards build -Dpreview_mt
+Installing markd (0.5.0)
+Installing reply (0.4.0)
+Installing source-typer (0.3.5 at 022b9d3)
+Postinstall of source-typer: shards build --without-development
+Failed postinstall of source-typer on shards build --without-development:
+CRYSTAL_WORKERS=
+args=   --without-development
+I: Resolving dependencies
+I: Fetching https://github.com/icyleaf/markd.git
+I: Fetching https://github.com/i3oris/reply.git
+I: Using markd (0.5.0)
+I: Using reply (0.4.0)
+I: Writing shard.lock
+I: Building: typer
+E: Error target typer failed to compile:
+Showing last frame. Use --error-trace for full trace.
 
-class AppHandler
-  include HTTP::Handler
+There was a problem expanding macro 'macro_140407006690976'
 
-  def call(context)
-    case context.request.path
-    when "/"
-      context.response.print "Hello World!"
-    when "/admin"
-      context.response.print "Hello admin!"
-    else
-      context.response.status = HTTP::Status::NOT_FOUND
-      context.response.print "Not found"
-    end
-  end
-end
+Code in /home/zw963/Crystal/share/crystal/src/compiler/crystal/tools/doc/markd_doc_renderer.cr:1:1
 
-# Configure Gatekeeper
-Gatekeeper.config do |config|
-  # Called when no authenticator can produce a user
-  config.on_unauthenticated = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You must log in first."
-  end
+ 1 | {% if !flag?(:without_libxml2) %}
+     ^
+Called macro defined in /home/zw963/Crystal/share/crystal/src/compiler/crystal/tools/doc/markd_doc_renderer.cr:1:1
 
-  # Called when a user exists but lacks the required roles
-  config.on_unauthorized = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You do not have permission."
-  end
+ 1 | {% if !flag?(:without_libxml2) %}
 
-  # Only allow users with role "admin" to access /admin
-  config.auth_rules << Gatekeeper::Rule.new(
-    /^\/admin/,
-    roles: ["admin"]
-  )
+Which expanded to:
 
-  # Allow everyone to access everything else (no roles)
-  config.auth_rules << Gatekeeper::Rule.new(/^\//)
+   1 |
+ > 2 |   require "sanitize"
+         ^
+Error: can't find file 'sanitize'
 
-  # Simple authenticator that always logs in an "admin" user
-  config.authenticators << ->(ctx : HTTP::Server::Context) : Gatekeeper::Identity? do
-    # In real code you’d look at cookies / headers / session etc.
-    Gatekeeper::IdentityUser(Int32).new(1, Set{"admin"})
-  end
-end
+If you're trying to require a shard:
+- Did you remember to run `shards install`?
+- Did you make sure you're running the compiler in the same directory as your shard.yml?
+I notice sanitize is a shards  in the crystal source code, but after I installed my self-compiled crystal compiler.not install(copy) following folder into dest install folder
+╰──➤ $ ls lib/ not include the lib folderCould the command I ran during installation be wrong?FLAGS=-Dpreview_mt make interpreter=1 stats=1 release=1following is the installed files:(no lib)```
+tmp
+└── local
+│   └── crystal
+├── bash-completion
+├── fish
+├── man
+```Or do I need to do some copying and setup myself?]]></content:encoded></item><item><title>Crystal spec hangs on Apple Silicon after linking</title><link>https://forum.crystal-lang.org/t/crystal-spec-hangs-on-apple-silicon-after-linking/8738</link><author>hahwul</author><category>community</category><pubDate>Fri, 27 Feb 2026 07:39:56 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m experiencing an issue where  completes Parse/Semantic and all Codegen stages (bc+obj/linking/dsymutil), but then completely hangs and doesn’t execute the specs.Here is the output with $ crystal spec
+^C
 
-handlers = [
-  Gatekeeper::AuthHandler.new,
-  AppHandler.new,
-]
+Aborted!
+Finished in 5:40 minutes
 
-server = HTTP::Server.new(handlers)
+$ crystal spec -p -s
+Parse:                             00:00:00.000543875 (   1.27MB)
+Semantic (top level):              00:00:00.305503792 ( 199.34MB)
+Semantic (new):                    00:00:00.001553541 ( 199.34MB)
+Semantic (type declarations):      00:00:00.020784875 ( 199.34MB)
+Semantic (abstract def check):     00:00:00.006858708 ( 215.34MB)
+Semantic (restrictions augmenter): 00:00:00.006153750 ( 231.34MB)
+Semantic (ivars initializers):     00:00:00.008899000 ( 231.34MB)
+Semantic (cvars initializers):     00:00:00.087336542 ( 263.39MB)
+Semantic (main):                   00:00:00.894053917 ( 712.27MB)
+Semantic (cleanup):                00:00:00.000304000 ( 712.27MB)
+Semantic (recursive struct check): 00:00:00.000601084 ( 712.27MB)
+Codegen (crystal):                 00:00:00.737221750 ( 777.27MB)
+Codegen (bc+obj):                  00:00:00.511846916 ( 811.27MB)
+Codegen (linking):                 00:00:00.206456875 ( 811.27MB)
+dsymutil:                          00:00:00.209412083 ( 811.27MB)
 
-address = server.bind_tcp "0.0.0.0", 3000
-puts "Listening on http://#{address}"
-server.listen
-This is , but the API is stable, fully tested, and intentionally small.
-I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!Edit: Renamed kemal-guardian → GatekeeperEdit: Updated the example]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
-  @[Get("/users")]
-  def index
-    "Listing all users"
-  end
+Codegen (bc+obj):
+ - all previous .o files were reused
+^C
 
-  @[Get("/users/:id")]
-  def show(id : Int32)
-    "Showing user with ID: #{id}"
-  end
-
-  @[Post("/users", auth: true)]
-  def create(name : String, age : Int32, description : String?))
-    "Creating user with name: #{name}, age: #{age} and description: #{description}"
-  end
-
-  private def authenticate! : Bool
-    true
-  end
-end
-Not a single release yep, API isn’t stable but may not have radical changes, meanwhile I’m using it in a not yet released project to test the API.]]></content:encoded></item><item><title>Hot ECR Reloading in Your Area</title><link>https://old.reddit.com/r/crystal_programming/comments/1ozgsxh/hot_ecr_reloading_in_your_area/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Mon, 17 Nov 2025 13:51:10 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>RE: https://ruby.social/@willhbr/115564828622296517[1]</title><link>https://fosstodon.org/@CrystalLanguage/115564893854977349</link><author></author><category>official</category><pubDate>Mon, 17 Nov 2025 11:52:18 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[Neat enhancement for ECR that allows hot reloading of static strings in the template at runtime 🤯 Changes to the Crystal code still require rebuilding, but this reduces the feedback loop for little changes such as adding a class in an HTML template.]]></content:encoded></item><item><title>OptionParser : conditional option</title><link>https://forum.crystal-lang.org/t/optionparser-conditional-option/8544</link><author>hutou</author><category>community</category><pubDate>Sun, 16 Nov 2025 18:43:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi,
-In OptionParser, would it be possible to have an option B depending on another option A, giving an error if option A is missing?]]></content:encoded></item><item><title>Hello, Crystal Community 👋🏼!</title><link>https://forum.crystal-lang.org/t/hello-crystal-community/8543</link><author>omarluq</author><category>community</category><pubDate>Sun, 16 Nov 2025 05:53:34 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m Omar, a Senior DevOps Engineer in Austin, TX. I spend most of my days in the Kubernetes and Go world, so picking up Crystal has been a really refreshing shift, especially since I’ve always been a Rubyist at heart.I recently started hacking on a minimalist terminal I/O library for building TUI’s in Crystal, and I’ve been having a great time with it. This language is seriously a joy to use.Excited to learn, share, and meet everyone here.]]></content:encoded></item><item><title>Single Crystal Graphene: the 2 Dimensional super material for space elevators</title><link>https://www.azom.com/article.aspx?ArticleID=16371</link><author>dreadsword</author><category>HN</category><category>hn</category><pubDate>Fri, 14 Nov 2025 17:11:28 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[In this interview, Adrian Nixon, CEO of Nixor Ltd, talks to AZoM about Space Elevators and how 2D materials will contribute to them.How does a space elevator work?The concept is straightforward. At the moment the only way of getting into space is to ride on a rocket. However, there is another way.Imagine you are standing at the equator. A geostationary satellite has been launched into orbit right above you. From your point of view, that satellite will always be directly above you.Now, imagine that you could drop a cable from the satellite down to the ground. You would see the cable directly in front of you. You could grip the cable, start climbing and eventually, you would climb all the way up into space. That’s it.Even though the concept is straightforward, actually doing it is quite the opposite. It will be one of the major engineering challenges of all time, but graphene could help.It sounds like science fiction! Could a space elevator really be built?When I first heard about the space elevator I thought it was science fiction too. Then I looked into the background and I discovered there is a worldwide community of very credible engineers and rocket scientists who believe this can be done and they are actively working on the technology.Back at the turn of this century, NASA decided to find out whether this was a realistic project.  The NASA Institute for Advanced Concepts (NIAC) funded a feasibility study into the Space Elevator, using one of their most respected scientists, Bradley C. Edwards. Dr. Edwards conducted a thorough six-month investigation and reported back with findings based on an assessment of the challenges involved and the key components of the technology:There are four basic elements of a space elevator.The base station and anchor.The counterweight and orbital space station.The tether (the cable that connects the surface to space).The climber (the elevator carriage).Dr. Edwards found that given enough money and time, everything apart from the tether could be created with the current technology. There was no material strong enough to make the tether. Carbon nanotubes were proposed as a candidate material but no continuous production process has emerged that can make them in the quantity and quality needed.So, the whole space elevator project effectively stalled. However, a global group of highly skilled rocket scientists and engineers kept alive the idea in an organisation called the International Space Elevator Consortium (ISEC). They maintain a constant watch on developing materials science.Since the NASA report was commissioned, a new material has been isolated - graphene. The technology of graphene is maturing and it now has the attention of ISEC as a candidate tether material.What are the main challenges making Graphene materials for Space Elevator tethers?Image Credits: Rost9/shutterstock.comGraphene is a fantastic 2D material. It is 200 times stronger than steel, transparent, flexible and conducts electricity better than copper. However, graphene can only be made commercially in little bits with the current technology.Take for example, the ‘200 times stronger than steel’ property. You can't make full use of that at the moment because the current commercial state is to produce graphene from graphite using the top-down method. This makes graphene as nano plates that are typically 400 nanometers long. To give an idea of how small this, look at the edge of a piece of copier paper, which is 100 microns (100,000 nanometers) thick. You could fit 250 of these graphene nanoplates across the edge of that piece of paper.So, you can see graphene nanoplates really small. You can imagine that if you wanted to use the current commercially available graphene for a space elevator task, and lots of other applications, you're going to need something like a chain. You've got all these really strong small links, but they're not connected together so nanoplate graphene will not work.The first solution you might consider would be to glue together the nanoplates. Research has been carried out looking at copolymerizing graphene nanoplatelets with various polymers to make a strong composite, however, this is not strong enough to be a viable tether material.The other way of making graphene is by the bottom-up method, which assembles graphene, atom by atom. The leading technology is called Chemical Vapour Deposition (CVD). Even though this process is really still in its infancy from an industrial point of view, it is impressive.The CVD process usually involves heating methane and hydrogen to just below 1000 degrees centigrade over a clean metal surface, such as copper or nickel. As the hot methane approaches the surface of the metal, a reaction takes place catalyzed by the metal that removes the hydrogen from the carbon in the methane molecule. The carbon from the methane lands on the metal surface and starts to link up with other carbon atoms. The lowest energy structure is a flat sp2 hybridized carbon - in other words, graphene. Once the surface is covered, the reaction stops, leaving a one atom thick 2D covering of graphene on the metal.You would think you would have a continuous sheet of graphene across the surface, but you don't get a perfect layer because there are some problems. One, is that the surface of the metal contains cracks at the microscopic level, (it looks a bit like crazy paving). When the graphene layer grows over that, it often picks up these discontinuities and you will get defects in the sheet.Another problem is that graphene grows from multiple spots at the same time; a bit like snowflakes landing on a pavement. These form separate domains, which gradually increase and then butt up against one another. Again, you get discontinuities. This creates polycrystalline graphene.Having made the graphene layer, you now have to remove it from the metal. There are two basic approaches. The first is to dissolve away the metal using an etchant solution such as a strong acid or oxidizing agent. The second is to use a strong sticky tape. The sticky tape method usually leaves a polymer residue that contaminates the graphene.Both methods are currently a batch process, although teams in the UK, USA and Norway are working on turning this method into a continuous process. All of these methods are still in the laboratory phase at present.Image Credits: 30000ad/shutterstock.comHow can you make Graphene suitable for space elevator tethers?The tether needs to be as strong as possible, so this means the entire length of the structure needs to be made from single sheets of graphene that are defect free. Such a structure would be a single molecule at a macro scale. Until recently this was thought to be impossibleHowever, back in January and March 2017, I proposed a continuous process for making defect free sheet graphene in rolls.Things then started to get really interesting, because later that year (in the summer of 2017) a team at Peking University announced they were the first to make near perfect graphene at a scale of 500mm x 50mm. They called this material single crystal graphene. A crystal in this context refers to a repeating regular pattern, rather than the sparkling brittle crystals of our everyday experience.Single-crystal graphene is important because it is very strong. Tensile strength is a measure of the force needed to pull apart any material and is measured in Pascals (Pa). Commercially available structural steel has strength of 550 MPa (550 Million Pa). A space elevator tether needs to be made from a material with strength of at least 50GPa (50000 MPa), so steel is not strong enough. Single-crystal graphene on the other hand, has a tensile strength of 130GPa. (130000 MPa). It is the strongest material ever tested and will be strong enough to make a space elevator tether.To answer your question, single-crystal graphene is the material that can make space elevator tethers. That material exists. It has already been made in the laboratory.As nothing like a space elevator has ever been made, how much can you theoretically and practically test it?NASA has done a great deal of the theoretical work on the elements of the space elevator. The International Space Elevator Consortium (ISEC) and others have continued this work so we know where the space elevator could be built and many of the obvious technical challenges have been thought through and addressed.As far as single crystal graphene is concerned we are still at the early stages. We know the material has been made at a laboratory scale but samples have been isolated for further testing.A few weeks ago, in May 2018, a team in South Korea made near perfect single-crystal graphene at the centimetre scale for testing in a laboratory. They measured the strength directly and found that the sample had a Young’s modulus of 0.9 TPa. This is very close to the predicted value of 1.0 TPa and establishes graphene as the strongest material ever tested.If you want to find out more, I’ll be presenting about this and more at the ISEC conference in Seattle on the 17th August 2018.How close are we to constructing the real thing?Image Credits: chombosan/shutterstock.comThe space elevator is about to enter the public consciousness; in simulation anyway. Disney announced a few days ago that they are now working on a Space Elevator simulator to an orbital restaurant at Disney World’s Epcot Centre in Florida!Arthur C. Clarke famously said the space elevator would be built fifty years after everyone stopped laughing. The laughter has already stopped. The real thing could be closer than you might think. A proof of concept project will be necessary to show that single-crystal graphene can be made by a continuous process. Then a series of follow up projects to design and make the production machines, so that the process can be optimised and scaled up properly. The ISEC team estimates it will probably take about 20 years. It will cost approximately 20 billion dollars just for the tether.To actually build all of the other elements, it would probably cost another $80 billion. We could get it to completion for somewhere under 100 billion dollars, over a 20 to 30 year period. That figure compares with the global space industry that is worth around 360 billion dollars in 2018 alone.You probably would discover all sorts of interesting things going forward as well, because the ROI on all this is just staggering. It might even happen in my lifetime, however there are still many hurdles to overcome.I wouldn’t want to give anybody the impression that it's going to happen anytime soon. At the moment this is a set of ideas - they've been well thought through, but they need testing properly.  This will be an industrial strength challenge over an extended period of time but I’m convinced this can be done.How will the space elevator benefit us, and what do space elevators mean for the future of space travel?Apart from getting us into space smoothly and safely, the operating costs are low. At the time of writing you can expect to pay around $20,000 per kilogram to take a payload into orbit, but with the space elevator, once you've paid all the setup costs, then you are down to $100 or $200 per kilogram. Even with large set up costs the business case is compelling.It makes a lot of sense with the return on investment (ROI) over a long period of time. If you're just going to use it as a one off, then it's a very expensive onetime thing, but the idea is that once you get a space elevator built space travel becomes routine and cheap.Dr. Edwards summed up the implications in his report for NASA: “…the long-term return we (humans) would receive on the construction of a space elevator is staggering, it would literally change our world.”Beginning his career as a Chartered Chemist and Member of the Royal Society of Chemistry, Adrian Nixon is now the Senior Editor at InvestorIntel and the Founder/CEO of Nixor Limited. He is also an advisory board member of the National Graphene Association and the Co-Founder/Facilitator of the Foresight Forum.Adrian Nixon will be the keynote speaker at the 2018 International Space Elevator Conference (17th-19th August 2018); held at the Museum of Flight in Seattle, Washington.
-        Disclaimer: The views expressed here are those of the interviewee and do not necessarily represent the views of AZoM.com Limited (T/A) AZoNetwork, the owner and operator of this website. This disclaimer forms part of the Terms and Conditions of use of this website.
-    ]]></content:encoded></item><item><title>File reads, reversing a slice</title><link>https://forum.crystal-lang.org/t/file-reads-reversing-a-slice/8542</link><author>BloodFeastMan</author><category>community</category><pubDate>Thu, 13 Nov 2025 22:01:10 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Playing with file reads / writes, so this loop will read from an input file and write to an output file:loop do
-	buf = Slice(UInt8).new(4096)
-	n = infile.read(buf)
-	break if n == 0
-	outfile.write(buf[0...n])
-end
-All is fine, the output file hashes correctly.If I place a  in there:loop do
-	buf = Slice(UInt8).new(4096)
-	n = infile.read(buf)
-	break if n == 0
-	buf.reverse!
-	outfile.write(buf[0...n])
-end
-.. and run it twice, first on an input file, and then on the file that the first run produced, I would have thought that I would be back to my starting point, but the final result (after running it twice) does not hash correctly, and the contents are jibberish.If I then manually count the input file size and set the  accordingly:loop do
-	read_length = do_length(fsize)
-	buf = Slice(UInt8).new(read_length)
-	n = infile.read(buf)
-	break if n == 0
-	buf.reverse!
-	outfile.write(buf[0...n])
-	fsize -= read_length
-end
-if infile_size < 4096 # infile_size counts down in the above loop
-	read_length = infile_size
-else
-	read_length = 4096
-end
-Now it will give me my expected result, i.e., if I run it twice, once on an input file and that on that output, I’m back to the same hash as the original input, which is interesting, as only the last slice read would not be 4096, furthermore,   be an exponential growth of 8, i.e., 1024, 2048, 4096, as a random multiple of 8 will give trash results. As an example, 3072 does not work.This snippet doesn’t actually do anything useful, just an interesting observation from a hobbyist, and  I’m sure there’s an explanation.]]></content:encoded></item><item><title>Tracking Down Progressively-Enhanceable APIs in Crystal&apos;s Stdlib</title><link>https://willhbr.net/2025/11/07/tracking-down-progressively-enhanceable-apis/</link><author>straight-shoota</author><category>HN</category><category>hn</category><pubDate>Thu, 13 Nov 2025 17:48:58 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[Something that I’m a big fan of is APIs that can be easily modified and hacked with. It’s frustrating to have to write fully production-ready code when you actually want to just prototype something, and so I’m happy when there’s an API that it’s easy to use, which then progresses into a more full-featured API.In Crystal an example of this is . If you want to get the entire contents of a file you can just do:Will this cause problems if the file is huge? Probably, but it works fine for a prototype or in something less critical. Then when you want to be a grown-up and do things properly, the API doesn’t actually change that much:What I didn’t know is that there are a more of these APIs hiding in the Crystal stdlib that I wasn’t aware of. I found these after I captured a profile of my status page library, it’s plenty fast enough (especially because I’m the only person ever sending requests) but I was interested to see what it spent its time doing.I captured the sample using samply which is super convenient. I built it from the main branch so I could use the  flag. This dumps the symbol info directly into the profile file, since running a local web server and having the Firefox profiler talk back to it runs into all sorts of security roadblocks, especially when it’s not actually running locally.To get some nice juicy data, I wrote another little program that would just spam a certain URL with HTTP requests, compiled with  to make the most of my cores:Unsurprisingly, after getting the profile I can confirm it spends its time dumping bytes into the response buffer, since there’s no interesting calculation on my default  page. However there were two interesting sections that were taking more time than I expected.The first is , which replaces characters that could be interpreted as HTML tags with the corresponding HTML entity. I noticed two things, first it immediately calls into , and inside that there’s a  call. My first thought was maybe it’s implemented with a regex that’s convenient but not performant, but looking at the docs and the code, that’s not the case, it uses a  to make replacements with by looking up each character in the string with its replacement in the hash.The  revealed the real issue though,  takes a string and returns a new string with the escapes applied, and that new string has to be allocated. In my code I took that string and immediately dumped it into an :Look at that, I’m using the wrong API! That’s convenient, but it would be better if  would write directly into  instead of allocating its own buffer. Well that’s what HTML.escape(string : String, io : IO) does, and it’s trivial to swap:Re-profiled, and that section is gone from the trace. Easy.Removing the non- API isn’t a good move here, since you’ll just encourage people to do this:Since what they  right now is a , not a lecture about why not to allocate short-lived buffers.The second thing that stood out were calls to IO::Memory#increase_capacity_by.  is a dynamically-sized in-memory buffer, and the default capacity (as of Crystal 1.18.2) is just 64 bytes. When a write would exceed the size of the buffer, the capacity is increased to the next power of two with , so as soon as we write our 65th byte, it’ll be increased to 128 bytes.The response of a somewhat small status page is just under 5000 bytes,  so—assuming a bunch of small writes to the buffer—it will have to be expanded seven times. Since we know the response is going to be at least a few kilobytes (the template with no content is 1kB), setting the initial size to 4kB avoids having to do 6 reallocations.In the end this is a non-issue, because the code is so low-traffic and already very performant. As I’ve written before I don’t like the somewhat superstitious approach of limiting language features because someone might mis-use them. Slow code can come from anywhere, and you have to actually look for it. You can see the changes I actually made to the status page library in this commit.On the other hand, there is an opportunity for languages to enable library authors to guide their API use. Most languages have (either builtin or through a linter) a way of annotating that the return value from a function shouldn’t be ignored. In Rust this is the  tag.What could be neat is a system for attaching metadata to objects at compile time that could be read later in the compile step. So the  method could attach a bit of information that says the string it returns could be directly written to an . Then if that object is passed to  (or  or whatever) it could check that attribute and provide a warning.This would fit in with Crystal’s existing macro system, but I’m sure it would explode the complexity of the compiler and make compilation much slower.]]></content:encoded></item><item><title>Restricting options in CLI app</title><link>https://forum.crystal-lang.org/t/restricting-options-in-cli-app/8541</link><author>hutou</author><category>community</category><pubDate>Wed, 12 Nov 2025 11:36:09 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A CLI app I am working on has the following syntax in the command line:appname command subcommand argsI’m using OptionParser and I’d wand to restrict some option at app level or the command level, for example:appname --option1 command  --option2 subcommandso that I’d prevent option1 to be used after command or subcommand, and option2 used before command.]]></content:encoded></item><item><title>VS Code Ameba Extension v0.3.0 Released</title><link>https://forum.crystal-lang.org/t/vs-code-ameba-extension-v0-3-0-released/8540</link><author>nobodywasishere</author><category>community</category><pubDate>Tue, 11 Nov 2025 03:26:33 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[What's Changed
-
-Add link to documentation by @nobodywasishere in #146
-Move to CancellationToken, Use spawn instead of exec, Add output channel for logging by @nobodywasishere in #147
-Reload diagnos...]]></content:encoded></item><item><title>Zeroing in on Zero-Point Motion Inside a Crystal</title><link>https://physics.aps.org/articles/v18/178</link><author>lc0_stein</author><category>HN</category><category>hn</category><pubDate>Mon, 10 Nov 2025 21:17:04 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Crystal Forge: Compliance-First NixOS Fleet Management</title><link>https://crystalforge.us/</link><author>UlyssesZhan</author><category>HN</category><category>hn</category><pubDate>Mon, 10 Nov 2025 19:59:48 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Crystal 1.18.0 Is Released</title><link>https://crystal-lang.org/2025/10/14/1.18.0-released/</link><author>ksec</author><category>HN</category><category>hn</category><pubDate>Mon, 10 Nov 2025 05:25:28 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.0 with several new features and bug
-fixes.This release includes 172 changes since
-1.17.1
-by 31 contributors. We thank all the contributors for all the effort put into
-improving the language! ❤️Below we list the most remarkable changes in the language, compiler and stdlib.
-For more details, visit the full
-changelog.We do not expect any breaking changes in existing code. If you notice any
-unexpected issues, please let us know in the issue tracker or forum.Execution contexts from RFC 0002 continue as a preview feature with opt-in
-with compiler flags -Dpreview_mt -Dexecution_context. It might move out of
-preview in the next release.The preview of synchronization primitives in  has seen some
-improvements as well.Deprecation warnings are now available on types and aliases (#15962) as well
-as individual method parameters (#15999).
-Deprecated types only trigger warnings when they are actually  (e.g.
-calling a class method), not when they’re just part of a type restriction, for
-example.
-Deprecated parameters only trigger a warning when the particular parameter is
-used in a call. Calls without this parameter are unaffected.The format of  has been adjusted slightly to align with the Internet
-Extended Date/Time Format (IXDTF) defined in RFC 9557 (#16039).Changes from the previous format:Replace  location by  offsetSkip zero nanoseconds entirely even when  is true (see https://github.com/crystal-lang/crystal/pull/16039#discussion_r2250863021)Remove whitespace between time and offsetWrap location in square brackets to indicate an IXDTF time-zone suffixSome examples show the differences:The local Windows system time zone now uses the canonical IANA name (#15967).The output of  got a wrapper to indicate
-the  type and differentiate from the wrapped type (#15979).
-The equivalent for  is still pending.The private constructors of  moved into the 
-hook (#16147). They’re now defined on the including types which is more robust
-in terms of  overload ordering. This also allows referring generic
-type variables inside converters. now uses scoped ANSI reset codes which only reset the respective
-property, instead of resetting  (#16052).We added type restrictions to many API methods. This improves the documentation.
-This is a semi-automatic effort, assisted by a tool that automatically extracts
-typing information from the semantic analysis of a program (#15682).Multi-line strings containing source code in compiler specs have had two
-different formats: Some of them were using regular string literals, others used
-heredocs. The latter was usually preferred in new code additions because
-line numbers and indents are more sensible. And with an appropriate heredoc
-identifier to denote the language, we even get nested syntax highlighting.
-In this release we’ve converted all compiler specs to use heredocs
-(#11291).With the help of , we’ve enabled and applied a couple more linter rules:
- (#16010),  (#16011), and
- (#16014).The compiler can dump type information to a JSON file when the environment
-variable  is set (#16027).Resolve types when guessing return type from class method overloads (#16118).In the following snippet, the compiler is able to infer ’s type to be , since both overloads of  have a return type of :Guess instance variable types from global method calls (#16119).This allows the following to compile:The call needs to be global; other than that, type guessing for top-level methods has the same limitations as for class methods.Hash literals are evaluated from left to right, fixing a regression from 1.6.0 (#16124).Temporary variables are now grouped by file name in order to increase the chance
-of reusing previous macro expansions (#16122).Fully exit the process on  from REPL (#16171)Fixed interpreter hanging on the signal pipe (#16167)Support for LLVM 21.1 and 22.0 (#16062)Update Unicode to 17.0.0 (#16160)We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Kemal 1.8.0 is released! Faster Routing and Better Error Messages</title><link>https://old.reddit.com/r/crystal_programming/comments/1oqo5wc/kemal_180_is_released_faster_routing_and_better/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Fri, 7 Nov 2025 07:33:52 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Question about inheritence</title><link>https://forum.crystal-lang.org/t/question-about-inheritence/8538</link><author>Fulgurance</author><category>community</category><pubDate>Thu, 6 Nov 2025 15:26:24 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, today I did this small test for the need of my project.I would like to understand why the result is false ?class Mother
-
-    def self.isDaughter : Bool
-        return self.class == Daughter
-    end
-
-end
-
-class Daughter < Mother
-end
-
-puts Daughter.isDaughter
-]]></content:encoded></item><item><title>Zensical – A modern static site generator built by the Material for MkDocs team</title><link>https://forum.crystal-lang.org/t/zensical-a-modern-static-site-generator-built-by-the-material-for-mkdocs-team/8534</link><author>Fryguy</author><category>community</category><pubDate>Wed, 5 Nov 2025 16:43:21 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We are thrilled to announce Zensical, our next-gen static site generator that addresses and overcomes the technical limitations of MkDocs]]></content:encoded></item><item><title>Eliminate environment modifications</title><link>https://forum.crystal-lang.org/t/eliminate-environment-modifications/8533</link><author>straight-shoota</author><category>community</category><pubDate>Wed, 5 Nov 2025 09:10:48 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Modifying a process’ environment is generally not thread-safe because it is memory shared between all threads of a process.
-System functions like  or  are based on a global variable ( on unix systems). When a thread updates the environment configuration, it may reallocate the memory. Thus, any other thread which had previously obtained the pointer before the update and is now reading from the old memory, may be left with corrupt data.We could offer some mitigation by synchronizing access through Crystal’s  interface.
-However, that would still not be 100% safe because it cannot account for direct access via the system APIs.But maybe there’s a simpler solution: Disallow environment modifications, i.e. deprecate .This idea is based on this hypothesis:Unless your process is a shell or adjacent, it shouldn’t need to mutate its environment.We’d need to look a bit more closely at specific use cases, but I think this might be a valid option.It should be feasible to keep the functionality of  available in a portable interface, but with an explicit warning that it’s potentially unsafe (e.g. ).Safe usage could only be guaranteed in a single-threaded process. It should be safe to set environment variables at the start of a multi-threaded process, before it spawns any other threads.A common usage pattern is when you need to adjust the environment for a piece of code that you cannot configure directly but depends on environment variables.This is primarily relevant for testing code that is supposed to react to environment settings. For example, we test several features in the standard library and compiler using the  helper.
-This functionality seems reasonable and relevant.
-But instead of modifying the process’ environment, we could mock it using a fiber-local overlay in the  interface.
-In some cases, it might even be sufficient to just pass in configuration as explicit arguments.I’m not aware of any specific other use cases. But I could expect instances where you need to modify the environment for calling a library methods which are not using Crystal’s  interface and thus  to read from the actual process environment.
-That generally smells like bad design, but there might be some use cases.I’m posting this thread to ask for feedback and examples.29 posts - 10 participants]]></content:encoded></item><item><title>Yet another spin-off shard: ralsina/docopt-config</title><link>https://forum.crystal-lang.org/t/yet-another-spin-off-shard-ralsina-docopt-config/8528</link><author>ralsina</author><category>community</category><pubDate>Mon, 3 Nov 2025 15:44:59 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I like using docopt in my CLI tools because it means the docs are always correct. However once you want to support other means of config like config files and env vars, docopt has no support.UNTIL NOW with ralsina/docopt-config where you get it all for free. Just write your docopt and use docopt_config instead of docopt and It Just Works.Zero config. A simple flat yaml file with keys like your options. Env vars with a prefix and the same name as your options. All that is read and properly prioritized, keeping your docopt as the only source of truth for your app’s config.It’s not for every tool (git would not be a good fit!) but for reasonably simple things it should be nice and easy.]]></content:encoded></item><item><title>Lucky is Lightning Fast!</title><link>https://dev.to/kinvoki/lucky-is-lightning-fast-3m2c</link><author>kinvoki</author><category>blog</category><pubDate>Mon, 3 Nov 2025 06:34:05 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Lucky Framework (Crystal) ranks near the top in TechEmpower Benchmark #20, competing strongly against full-stack frameworks like Rails, Phoenix, and Django.Pretty solid result! Especially if you only consider "Full-stack" frameworks and not micro-stuff.1. Lucky is near the top in Crystal-land (and beyond)In the Crystal ecosystem, Lucky ranks near the top. And in the broader web framework landscape too.2. Crystal frameworks dominate speedThe main speed-competitor in Crystal-land is Raze framework (which has been retired). Lucky's speed is comparable to most other Crystal frameworks: Kemal, Spider-Gazelle, Onyx & Amber (all did pretty well on speed thanks to Crystal 😊)3. Lucky holds its own against full-featured frameworksThe most important comparison for me is against true full-featured frameworks like Rails, Hanami, Phoenix, Django, Symphony, Grails, Spring, Prologue, etc. And  is doing really well there.If you go to the main page, there are ~250 benchmark results for every web-framework under the sun. However, that's too many results for my taste 😊 i.e. things like "h2o.cr" on the list are too purpose-specific for me or anything I would do in a normal course of things, developing an enterprise or user-facing web application.I'm currently considering a Full-Stack Framework for a small web-based enterprise-type project and deciding between Phoenix, Lucky & Rails. Each has its own strengths for my use-case. So this particular comparison is more of an interest to me, based on frameworks & languages that I've had exposure to or would even consider for such an application.
+Aborted!
+Finished in 17.36 seconds
+0 examples, 0 failures, 0 errors, 0 pending
+Individual specs run fine when executed separately.This issue consistently happens on macOS / Apple Silicon.Clearing the cache () does not fix the issue; it still hangs right after the Codegen/linking stage.CPU Usage: While hanging, both the  process and the compiled  binary sit at 0.0% CPU (State ). I think.. this indicates a deadlock or a blocking wait rather than an infinite loop.You can reproduce this by cloning the OWASP Noir repository and running .Architecture: Apple Silicon (ARM64)I suspect this might be a macOS-specific LLVM or spec runner issue, possibly a deadlock when the runner tries to execute the compiled spec binary. Has anyone seen this behavior before, or have any pointers on how to debug this further?]]></content:encoded></item><item><title>Retriggering a shards postinstall?</title><link>https://forum.crystal-lang.org/t/retriggering-a-shards-postinstall/8737</link><author>Fijxu</author><category>community</category><pubDate>Fri, 27 Feb 2026 05:20:51 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Some tools that I use like Ameba and cr-source-typer execute a postinstall (example: cr-source-typer/shard.yml at master · Vici37/cr-source-typer · GitHub ) and will place it’s executable in the  directory of the current project, but when the system is updated, shared libraries change and then the shard binary has to be rebuilt, but shards does not seem to have an easy way to re trigger the postinstall without removing the dependency from the  file and running shards install <dependency>.There is any other way to do it? Would be great is shards could keep track of the installed binaries from dependencies and check if their linked libraries are still valid or something like that.]]></content:encoded></item><item><title>Today in prototypes that worked too well: Sheety!</title><link>https://forum.crystal-lang.org/t/today-in-prototypes-that-worked-too-well-sheety/8733</link><author>ralsina</author><category>community</category><pubDate>Tue, 24 Feb 2026 21:53:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[What is a spreadsheet? It’s a bunch of nodes tied with dependencies. Some of the nodes are pure data, others are code.It’s a DAG. And you know who has wrote library that processes DAGs as tasks? This guy! it’s called Croupier.So, some cells are just a value with a key: Other cells are code: But of course the code is in “Excel formula language” … how if there was a parser for it? There are a bunch. I liked one called  “formulas” in Python. So I ported it to Crystal, and that creates a AST.Of course one can use a AST to generate code. So it could generate Crystal code. Which could be defined as Croupier tasks. Of course the parser knows EXACTLY the dependencies. So the tasks can be wired to do the right thing.So then you can compile the “spreadsheet” into a program.And the cells that are just data don’t need to recompile the program, they are just data, you update, then croupier reruns ONLY the tasks that need running, updating ONLY the cells that need updating, and can even do that on multiple threads.Here’s an example of it in “action”:20 posts - 5 participants]]></content:encoded></item><item><title>Possible Bug report: Problem compiling Crystal programs after update to the latest release on Termux (Android)</title><link>https://forum.crystal-lang.org/t/possible-bug-report-problem-compiling-crystal-programs-after-update-to-the-latest-release-on-termux-android/8732</link><author>MathNerd</author><category>community</category><pubDate>Tue, 24 Feb 2026 20:52:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[As depicted in the image below:Before the update everything worked just fine.]]></content:encoded></item><item><title>The Corporate Vault: How to Build a 2026 Antifragile Crypto Treasury</title><link>https://dev.to/tanelith/the-corporate-vault-how-to-build-a-2026-antifragile-crypto-treasury-31e5</link><author>Emir Taner</author><category>blog</category><pubDate>Tue, 24 Feb 2026 16:06:42 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[The “crypto bubble” debate is over.
+When banks like Goldman are sitting on billions in digital assets and major exchanges are hard-coding BTC into insurance funds, we’re not in degen casino mode anymore - we’re watching a global re-banking in real time. 💎So if you’re still running a vibes-based portfolio in 2026… that’s a choice. Let’s talk about the blueprint institutions are quietly following.
   
   
-  ⚠️ Take These Benchmarks with a Grain of Salt
-Not all frameworks are properly optimized - Some frameworks on the list may not be configured for optimal performance - Performance should be one consideration among many - Ecosystem, dev experience, and productivity are all more important than speed in most cases ☝️ - Lucky ticks all 3 boxes for me: February 9, 2021Originally published: February 08, 2021 • Last updated: February 09, 2021]]></content:encoded></item><item><title>Through the Crystal Ball of VC Florian Graillot</title><link>https://insurtechamsterdam.com/public/blog/insurance-innovation</link><author>Venesha</author><category>HN</category><category>hn</category><pubDate>Sun, 2 Nov 2025 09:12:22 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[Today, we sit down with Florian Graillot, a leading voice in the insurtech ecosystem and Founder of AstoryaVC, a specialist venture capital fund dedicated to transforming the insurance industry. 
-
-Florian shares his perspective on how Insurtech has evolved — from early digital distribution models to today’s AI-driven, B2B, and embedded solutions. He discusses the changing expectations for startups and how collaboration between incumbents and innovators is shaping the next phase of insurance transformation.Looking back at the first wave of Insurtech, what stands out most—the successes, the failures, or the lessons that shaped where the industry is today?That’s a very fair question as the hashtag InsurTech recently turned 10 ! Based on all investments announced across Europe in insurance technology, I’d say there are several trends to keep in mind.The first one is that most startups from that initial wave of InsurTech were addressing the ‘distribution’ part of the value chain. Since inception, over half of all rounds announced were in that section. Most players were even distributing directly to end customers (B2C or B2SME) while another significant part of funding went to full-stack players (startups operating under an insurance license).Since the second half of 2022, things have changed.Investors are currently fueling a broader range of startups, either embracing different distribution models (e.g. ‘embedded insurance’) or addressing other sections of the value chain. I think about the ‘product’ part where more startups are leveraging technology to build resilience and tackle emerging risks (including climate or cyber for instance). And a growing number of players have embraced a B2B positioning, meaning they are developing technology for incumbents.Ultimately, several leaders have emerged as the VC market has pivoted from “growth at all costs” to “profitable growth”. Several startups have indeed reached profitability while they have reached great milestones. There are several players on the market with over 500,000 customers - even close to 1m ! -, generating hundreds of millions of Gross Written Premium per year. In the UK, I think about Marshmallow selling car insurance in the UK ; I France I would refer to Alan selling health insurance, Acheel a multi-product full-stack InsurTech or Descartes Underwriting doing parametric weather (and cyber) insurance ; in Germany, Getsafe is selling many B2C insurance products.Long story short, the first wave of insurance innovation is very biased towards two single business models (D2C and full-stack) while several players have clearly emerged, and insurance innovation is more business diverse than ever, getting closer to the insurance core engine.As incumbents increasingly integrate AI-driven underwriting and claims automation, do you see space for pure-play Insurtech disruptors, or is the future more about partnerships and embedded models?AI is a buzzword. But it’s also a reality. Since the beginning of this year, a third of all deals announced in InsurTech Europe were AI-first players ! There are two trends currently structuring the market. Several players are doing “AI in insurance” and building a product or use-case while teaming up together with their insurance customers & partners. Other players are focusing on a single use-case. In the first scenario, we see shorter sales cycles but I’m wondering how to demonstrate a clear RoI with unclear use-case scenarios (up-front). In the second category, sales cycles are similar to those enjoyed in Enterprise software but the RoI can easily be demonstrated as the value proposition is clearly detailed upfront. Let’s see if both categories remain on the market or if one takes the lead in the near future. Anyway, incumbents do initiate many AI projects and there is a real diversity in terms of business models. Almost all of the value chain is under threat. Though, claim management is the clear leader. Underwriting and product design are a growing trend though less players are active on these sections of the value chain (so far).From your vantage point, what are the most pressing risks Insurtechs should be tackling today—regulatory, technological, or macroeconomic? And how do new challenges like electric vehicles, cyber threats, climate change, and digital assets shift that risk landscape?I see three major challenges for insurers in the near future. The first one is how to keep growing while inflation is going down (assuming it led to a massive price surge in the last few years, which drove revenues growth). The second challenge is around operational efficiency. Many players are even raising it publicly. And technology could definitely help. Many B2B InsurTech are already offering their services to incumbents ! Last but not least, new risks are emerging and threatening existing business lines or unlocking new ones. I think about climate, cyber, the switch to electric vehicles, financial fraud & sams, health wellbeing & longevity.Home insurance has become unprofitable in some markets due to climate risk. How can technology help insurers keep coverage affordable while remaining sustainable as businesses?In the US for instance, several players have indeed left local markets. This is not sustainable. Neither in an economic standpoint - revenues are down for these players - nor societally speaking - how to live in a non-insured World ?! In addition, in Europe for instance, several players faced a tough financial year when natural catastrophes pilled while they had a great financial year when the climate was smoother. Such a dependence on climate & natural events, is not sustainable either for incumbents. This is probably why we are spotting so many players exploring how technology (data, algorithms) could help better understand, assess and price these risks. I’m even wondering if, in several locations, climate insurance might become a must have on top of - or instead of - home insurance. And beyond pure insurance it might be a matter of expanding the risk value chain with prevention, risk assessment and resilience.2021 was the peak for VC funding in Insurtech, followed by a steep drop mirroring Fintech and VC globally. How has this climate changed the way startups should position themselves? And what separates those able to raise late-stage capital from those that stall after early traction?You’re right, the VC market has pivoted from “growth at all costs” to “profitable growth”. Startups need to show figures earlier in their journey and should demonstrate their capacity to make money. This may sound obvious but it’s challenging in the insurance industry. First, you need to sell insurance in a profitable way meaning that premium generated should cover claims with a margin ! Then you need to distribute these products - or a tech you have developed - in a profitable way, meaning you should earn more than what it costs you to find customers. Ultimately, a company could consider being profitable if other expenses enable it.Whatever the positioning (selling technology to incumbent or selling insurance products to end customers) startups now need to keep that in mind and not necessarily reached profitability in the short term - investors are here to finance the first customers - but demonstrate they have a resilient business model !Are you seeing a shift in how Insurtech VCs evaluate customer acquisition models—particularly in the SME space where conversion cycles are longer and more costly?I would refer to the famous CAC/LTV ratio in the VC industry. This compares potential revenues (LTV) with how much it costs to sign these customers (CAC). And, as mentioned above, both startups selling insurance or technology should think this way and demonstrate their resilience in that background. The SME space might sound particularly challenging as it combines downfalls: small customers - compared to Enterprise customers - but still professional players, meaning a long sales cycle (compared to B2C). But startups selling insurance to SME - or operating in the SME insurance space - have long been a model in the InsurTech space : regularly there are new entrants, and at a later stage, +Simple is now under Private Equity ownership !Where do you see the greatest impact of Insurtechs on insurers: driving revenue growth, reducing operating costs, or lowering claims expenses? Which of these areas still holds the most untapped potential?Things have evolved over the years. In the D2C space, InsurTech 1.0 claimed it would replace incumbents. If several players have reached significant milestones, things are more balanced and we see more partnerships between corporates and startups.In the B2B space, things have always been more balanced. A lot has been explored in claim management - targeting operational efficiency, but fraud is a regular use-case too (which has an impact on claim expenses. And the more the ecosystem matures, the more startups get close to the insurance core engine (risk assessment & pricing). This might have an impact on the loss ratio.In addition, tech-enabled MGA are leveraging technology (data, algorithms, …) to better address vertical niches. These players may be growth opportunities for insurers they are working with.Overall, tech startups have various impacts on the insurance business. Which makes sense as every section of the value chain and every business line is under innovation threat. There is nowhere in the market where startups are not exploring how to improve - or revamp - how insurance is done !Europe’s Insurtech scene is often described as dominated by France, Germany, and the UK. Which other regions or markets across the continent are underestimated right now?Actually the InsurTech ecosystem is vibrant across Europe. It’s true the UK and France are clear leaders - in terms of rounds announced - while Germany is slightly below what it should be (based on the FinTech comparable for instance). But beyond these three largest ecosystems, many others are worth it. And that’s something we advise to board members we meet: you should keep an eye on what is happening beyond your domestic market, wherever you are based in Europe. Spain has long been very active, Italy is gaining momentum recently, the Nordics enjoy regular InsurTech players, while Benelux has already famous names on its ground (think of Qover in Belgium, Friss in the Netherlands or Ibisa Insurance in Luxembourg). Eastern Europe is very active too, with very strong teams. And you may remember that Quantee - from Poland - got acquired by Guidewire in the first half of 2025 !If insurers truly have less useful customer data than tech platforms or Big Tech, is there a future where those platforms dominate insurance distribution? And what’s the single biggest mindset shift incumbents need to make to benefit from this second wave of innovation rather than be left behind?I really enjoy that topic. On one hand, I remember the early days of InsurTech when the market spoke about “the Uber of insurance”. Then, Google or Amazon gave it a try to insurance and resumed their initiatives. These failed attempts seemed like tech giants could not enter insurance. In the meantime, several have done great in Financial Services (e.g. banking). And beyond these few players - the tech giants - there are plenty of vertical platforms which have significant customer bases in their niche. These players are highly relevant to push insurance to their customers. And actually many already offer insurance solutions. This is enabled by InsurTech players operating in the “embedded insurance” field. They have developed technology enabling any third party to become an insurance distributor. Which scale could these players reach? This is another question. Let’s have a look at eCommerce figures: it accounts for ~30% of all retail spendings. Online insurance distribution might reach such a market share in the future. Embedded insurance is one way to do it, alongside direct distribution. Let’s see where it lands. At least, I doubt insurance could be the only industry worldwide to remain fully offline…Looking ahead, what’s the single biggest mindset shift incumbents need to make if they want to benefit from this second wave of insurance innovation rather than be left behind?I would refer to the “make or buy” dilemma.This is a real pattern I’ve spotted while investing in InsurTech for 10 years (first at AXA Ventures, then at astoryaVC). Incumbents tend to make things first. Whatever the tech trend (note this applies well to the current AI wave). For many reasons - starting with the challenge to attract, and most of all to keep, tech talents - incumbents often fail in their internal initiatives. Ultimately, they come back to the market and partner / buy an external solution. This means there is one way to take the lead and stay 24 to 36 months ahead of your competitors: go directly to external solutions.Of course, there is no one-size-fits-all rule. It’s a matter of choosing the right path: “make” where you do have a competitive advantage ; “buy” elsewhere. Too often, the market tends to “make” on every topic. This should be more balanced. Fortunately, the market is big enough to see several incumbents “buy”, building a competitive advantage by teaming up together with a startup on a specific use-case !]]></content:encoded></item><item><title>Kemal now uses a LRU Cache for Faster Routing Performance</title><link>https://old.reddit.com/r/crystal_programming/comments/1olhfag/kemal_now_uses_a_lru_cache_for_faster_routing/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Sat, 1 Nov 2025 07:04:05 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Annother Spinoff Shard: ralsina/rate_limiter</title><link>https://forum.crystal-lang.org/t/annother-spinoff-shard-ralsina-rate-limiter/8525</link><author>ralsina</author><category>community</category><pubDate>Fri, 31 Oct 2025 22:19:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I am sorry, I know I create a lot of topics all at once, but it happens when I actually have some time to work on my projects Basically, it’s a generic in-memory sliding window composible rate limiter. Usage looks like this:# Per user rate limiting
-user_limiter = RateLimiter.new(50, 3600)  # 50 requests per hour per user
-
-# Per IP rate limiting
-ip_limiter = RateLimiter.new(200, 3600)  # 200 requests per hour per IP
-
-# Per endpoint rate limiting
-endpoint_limiter = RateLimiter.new(20, 60)  # 20 requests per minute per endpoint
-
-# Per user + endpoint rate limiting
-user_endpoint_limiter = RateLimiter.new(10, 60)  # 10 requests per minute per user+endpoint
-
-# Check request (example: user trying to access API)
-username = "alice"
-ip = "10.0.0.1"
-endpoint = "/api/create_note"
-
-# Check all applicable rate limits
-limits = [
-  user_limiter.allow?(username),
-  ip_limiter.allow?(ip),
-  endpoint_limiter.allow?(endpoint),
-  user_endpoint_limiter.allow?("#{username}::#{endpoint}")
-]
-
-if limits.any?
-  # Request is allowed by all rate limiters
-  process_request(username, ip, endpoint)
-else
-  # Request exceeds at least one rate limit
-  render_error("Rate limit exceeded")
-end
-]]></content:encoded></item><item><title>Some performance testing</title><link>https://forum.crystal-lang.org/t/some-performance-testing/8524</link><author>ralsina</author><category>community</category><pubDate>Fri, 31 Oct 2025 20:04:30 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[As I worked on ToCry I got curious about how well it performed.It was  built with performance as the main goal. In fact it’s sort of guaranteed not to be the fastest way to do things. It uses sepia as data storage, which is the opposite of efficient, and I implemented it .On the other hand, the best thing was to just write some scripts and measure things!Turns out … it’s pretty fast? It can have about 20 simultaneous users and 300 RPS on a Pi 4 with 4GB of RAM, and industry standard says that equates to about 200 users.200 users? On an old SBC! This is not scientific. What a “realistic” load is needs to be discovered by having actual users :-)]]></content:encoded></item><item><title>Second fiber does not complete</title><link>https://forum.crystal-lang.org/t/second-fiber-does-not-complete/8523</link><author>axd99</author><category>community</category><pubDate>Fri, 31 Oct 2025 16:49:59 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi, I am experimenting with crystal’s fibers and to test with a buffered channel I wrote this:# generate a list of file names.
-# This is the data source.
-list = [] of String
-(1..4).each do |i|
-  list << "file#{i}"
-end
-
-# provides communication between the producing fiber and the
-# consuming one.
-ch = Channel(String).new(3)
-
-# fiber1
-# this fiber loads the data into the channel
-# This is the producer.
-spawn do
-  puts "--- Entering fiber1"
-  list.each do |val|
-    puts "fiber1, before send #{val}"
-    ch.send val
-    puts "fiber1, after send #{val}"
-  end
-  puts "--- Exiting fiber1"
-end
-
-# fiber2
-# this fiber empties the channel
-# This is the consumer.
-spawn do
-  puts "---- Entering fiber 2"
-  while val2 = ch.receive
-    puts "Received: #{val2}"
-  end
-  puts "---------------------"   # The code does not get to here
-  puts "---- Exiting fiber2"
-  puts "---------------------"
-end
-
-puts "Starting...\n"
-
-# Start the fibers
-Fiber.yield
-
-# When the control gets back here all data has been exhausted.
-puts "Goodbye!!!"
-
-# shouldn't either of these 2 restart fiber2?
-Fiber.yield
-ch.close 
-p ch.closed?
-
-
-Now, when I run the above, all data is produced and consumed as expected.
-However the ‘---- Exiting Fiber 2’ never executed.$ crystal list-files.cr
-Starting...
---- Entering fiber1
-fiber1, before send file1
-fiber1, after send file1
-fiber1, before send file2
-fiber1, after send file2
-fiber1, before send file3
-fiber1, after send file3
-fiber1, before send file4
----- Entering fiber 2
-Received: file1
-Received: file2
-Received: file3
-Received: file4
-fiber1, after send file4
---- Exiting fiber1
-Goodbye!!!
-true
-Any pointer would be most welcome.
-Many thanks.]]></content:encoded></item><item><title>Wanna do an MCP? Try this :-)</title><link>https://forum.crystal-lang.org/t/wanna-do-an-mcp-try-this/8520</link><author>ralsina</author><category>community</category><pubDate>Wed, 29 Oct 2025 19:46:53 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[MCP is a mechanism to expose things to AI agents.Turns out it’s super easy to do, and it gives you some amazing leverage for tools! For example, I gave my kanban board a MCP server and now I can just say “move the note “whatever” to done” and it works ;-)It supports stdio MCP servers (nice way to expose a CLI tool to AI agents) and web MCP servers (with kemal at least)Here is a FULL example of a MCP with a single tool, in stdio mode:require "mcp"
-
-# A simple tool that returns the answer to any question
-class AnswerTool < MCP::AbstractTool
-  @@tool_name = "get_answer"
-  @@tool_description = "Returns 42 as the answer to any question you ask"
-  @@tool_input_schema = {
-    "type"       => "object",
-    "properties" => {
-      "question" => {
-        "type"        => "string",
-        "description" => "The question you want answered",
-      },
-    },
-    "required" => ["question"],
-  }.to_json
-
-  def invoke(params : Hash(String, JSON::Any), env : HTTP::Server::Context? = nil)
-    question = params["question"]?.try(&.as_s) || "unknown question"
-    {
-      "answer"   => 42,
-      "question" => question,
-    }
-  end
-end
-
-# Start the stdio server - that's it! One line and you have a complete MCP server.
-MCP::StdioHandler.start_server
-Have fun and let me know if something is not ergnomic, I am trying to make this as boilerplate-free as possible.14 posts - 6 participants]]></content:encoded></item><item><title>Airsailer - open source Cloud orchestrator in Crystal</title><link>https://forum.crystal-lang.org/t/airsailer-open-source-cloud-orchestrator-in-crystal/8516</link><author>paulocoghi</author><category>community</category><pubDate>Wed, 29 Oct 2025 09:45:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Missed you all during my cancer treatment, and I’m finally cancer-free!I’m back full-time at my cloud computing startup, and going fully open source (MIT license) for the entire platform.LXC (Linux/system containers) for bare-metal performance, no VM overhead (PoC working)elastic bare-metal hardware resources that can be changed without rebootelastic LVM storage with thin-provisioning (manually handled today)routing for local networks + WireGuard for clusters (manually handled today)Homogeneous deployment as the strategy for automatic horizontal scaling and load-balancing (will be on a future release with PaaS automation)automatic proxy + SSL for apps, no need for 1 public IP per app (proxy lib temporarily made in JS because of acme-client lib) IaaS+PaaS with 20% of features that cover 80% of cloud demand.I’m refactoring and I will release soon at github.com/airsailer/airsailer. Since I sustain my family only through this work, I expect to release a new production version soon.Happy to talk to you again. ]]></content:encoded></item><item><title>Crystal Prime Deluxe 18000 Box of 10</title><link>https://dev.to/crystalprimedeluxe18000boxof10/crystal-prime-deluxe-18000-box-of-10-5gkf</link><author>Crystal Prime Deluxe 18000 Box of 10</author><category>blog</category><pubDate>Tue, 28 Oct 2025 16:09:54 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[VapeZone  offers premium vape products at competitive prices, based in the UK. Explore our wide range of high-quality vapes and accessories.]]></content:encoded></item><item><title>Inside an Isotemp OCXO107-10 Oven Controlled Crystal Oscillator</title><link>https://tomverbeure.github.io/2025/10/26/Inside-an-Isotemp-OCXO107-10.html</link><author>zdw</author><category>HN</category><category>hn</category><pubDate>Mon, 27 Oct 2025 21:35:46 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Create parsor for simple if statements</title><link>https://forum.crystal-lang.org/t/create-parsor-for-simple-if-statements/8514</link><author>Fulgurance</author><category>community</category><pubDate>Mon, 27 Oct 2025 17:18:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am seeking help/advice to make a very simple parser that use just  statement (I mean not with  statement or )I did already a condition parser that work, but I don’t know how to manage if there is multiple if.Basically, when my parser read a configuration file, I would like when it parse it to read the if statements:if (condition)
-    if (condition)
-        (do this)
-    end
-    if (condition)
-        (do this)
-    end
-end
-How can I manage this ? I tried to put the problem on paper, find a way, but I actually don’t really find a solution. If someone have experience already with this, I will be gratefulIn my example, if you are in the last condition, how can I know if I am not under the previous one ?]]></content:encoded></item><item><title>Inside an Isotemp OCXO107-10 Oven Controlled Crystal Oscillator</title><link>https://tomverbeure.github.io/2025/10/26/Inside-an-Isotemp-OCXO107-10.html</link><author>thomasjb</author><category>HN</category><category>hn</category><pubDate>Mon, 27 Oct 2025 10:17:24 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Cml and choose - type problems</title><link>https://forum.crystal-lang.org/t/cml-and-choose-type-problems/8509</link><author>dsisnero</author><category>community</category><pubDate>Sun, 26 Oct 2025 08:13:37 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[# =============================================================================
-# Concurrent ML `choose` type inference problem in Crystal
-# =============================================================================
-#
-# This document describes a real-world type inference limitation encountered
-# when porting John Reppy’s Concurrent ML (CML) design to Crystal language.
-#
-# The CML model centers on *events* (values of type `Event(T)`), which represent
-# potential synchronous communications or computations.  Multiple events can
-# be combined using `choose_evt` (nondeterministic choice), and only one branch
-# “commits” when synchronized via `sync(evt)`.
-#
-# The core invariant:  `choose` is purely a combinator; it doesn’t perform
-# until `sync` is called.  This design works well in SML because its type
-# inference engine easily unifies all branch result types, and events such as
-# `timeout_evt` or `never_evt` can safely coexist in a single choice.
-#
-# In Crystal, we’re very close — but there’s a key *type inference barrier*:
-#
-# -----------------------------------------------------------------------------
-# Problem Summary
-# -----------------------------------------------------------------------------
-#
-# When combining heterogeneous `Event(T)` types in an `Array`, Crystal’s type
-# inference produces a union of the *concrete generic instantiations* rather
-# than a single polymorphic supertype.  This breaks overload resolution for a
-# method like:
-#
-#     def self.choose(evts : Array(Event(T))) : Event(T) forall T
-#
-# Example:
-#
-#     ch = CML::Chan(Int32).new
-#
-#     choice = CML.choose([
-#       CML.wrap(ch.recv_evt) { |_| :recv },              # Event(Symbol)
-#       CML.wrap(CML.timeout(0.1.seconds)) { |_| :timeout }, # Event(Symbol)
-#     ])
-#
-#     # ❌ Compiler error:
-#     # expected Array(Event(Symbol)), not Array(Event(Symbol) | TimeoutEvt)
-#
-# Even though all branches *conceptually* yield `Symbol`, Crystal’s invariance
-# and separate generic instantiations mean it cannot unify them automatically.
-#
-# In SML, this works because type inference is polymorphic by default:
-#    val e1 : ’a event
-#    val e2 : unit event
-#    val choice = choose [wrap e1 (fn _ => #recv), wrap timeout_event (fn _ => #timeout)]
-#
-# -----------------------------------------------------------------------------
-# Why `never` and `timeout` amplify the issue
-# -----------------------------------------------------------------------------
-#
-# - `never_evt` is typed as `Event(T)` but never produces a value — it’s inert.
-#   In ML, this freely unifies with anything (like `’a event`).
-# - `timeout_evt` naturally yields a `Symbol` (`:timeout`) or unit.
-#   In practice, most real `choose` calls race real events against a timeout.
-#
-# In Crystal, these must share a single `T` type parameter in
-# `Array(Event(T))`, but the compiler cannot infer it when generics differ.
-#
-# -----------------------------------------------------------------------------
-# Workarounds tried
-# -----------------------------------------------------------------------------
-#
-# 1. Manual casting:
-#
-#        typed_never = CML.wrap(CML.never(Int32)) { |_| :never } as CML::Event(Symbol)
-#        choice = CML.choose([typed_never,
-#                             CML.wrap(ch.recv_evt) { |_| :recv },
-#                             CML.wrap(CML.timeout(0.1.seconds)) { |_| :timeout }])
-#
-#    ✅ Works, but ugly and non-obvious for library users.
-#
-# 2. Force the array literal type explicitly:
-#
-#        choice = CML.choose([
-#          CML.wrap(CML.never(Int32)) { |_| :never },
-#          CML.wrap(ch.recv_evt) { |_| :recv },
-#          CML.wrap(CML.timeout(0.1.seconds)) { |_| :timeout },
-#        ] of CML::Event(Symbol))
-#
-#    ✅ Works, but verbose and not ergonomic.
-#
-# 3. A dynamic fallback (library side):
-#
-#        def self.choose_any(evts : Array(Event) | Tuple)
-#          unified = evts.map do |e|
-#            CML.wrap(e.as(Event)) { |x| x.as(Symbol | Nil | Int32 | String) }
-#          end
-#          ChooseEvt(Symbol | Nil | Int32 | String).new(unified)
-#        end
-#
-#    ✅ Works, allows mixing `TimeoutEvt` and others.
-#    ⚠️ Loses static type guarantees, since all results are widened into a big union.
-#
-# -----------------------------------------------------------------------------
-# Desired behavior
-# -----------------------------------------------------------------------------
-#
-# Ideally, Crystal could unify the type variable `T` across generic parameters
-# of `Event(T)` when placed in an array, producing something like:
-#
-#     Array(Event(Symbol))  ← rather than  Array(Event(Symbol) | TimeoutEvt)
-#
-# That would allow:
-#
-#     choice = CML.choose([
-#       CML.wrap(ch.recv_evt) { |_| :recv },
-#       CML.wrap(CML.timeout(0.1.seconds)) { |_| :timeout },
-#       CML.never(Int32)
-#     ])
-#     result = CML.sync(choice)
-#
-# to compile cleanly.
-#
-# -----------------------------------------------------------------------------
-# Minimal Repro
-# -----------------------------------------------------------------------------
-#
-# ```crystal
-# module CML
-#   abstract class Event(T); end
-#
-#   class TimeoutEvt < Event(Symbol); end
-#   class RecvEvt(T) < Event(T); end
-#
-#   def self.choose(evts : Array(Event(T))) : Event(T) forall T
-#     # no-op
-#     evts.first
-#   end
-# end
-#
-# ch = CML::RecvEvt(Int32).new
-# choice = CML.choose([ch, CML::TimeoutEvt.new])
-# ```
-#
-# ❌ Error: expected argument #1 to 'choose' to be Array(Event(Int32)), not Array(Event(Int32) | CML::TimeoutEvt)
-#
-# -----------------------------------------------------------------------------
-# Discussion questions for Crystal core / type system developers
-# -----------------------------------------------------------------------------
-#
-# 1. Could Crystal’s generic unification rules be relaxed to allow
-#    `Array(Event(Int32) | Event(Symbol))` to unify as `Array(Event(Int32 | Symbol))`
-#    when the same generic base type is used?
-#
-# 2. Is there a way for a library to express a “variance-like” constraint
-#    on generic parameters for this pattern — e.g., `Event` being covariant in `T`?
-#
-# 3. Would a macro-level solution (`macro choose_evt(*evts)`) be able to
-#    introspect and compute a common union type of the block return values,
-#    producing an `Array(Event(common_union_type))` automatically?
-#
-# 4. Is there any pattern or compiler hint (`.splat`, `typeof(...)`) that can
-#    achieve this statically today without resorting to a huge union wrapper?
-#
-# -----------------------------------------------------------------------------
-# The goal
-# -----------------------------------------------------------------------------
-#
-# Bring Crystal’s ergonomics for typed event combinators closer to the
-# Concurrent ML model:
-#
-#     choose [timeout_evt, recv_evt, never_evt] |> sync
-#
-# should “just work” without any explicit type coercion,
-# while retaining static safety and type inference fidelity.
-#
-# -----------------------------------------------------------------------------
-# Thank you!
-# -----------------------------------------------------------------------------
-#
-# Any insight or future direction for generic covariance, inference improvements,
-# or macro-based workarounds would be incredibly valuable for Crystal libraries
-# that implement higher-level concurrency abstractions like Concurrent ML.
-#
-# -- Dominic Sisneros (dsisnero)
-# -----------------------------------------------------------------------------
-
-]]></content:encoded></item><item><title>Equivalent of Ruby&apos;s `self.class::Subclass`</title><link>https://forum.crystal-lang.org/t/equivalent-of-rubys-self-class-subclass/8508</link><author>Cristian</author><category>community</category><pubDate>Sat, 25 Oct 2025 21:08:32 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I would like to convert this Ruby code to Crystal:# Ruby code
-
-class P
-  class Sub
-    def m
-      "from P::Sub"
-    end
-  end
+  1. The Foundation: Bitcoin as Digital Granite 🪨
+Bitcoin is no longer “the risky trade” — it’s the .
+With most supply locked away and realized volatility sliding toward blue-chip territory, any ugly dip toward key levels is less “oh no” and more “corporate discount window”.BTC in this setup isn’t a lotto ticket. It’s reserve collateral.
   
-  def sub_m
-    self.class::Sub.new.m
-  end
+  
+  2. The Infrastructure Anchor: WBT as the Stabilizer ⚓
+Everyone talks about exchanges, very few treat their native coins as .Between index inclusion and its role as a “safe harbour” asset during panic phases, WhiteBIT Coin behaves less like a meme and more like exchange equity with built-in utility.When altcoins are doing their usual +30% / –35% shuffle, this is the piece meant to bleed less, rebound cleaner and keep the portfolio from wobbling off a cliff.
+  
+  
+  3. The Tech Leaps: ETH and LINK as the Rails 🚀
+Bucket:  = your stake in the global decentralized computer. Fees, apps, rollups — it’s the execution layer of half the industry. = the “data glue” for RWAs, DeFi, and anything that needs real-world inputs to not break.If your capital is B2B-minded — infra, RWAs, payment rails — this is where you express that thesis.
+  
+  
+  4. From Gambling to Insurance 🧠
+This isn’t about predicting the next 100x ticker.
+It’s about turning your holdings into a weather-proof balance sheet:ETH & LINK as growth railsIn a world of melting fiat, your crypto stack shouldn’t look like a weekend trading experiment — it should look like a corporate insurance policy that benefits from chaos instead of dying in it.If you want to see the numbers and allocation logic broken down in more detail, there’s a deeper article linked in the description.Stop playing like retail. Start thinking like a treasury. 🏦🚀]]></content:encoded></item><item><title>Rose Quartz Energy Bracelet – A Powerful Symbol of Love &amp; Positive Vibrations | NVC Attunements</title><link>https://dev.to/arpita_sharma_6bb05c7e981/rose-quartz-energy-bracelet-a-powerful-symbol-of-love-positive-vibrations-nvc-attunements-30fn</link><author>Arpita Sharma</author><category>blog</category><pubDate>Tue, 24 Feb 2026 07:44:58 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[The Rose quartz energy bracelet is a timeless piece of crystal jewelry designed to bring love, balance, and emotional healing into your life. At NVC Attunements, we offer carefully selected rose quartz bracelets made from genuine stones known for their gentle pink glow and soothing energy. Often called the stone of unconditional love, rose quartz is cherished for its ability to encourage compassion, harmony, and inner peace.Wearing a Rose quartz energy bracelet is believed to activate and balance the heart chakra, the center of love and emotional well-being. This beautiful gemstone helps release negative emotions, reduce stress, and promote forgiveness. Many individuals use rose quartz during meditation and affirmation practices to strengthen self-love and attract positive relationships. Its calming vibrations make it an essential crystal for those seeking emotional clarity and stability.At NVC Attunements, each Rose quartz energy bracelet is handcrafted with attention to quality and authenticity. We select smooth, natural beads that highlight the crystal’s soft pink hue and radiant energy. The bracelet is designed for comfortable daily wear, making it easy to carry positive vibrations wherever you go. Whether paired with casual attire or layered with other crystal bracelets, it adds both elegance and spiritual meaning.Beyond its healing properties, the Rose quartz energy bracelet makes a thoughtful gift for loved ones. It symbolizes affection, emotional strength, and heartfelt connection. Gifting this bracelet expresses care and positivity, making it perfect for birthdays, anniversaries, or special spiritual milestones.Choosing a Rose quartz energy bracelet from NVC Attunements means embracing both beauty and purpose. This powerful crystal accessory supports emotional balance, encourages self-growth, and enhances your spiritual journey. Add this meaningful gemstone bracelet to your collection and experience the loving energy of rose quartz every day.]]></content:encoded></item><item><title>Crystal Best Quality Pencil Tower: Meaning, Benefits &amp; How It Enhances Positive Energy</title><link>https://medium.com/@nayakbarssa/crystal-best-quality-pencil-tower-meaning-benefits-how-it-enhances-positive-energy-7c9a13b3435d?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Mon, 23 Feb 2026 10:42:11 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[A Crystal Pencil Tower is a beautifully polished, pointed crystal known for its ability to amplify energy, improve focus, and cleanse…]]></content:encoded></item><item><title>How to search keyword on Crystal lang Change log?</title><link>https://forum.crystal-lang.org/t/how-to-search-keyword-on-crystal-lang-change-log/8731</link><author>zw963</author><category>community</category><pubDate>Mon, 23 Feb 2026 06:33:38 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[e.g. I want to search which release introduce , there is no useful version info in the doc, use the search input box on the github release page always no meaningful result, what I expect is I can search the change log easier use my local grep tools.]]></content:encoded></item><item><title>Vibe Collab: a way to collaborate while wielding AI agents</title><link>https://forum.crystal-lang.org/t/vibe-collab-a-way-to-collaborate-while-wielding-ai-agents/8729</link><author>renich</author><category>community</category><pubDate>Sun, 22 Feb 2026 05:52:51 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I am opening this topic so that we can discuss this.We should create a protocol to enable sane collaboration while using AI agents.What that protocol should be.How does practical collaboration among developers, AI agents and core developers look like?What is practical/impractical?What speeds up development, review and integration?What are the compromises?]]></content:encoded></item><item><title>Why Isn&apos;t Every Sane Developer Obsessed with Crystal?</title><link>https://forum.crystal-lang.org/t/why-isnt-every-sane-developer-obsessed-with-crystal/8728</link><author>omarluq</author><category>community</category><pubDate>Sat, 21 Feb 2026 23:30:56 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Seriously. This keeps me up at night. The language is right there. It’s fast, it’s beautiful, it’s expressive, the type system is incredible, and it compiles to native binaries. What more do people want?I watch developers mass migrate to languages that make them fight the compiler, write verbose boilerplate, or handle errors like it’s 1995, and I just don’t get it. Crystal is something genuinely special and the rest of the world just walks right past it.What is it going to take?35 posts - 14 participants]]></content:encoded></item><item><title>The mighty Tsoding made a crystal video</title><link>https://forum.crystal-lang.org/t/the-mighty-tsoding-made-a-crystal-video/8727</link><author>renich</author><category>community</category><pubDate>Fri, 20 Feb 2026 17:28:45 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I dunno if you follow this guy. I do. He’s a master programmer.Well, he made a YouTube video 5 years ago to try out crystal.Haven’t seen it yet but I was gratiously amazed.]]></content:encoded></item><item><title>Need to crazy-optimize some GMP stuff?</title><link>https://forum.crystal-lang.org/t/need-to-crazy-optimize-some-gmp-stuff/8726</link><author>ralsina</author><category>community</category><pubDate>Fri, 20 Feb 2026 15:36:08 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[While crystal stdlib has a GMP binding (The Big Module) which is super convenient to use, what happens when you need something NOT convenient to use but faster?The main bottleneck in Big’s performance is that they are immutable, so super tight loops with operations on Bigs will pay the object allocation tax.require "mut_gmp"
+
+a = MutGMP::MpZ.new(42)
+b = MutGMP::MpZ.new(10)
+
+a.add!(b)  # a is now 52, mutated in-place
+a.mul!(2)  # a is now 104
+
+# Operations can be chained
+c = MutGMP::MpZ.new(5)
+c.add!(10).mul!(2).sub!(5)  # c is now 25
+]]></content:encoded></item><item><title>ANSI sequences modified unexpectedly</title><link>https://forum.crystal-lang.org/t/ansi-sequences-modified-unexpectedly/8722</link><author>hutou</author><category>community</category><pubDate>Thu, 19 Feb 2026 16:46:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[In a specification source code, I use ANSI sequences to surround certain values in order to check if they are rendered correctly. Several months ago (March 2025), when I wrote this code, the specifications worked correctly.
+Today, they fail (Crystal 1.19.1) and I noticed something strange:
+in the displayed failures, the sequence  in my source code (the “expected” value) is replaced by the sequence  (the “obtained” value), which of course produces an error.
+I don’t understand why!]]></content:encoded></item><item><title>Pyrite Crystal for Money, Confidence and Positive Energy</title><link>https://dev.to/shubhanjali/pyrite-crystal-for-money-confidence-and-positive-energy-2oj5</link><author>Shubhanjali</author><category>blog</category><pubDate>Thu, 19 Feb 2026 08:16:10 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[ is widely associated with money attraction and confidence building. People believe that Pyrite supports clear thinking and helps reduce self-doubt. Its strong appearance is often connected with positive energy and motivation. Many users keep Pyrite crystal near their workspace to stay focused and productive. Wearing Pyrite jewelry is also considered helpful for maintaining balanced energy throughout the day. The crystal is simple to use and does not require special rituals. At , Pyrite crystal items are kept natural so they feel comfortable for daily use. This crystal is often chosen by people who want steady energy, confidence, and positivity in their routine. Because of its natural look and easy use, Pyrite remains a popular choice among crystal users.]]></content:encoded></item><item><title>Di; new dependency injection shard</title><link>https://forum.crystal-lang.org/t/di-new-dependency-injection-shard/8719</link><author>omarluq</author><category>community</category><pubDate>Thu, 19 Feb 2026 03:02:54 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I just released Di v0.1.0, a new dependency injection shard.Di is macro first and type safe. It supports auto wire from constructor types, named services, transient services, fiber local scopes, health checks, and graceful shutdown.require "di"
+
+Di.provide { Database.new(ENV["DATABASE_URL"]) }
+Di.provide UserRepo
+Di.provide UserService
+
+svc = Di.invoke(UserService)
+# or
+svc = Di[UserService]
+
+Di.scope(:request) do
+  Di.provide { CurrentUser.from_token(token) }
+  current = Di.invoke(CurrentUser)
+  # or
+  current = Di[CurrentUser]
+end
+Feedback are always welcome.18 posts - 5 participants]]></content:encoded></item><item><title>Why I Like the Crystal Programming Language</title><link>https://medium.com/@drunkenufopilot/why-i-like-the-crystal-programming-language-55a0afa5aca3?source=rss------crystal_lang-5</link><author>Daren Scot Wilson</author><category>blog</category><pubDate>Wed, 18 Feb 2026 06:20:06 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[One fine cold day in fall of 2019, I was looking over the annual combinatorial algorithm challenge on Kaggle. I had some ideas about what…]]></content:encoded></item><item><title>I Built A Crystal Compiler With Parallel/Incremental Compilation</title><link>https://forum.crystal-lang.org/t/i-built-a-crystal-compiler-with-parallel-incremental-compilation/8718</link><author>crimson-knight</author><category>community</category><pubDate>Tue, 17 Feb 2026 17:40:37 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been working on incremental compilation for Crystal and I’m at the point where I need people with real projects to try it out and tell me what they see. is a build of the Crystal compiler from my  branch. It tracks dependency changes at the file level and skips recompilation of files that haven’t changed. The result is that after your first compile, subsequent compiles while you’re developing should be significantly faster.It also includes WASM compilation support ( target), but the main thing I’m looking for feedback on right now is the incremental compilation experience during active development.Install (macOS only right now)
+brew tap crimson-knight/crystal-alpha
+
+brew install crystal-alpha
+
+That’s it. This installs alongside your existing  compiler - it doesn’t replace it.It works exactly like  but the command is :
+# Build your project
+
+crystal-alpha build src/my_app.cr -o bin/my_app
+
+# Run specs
+
+crystal-alpha spec
+
+# Watch mode - recompiles on file changes
+
+crystal-alpha watch src/my_app.cr
+
+This is where incremental compilation really shines. Instead of manually rebuilding after every change, run:
+crystal-alpha watch src/my_app.cr -o bin/my_app
+
+Watch mode uses macOS native kqueue file monitoring — it detects the moment you save a file and triggers an incremental rebuild automatically. Only the files you changed (and anything that depends on them) get recompiled. Everything else is cached.A few things that make this practical for real development: — Executes your binary after each successful compile. When you save a file, it kills the running process, recompiles, and restarts it. This is the one you want for web apps:
+crystal-alpha watch src/my_app.cr -o bin/my_app --run
+
+ — Clears the terminal before each compile so you get a clean output — Waits 300ms after a save before compiling, so rapid saves from your editor don’t cause repeated builds — If your code has an error, it prints the error and keeps watching. Fix the file, save, and it tries again immediatelyThe point of watch mode is that you leave it running in a terminal while you work. Save a file, see the result in seconds. For a project that normally takes 30+ seconds to compile from scratch, you should see incremental rebuilds in the low single digits.Go to your project directoryDo a cold compile: crystal-alpha build src/your_app.cr -o bin/my_appChange a file - any file, even just add a commentTell me how long both compiles tookYou don’t need precise benchmarks. Even just “cold compile took about 30 seconds, second compile took about 4 seconds” is exactly what I’m looking for.If you have a larger project, that’s even better. The bigger the project, the more dramatic the difference should be.: Try watch mode for a real development session. Start crystal-alpha watch src/my_app.cr -o bin/my_app --run, make some edits, and tell me what the experience feels like compared to your normal workflow.What project you tested with (rough size is fine - “small CLI tool” vs “web app with 50 models”)Cold compile time (rough is fine,  output works too)Incremental compile time after a small changeDid it produce a correct binary? (aka Does your app still work?)Any errors or weird behaviormacOS only (Apple Silicon and Intel) for nowThis is an alpha - if something breaks, I want to hear about itThe first compile will always be the same speed as normal Crystal since there’s nothing cached yetThanks for helping test this. The goal is to make Crystal development feel as fast as editing a scripting language while keeping all the performance benefits of a compiled language.14 posts - 6 participants]]></content:encoded></item><item><title>Crystal (Spatik) Tortoise: Meaning, Benefits &amp; Vastu Significance</title><link>https://medium.com/@nayakbarssa/crystal-spatik-tortoise-meaning-benefits-vastu-significance-9efcd4dd59d5?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Tue, 17 Feb 2026 08:34:36 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[The Crystal (Spatik) Tortoise is a powerful vastu and feng shui remedy known for attracting wealth, stability, longevity, and positive…]]></content:encoded></item><item><title>Scientifically Ranking the Pokémon Crystal Trainers (2023) [video]</title><link>https://www.youtube.com/watch?v=Q6E6OaWb7LQ</link><author>aw1621107</author><category>HN</category><category>hn</category><pubDate>Tue, 17 Feb 2026 07:03:58 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Announcing Autobot - AI agent framework in Crystal</title><link>https://forum.crystal-lang.org/t/announcing-autobot-ai-agent-framework-in-crystal/8715</link><author>veelenga</author><category>community</category><pubDate>Mon, 16 Feb 2026 21:11:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Crystal deserves its own AI agent framework — and it’s a perfect fit. The language’s strengths shine here: efficiency, tiny footprint and real concurrency make it ideal for running autonomous agents.The numbers: 2MB binary, ~5MB RAM, <10ms startup, zero runtime deps. Run dozens of isolated bots on a single machine — each with its own personality, workspace, and config.There’s a big roadmap ahead — MCP support, voice support, multi-agent orchestration, and more. If you’re interested in helping build the Crystal AI ecosystem, feel free to reach out. Contributions, ideas, and feedback are all welcome.]]></content:encoded></item><item><title>I went crazy and tried to do some hard stuff because I&apos;m an adult and can just do things</title><link>https://forum.crystal-lang.org/t/i-went-crazy-and-tried-to-do-some-hard-stuff-because-im-an-adult-and-can-just-do-things/8714</link><author>crimson-knight</author><category>community</category><pubDate>Sun, 15 Feb 2026 23:11:32 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I want to combine 2 things that I love more than anything.Not necessarily in that order.I vibe code with Crystal all the time, it’s been perfect because of the type system, but the syntax is clean and makes it easy for Claude to mimic the patterns within the files easily. The rate of writing Ruby by accident from the models has also gone down a lot. I’m very grateful for these advancements!So I decided to do 2 things, that are only related by Crystal and AI.I forked  and I added some tooling to allow writing documentation for agents within a library. So now you can write docs for your peferred AI coding assistant and then pass along the skills, subagents and MCPs for that library. The  project is what I called it so that there is an easy but different command from the real , this way you can try it out without disrupting the normal shards installation. This is just for testing the idea out as my workflow improves. I think others will enjoy the level of plug-and-play that I have achieved with this.# Via Homebrew
+brew tap crimson-knight/shards
+brew install shards-alpha
+
+# -- OR --
+
+# Install from source
+git clone https://github.com/crimson-knight/shards.git
+
+cd shards
+crystal build src/shards.cr -o bin/shards-alpha --release
+# Copy bin/shards-alpha somewhere on your PATH or symlink it into your /local/usr/bin
+# Set up Claude Code with compliance skills + agents
+shards-alpha assistant init
+
+# Use it like normal shards — everything is compatible
+shards-alpha install
+I went really crazy and decided to see if I could create a ralph-loop and get Claude Opus 4.6 to figure out how to implement WASM 3.0 as a compile target with garbage collection.And it works! There’s support for all kinds of features that are part of the spec, but I’m still working through linking all of the C libraries that we depend on being linked/compiled into the WASM target. This took  while running on a loop and at one point it gave up because it couldn’t figure out the path it was on. I had it think from a more first-principles perspective about it’s original architectural decisions and then it realized it had made an assumption too briefly–found the fig that worked that unlocked GC support–and it chugged away until done from there.My plan is to experiment with building full stack apps with Crystal so that I can create a mono repo, and serve the web API and the entire browser app from Crystal+Amber.What a world we live in. This is just so cool.]]></content:encoded></item><item><title>Crystal driving the LLM?</title><link>https://forum.crystal-lang.org/t/crystal-driving-the-llm/8713</link><author>Xen</author><category>community</category><pubDate>Sun, 15 Feb 2026 17:51:50 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[So is anyone doing interesting stuff by letting Crystal drive the LLM?Having Gemini explain it to me, I realized that “agentic coding” is basically just giving the LLM some tools and letting it run in a feedback loop, and I guess that’s pretty much what’s driving the recent OpenClaw hoolabaloo. Was thinking it might be interesting to build a custom agent for something.Not that Crystal is particularly suited for working with LLMs, but neither is a look of other languages that people are using to build LLM stuff (hello nodejs), so it might as well join the fun.So are people actually using LLM for anything but writing code?12 posts - 5 participants]]></content:encoded></item><item><title>Crystal in LangArena benchmark</title><link>https://forum.crystal-lang.org/t/crystal-in-langarena-benchmark/8716</link><author>ralsina</author><category>community</category><pubDate>Fri, 13 Feb 2026 18:14:09 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I had not seen LangArena before, so I popped in and … it’s running the crystal code single-threaded, which may explain why Matmul1T has a great score but Matmul4T 8T and 16T do rather horribly so there is some low hanging fruit for optimization there!Matmul1T: OK in 5.598s
+Matmul4T: OK in 5.809s
+Matmul8T: OK in 5.776s
+Matmul16T: OK in 5.763s
+Matmul1T: OK in 5.637s
+Matmul4T: OK in 1.678s
+Matmul8T: OK in 1.523s
+Matmul16T: OK in 1.737s
+]]></content:encoded></item><item><title>`hace` shard</title><link>https://forum.crystal-lang.org/t/hace-shard/8717</link><author>ralsina</author><category>community</category><pubDate>Fri, 13 Feb 2026 17:48:31 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Now I feel guilty about not working on Hace for MONTHS :-D]]></content:encoded></item><item><title>CrystalCommunity.org - Connecting the Crystal Community</title><link>https://forum.crystal-lang.org/t/crystalcommunity-org-connecting-the-crystal-community/8711</link><author>sdogruyol</author><category>community</category><pubDate>Fri, 13 Feb 2026 08:53:35 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[As developers, we often work in silos. I felt the Crystal language needed a dedicated space for us to say, “Hey, I’m here, and I build with Crystal.”
+I believe this tool belongs to the community. That’s why I’ve open-sourced the entire project. It’s currently an MVP allowing you to pin your location via GitHub login, but there is so much more we can do. Log in and show your location. The code is available on GitHub. If you want to see how it works or add new features, PRs are highly welcome.Let’s make Crystal better together!]]></content:encoded></item><item><title>CrystalCommunity.org - Connecting the Crystal Community</title><link>https://old.reddit.com/r/crystal_programming/comments/1r3k8jn/crystalcommunityorg_connecting_the_crystal/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Fri, 13 Feb 2026 08:52:26 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[As developers, we often work in silos. I felt the Crystal language needed a dedicated space for us to say, "Hey, I'm here, and I build with Crystal." I believe this tool belongs to the community. That’s why I’ve open-sourced the entire project. It’s currently an MVP allowing you to pin your location via GitHub login, but there is so much more we can do. Log in and show your location. The code is available on GitHub. If you want to see how it works or add new features, PRs are highly welcome.Let’s make Crystal better together!]]></content:encoded></item><item><title>Feedback about a more regular spotlight/showcase of Crystal projects</title><link>https://forum.crystal-lang.org/t/feedback-about-a-more-regular-spotlight-showcase-of-crystal-projects/8710</link><author>paulocoghi</author><category>community</category><pubDate>Thu, 12 Feb 2026 15:53:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The number of solid/production-ready projects built with Crystal is growing everyday. Setting aside the usual (constructive) criticisms, the language is increasingly being used for serious work, and I believe greater visibility will surely help more developers to discover it.The idea: a more regular (monthly or bi-weekly) spotlight, mainly a blog article (and perhaps a short video interview on YouTube/X, remote or in-person like a podcast) showcasing projects that are either in production, well advanced, useful or simply funny/interesting.(I know, you did it in the past, like with the LavinMQ’s one, but I believe we could increase the frequency and expand to more projects)In the same initiative, we can also regularly bring core team members, as well as important contributors like:George Dietrich from AthenaSzikszai and Sijawusz from MintPaul, Jeremy and Matthew from LuckyMorgan and Marvin from MartenA semi-random example: look at termisu by Omar. The way he guides the project is genuinely fun, and the attention to detail (excellent docs, screenshots, overall developer experience) is impressive. I am genuinely curious to know how his experience with Crystal is. Don’t you either? I frequently browse recently updated Crystal repos on GitHub (like this) and keep finding real gems.What do you think? Other projects that you would like to add? Congratulations on the continuous improvements on Crystal performance. I didn’t expected it to be at  level of performance by surpassing Go and Nim. One special spotlight episode could be about LangArena and how amazingly good Crystal is performing in it. Thanks Kostya for the huge work on the benchmark! I would love to start such initiative myself and, although I have available time for it, my main challenge is economical/financial since I am recovering my small business after cancer treatment. I am open for possible calls with the Manas team, if desired.]]></content:encoded></item><item><title>Pyrite Crystal Uses and Benefits for Financial Growth</title><link>https://dev.to/shubhanjali/pyrite-crystal-uses-and-benefits-for-financial-growth-3jeh</link><author>Shubhanjali</author><category>blog</category><pubDate>Tue, 10 Feb 2026 08:08:29 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[Pyrite crystal is used for supporting financial growth and positive mindset. Many people believe that Pyrite helps improve focus and confidence, which is important for success. It is often kept at home or office to maintain steady energy. Wearing Pyrite jewelry is also common because it is easy to use daily. The crystal is believed to reduce negative energy and promote clear thinking. At Shubhanjali, Pyrite crystal products are kept simple so they blend easily into everyday life. This crystal is suitable for those who prefer natural energy support without complex practices.]]></content:encoded></item><item><title>Self-sandboxing apps</title><link>https://forum.crystal-lang.org/t/self-sandboxing-apps/8708</link><author>ralsina</author><category>community</category><pubDate>Mon, 9 Feb 2026 13:02:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Basically: it’s a linux thing where apps can say “I only need this access” and once active THEY CANNOT GIVE IT UP.So, I have code to enable it … does it sound generally useful? If yes I can make it a shard.]]></content:encoded></item><item><title>Amethyst Pendant: Meaning, Benefits &amp; Why You Should Wear It Daily</title><link>https://medium.com/@nayakbarssa/amethyst-pendant-meaning-benefits-why-you-should-wear-it-daily-7b88b545e1b7?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Mon, 9 Feb 2026 06:45:15 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[An Amethyst Pendant is more than just a beautiful piece of jewelry — it is a powerful spiritual tool known for calming the mind…]]></content:encoded></item><item><title>Nonreciprocal wave-mediated interactions power a classical time crystal</title><link>https://arxiv.org/abs/2504.15495</link><author>rbanffy</author><category>HN</category><category>hn</category><pubDate>Sun, 8 Feb 2026 22:42:05 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>CrystalScript - a Crystal binary caching CLI</title><link>https://forum.crystal-lang.org/t/crystalscript-a-crystal-binary-caching-cli/8706</link><author>QBM</author><category>community</category><pubDate>Sun, 8 Feb 2026 12:53:29 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I wanted to be able to use Crystal as a scripting language, meaning I could run source files without them having to be systematically compiled.It’s already possible by doing , but I wondered if I could get rid of that systematic half-second compilation time every time I run the script.So I built a CLI named crystalscript (I was not very inspired for a name). It’s basically a wrapper that will compile your script and cache the binary the first time it’s executed. After that, it will only replace the cached binary when the source changes.The best way to use it is with shebangs, for example lets make a simple  script#!/usr/bin/env crystalscript
+
+puts "Hello"
+Now it’s possible to call it like thisI also made it so there are different optimization mode for the binaries.For example, when I’m creating a new script, it will change often and I want the compilation to be as fast as possible. In this case I can use this shebang.#!/usr/bin/env -S crystalscript --mode dev
+When I’m done I can change the mode to  (default) or  to have a faster and lighter binary.On a side note, I found a similar project called scriptisto which works with many languages, but I still wanted to try to build one myself for Crystal.]]></content:encoded></item><item><title>Collision reached 100,000 installations on Flathub!</title><link>https://forum.crystal-lang.org/t/collision-reached-100-000-installations-on-flathub/8704</link><author>GeopJr</author><category>community</category><pubDate>Sun, 8 Feb 2026 03:47:29 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[As of today, my little GTK hash calculator, Collision, reached 100k installations on Flathub alone! Unfortunately, I don’t have the numbers for distro packages since they don’t usually keep count, but the Flathub stats on their own, show that a non-trivial amount of end users are running GUI software written in Crystal. Including linux mobile phones on aarch64!Collision is (obviously) written in Crystal with C bindings for glib libraries through gi-crystal.The hashes are being calculated using stdlib’s Digest functions, in parallel, allowing it to handle hundreds of files at the same time while keeping the main loop (/ GUI thread) unblocked, thanks to the wonderful execution contexts.I’ve been documenting my journey, so here’s some links:]]></content:encoded></item><item><title>How to print with --prelude empty?</title><link>https://forum.crystal-lang.org/t/how-to-print-with-prelude-empty/8700</link><author>kojix2</author><category>community</category><pubDate>Sat, 7 Feb 2026 12:08:43 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[crystal run --prelude empty script.cr
+How can I output a string when using  ?Here is one way. Any other ideas?lib LibC
+  fun puts(s : Pointer(UInt8)) : Int32  
+  fun exit(status : Int32) : NoReturn
 end
 
-
-class C < P
-  class Sub
-    def m
-      "from C::Sub"
-    end
-  end
+fun __crystal_raise_overflow : NoReturn
+  LibC.exit(1)
 end
 
+ptr = Pointer(UInt8).malloc(5)  
+(ptr + 0).value = 'H'.ord.to_u8  
+(ptr + 1).value = 'e'.ord.to_u8  
+(ptr + 2).value = 'l'.ord.to_u8  
+(ptr + 3).value = 'l'.ord.to_u8  
+(ptr + 4).value = 'o'.ord.to_u8  
+  
+LibC.puts(ptr)
+]]></content:encoded></item><item><title>FileCompare makes data differences crystal clear</title><link>https://filecompare.org/</link><author>zhouhua</author><category>HN</category><category>hn</category><pubDate>Thu, 5 Feb 2026 14:19:17 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[Why You Need a Reliable Way to Compare Two ListsWhether you are a marketer cleaning email lists, a developer validating configuration data, or a student checking for discrepancies in research figures, the task is almost always the same: you need to . Manually scanning through rows of data is not only tedious but also introduces human error. This is where a specialized tool becomes essential.When you  manually, your eyes can easily skip a line, especially if you are dealing with hundreds or thousands of entries. You aren't just looking for differences; often, you need to identify duplicates within a single list or find the common ground between separate datasets. A fast, accurate, and private way to handle this is no longer a luxury—it's a necessity for efficient data work.The Challenge of Data ComparisonData rarely comes in a perfect format. Imagine you have a list of customer emails from your sales team and another list from your support ticketing system. To ensure your marketing campaign reaches the right people, you must  to see which customers are already in your pipeline and which are new prospects. Doing this in a spreadsheet can work, but it often involves complex formulas or manual sorting that eats up your time.The real need here is for a process that is: You want the answer in seconds, not minutes. The tool must reliably identify matches, differences, and duplicates. You shouldn't need to install software or sign up for a service.This is exactly the gap a high-quality online tool fills. It allows anyone, regardless of technical skill, to  and get a clear, unambiguous result.Introducing a Smarter Way to Compare Two Lists OnlineOur tool is designed to be the most straightforward method to . You don't paste your data into a black box that sends it to a server. Instead, everything happens in your browser. This client-side processing means your sensitive information—be it email addresses, product SKUs, or usernames—never leaves your computer. When you use this tool to , you are getting the benefit of advanced algorithms with the peace of mind of complete privacy.How to Use the Tool: A Simple WorkflowUsing this tool to  involves three simple steps: Paste your data into the first text area. This could be a column copied from a spreadsheet, a list from a text file, or even data typed directly. Paste your comparison data into the second text area.Choose Your Operation and Compare: Select what you want to find—differences, common values, or duplicates—and click the button to run the comparison.The tool instantly processes your request and displays the results in a clean, easy-to-copy format. Whether you need to  for unique entries or to find overlaps, the output is generated right in front of you.Key Use Cases: Where This Tool ExcelsThe ability to  is a fundamental need across various professions. Here are a few scenarios where this tool becomes indispensable:For Marketing and Sales ProfessionalsYou live in a world of lists. Email subscribers, webinar attendees, leads from a trade show, and current customers. Before sending a critical newsletter, you need to  to exclude unsubscribes or existing customers from a prospect list. This tool allows you to quickly perform a comparison to find the "new" leads that should receive your campaign, ensuring you maintain good list hygiene and improve deliverability.For Data Analysts and Project ManagersValidating data is a core part of your workflow. You might need to  of project requirements to ensure nothing was missed between the planning and execution phases. Or perhaps you have a list of IDs from a database query and need to compare it against a master list to find missing records. This tool provides a fast, reliable way to perform these checks without writing a single line of code.For Developers and IT SpecialistsWhile you can write a script to , doing so for a one-off task is overkill. When you quickly need to check configuration files, compare lists of server names, or validate user inputs, a browser-based tool is the perfect solution. Since the comparison is done client-side, you can use it with sensitive IP addresses or internal system names without worrying about data security. It’s a secure, instant utility for common data validation tasks.Beyond Simple Differences: Finding Common Ground and DuplicatesWhen we talk about the ability to , most people think only of finding what is different. However, a robust tool offers more nuanced analysis:Finding Unique Items (Symmetric Difference): This shows you the items that exist in the first list but not the second, and vice versa. It’s the classic "what's changed" comparison.Finding Common Values (Intersection): This is critical for identifying overlaps. For example, finding which customers are on both your "high-value" list and your "product launch" list. Before you even compare two separate lists, you often need to clean the data within a single list. The duplicate finder highlights repeated entries, helping you consolidate and clean your data before performing a cross-list comparison.This comprehensive functionality means you don't need to juggle multiple tools. You have one reliable place to  for any scenario.Why This Tool Is Your Best OptionThere are many ways to , from spreadsheet software to custom scripts. However, this online tool offers a unique combination of benefits:It's Truly Free and Unlimited: No hidden paywalls or limits on the number of items you can compare.It Prioritizes Your Privacy: Because the processing happens entirely in your browser, your data stays on your device. There is no upload, no server log, and no chance of your information being stored or misused. The algorithms are optimized for speed, giving you results instantly, even with large lists. The interface is clean and uncluttered, designed to let you focus on your task without distraction.When you need to , you want a solution that is fast, private, and accurate. This tool delivers on all fronts, providing a seamless experience from paste to result.Frequently Asked QuestionsHow does this tool compare two lists without uploading my data?The tool uses client-side JavaScript. When you paste your lists into the text areas, the data stays in your browser's memory. The comparison happens locally on your device, and no information is transmitted to any server. This ensures your data remains completely private and secure.What exactly happens when I click to compare two lists?The tool takes the raw text you've provided for List A and List B. It then processes these strings based on the operation you selected. If you choose to find differences, it identifies items unique to each list. If you choose to find common values, it isolates the items that appear in both. The results are then formatted and displayed on your screen instantly.Can I use this to compare two lists that are very long?Yes, the tool is designed to handle substantial amounts of data efficiently. While extreme limits are determined by your computer's memory, it can comfortably compare lists with thousands of lines. Because the processing is done locally, the speed depends on your device's processing power.Is there a difference between comparing for differences and comparing for duplicates?Yes, these are distinct operations. When you  to find differences, you are looking at the unique entries across both datasets. When you use the duplicate finder, you are analyzing a  list to find any repeated lines within it. The tool offers both functionalities to cover all your data-cleaning needs.Do I need to format my lists in a specific way?The tool treats each line in your text area as a separate item. So, if you have a list of email addresses, you should paste them with one email per line. This is the most common format when copying data from spreadsheets or text files. It keeps the process simple and intuitive.Why should I use an online tool instead of a spreadsheet to compare two lists?While spreadsheets are powerful, they often require complex formulas or multiple steps to perform a simple comparison. This dedicated tool is built for one purpose: to . It provides the answer instantly with no setup, no formulas, and no risk of making a mistake in a cell reference. It's about speed and convenience for a specific, common task.Is this compare two lists tool really free to use?Absolutely. There are no subscription fees, no hidden costs, and no limits on the number of comparisons you can perform. It is designed to be a helpful, accessible utility for anyone who needs to analyze data quickly.The next time you are faced with two columns of data, a stack of information that needs reconciling, or a simple need to find an overlap, skip the manual check. Use this fast, private, and reliable tool to  and get back to the work that really matters.]]></content:encoded></item><item><title>AgentKit for crystal (shard for running Agent Loops)</title><link>https://forum.crystal-lang.org/t/agentkit-for-crystal-shard-for-running-agent-loops/8697</link><author>alexkutsan</author><category>community</category><pubDate>Wed, 4 Feb 2026 10:20:10 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[This is an LLM agent loop with support of MCP servers]]></content:encoded></item><item><title>[ANN] crst - A reStructuredText (RST) parser for Crystal</title><link>https://forum.crystal-lang.org/t/ann-crst-a-restructuredtext-rst-parser-for-crystal/8696</link><author>renich</author><category>community</category><pubDate>Wed, 4 Feb 2026 09:42:29 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’d like to share , a reStructuredText (RST) parser I’ve been working on.If you need to handle RST markup in Crystal; for documentation, content processing, or static sites, this shard provides a native solution that converts RST into HTML, DocBook XML, LaTeX, and plain text.Output Formats: HTML5, DocBook XML, LaTeX, Plain Text.Standard Compliance: Supports lists, tables (simple & grid), footnotes, citations, and more.Extensible: You can define custom directives and roles.Safe: Configurable safety options for file inclusion.dependencies:
+  crst:
+    git: https://gitlab.com/renich/crst.git
+require “crst”
 
-puts C.new.sub_m # => "from C::Sub"
+input = <<-RST
+Hello World
+===========
+This is a paragraph with *emphasis*.
+RST
 
-By using ,  returns “from C::Sub” instead of “from P::Sub”, but this syntax is not valid in Crystal: Error: unexpected token: "::"17 posts - 7 participants]]></content:encoded></item><item><title>How can I force the type of a nested literal from the outside in?</title><link>https://forum.crystal-lang.org/t/how-can-i-force-the-type-of-a-nested-literal-from-the-outside-in/8507</link><author>Carlos</author><category>community</category><pubDate>Fri, 24 Oct 2025 18:58:28 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I want an array of , buticr:1> typeof([["str"], [:sym], ["str", :sym]])
- => Array(Array(String | Symbol) | Array(String) | Array(Symbol))
-I can force the type of the inner arraysicr:2> typeof([["str"] of String | Symbol, [:sym] of String | Symbol, ["str", :sym]])
- => Array(Array(String | Symbol))
-but I’d rather not do that, because that’s a lot of typing. I’d rather doicr:3> typeof([["str"], [:sym], ["str", :sym]] of Array(String | Symbol))
-error in line 1
-Error: instantiating 'Pointer(Array(String | Symbol))#[]=(Int32, Array(String))'
+puts Crst.to_html(input)
+Feedback and contributions are welcome.]]></content:encoded></item><item><title>When are folks removing `Time.monotonic` usage from their shards?</title><link>https://forum.crystal-lang.org/t/when-are-folks-removing-time-monotonic-usage-from-their-shards/8691</link><author>jgaskins</author><category>community</category><pubDate>Wed, 4 Feb 2026 03:59:57 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The new  in 1.19 is great. I mainly used  to measure how long some operation took and  is perfect for that.What  great is the long list of deprecation warnings when running specs in some of my shards. Updating apps is fine because we control which version of Crystal they use. That’s not true of shards, though. Updating those shards to use  may not be feasible if someone’s still using it on Crystal 1.18 or earlier.How are folks dealing with this?]]></content:encoded></item><item><title>Fossil.cr: A FastAPI-Inspired REST API Framework for Crystal</title><link>https://old.reddit.com/r/crystal_programming/comments/1qus6s0/fossilcr_a_fastapiinspired_rest_api_framework_for/</link><author>/u/ser_named_scurrra</author><category>community</category><pubDate>Tue, 3 Feb 2026 13:40:09 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[I built , a FastAPI-inspired framework for building REST APIs in Crystal. It leverages Crystal’s  to reduce boilerplate and simplify API development, making it easy to handle path/query/form/body parameters, , and .: Automatically generate endpoints from annotated methods.: Handles path, query, form, file, and body parameters with type safety.: Supports header, cookie, and singleton dependencies for modular code.: Built-in JSON serialization and custom content-type handling.: Extends Crystal’s  with minimal overhead.Fossil.cr fills a gap in the Crystal ecosystem by providing a type-safe, expressive way to build APIs without manual request/response handling. It’s perfect for projects where you want the  with the developer experience of FastAPI.]]></content:encoded></item><item><title>Hamilton.cr: A Lightweight Telegram Bot Framework for Crystal (with Example: tgsh, a Shell Access Bot)</title><link>https://old.reddit.com/r/crystal_programming/comments/1qus1iz/hamiltoncr_a_lightweight_telegram_bot_framework/</link><author>/u/ser_named_scurrra</author><category>community</category><pubDate>Tue, 3 Feb 2026 13:33:43 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[I built , a lightweight framework for creating Telegram bots in Crystal. It simplifies bot development with , , and  for commands, text, stickers, and media (videos, GIFs, etc.).: Start handling updates in minutes.: Compile with  for concurrent processing.: Store user-specific data across interactions.: Gracefully manage long-running tasks.To showcase its flexibility, I built , a Telegram bot for . With tgsh, you can:Run commands (, ) with real-time output.Manage processes using POSIX signals ().Upload/download files and run Python scripts — all from Telegram.Hamilton.cr fills a gap in the Crystal ecosystem by providing a type-safe, extensible wrapper for the Telegram Bot API. It’s perfect for bots like tgsh or any project requiring async task management.]]></content:encoded></item><item><title>Imaging the Wigner crystal state in a new type of quantum material</title><link>https://phys.org/news/2026-01-imaging-wigner-crystal-state-quantum.html</link><author>rbanffy</author><category>HN</category><category>hn</category><pubDate>Sun, 1 Feb 2026 18:30:50 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Kemal has a new Website</title><link>https://old.reddit.com/r/crystal_programming/comments/1qs2a0h/kemal_has_a_new_website/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Sat, 31 Jan 2026 13:24:59 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Kemal Modular Router support PR - Looking for more Feedback</title><link>https://old.reddit.com/r/crystal_programming/comments/1qr7tvs/kemal_modular_router_support_pr_looking_for_more/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Fri, 30 Jan 2026 15:02:04 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Green Aventurine Pencil Tower: Meaning, Benefits &amp; How to Use It for Luck and Growth</title><link>https://medium.com/@nayakbarssa/green-aventurine-pencil-tower-meaning-benefits-how-to-use-it-for-luck-and-growth-580344ff014c?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Fri, 30 Jan 2026 08:50:43 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[The Green Aventurine Pencil Tower is a powerful crystal tool known for attracting luck, prosperity, emotional healing, and personal growth…]]></content:encoded></item><item><title>Lapis Lazuli Tower (Orgonite): Meaning, Benefits &amp; How It Amplifies Energy</title><link>https://medium.com/@nayakbarssa/lapis-lazuli-tower-orgonite-meaning-benefits-how-it-amplifies-energy-7be682e9e3a3?source=rss------crystal_lang-5</link><author>effectivegems001</author><category>blog</category><pubDate>Thu, 29 Jan 2026 11:52:59 +0000</pubDate><source url="https://medium.com/tag/crystal-lang/latest?source=rss------crystal_lang-5">Crystal Lang on Medium</source><content:encoded><![CDATA[The Lapis Lazuli Tower (Orgonite) is a powerful combination of ancient crystal wisdom and modern energy science. Known for enhancing…]]></content:encoded></item><item><title>SGC at $208.65: A Technical Look at Today’s Price Behavior</title><link>https://dev.to/shainu_aripaka_773eded726/sgc-at-20865-a-technical-look-at-todays-price-behavior-5ab4</link><author>shainu aripaka</author><category>blog</category><pubDate>Wed, 28 Jan 2026 18:19:08 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[Today’s market session places , following a sequence of sharp intraday movements and gradual pullbacks. From a technical perspective, this kind of price behavior highlights active participation rather than low-liquidity drift.The chart shows multiple short-lived upward pushes, each meeting resistance before retracing. This often indicates algorithmic trading, short-term speculation, or cautious re-entry by participants testing higher price acceptance.From a systems viewpoint, volatile sessions like this are valuable. They generate dense data points that improve market discovery and help define short-term support and resistance zones.For developers and analysts observing blockchain-based assets, price action is less about the number itself and more about how the number is reached. Today’s SGC movement reflects a market that is alive, reactive, and continuously adjusting.]]></content:encoded></item><item><title>Kemal 1.9.0 is released! Better Security by Default</title><link>https://old.reddit.com/r/crystal_programming/comments/1qp9exz/kemal_190_is_released_better_security_by_default/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Wed, 28 Jan 2026 11:58:30 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Jargon Improved and Posted to Hacker News</title><link>https://old.reddit.com/r/crystal_programming/comments/1qosuol/jargon_improved_and_posted_to_hacker_news/</link><author>/u/transfire</author><category>community</category><pubDate>Tue, 27 Jan 2026 22:28:22 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[Hey Crystal fans. I am pretty close to finishing my Jargon library -- many improvements with the latest release.I am big fan of Crystal and want to do my part to promote it. So I posted about Jargon on Hacker News.  The more visibility we can get on our Crystal work, the more attention Crystal itself gets. Thanks!]]></content:encoded></item><item><title>API REST con Crystal, Kemal y SQLite</title><link>https://old.reddit.com/r/crystal_programming/comments/1qmrk40/api_rest_con_crystal_kemal_y_sqlite/</link><author>/u/emanuelpeg</author><category>community</category><pubDate>Sun, 25 Jan 2026 18:46:31 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Show HN: Crystal Upscaler – AI image upscaler built for portraits and faces</title><link>https://crystalupscaler.com/</link><author>charlie0simmon</author><category>HN</category><category>hn</category><pubDate>Sun, 25 Jan 2026 11:59:06 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[Mindepy, LLC is a technology company specializing in AI-powered image and video processing services.Core products and services include:AI image upscalers that increase resolution while preserving quality.AI-powered image and video generators.Photo enhancement and restoration tools.We serve a global customer base through web-based SaaS platforms, with free tiers and premium subscription plans.Primary website: crystalupscaler.comRegistered business address: 131 Continental Dr, Suite 305, Newark, DE 19713, United States.]]></content:encoded></item><item><title>&quot;Made with Crystal&quot; badge for Crystal adovcacy</title><link>https://old.reddit.com/r/crystal_programming/comments/1qlvd47/made_with_crystal_badge_for_crystal_adovcacy/</link><author>/u/ejstembler</author><category>community</category><pubDate>Sat, 24 Jan 2026 18:53:16 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[A few years back, I converted my custom Ruby blog engine to Crystal/Kemal in an effort to test Crystal, and learn to it better. At the time I also created a "Made with Crystal" badge/button which I displayed in the footer. Today I decided to release it as a repo (better late than never) so others can use it too to help promote Crystal.]]></content:encoded></item><item><title>From 4 Minutes to 3 Seconds: How Database Transaction Rollback Revolutionized Test Suite</title><link>https://dev.to/miry/from-4-minutes-to-3-seconds-how-database-transaction-rollback-revolutionized-test-suite-4olh</link><author>Michael Nikitochkin</author><category>blog</category><pubDate>Sat, 24 Jan 2026 16:15:32 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[In a single afternoon, I transformed my  test suite from a 4-minute ordeal into a 3-second sprint by replacing expensive database  with lightning-fast . This 98.8% performance improvement didn't just make developers happier—it fundamentally changed how I approach testing. 447 tests now run in  instead of —a  that makes test-driven development (TDD) practical again.
+  
+  
+  The Problem: When Tests Become a Bottleneck
+The test suite was destroying developer productivity. Every pull request meant waiting, every bug fix meant coffee breaks. With truncation-based test isolation, the team was hemorrhaging time:UserTest#test_email_validation - 
+  
+  
+  The Root Cause: Truncation Hell
+The culprit was my test isolation strategy: . Before each test, I was:Dropping and recreating data across 20+ tablesPerforming expensive I/O operations that scaled with data sizeEach test was paying a  tax just to clean up after itself. With 447 tests, that's over 3 minutes of pure overhead.
+  
+  
+  The Solution: Transaction Rollback Strategy
+Instead of physically deleting data and resetting sequences, I could simply wrap each test in a database transaction and .  transactions are designed for exactly this—atomic operations that can be discarded instantly. - Database schema loading, migrations, etc.Only test data is transactional - All changes disappear instantly -  is just a memory operation - Each test gets a fresh slate automatically
+  
+  
+  Performance Transformation
 
+  
+  
+  Dramatic Individual Test Speedup
+Example: User::ValidateTest#test_email_validation
+  
+  
+  What This Means for Developers
+Before (Truncation Hell):"I'll run tests while grabbing coffee" - waiting kills productivity1.8 tests per minute - glacial feedback4+ minute feedback loop - context switching inevitable - testing becomes optionalAfter (Transaction Magic):"I'll run tests before every commit" - instant gratification9,450 tests per minute - blazing speed3-second feedback loop - you're still thinking about the code - testing becomes second nature
+  
+  
+  The Problem: Expensive Database Surgery
+Each test paid ~40-60ms of truncation overhead: 20-30ms (disk I/O) 10-15ms (catalog updates) 5-10msWith 447 tests, that's over 3 minutes of pure cleanup time.
+  
+  
+  The Solution: Instant Rollback
+Transaction rollback costs ~2-4ms per test (50-75% reduction): 1-2ms (memory allocation) 1-2ms (memory discard) Pure memory operation![IMAGE PLACEHOLDER: Prompt: Performance cost breakdown comparison chart. Left bar showing truncation costs: "TRUNCATE ops (20-30ms)" in red, "Sequence resets (10-15ms)" in orange, "Connection overhead (5-10ms)" in yellow, totaling 40-60ms per test. Right bar showing rollback costs: "Transaction start (1-2ms)" in light blue, "Rollback (1-2ms)" in dark blue, totaling 2-4ms per test. Include annotations: "50-75% reduction" and "Pure memory operation" for rollback. Style: modern bar chart with gradient colors, clear cost labels, benchmark comparison.]Override 's  method to wrap test execution in database transactions:Setup OUTSIDE transaction - Database schema and reference data loads once per test suite - Each test runs atomically and always rolls back - Clear caches (, converted models, email collectors, )Why Override  Instead of Using Standard Hooks?The core issue is how 's  works: uses  to execute code inside a transaction blockIt sets thread-local variables to track the active transaction connectionIndividual database operations check these thread variables to reuse the transaction connectionThis pattern requires wrapping the  from the outsideStandard  lifecycle hooks have a fatal limitation, as there is no  or wrapper mechanism.By overriding , we control the  of operations and can properly use :1. Setup (OUTSIDE transaction)     ← Reference data persists
+2. Begin transaction with yield
+3. Test code (INSIDE transaction)  ← Thread variables track connection
+4. Rollback transaction
+5. Teardown (OUTSIDE transaction)  ← Clear caches, email collectors
 
-In C:\Users\carlo\scoop\apps\crystal\current\src\pointer.cr:146:29
+  
+  
+  Related Articles in My CI/CD Optimization Journey
+This article is part of my ongoing challenge to optimize tests and CI/CD pipelines for  projects. If you're interested in the full optimization story, check out my previous articles:]]></content:encoded></item><item><title>Crystal Minitest and the Shutdown Order Problem</title><link>https://dev.to/miry/crystal-minitest-and-the-shutdown-order-problem-jcn</link><author>Michael Nikitochkin</author><category>blog</category><pubDate>Sat, 24 Jan 2026 11:26:17 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[: Optimizing  setup by moving initialization from  to module-level broke logging:  creates resources early, and they're cleaned up before tests run (which happens in ). Solution: use  for tests instead.
+  
+  
+  Story: The Optimization and Discovery
+When setting up a  application to work with , I moved all initialization instructions to  hooks:After tests were working reliably, I optimized: why run this repetitive setup for every test? If I moved it to module-level initialization, it would run once when test file loads:Tests passed initially. But when I ran with  to enable verbose output, something broke:1 crystal run /users_test.cr
+Channel::ClosedError: Channel is closed
+    /usr/share/crystal/src/channel.cr:142:8 in 'send'
+    /usr/share/crystal/src/log/dispatch.cr:55:7 in 'dispatch'
+The logging channel was closed. I reverted to  as a workaround, but I needed to understand: Why does  setup runs matter more than  it runs?
+  
+  
+  Investigation: The Key Discovery
 
- 146 | (self + offset).value = value
-                               ^----
-Error: type must be Array(String | Symbol), not Array(String)
-Shouldn’t the compiler propagate the type specification, not only from the inside out, but also from the outside in?]]></content:encoded></item><item><title>Feasibility of multi-executable architecture for a large application using Crystal</title><link>https://forum.crystal-lang.org/t/feasibility-of-multi-executable-architecture-for-a-large-application-using-crystal/8505</link><author>gauravshah89</author><category>community</category><pubDate>Thu, 23 Oct 2025 10:32:33 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Crystal is my most-loved language  and I have been using it for small personal projects on and off. I am now starting a new project that may not remain personal in the long-run and should eventually grow on to become a large and complex desktop app. Run time performance will be a key requirement for this application.Since crystal has higher compile times compared to other languages, what is the best way to create very large and performant applications using crystal without getting bogged down by compile times?My Strategy  => Split the application into smaller  built from shared libraries rather than one monolithic Crystal binary. Rough proposed file structure given below: will be a standalone Crystal app/lib  () that compile quickly and will be linked to each other.common/
-shard.yml         # shared library (types, utils)api/
-shard.yml         # depends on ../commonworker/
-shard.yml         # depends on ../commoncli/
-shard.yml         # minimal dependenciesIs this a scalable approach for developing and maintaining serious production applications in Crystal? If this does not work out, I will have to use Rust which I don’t prefer.Thanks for reading this long question. ]]></content:encoded></item><item><title>A Closer Look at Piezoelectric Crystal</title><link>https://www.samaterials.com/content/a-closer-look-at-stressed-piezo-crystals.html</link><author>pillars</author><category>HN</category><category>hn</category><pubDate>Wed, 22 Oct 2025 16:12:16 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[
-                        Last updated on {{lastDate}}                    ²]]></content:encoded></item><item><title>We&apos;re reaching for the stars! 🚀✨</title><link>https://fosstodon.org/@CrystalLanguage/115418209673688930</link><author></author><category>official</category><enclosure url="https://cdn.fosstodon.org/media_attachments/files/115/418/195/353/117/484/original/d2be7cb66f9956a5.png" length="" type="text/plain"/><pubDate>Wed, 22 Oct 2025 14:08:35 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We're reaching for the stars! 🚀✨Just as 1.18 is released, over 20k users have starred the Crystal repo on GitHub 🌟]]></content:encoded></item><item><title>Crystal 1.18.2 is released!</title><link>https://forum.crystal-lang.org/t/crystal-1-18-2-is-released/8504</link><author>Crys</author><category>community</category><pubDate>Tue, 21 Oct 2025 20:20:55 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.2 with two regressions fixed.]]></content:encoded></item><item><title>LSP implementation for Crystal on Windows</title><link>https://forum.crystal-lang.org/t/lsp-implementation-for-crystal-on-windows/8502</link><author>god</author><category>community</category><pubDate>Tue, 21 Oct 2025 12:02:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The tooling for Crystal on Windows is not good. I am working on a language server and VSCode extension that leverages the existing CLI tools available and incorporates them into an instant-response context so as to achieve features such as autocomplete, real-time error detection, etc… on Windows, since Crystalline and Scry seem to be for POSIX platforms only.Demo of its current capabilities can be observed hereSource code is here, you can build the vsix for the vscode extension with “npm run package”, and the server itself with “shards build”.]]></content:encoded></item><item><title>Crystal 1.18.2 is released!</title><link>https://crystal-lang.org/2025/10/21/1.18.2-released/</link><author>Johannes Müller</author><category>releases</category><pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.2 with two regressions fixed.This release includes 3 changes since
-1.18.1
-by 3 contributors.  We thank all the contributors for all the effort put into
-improving the language! ❤️This patch release fixes a regression in the type restrictions of
- (#16231), and a bug in
-Fiber::ExecutionContext.default_workers_count (#16227) - both errors were
-introduced in 1.18.0.We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Optimization for nillable var check and code</title><link>https://forum.crystal-lang.org/t/optimization-for-nillable-var-check-and-code/8501</link><author>AlexR</author><category>community</category><pubDate>Mon, 20 Oct 2025 22:57:22 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Is there something terser than this:getter tex : LibSDL::Texture*?
-
-def render
-  tex = @tex
-  return unless tex
-  LibSDL.set_texture_alpha_mod(tex, 255)
-  ...
-end
-Original code, rejected by the compiler, being :getter tex : LibSDL::Texture*?
-
-def render
-  LibSDL.set_texture_alpha_mod(@tex.as(LibSDL::texture*), 255) if @tex
-  ...
-end
-
-# compilation error
-# Error: can't cast (Pointer(LibSDL::Texture) | Nil) to Pointer(LibSDL::Texture)
-]]></content:encoded></item><item><title>Crystal 1.18.1 is Released!</title><link>https://old.reddit.com/r/crystal_programming/comments/1obocwx/crystal_1181_is_released/</link><author>/u/Meatack</author><category>community</category><pubDate>Mon, 20 Oct 2025 17:32:54 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[   submitted by    /u/Meatack ]]></content:encoded></item><item><title>From Raw Crystal to Crystal Oscillator – Crystals Go to War in 1943</title><link>https://www.youtube.com/watch?v=duZlWWwxIPQ</link><author>akshatjiwan</author><category>HN</category><category>hn</category><pubDate>Mon, 20 Oct 2025 17:05:02 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Check if an array index exist</title><link>https://forum.crystal-lang.org/t/check-if-an-array-index-exist/8500</link><author>Fulgurance</author><category>community</category><pubDate>Sun, 19 Oct 2025 20:19:25 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I am actually coding a parser, and in my program I need to check if an index exist or not in the array. I did this, but when I try to run the code, crystal raise an error that my condition have  an index out of bound, why ?elsif Parser::ElseFilter.matches?(strippedLine)
-    if !elsePresence[currentIfLevel-1].nil? && elsePresence[currentIfLevel-1] || elsePresence[currentIfLevel-1].nil?
-        puts elsePresence.inspect
-        puts currentIfLevel-1
-        raise("Line #{index+1}\nFile: #{path}\nExtra else: #{line}\nAn extra \"else\" was declared.")
-    end
-Normally because I check if it is nil, I should not have problem with my condition no ?]]></content:encoded></item><item><title>Ruby controversy - Crystal opportunity</title><link>https://forum.crystal-lang.org/t/ruby-controversy-crystal-opportunity/8498</link><author>dsisnero</author><category>community</category><pubDate>Sat, 18 Oct 2025 17:41:06 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[@jgaskins With the recent controversy happening in ruby over Ruby Central and also DHH, it might be an opportunity for the more followed Crystal enthusiasts to re-introduce Crystal to the ruby world.10 posts - 6 participants]]></content:encoded></item><item><title>We&apos;ve just released Crystal 1.18.1 - a small bugfix version that solves two regressions.</title><link>https://fosstodon.org/@CrystalLanguage/115391082654527812</link><author></author><category>official</category><pubDate>Fri, 17 Oct 2025 19:09:49 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We've just released Crystal 1.18.1 - a small bugfix version that solves two regressions.]]></content:encoded></item><item><title>Crystal 1.18.1 is released!</title><link>https://crystal-lang.org/2025/10/17/1.18.1-released/</link><author>Matias Garcia Isaia</author><category>releases</category><pubDate>Fri, 17 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.1 with two regressions fixed.This release includes 2 changes since
-1.18.0
-by 1 contributor.  We thank all the contributors for all the effort put into
-improving the language! ❤️This patch release fixes a regression in the  def parsing (#16217), and
-overly strict type restrictions in  (#16218) - both introduced
-in 1.18.0.We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Crystal 1.18.0 Is Released</title><link>https://crystal-lang.org/2025/10/14/1.18.0-released/</link><author>sdogruyol</author><category>HN</category><category>hn</category><pubDate>Wed, 15 Oct 2025 14:30:44 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.0 with several new features and bug
-fixes.This release includes 172 changes since
-1.17.1
-by 31 contributors. We thank all the contributors for all the effort put into
-improving the language! ❤️Below we list the most remarkable changes in the language, compiler and stdlib.
-For more details, visit the full
-changelog.We do not expect any breaking changes in existing code. If you notice any
-unexpected issues, please let us know in the issue tracker or forum.Execution contexts from RFC 0002 continue as a preview feature with opt-in
-with compiler flags -Dpreview_mt -Dexecution_context. It might move out of
-preview in the next release.The preview of synchronization primitives in  has seen some
-improvements as well.Deprecation warnings are now available on types and aliases (#15962) as well
-as individual method parameters (#15999).
-Deprecated types only trigger warnings when they are actually  (e.g.
-calling a class method), not when they’re just part of a type restriction, for
-example.
-Deprecated parameters only trigger a warning when the particular parameter is
-used in a call. Calls without this parameter are unaffected.The format of  has been adjusted slightly to align with the Internet
-Extended Date/Time Format (IXDTF) defined in RFC 9557 (#16039).Changes from the previous format:Replace  location by  offsetSkip zero nanoseconds entirely even when  is true (see https://github.com/crystal-lang/crystal/pull/16039#discussion_r2250863021)Remove whitespace between time and offsetWrap location in square brackets to indicate an IXDTF time-zone suffixSome examples show the differences:The local Windows system time zone now uses the canonical IANA name (#15967).The output of  got a wrapper to indicate
-the  type and differentiate from the wrapped type (#15979).
-The equivalent for  is still pending.The private constructors of  moved into the 
-hook (#16147). They’re now defined on the including types which is more robust
-in terms of  overload ordering. This also allows referring generic
-type variables inside converters. now uses scoped ANSI reset codes which only reset the respective
-property, instead of resetting  (#16052).We added type restrictions to many API methods. This improves the documentation.
-This is a semi-automatic effort, assisted by a tool that automatically extracts
-typing information from the semantic analysis of a program (#15682).Multi-line strings containing source code in compiler specs have had two
-different formats: Some of them were using regular string literals, others used
-heredocs. The latter was usually preferred in new code additions because
-line numbers and indents are more sensible. And with an appropriate heredoc
-identifier to denote the language, we even get nested syntax highlighting.
-In this release we’ve converted all compiler specs to use heredocs
-(#11291).With the help of , we’ve enabled and applied a couple more linter rules:
- (#16010),  (#16011), and
- (#16014).The compiler can dump type information to a JSON file when the environment
-variable  is set (#16027).Resolve types when guessing return type from class method overloads (#16118).In the following snippet, the compiler is able to infer ’s type to be , since both overloads of  have a return type of :Guess instance variable types from global method calls (#16119).This allows the following to compile:The call needs to be global; other than that, type guessing for top-level methods has the same limitations as for class methods.Hash literals are evaluated from left to right, fixing a regression from 1.6.0 (#16124).Temporary variables are now grouped by file name in order to increase the chance
-of reusing previous macro expansions (#16122).Fully exit the process on  from REPL (#16171)Fixed interpreter hanging on the signal pipe (#16167)Support for LLVM 21.1 and 22.0 (#16062)Update Unicode to 17.0.0 (#16160)We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item><item><title>Crystal 1.18.0 is released!</title><link>https://old.reddit.com/r/crystal_programming/comments/1o7ckdv/crystal_1180_is_released/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Wed, 15 Oct 2025 14:29:46 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Notes on Building CLI and GUI tools with Crystal</title><link>https://dev.to/kojix2/notes-on-building-cli-and-gui-tools-with-crystal-4pcd</link><author>kojix2</author><category>blog</category><pubDate>Wed, 15 Oct 2025 03:25:14 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This post is just me writing down some vague thoughts that are floating around in my head right now.Sorry if you came here expecting a well-structured tutorial — but you know, if I try to organize everything perfectly, I’ll never publish anything.Crystal originated from the Ruby community, so there are many people who want to build web applications with it.However, the Crystal programming language itself can be described as “a statically compiled language with a Ruby-like syntax and a garbage collector, somewhat like C with GC and type inference.”It’s not necessarily optimized for web applications.Personally, I wanted to use Crystal for command-line tools and GUI apps.For some reason, though, there don’t seem to be many people building CLI tools in Crystal.The ecosystem for building and distributing binaries wasn’t very well developed for a long time.That used to be a real pain, but after gradually solving those issues, I think we’re now at the point where most CLI tools I want can be built and distributed in Crystal without much trouble.On the GUI side, the situation is similar — there aren’t many libraries available.But this isn’t unique to Crystal. GUI programming, in general, depends heavily on opaque, platform-specific APIs, which don’t always play nicely with open-source development.Then I got curious about Tauri and Electron — the now-famous WebView-based app frameworks.Personally, I can barely read JavaScript, so I had no real interest in those at first, but their popularity made me curious.And as I mentioned earlier, web app development in the Crystal ecosystem is quite active.So I decided to give it a try.I learned that “WebView” isn’t a single library — each OS (Windows, Linux, macOS) provides its own.Projects like webview/webview and Tauri’s wry act as unifying layers over these platform-specific APIs.Tauri itself uses WebView under the hood while also providing a framework to handle security and integration with Rust backends.Maybe it’s possible to use TypeScript and other frontend tools with Crystal too, but personally, I prefer the more old-fashioned approach — something like Kemal + ECR, the “classic amateur” way.When I actually started building an app with Crystal + WebView, I discovered a few things.First, you need to pay attention to event loops and thread management.The WebView itself runs in a separate process, and at the same time you need to run a Kemal server.That means you often have to make it multithreaded and carefully manage your execution contexts or Fibers — otherwise, things simply won’t run correctly.Then there’s the build, linking, and packaging pain.I sent a few pull requests to the Crystal WebView project, which helped a bit, but building on MinGW is still rough.MSVC technically works, but it’s just too tedious to deal with, so I decided to stay away from it.Bundling shared libraries is also tricky.I’d prefer to lean toward static linking whenever possible, but depending on licensing and security update concerns, it’s sometimes better to link against system or bundled shared libraries.I discovered tools like fpm, which are really useful, but in the end, I still end up asking AI to help me write custom GitHub Actions YAML and shell scripts.And then, once you finally have a working binary, Windows or macOS antivirus software will happily flag it as suspicious.Maybe for people doing this professionally, all this doesn’t sound like a big deal, but as someone doing it for fun, it’s a lot of work.
-Even so, after all the pain, I’ve started to feel like — maybe, just maybe — this setup is actually pretty cool.This post was translated from the original Japanese version using ChatGPT.
-You can read the original post here [JA]]]></content:encoded></item><item><title>Extra, extra - Crystal 1.18.0 is out now!</title><link>https://fosstodon.org/@CrystalLanguage/115374378935720511</link><author></author><category>official</category><pubDate>Tue, 14 Oct 2025 20:21:51 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[Extra, extra - Crystal 1.18.0 is out now!]]></content:encoded></item><item><title>How a quartz crystal works in a microcontroller?</title><link>https://dev.to/carolineee/how-a-quartz-crystal-works-in-a-microcontroller-4lhf</link><author>Hedy</author><category>blog</category><pubDate>Tue, 14 Oct 2025 09:37:43 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[This is a fundamental concept in microcontroller systems. Let's break down how a quartz crystal works in a microcontroller, from the basic physics to the practical circuit.The Core Concept: The Piezoelectric Effect
-At the heart of a quartz crystal is a physical phenomenon called the Piezoelectric Effect.Mechanical → Electrical: When you apply a physical stress (squeeze or bend) to a quartz crystal, it generates a small electrical voltage across its surfaces.Electrical → Mechanical: Conversely, when you apply an electrical voltage to a quartz crystal, it physically deforms (vibrates) slightly.This two-way street is the magic key.How It Creates a Clock Signal: ResonanceNatural Frequency: Every piece of quartz crystal has a natural resonant frequency—a specific frequency at which it "likes" to vibrate most efficiently. This frequency is determined primarily by its physical size, shape, and how it's cut. A thinner, smaller crystal vibrates at a higher frequency. This is why crystals for common microcontrollers (like 16 MHz, 20 MHz) are small, while crystals for real-time clocks (32.768 kHz) are larger and often cylindrical.The Oscillator Circuit: Inside the microcontroller, there is a specialized circuit called a Crystal Oscillator (often denoted as OSC1 and OSC2 pins). This circuit is designed to:Apply a constantly alternating voltage to the crystal.Listen to the tiny voltage generated by the crystal's vibration.Amplify that signal and feed it back to the crystal.The Self-Sustaining Loop (The "How It Works"):When you power on the circuit, electrical noise provides a tiny, random voltage kick to the crystal.The crystal vibrates in response, generating a tiny voltage at its natural resonant frequency.The oscillator circuit in the microcontroller picks up this tiny signal, amplifies it, and feeds it back to the crystal.This reinforced signal causes the crystal to vibrate more strongly.Within a few milliseconds, this feedback loop builds up into a strong, continuous, and perfectly stable oscillation at the crystal's precise natural frequency.The result is a clean, square-wave clock signal that drives the entire microcontroller.The Complete Picture: The Practical Circuit
-On your schematic and PCB, you don't just connect the crystal directly to the MCU. A typical crystal circuit looks like this:text
-
-         ---||---       ---||---
-OSC1 |---|     |---X---|     |---| OSC2
-     |    C1        |        C2   |
-     |              |             |
-     |-------------/ \------------|
-                   Rf (Internal)
-Illustration of a typical crystal oscillator circuitComponents and Their Roles:Quartz Crystal (X): The resonant element that sets the frequency.Load Capacitors (C1 and C2): These are absolutely critical.Purpose: They, along with the crystal's own internal capacitance, form a capacitive load that helps the crystal oscillate at its specified frequency.Value: The values (typically 10-22 pF for most MCUs) are chosen to match the crystal's specified load capacitance. Using the wrong values can make the oscillator unstable or cause the frequency to be slightly off.Internal Oscillator Circuit (inside MCU): Contains the amplifier and a feedback resistor (Rf), which biases the amplifier into its linear region so it can start and maintain oscillation.Why is the Clock Signal So Important?
-The clock signal is the "heartbeat" of the microcontroller. It synchronizes every operation:Core Execution: The CPU executes instructions in time with the clock ticks (each tick is one clock cycle).Peripheral Timing: Timers, PWM (Pulse Width Modulation), and communication interfaces like UART, SPI, and I2C all rely on the clock to generate precise baud rates and time intervals.Bus Operations: Reading from Flash memory, writing to RAM, and accessing peripherals are all coordinated by the clock.A simple analogy: Imagine an orchestra without a conductor. It would be chaotic. The crystal-generated clock signal is the conductor, ensuring every part of the microcontroller works in perfect synchrony.The Special 32.768 kHz "Watch Crystal"
-You often see a second, smaller crystal on boards (shaped like a tiny can). This is almost always a 32.768 kHz crystal.Why that number? 32,768 = 2¹⁵.A simple 15-stage binary divider circuit can easily divide this frequency down to exactly 1 Hz (one pulse per second), which is perfect for driving a Real-Time Clock (RTC) to keep track of time, even when the main microcontroller is in sleep mode.It's a resonator: The quartz crystal doesn't create a frequency out of nothing; it filters and stabilizes the oscillation to its precise natural frequency.Piezoelectric Effect is key: The mechanical-electrical feedback loop is what makes it work.It's a system: The crystal alone won't work. It needs the microcontroller's internal oscillator circuit and the external load capacitors to form a complete, functioning oscillator.Precision and Stability: Compared to internal RC oscillators, crystals are vastly more accurate and stable over temperature and voltage changes, which is essential for timing-critical applications and communication protocols.]]></content:encoded></item><item><title>Crystal 1.18.0 is released!</title><link>https://crystal-lang.org/2025/10/14/1.18.0-released/</link><author>Johannes Müller</author><category>releases</category><pubDate>Tue, 14 Oct 2025 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Releases</source><content:encoded><![CDATA[We are announcing a new Crystal release 1.18.0 with several new features and bug
-fixes.This release includes 172 changes since
-1.17.1
-by 31 contributors. We thank all the contributors for all the effort put into
-improving the language! ❤️Below we list the most remarkable changes in the language, compiler and stdlib.
-For more details, visit the full
-changelog.We do not expect any breaking changes in existing code. If you notice any
-unexpected issues, please let us know in the issue tracker or forum.Execution contexts from RFC 0002 continue as a preview feature with opt-in
-with compiler flags -Dpreview_mt -Dexecution_context. It might move out of
-preview in the next release.The preview of synchronization primitives in  has seen some
-improvements as well.Deprecation warnings are now available on types and aliases (#15962) as well
-as individual method parameters (#15999).
-Deprecated types only trigger warnings when they are actually  (e.g.
-calling a class method), not when they’re just part of a type restriction, for
-example.
-Deprecated parameters only trigger a warning when the particular parameter is
-used in a call. Calls without this parameter are unaffected.The format of  has been adjusted slightly to align with the Internet
-Extended Date/Time Format (IXDTF) defined in RFC 9557 (#16039).Changes from the previous format:Replace  location by  offsetSkip zero nanoseconds entirely even when  is true (see https://github.com/crystal-lang/crystal/pull/16039#discussion_r2250863021)Remove whitespace between time and offsetWrap location in square brackets to indicate an IXDTF time-zone suffixSome examples show the differences:The local Windows system time zone now uses the canonical IANA name (#15967).The output of  got a wrapper to indicate
-the  type and differentiate from the wrapped type (#15979).
-The equivalent for  is still pending.The private constructors of  moved into the 
-hook (#16147). They’re now defined on the including types which is more robust
-in terms of  overload ordering. This also allows referring generic
-type variables inside converters. now uses scoped ANSI reset codes which only reset the respective
-property, instead of resetting  (#16052).We added type restrictions to many API methods. This improves the documentation.
-This is a semi-automatic effort, assisted by a tool that automatically extracts
-typing information from the semantic analysis of a program (#15682).Multi-line strings containing source code in compiler specs have had two
-different formats: Some of them were using regular string literals, others used
-heredocs. The latter was usually preferred in new code additions because
-line numbers and indents are more sensible. And with an appropriate heredoc
-identifier to denote the language, we even get nested syntax highlighting.
-In this release we’ve converted all compiler specs to use heredocs
-(#11291).With the help of , we’ve enabled and applied a couple more linter rules:
- (#16010),  (#16011), and
- (#16014).The compiler can dump type information to a JSON file when the environment
-variable  is set (#16027).Resolve types when guessing return type from class method overloads (#16118).In the following snippet, the compiler is able to infer ’s type to be , since both overloads of  have a return type of :Guess instance variable types from global method calls (#16119).This allows the following to compile:The call needs to be global; other than that, type guessing for top-level methods has the same limitations as for class methods.Hash literals are evaluated from left to right, fixing a regression from 1.6.0 (#16124).Temporary variables are now grouped by file name in order to increase the chance
-of reusing previous macro expansions (#16122).Fully exit the process on  from REPL (#16171)Fixed interpreter hanging on the signal pipe (#16167)Support for LLVM 21.1 and 22.0 (#16062)Update Unicode to 17.0.0 (#16160)We have been able to do all of this thanks to the continued support of
- 84codes and every other sponsor.  To
- maintain and increase the development pace, donations and sponsorships are
- essential.  OpenCollective is
- available for that.Reach out to crystal@manas.tech if you’d like to
- become a direct sponsor or find other ways to support Crystal. We thank you in
- advance!Contribute]]></content:encoded></item></channel></rss>
+  
+  
+  Why Minitest Is Different
+ doesn't run tests during normal program execution. Instead:This creates a timing problem. With module-level setup: initialize a Log instance with  on booting spawns a background fiber with a channelMain program completes →  runtime cleanup beginsChannel may be closed by garbage collection (this is where my assumption lies) fires →  runs testsTests call  → channel already closed → With , setup happens inside , so the  instance is created during shutdown, not during normal execution.
+  
+  
+  How  Works
+During shutdown, garbage collection calls , which closes the channel. But  hooks run  some cleanup, creating the race condition.The issue isn't optimization itself—it's that  isn't suitable for code that runs before . The solution is to use a dispatcher without background resources for tests:For tests with module-level init,  is ideal.The optimization itself was sound—module-level initialization  faster. The issue was incompatibility with  in a shutdown context.More broadly, any code that relies on objects with finalize methods could be affected by garbage collection events and  timing—background resources created during normal execution may be cleaned up before tests run.The fix is simple (one configuration change) but reveals a broader principle:Test infrastructure must account for shutdown order and resource cleanup timing, regardless of framework. Some libraries use  handlers for cleanup in multi-threaded applications, and when tests run after these handlers, any finalized objects (channels, connections, files, caches) become inaccessible.]]></content:encoded></item><item><title>Crystal talk at FOSDEM 2026</title><link>https://crystal-lang.org/2026/01/23/crystal-talk-fosdem/</link><author>Johannes Müller</author><category>official</category><pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate><source url="https://crystal-lang.org/">Crystal Blog</source><content:encoded><![CDATA[The talk is going to be an introduction into some concepts of Crystals.
+If you are already familiar with the language, I hope it will still be worthwhile.If a couple of people are interested in a Crystal meetup, maybe
+we can arrange to gather somewhere during FOSDEM. Let me know in the comments.
+I’ll bring some Crystal merch.Hope to see you in Brussels!In case you can’t make it, the talk is being recorded. The talk recording is now available. Thanks to the video team at FOSDEM!]]></content:encoded></item><item><title>Jargon</title><link>https://old.reddit.com/r/crystal_programming/comments/1qk5gvw/jargon/</link><author>/u/transfire</author><category>community</category><pubDate>Thu, 22 Jan 2026 20:16:19 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[I just released Jargon, a Crystal library that generates CLI interfaces from JSON Schema definitions. Define your data structure once, get a CLI parser with validation for free.``` schema = %({ "type": "object", "properties": { "name": {"type": "string", "description": "User name"}, "count": {"type": "integer", "short": "n"}, "verbose": {"type": "boolean", "short": "v"} }, "required": ["name"] })cli = Jargon.from_json(schema, "myapp") result = cli.parse(ARGV) ```Features: - Multiple argument styles: --name John, name=John, name:John - Type coercion, validation, and defaults from the schema - Positional arguments, short flags, subcommands - Nested subcommands with independent schemas - JSON input from stdin]]></content:encoded></item><item><title>We released Crystal 1.19.1 to fix a regression in absolute to relative conversions of timers that affected some targets.</title><link>https://fosstodon.org/@CrystalLanguage/115938457609506527</link><author></author><category>official</category><pubDate>Thu, 22 Jan 2026 11:14:28 +0000</pubDate><source url="https://fosstodon.org/@CrystalLanguage">@CrystalLanguage</source><content:encoded><![CDATA[We released Crystal 1.19.1 to fix a regression in absolute to relative conversions of timers that affected some targets.]]></content:encoded></item><item><title>Ignoreme</title><link>https://old.reddit.com/r/crystal_programming/comments/1qjldsb/ignoreme/</link><author>/u/transfire</author><category>community</category><pubDate>Thu, 22 Jan 2026 04:56:51 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[If any one needs a simple ignore file parser and matcher (.gitignore compatible mostly), then here you go.Yes, I vibe coded the heck out of it. But it is a pretty tight functionality, so seemed to do a good job. Any suggestions or pull requests welcome.]]></content:encoded></item><item><title>APIs Ligeras con Crystal y Kemal parte 2</title><link>https://old.reddit.com/r/crystal_programming/comments/1qjjaxk/apis_ligeras_con_crystal_y_kemal_parte_2/</link><author>/u/emanuelpeg</author><category>community</category><pubDate>Thu, 22 Jan 2026 03:18:29 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>APIs Ligeras con Crystal y Kemal</title><link>https://old.reddit.com/r/crystal_programming/comments/1qjityb/apis_ligeras_con_crystal_y_kemal/</link><author>/u/emanuelpeg</author><category>community</category><pubDate>Thu, 22 Jan 2026 02:57:14 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Exploring Crystal macros: Building file-based routing for Kemal</title><link>https://krthr.co/exploring-crystal-macros-building-file-based-routing-for-kemal/</link><author>krthr</author><category>HN</category><category>hn</category><pubDate>Wed, 21 Jan 2026 19:35:48 +0000</pubDate><source url="https://news.ycombinator.com/newest">Hacker News - Newest: &quot;Crystal&quot;</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>

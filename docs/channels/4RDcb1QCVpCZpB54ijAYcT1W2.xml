@@ -1,82 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Wanna visualize your crystal code?</title><link>https://forum.crystal-lang.org/t/wanna-visualize-your-crystal-code/8554</link><author>ralsina</author><category>community</category><pubDate>Thu, 20 Nov 2025 16:29:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back I mentioned what I called the Ralsina Programmatic Universe, a chart I kept of how each of my projects used other projects and so on.It was a pretty half-baked thing …WELL now it’s AT LEAST 75% baked!And here is a fun thing: if you are a github user, you can get yours with no effort! Just:You can click on a repo to focus on it and its dependencies, you can search for a specific repo, double clicking will open the repo in the browser.]]></content:encoded></item><item><title>Get the current mode of a file</title><link>https://forum.crystal-lang.org/t/get-the-current-mode-of-a-file/8553</link><author>Fulgurance</author><category>community</category><pubDate>Wed, 19 Nov 2025 16:35:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi guys, I have a question. Is there any way to get the octal value (mode) of a file in crystal ?]]></content:encoded></item><item><title>A minimal terminal API shard omarluq/termisu</title><link>https://forum.crystal-lang.org/t/a-minimal-terminal-api-shard-omarluq-termisu/8549</link><author>omarluq</author><category>community</category><pubDate>Wed, 19 Nov 2025 04:30:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m building Termisu, a small, minimal terminal API inspired by Termbox and Termbox-Go. The goal is to offer a simple, lightweight foundation for building text based UIs on *nix systems.I don’t use Windows myself, so cross-platform support isn’t on my immediate roadmap, but I’m open to contributions if anyone wants to explore that side.If you’d like to try it out and give feedback or suggestions, I’d really appreciate it!]]></content:encoded></item><item><title>Gatekeeper</title><link>https://forum.crystal-lang.org/t/gatekeeper/8547</link><author>henrikac</author><category>community</category><pubDate>Tue, 18 Nov 2025 21:01:46 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve just released a small shard called , and I wanted to share it here in case it’s useful to others. is a lightweight .
-It doesn’t try to be a full security framework — instead, it focuses on one thing:Enforcing  for your routes, using whatever authentication mechanism  choose.It integrates into any Crystal HTTP handler chain, evaluates your rules, runs your authenticators, and returns  or  when needed.Simple  (regex path matching + optional HTTP methods)
-– sessions, JWT, API tokens, whatever fits your app with a built-in Optional Customize responses for
-Only ~125 lines of actual logic — intentionally tiny and focusedrequire "gatekeeper"
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Similar to asyncio</title><link>https://forum.crystal-lang.org/t/similar-to-asyncio/8744</link><author>junetxp01</author><category>community</category><pubDate>Sun, 1 Mar 2026 22:44:47 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Does Crystal have a library similar to asyncio like in Python?]]></content:encoded></item><item><title>Redis protocol update</title><link>https://forum.crystal-lang.org/t/redis-protocol-update/8743</link><author>jgaskins</author><category>community</category><pubDate>Sun, 1 Mar 2026 21:38:32 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been wanting to update my Redis shard for the past few years to use the RESP3 format, which adds new data types and changes the output format of some existing commands. Details are in this issue. I originally kept it on RESP2 because, at the time, nothing was using RESP3. Even the modules owned by Redis Labs (now just called Redis, Inc) were still outputting RESP2 data types.The downside is that it’s a pretty breaking change, which is difficult for something like Redis where most applications aren’t using it directly and are instead using it through shards like  and . Both of those shards do dependency management well and would avoid this breaking change until they were ready to upgrade, but others might not.Anyway, if anyone’s willing to take a look and offer feedback, that would be helpful.]]></content:encoded></item><item><title>fast-http-server: Super fast, zero configuration command line HTTP Server</title><link>https://old.reddit.com/r/crystal_programming/comments/1rhrcu3/fasthttpserver_super_fast_zero_configuration/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Sun, 1 Mar 2026 07:46:17 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>Projects that shouldn&apos;t work: doomcr</title><link>https://forum.crystal-lang.org/t/projects-that-shouldnt-work-doomcr/8740</link><author>omarluq</author><category>community</category><pubDate>Sat, 28 Feb 2026 03:32:11 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I did a fun and useless thing: put Doom in the terminal with Crystal.
+Why did I do this? Because why not.
+Honestly I fully expected this to explode. It did not.shareware  (default)Freedoom ()docker run --rm -it doomcr:latest
+docker run --rm -it -e DOOM_WAD_SOURCE=freedoom doomcr:latest
+You can also mount your own IWAD if you already have one.If anyone wants to try it and roast the terminal rendering/input handling, I’m all ears.]]></content:encoded></item><item><title>Error: can&apos;t find file &apos;sanitize&apos;</title><link>https://forum.crystal-lang.org/t/error-cant-find-file-sanitize/8739</link><author>zw963</author><category>community</category><pubDate>Fri, 27 Feb 2026 09:01:34 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I run shards install on my project (which use  as development dependencies failed ╰──➤ $ shards install
+Resolving dependencies
+Fetching https://github.com/j8r/tail.cr.git
+Fetching https://github.com/crystal-ameba/ameba.git
+Fetching https://github.com/vici37/cr-source-typer.git
+Fetching https://github.com/petoem/inotify.cr.git
+Fetching https://github.com/i3oris/reply.git
+Fetching https://github.com/icyleaf/markd.git
+Installing inotify (1.2.0 at 77b9c80)
+Installing tail (0.3.1)
+Installing ameba (1.6.4)
+Postinstall of ameba: shards build -Dpreview_mt
+Installing markd (0.5.0)
+Installing reply (0.4.0)
+Installing source-typer (0.3.5 at 022b9d3)
+Postinstall of source-typer: shards build --without-development
+Failed postinstall of source-typer on shards build --without-development:
+CRYSTAL_WORKERS=
+args=   --without-development
+I: Resolving dependencies
+I: Fetching https://github.com/icyleaf/markd.git
+I: Fetching https://github.com/i3oris/reply.git
+I: Using markd (0.5.0)
+I: Using reply (0.4.0)
+I: Writing shard.lock
+I: Building: typer
+E: Error target typer failed to compile:
+Showing last frame. Use --error-trace for full trace.
 
-class AppHandler
-  include HTTP::Handler
+There was a problem expanding macro 'macro_140407006690976'
 
-  def call(context)
-    case context.request.path
-    when "/"
-      context.response.print "Hello World!"
-    when "/admin"
-      context.response.print "Hello admin!"
-    else
-      context.response.status = HTTP::Status::NOT_FOUND
-      context.response.print "Not found"
-    end
-  end
-end
+Code in /home/zw963/Crystal/share/crystal/src/compiler/crystal/tools/doc/markd_doc_renderer.cr:1:1
 
-# Configure Gatekeeper
-Gatekeeper.config do |config|
-  # Called when no authenticator can produce a user
-  config.on_unauthenticated = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You must log in first."
-  end
+ 1 | {% if !flag?(:without_libxml2) %}
+     ^
+Called macro defined in /home/zw963/Crystal/share/crystal/src/compiler/crystal/tools/doc/markd_doc_renderer.cr:1:1
 
-  # Called when a user exists but lacks the required roles
-  config.on_unauthorized = ->(ctx : HTTP::Server::Context) do
-    ctx.response.print "You do not have permission."
-  end
+ 1 | {% if !flag?(:without_libxml2) %}
 
-  # Only allow users with role "admin" to access /admin
-  config.auth_rules << Gatekeeper::Rule.new(
-    /^\/admin/,
-    roles: ["admin"]
-  )
+Which expanded to:
 
-  # Allow everyone to access everything else (no roles)
-  config.auth_rules << Gatekeeper::Rule.new(/^\//)
+   1 |
+ > 2 |   require "sanitize"
+         ^
+Error: can't find file 'sanitize'
 
-  # Simple authenticator that always logs in an "admin" user
-  config.authenticators << ->(ctx : HTTP::Server::Context) : Gatekeeper::Identity? do
-    # In real code you’d look at cookies / headers / session etc.
-    Gatekeeper::IdentityUser(Int32).new(1, Set{"admin"})
-  end
-end
+If you're trying to require a shard:
+- Did you remember to run `shards install`?
+- Did you make sure you're running the compiler in the same directory as your shard.yml?
+I notice sanitize is a shards  in the crystal source code, but after I installed my self-compiled crystal compiler.not install(copy) following folder into dest install folder
+╰──➤ $ ls lib/ not include the lib folderCould the command I ran during installation be wrong?FLAGS=-Dpreview_mt make interpreter=1 stats=1 release=1following is the installed files:(no lib)```
+tmp
+└── local
+│   └── crystal
+├── bash-completion
+├── fish
+├── man
+```Or do I need to do some copying and setup myself?]]></content:encoded></item><item><title>Crystal spec hangs on Apple Silicon after linking</title><link>https://forum.crystal-lang.org/t/crystal-spec-hangs-on-apple-silicon-after-linking/8738</link><author>hahwul</author><category>community</category><pubDate>Fri, 27 Feb 2026 07:39:56 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m experiencing an issue where  completes Parse/Semantic and all Codegen stages (bc+obj/linking/dsymutil), but then completely hangs and doesn’t execute the specs.Here is the output with $ crystal spec
+^C
 
-handlers = [
-  Gatekeeper::AuthHandler.new,
-  AppHandler.new,
-]
+Aborted!
+Finished in 5:40 minutes
 
-server = HTTP::Server.new(handlers)
+$ crystal spec -p -s
+Parse:                             00:00:00.000543875 (   1.27MB)
+Semantic (top level):              00:00:00.305503792 ( 199.34MB)
+Semantic (new):                    00:00:00.001553541 ( 199.34MB)
+Semantic (type declarations):      00:00:00.020784875 ( 199.34MB)
+Semantic (abstract def check):     00:00:00.006858708 ( 215.34MB)
+Semantic (restrictions augmenter): 00:00:00.006153750 ( 231.34MB)
+Semantic (ivars initializers):     00:00:00.008899000 ( 231.34MB)
+Semantic (cvars initializers):     00:00:00.087336542 ( 263.39MB)
+Semantic (main):                   00:00:00.894053917 ( 712.27MB)
+Semantic (cleanup):                00:00:00.000304000 ( 712.27MB)
+Semantic (recursive struct check): 00:00:00.000601084 ( 712.27MB)
+Codegen (crystal):                 00:00:00.737221750 ( 777.27MB)
+Codegen (bc+obj):                  00:00:00.511846916 ( 811.27MB)
+Codegen (linking):                 00:00:00.206456875 ( 811.27MB)
+dsymutil:                          00:00:00.209412083 ( 811.27MB)
 
-address = server.bind_tcp "0.0.0.0", 3000
-puts "Listening on http://#{address}"
-server.listen
-This is , but the API is stable, fully tested, and intentionally small.
-I plan to iterate slowly with community feedback (rule helpers, role hierarchies, route attributes, etc.).Any thoughts, suggestions, or ideas are very welcome!Edit: Renamed kemal-guardian → GatekeeperEdit: Updated the example]]></content:encoded></item><item><title>Loading ECR templates at runtime*</title><link>https://forum.crystal-lang.org/t/loading-ecr-templates-at-runtime/8546</link><author>willhbr</author><category>community</category><pubDate>Tue, 18 Nov 2025 06:58:19 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve been doing a bit of a dive into how ECR works, and ended up implementing a way to reload the non-code parts of ECR files at runtime. This means you can make an HTML template, tweak styles/layout and see the changes immediately, so long as you don’t touch any Crystal code in the template.Once I knew how ECR works (it’s really cool!) I realised I could load the template-y parts of the ECR file at runtime, which gives me most of the benefit of runtime templates while still being able to compile to efficient code (sans hot reloading) on a release build. That post also has a bit of explanation on why ECR is so cool.Hopefully someone finds this useful or my explanations interesting!]]></content:encoded></item><item><title>New shard, kemal-controller</title><link>https://forum.crystal-lang.org/t/new-shard-kemal-controller/8545</link><author>hugopl</author><category>community</category><pubDate>Mon, 17 Nov 2025 19:03:27 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’m used to the rails way of doing a MVC web applications, so every time I was doing something with Kemal I had the felling of missing something, yes, a controller class.This shard does that, it add a way to write Kemal routes in a controller class (struct in fact), but the most interesting thing it does IMO is to map the HTTP/Route parameters into method parameters, example:struct UsersController < Kemal::Controller
-  @[Get("/users")]
-  def index
-    "Listing all users"
-  end
+Codegen (bc+obj):
+ - all previous .o files were reused
+^C
 
-  @[Get("/users/:id")]
-  def show(id : Int32)
-    "Showing user with ID: #{id}"
-  end
-
-  @[Post("/users", auth: true)]
-  def create(name : String, age : Int32, description : String?))
-    "Creating user with name: #{name}, age: #{age} and description: #{description}"
-  end
-
-  private def authenticate! : Bool
-    true
-  end
-end
-Not a single release yep, API isn’t stable but may not have radical changes, meanwhile I’m using it in a not yet released project to test the API.]]></content:encoded></item><item><title>Hot ECR Reloading in Your Area</title><link>https://old.reddit.com/r/crystal_programming/comments/1ozgsxh/hot_ecr_reloading_in_your_area/</link><author>/u/sdogruyol</author><category>community</category><pubDate>Mon, 17 Nov 2025 13:51:10 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item><item><title>OptionParser : conditional option</title><link>https://forum.crystal-lang.org/t/optionparser-conditional-option/8544</link><author>hutou</author><category>community</category><pubDate>Sun, 16 Nov 2025 18:43:14 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi,
-In OptionParser, would it be possible to have an option B depending on another option A, giving an error if option A is missing?]]></content:encoded></item></channel></rss>
+Aborted!
+Finished in 17.36 seconds
+0 examples, 0 failures, 0 errors, 0 pending
+Individual specs run fine when executed separately.This issue consistently happens on macOS / Apple Silicon.Clearing the cache () does not fix the issue; it still hangs right after the Codegen/linking stage.CPU Usage: While hanging, both the  process and the compiled  binary sit at 0.0% CPU (State ). I think.. this indicates a deadlock or a blocking wait rather than an infinite loop.You can reproduce this by cloning the OWASP Noir repository and running .Architecture: Apple Silicon (ARM64)I suspect this might be a macOS-specific LLVM or spec runner issue, possibly a deadlock when the runner tries to execute the compiled spec binary. Has anyone seen this behavior before, or have any pointers on how to debug this further?]]></content:encoded></item><item><title>Retriggering a shards postinstall?</title><link>https://forum.crystal-lang.org/t/retriggering-a-shards-postinstall/8737</link><author>Fijxu</author><category>community</category><pubDate>Fri, 27 Feb 2026 05:20:51 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Some tools that I use like Ameba and cr-source-typer execute a postinstall (example: cr-source-typer/shard.yml at master · Vici37/cr-source-typer · GitHub ) and will place it’s executable in the  directory of the current project, but when the system is updated, shared libraries change and then the shard binary has to be rebuilt, but shards does not seem to have an easy way to re trigger the postinstall without removing the dependency from the  file and running shards install <dependency>.There is any other way to do it? Would be great is shards could keep track of the installed binaries from dependencies and check if their linked libraries are still valid or something like that.]]></content:encoded></item></channel></rss>
