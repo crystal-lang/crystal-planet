@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>How to Set Intentions With Crystals for the First Time: A Beginner&apos;s Guide</title><link>https://dev.to/samriddhi_reiki/how-to-set-intentions-with-crystals-for-the-first-time-a-beginners-guide-4ban</link><author>Samriddhi Reiki Foundation (SRF)</author><category>blog</category><pubDate>Wed, 17 Jun 2026 09:44:20 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[You have your new crystal, but now what? Learn the simple, powerful art of setting intentions and "programming" your stones with this step-by-step beginner's guide.
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blogs</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Neonmem 0.9.7 is out.</title><link>https://dev.to/neonmem_dev/neonmem-097-is-out-59cp</link><author>Neonmem Dev Team</author><category>blog</category><pubDate>Wed, 24 Jun 2026 16:34:22 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[
+  
+  
+  1. A two-level importer — two kinds of "stuff," treated differently
+The big change. Your project doesn't come in one shape, so the importer no longer flattens
+it into one pile:Folders & files → a searchable knowledge pool. Your docs, code and notes are
+vectorised into a lossless, deduplicated facts pool — the same fact stated three ways
+becomes one fact, every source kept. Nothing is summarised away.Agent chats → typed memories. Point Neonmem at a Claude (or other agent) transcript
+and it pulls out only what's worth keeping — the decisions, dead-ends and rules — as
+clean, typed memories. A decision is stored as a decision; a dead-end stays a warning.
+The process-narration ("I read the file…", "please check…") is dropped. If a chat references a file on disk, that file is pulled into
+the pool automatically, with a memory that points back to it.The result is labelled honestly in the UI:  (the pool) and (the kept decisions).
+  
+  
+  2. Grounded, offline recall
+0.9.7 replaces the old embedder with , run as a fused  graph
+through :Database-class retrieval quality on  — no GPU, no PyTorch, no API key, no cloud.Every prompt walks memory in order — reflexes → short-term → long-term → facts pool —
+and answers from what you actually imported, or honestly says it doesn't know.This is the headline behaviour: ask  and you get  definition from docs — not the textbook expansion the model would otherwise guess. A memory that's
+occasionally wrong is worse than no memory at all, so the rule is: answer from the user's
+sources, or abstain. Never invent.Tag an import with a topic (e.g. ) and Neonmem mints one clean, canonical
+memory for it, linked back to the source — even when your docs never write the term
+verbatim, as long as they clearly describe it. If the corpus genuinely has nothing on a
+tag, it's left out rather than faked.Memories follow one : a single concise statement (ARC — your provisioning
+platform) linked to the full source, not a messy pile of raw chunks. Chat capture
+deduplicates through the same facts layer, so re-importing a conversation never doubles up.The importer keeps the  inside the cartridge (content-addressed +
+compressed) — one file replaces the scattered docs and transcripts, and the facts are
+always rebuildable from ground truth.Opt-in AES-256-GCM encryption at rest — your whole corpus as a private vault.Imported knowledge is long-term and  the project.
+  
+  
+  Built on (all open, permissively licensed)
+Embeddings:  (Apache-2.0) via  (MIT). Vector search: (MIT). Agent integration: the . Full attributions ship
+with every download. No third-party LLM, nothing phones home.Windows (signed installer + portable) and Linux (AppImage); macOS on the way. Local,
+private, and free for personal use.Import a project, then ask it the one thing your assistant always gets confidently wrong
+about your codebase. That question is the whole test.]]></content:encoded></item><item><title>How I Built 200+ High-Performance Web Apps for US Businesses (And What I Learned)</title><link>https://dev.to/daves_5482a3f7aa419af7b69/how-i-built-200-high-performance-web-apps-for-us-businesses-and-what-i-learned-4g17</link><author>Umer</author><category>blog</category><pubDate>Tue, 23 Jun 2026 11:18:26 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[If you're a US startup or business struggling to find a reliable software engineer who actually delivers — I want to share my story and what I've learned building 200+ projects.My name is Umer Malik. I'm a freelance software engineer specializing in serving American businesses and startups. Over the past 8 years, I've worked with clients across New York, Chicago, Los Angeles, and beyond — delivering high-performance web apps, APIs, WooCommerce solutions, and headless CMS systems with a 98% satisfaction rate.
+  
+  
+  The Problem Most US Businesses Face
+You've probably been burned before. A developer who disappeared mid-project. An agency that charged $20,000 for something that broke in a week. A "senior" engineer who couldn't explain their own code.I've heard these stories from almost every client who came to me.1. Direct Communication — No Middlemen
+You work directly with me, not a project manager who relays messages to an offshore team.2. Performance-First Development
+Every app I build targets 95+ Google PageSpeed scores out of the box. Fast sites = more conversions = more revenue for you.
+Weekly progress updates. Full code ownership transferred to you. No lock-in.4. US-Focused Engineering
+I understand American market standards, compliance needs, and business culture. My work is built to serve your US customers.
+  
+  
+  Technologies I Specialize In
+Next.js / React for blazing-fast frontendsNode.js / Go for scalable APIsWooCommerce for e-commerceHeadless CMS (Contentful, Sanity, Strapi)Cloud infrastructure (AWS, GCP)Cross-platform mobile apps98% client satisfaction rate8 years of dedicated experienceClients across New York, Chicago, Los Angeles, and more US citiesIf you're looking for a software engineer who is serious about your success, let's talk. I'm currently accepting new US clients for Q3 2026.Or reach out directly — I respond within 24 hours.Let's build something great together.]]></content:encoded></item><item><title>Hotwire Marten: Less JavaScript, More Interactivity</title><link>https://dev.to/treagod/hotwire-marten-less-javascript-more-interactivity-3f5i</link><author>Marvin Ahlgrimm</author><category>blog</category><pubDate>Fri, 19 Jun 2026 07:05:29 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[Recently I came across a statement that a developer went back to Ruby on Rails from the Crystal ecosystem. The reason: missing Hotwire support. And honestly, I get it!I'm a huge fan of the Hotwire utilities - you can write normal server code without too many frontend dependencies. In fact, Turbo brings SPA feeling out of the box!I've been developing apps with Marten for a while. And all of them have had Hotwire built in. I've built a turbo extension for it quite a while ago, but the experience was never the same as with Rails. So I very much understand the statement to go back to Rails. Everything works out of the box!Well, how should anyone know that there's already effort to bring better Hotwire support to the Crystal ecosystem, if nobody writes about it? So here it is! In this post I'll walk you through building a task app with Marten using the full Hotwire stack — Turbo Frames, Turbo Streams, and Stimulus. And beyond what's already available in marten-turbo, I'm currently working on importmap and Stimulus integration support, which is coming along nicely. I want to show you where things stand today.
+  
+  
+  Initializing the task app
+Let's start by setting up a normal Marten project:marten new project turbo_tasks
+Hotwire integration? None 😩 But don't worry — it's relatively simple to add, and once it's set up, the tooling will feel quite natural.Let's add marten-turbo and marten-stimulus. The latter will pull in marten-importmap as a transitive dependency:Run  and we're halfway there.We need to require the new dependencies and register the Marten apps:And just like that, Marten has Hotwire support! It recognizes Turbo tags, provides Turbo helpers, and adds CLI commands for importmap and Stimulus.config/initializers/importmap.crconfig/initializers/importmap_pins.crsrc/assets/application.js
+  
+  
+  2. Pin Hotwire dependencies
+Now pin the required packages:marten importmap pin @hotwired/turbo
+marten importmap pin @hotwired/stimulus
+
+  
+  
+  3. Boot Turbo and Stimulus
+Update src/assets/application.js:The  import is pinned automatically by  — no manual setup needed. It reads your importmap at runtime and registers any controllers it finds under the  prefix.You'll also need to tell the importmap where your controllers live. In config/initializers/importmap.cr:Finally, add  to the  section of your base template. This renders the importmap JSON and the necessary preloads.With that, the boring part is done. Let's build something.Let's build something really innovative: a Task App. An app where you can create a task and mark it as complete once done. Never seen that before 🤞.Well it's small enough to showcase the basics of this setup.We'll create a task model, let Marten generate the migrations and create a turbo-augmented CRUD interface.The model is kept fairly slim in order to not overload this post:turbo_tasksmarten genmigrations
+Generating migrations app :
+  › Creating src/migrations/202604270947501_create_main_task_table.cr]... DONE
+      ○ Create main_task table
+turbo_tasks
+turbo_tasksmarten migrate
+Running migrations:
+  › Applying main_202604270947501_create_main_task_table... DONE
+Create src/handlers/tasks/list_handler.cr and src/templates/tasks/list.html:{% extend "base.html" %}
+
+{% block title %}Tasks{% endblock %}
+
+{% block content %}
+  Tasks
+    {% for task in records %}
+      {{ task.title }}
+    {% endfor %}
+  
+{% endblock %}
+path "/", Tasks::ListHandler, name: "home" to your Add  right before  inside Nothing fancy yet — just a list of zero tasks. But open your dev-tools and check the network tab: Turbo and Stimulus are already loaded without touching any further JavaScript beyond the initialization 😮‍💨.From here on, we'll keep the setup intentionally small so the Turbo behavior stays visible.Let's add some basic Turbo functionality to see if it really works. We need a create handler, a schema, and a template:{% extend "base.html" %}
+{% block title %}Create Task{% endblock %}
+{% block content %}
+  Create Task
+      {% csrf_input %}
+      Title:Create
+{% endblock %}
+Add path "/tasks/create", Tasks::CreateHandler, name: "tasks_create" to your .Now update the list template to have a link to the new create page:{% extend "base.html" %}
+
+{% block title %}Tasks{% endblock %}
+
+{% block content %}
+  TasksCreate task
+    {% for task in records %}
+      {{ task.title }}
+    {% else %}
+      No tasks found. Create your first one
+    {% endfor %}
+  
+{% endblock %}
+Notice what's happening here: the "Create task" link has data-turbo-frame="new_task", which tells Turbo to fetch the create page and only extract the matching <turbo-frame id="new_task"> from the response. It swaps that frame into the empty  on the list page — no full page reload, no custom JavaScript. Nothing new to seasoned Hotwire devs, but it's still worth mentioning!Click the link and the form just appears inline. Submit it and you're back to the list with your new task. That's the SPA feeling Turbo gives you for free.That's enough for the first part. In the next one, I'll go further into Turbo and how to use it to not replace the whole page of the task list when updating a task!]]></content:encoded></item><item><title>How to Set Intentions With Crystals for the First Time: A Beginner&apos;s Guide</title><link>https://dev.to/samriddhi_reiki/how-to-set-intentions-with-crystals-for-the-first-time-a-beginners-guide-4ban</link><author>Samriddhi Reiki Foundation (SRF)</author><category>blog</category><pubDate>Wed, 17 Jun 2026 09:44:20 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[You have your new crystal, but now what? Learn the simple, powerful art of setting intentions and "programming" your stones with this step-by-step beginner's guide.
   
   
   You Bought a Crystal... Now What?
@@ -192,8 +291,4 @@ Using Crystal Awards, Acrylic Awards online, Custom perpetual plaques, and Perso
   
   Organizations planning award ceremonies often compare different recognition options before making a decision.
 The choice between crystal awards and plaques often depends on the event, budget, and recognition goals. Crystal awards are frequently selected for high-profile ceremonies because of their luxurious appearance, while plaques remain a classic and versatile option for many recognition programs.Modern engraving technology has made it possible to create highly detailed designs with exceptional precision. Logos, photographs, text, and decorative elements can all be incorporated into award designs, resulting in unique and personalized recognition pieces. This flexibility allows organizations to align awards with their branding and event themes.Choosing the Right Recognition Awards for Every Occasion
-Selecting the appropriate award is an important part of creating a successful recognition program. Different occasions call for different styles of awards, and understanding the purpose of the presentation helps ensure the best choice.Engraved Crystal Awards are often preferred for executive recognition, annual achievement ceremonies, and prestigious honors. Their polished appearance communicates excellence and distinction, making them ideal for celebrating major accomplishments. The reflective quality of crystal creates an impressive presentation that captures attention and enhances the significance of the award.Custom Engraved Plaques continue to be a reliable option for organizations seeking a traditional and professional recognition solution. They can be customized for virtually any event and are available in a wide range of styles and finishes. Their versatility makes them suitable for both formal and informal presentations.Religious Awards often feature inspirational messages, meaningful symbols, and personalized engravings that reflect faith and service. These awards are commonly presented during church anniversaries, ministry appreciation events, youth leadership programs, and community outreach initiatives. By recognizing dedication and commitment, these awards strengthen community bonds and encourage continued service.Firefighter Awards serve as powerful symbols of appreciation and respect. Fire departments, municipalities, and community organizations frequently present these awards to recognize years of service, acts of bravery, leadership achievements, and outstanding performance. Personalized engraving adds a meaningful touch that reflects the recipient’s contributions and dedication.A successful recognition program goes beyond simply presenting an award. It creates an opportunity to celebrate achievements, reinforce organizational values, and inspire future excellence. Personalized awards help recipients feel valued while strengthening relationships within teams and communities.Whether selecting Engraved Crystal Awards for prestigious ceremonies, Custom Engraved Plaques for professional recognition, Religious Awards for faith-based service, or Firefighter Awards for public safety heroes, choosing high-quality personalized awards ensures that accomplishments are honored in a meaningful and memorable way. Thoughtfully designed recognition products continue to serve as lasting reminders of dedication, achievement, and excellence long after the ceremony has ended.]]></content:encoded></item><item><title>The Two Worlds</title><link>https://dev.to/godsend69/the-two-worlds-30l6</link><author>Spiros Tsaconas</author><category>blog</category><pubDate>Sun, 17 May 2026 09:00:55 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[I am a thinker, a seeker, and a guide. My mission is to help others navigate the intersections of human potential and the emerging world of Artificial Intelligence, through understanding psychology, neuro-linguistic programming, and technology. I aim to empower people to harness their will, transcend limitations, and evolve into their highest selves, by joining me in exploring the powerful union of mind, heart, and machine.. . in order to Build The Bridge, for both of our Worlds.]]></content:encoded></item><item><title>Spectre Programming Language</title><link>https://dev.to/navidm/spectre-programming-language-39ff</link><author>Navid</author><category>blog</category><pubDate>Thu, 14 May 2026 20:07:32 +0000</pubDate><source url="https://dev.to/t/crystal">DEV Community: crystal</source><content:encoded><![CDATA[
-  
-  
-  Why create a new programming language?
-No programming languages offer the combination of DbC at the language-level and also low-level control over the programs written. Spectre features no garbage collector, opting for a custom-allocator based approach to memory management and ownership, and uses design-by-contract features such as preconditions, postconditions, and type-level invariants, in addition to static trust propagation through the use of verifiably safe and unverifiable functions.Some things built with the Spectre Programming Language:]]></content:encoded></item></channel></rss>
+Selecting the appropriate award is an important part of creating a successful recognition program. Different occasions call for different styles of awards, and understanding the purpose of the presentation helps ensure the best choice.Engraved Crystal Awards are often preferred for executive recognition, annual achievement ceremonies, and prestigious honors. Their polished appearance communicates excellence and distinction, making them ideal for celebrating major accomplishments. The reflective quality of crystal creates an impressive presentation that captures attention and enhances the significance of the award.Custom Engraved Plaques continue to be a reliable option for organizations seeking a traditional and professional recognition solution. They can be customized for virtually any event and are available in a wide range of styles and finishes. Their versatility makes them suitable for both formal and informal presentations.Religious Awards often feature inspirational messages, meaningful symbols, and personalized engravings that reflect faith and service. These awards are commonly presented during church anniversaries, ministry appreciation events, youth leadership programs, and community outreach initiatives. By recognizing dedication and commitment, these awards strengthen community bonds and encourage continued service.Firefighter Awards serve as powerful symbols of appreciation and respect. Fire departments, municipalities, and community organizations frequently present these awards to recognize years of service, acts of bravery, leadership achievements, and outstanding performance. Personalized engraving adds a meaningful touch that reflects the recipient’s contributions and dedication.A successful recognition program goes beyond simply presenting an award. It creates an opportunity to celebrate achievements, reinforce organizational values, and inspire future excellence. Personalized awards help recipients feel valued while strengthening relationships within teams and communities.Whether selecting Engraved Crystal Awards for prestigious ceremonies, Custom Engraved Plaques for professional recognition, Religious Awards for faith-based service, or Firefighter Awards for public safety heroes, choosing high-quality personalized awards ensures that accomplishments are honored in a meaningful and memorable way. Thoughtfully designed recognition products continue to serve as lasting reminders of dedication, achievement, and excellence long after the ceremony has ended.]]></content:encoded></item></channel></rss>
