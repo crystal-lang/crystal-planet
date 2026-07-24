@@ -1,1 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Project Jules reviewing Crystal</title><link>https://forum.crystal-lang.org/t/project-jules-reviewing-crystal/9015</link><author>renich</author><category>community</category><pubDate>Tue, 16 Jun 2026 04:07:36 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve setup project Jules to review Crystal. It’s been on autonomous mode for a while and it has found many potential issues and it can create PRs for all of those in varying levels of confidence.But, those are just some of the issues/opportunities it found on it’s own. I will include screenshots of the others.A “full wifi signal” evokes a high level of confidence on Jules being able to implement the fix on it’s own; without assistance.Then, there are the two other levels where it thinks it might require some assistance or definitely require assistance.In short, I would like to know if there is any interest in reviewing these and participate with the customization of Jules.I am currently running the 3 pre-defined profiels:So, a specialized profile or two might do us some good. What I’ve done so far is only to provision the machine with the latest crystal.In any case, ask away if interested. If you decide to ignore this, it’s OK. I offer it in good faith.Also, I have access to this Gemini Ultra account for 2 more months only while I finish a project. These are unused resources so I wanted to “waste” them properly. ;D]]></content:encoded></item><item><title>Dirless now handles SSH keys</title><link>https://old.reddit.com/r/crystal_programming/comments/1u62d0l/dirless_now_handles_ssh_keys/</link><author>/u/MallVirtual5236</author><category>community</category><pubDate>Mon, 15 Jun 2026 01:14:04 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Unexpected token: &quot;DELIMITER_START&quot; was, well, unexpected</title><link>https://forum.crystal-lang.org/t/unexpected-token-delimiter-start-was-well-unexpected/9070</link><author>swsch</author><category>community</category><pubDate>Fri, 24 Jul 2026 09:54:21 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I was doing some warmup exercises and ran into some unexpected behaviour.The original code and its inlined versiondef bday_pdox(n : Int32) : Float64
+    diff = (365 - n + 1..365).product
+    all = 365**n
+    1 - diff/all
+end
+
+def bday_pdox_inlined(n : Int32) : Float64
+    1 - (365 - n + 1..365).product/365**n
+end
+
+
+caused an OverflowError once  got too large. Annoying, but not unexpected. So I switched to floating point numbers:def bday_pdox_inlined(n : Int32) : Float64
+    1 - (365 - n + 1..365).product(&.to_f64)/365.0**n
+end
+Now  complained about a syntax error at the :syntax error in ‘./birthday_paradox.cr:35:45’: unexpected token: “DELIMITER_START”I had to add another – unexpected – pair of parentheses to get the code to compile:def bday_pdox_inlined(n : Int32) : Float64
+    1 - ((365 - n + 1..365).product(&.to_f64))/365.0**n
+end
+The same behaviour happens when I use a block  instead of the short version but in that case, the parentheses are not unexpected as blocks as final arguments inside complex expressions don’t mesh well.I assume that the short version gets macro expanded to the full block which then causes the problem. Explainable, but unexpected.Is that something that can be fixed in crystal or do I need to train my crystal eye to watch out for ?]]></content:encoded></item><item><title>Using new parallel ExecutionContext</title><link>https://forum.crystal-lang.org/t/using-new-parallel-executioncontext/9069</link><author>jzakiya</author><category>community</category><pubDate>Wed, 22 Jul 2026 16:13:38 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I converted my residue sieves to use the new Crystal 1.21  structures.They’re a significant upgrade in convenience, flexibility, and performance to create true parallelism. Under the old regime I had to compile, then run code, as:$ crystal build --release -Dpreview_mt --mcpu native twinprimes_ssoz.cr CRYSTAL_WORKERS=32 ./twinprimes_ssoz val1 val2Now I can do the way more convenient and easier:$ crystal build --release --mcpu native twinprimes_ssoz.cr $ ./twinprimes_ssoz val1 val2I used the   documentation below to learn how to use them.Enough was there for me to figure out, through trial-and-error, how to create working code. More thorough documentation would be useful to show and explain how all the different methods can|should be used.I was ultimately able to convert my old code to run in parallel similar to the Rust, D, C++, etc versions.  This means the code now reuses the threads to run all the sieve instances in parallel, and now uses a small constant memory footprint for the total length of the sieving process.  Previously the memory footprint would grow as more fibers were used, preventing processing of input sizes that needed more system memory than available.Below are 2 coded versions to achieve true parallel operation.The 1st retained the old code structure using , and the 2nd .  They perform similarly, switching in performance depending on the input sizes, but in general the times are consistently close.
+Parallel implementation using Channels
+
+  done = Channel(Nil).new(pairscnt)
+  threads = Fiber::ExecutionContext::Parallel.new("threads", System.cpu_count)
+  
+  threadscnt = Atomic.new(0)                # count of finished threads
+  restwins.each_with_index do |r_hi, i|     # sieve twinpair restracks
+    threads.spawn do
+      lastwins[i], cnts[i] = twins_sieve(params)
+      print "\r#{threadscnt.add(1)} of #{pairscnt} twinpairs done"
+      done.send(nil)
+  end end
+  pairscnt.times { done.receive }           # wait for all threads to finish
+  
+  
+Parallel implementation using Wait Groups
+  
+  wg = WaitGroup.new(pairscnt)
+  threads = Fiber::ExecutionContext::Parallel.new("threads", System.cpu_count)
+  
+  threadscnt = Atomic.new(0)                # count of finished threads
+  restwins.each_with_index do |r_hi, i|     # sieve twinpair restracks
+    threads.spawn do
+      lastwins[i], cnts[i] = twins_sieve(params)
+      print "\r#{threadscnt.add(1)} of #{pairscnt} twinpairs done"
+    ensure
+      wg.done
+  end end
+  wg.wait                                   # wait for all threads to finish
+  
+Again, this is a major & beneficial upgrade for Crystal, and it’s great this is now part of the .The only problem I’ve seen so far, using , is for certain input sizes both implementations start out using all available threads, but then quickly drop to using just 4 threads, then ultimately freezes processing, requiring a hard keyboard termination to stop it.This phenomena is not linear, as it occurs with some smaller input values, which doesn’t occur with much greater values. So it seems the parallel processing is tied to the input values somehow?I would also like feedback to writing the code “better” if possible.Kudos, again, to the development of these new parallel processing structures.12 posts - 4 participants]]></content:encoded></item></channel></rss>
