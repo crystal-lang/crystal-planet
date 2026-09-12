@@ -1,1 +1,367 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Project Jules reviewing Crystal</title><link>https://forum.crystal-lang.org/t/project-jules-reviewing-crystal/9015</link><author>renich</author><category>community</category><pubDate>Tue, 16 Jun 2026 04:07:36 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve setup project Jules to review Crystal. It’s been on autonomous mode for a while and it has found many potential issues and it can create PRs for all of those in varying levels of confidence.But, those are just some of the issues/opportunities it found on it’s own. I will include screenshots of the others.A “full wifi signal” evokes a high level of confidence on Jules being able to implement the fix on it’s own; without assistance.Then, there are the two other levels where it thinks it might require some assistance or definitely require assistance.In short, I would like to know if there is any interest in reviewing these and participate with the customization of Jules.I am currently running the 3 pre-defined profiels:So, a specialized profile or two might do us some good. What I’ve done so far is only to provision the machine with the latest crystal.In any case, ask away if interested. If you decide to ignore this, it’s OK. I offer it in good faith.Also, I have access to this Gemini Ultra account for 2 more months only while I finish a project. These are unused resources so I wanted to “waste” them properly. ;D]]></content:encoded></item><item><title>Dirless now handles SSH keys</title><link>https://old.reddit.com/r/crystal_programming/comments/1u62d0l/dirless_now_handles_ssh_keys/</link><author>/u/MallVirtual5236</author><category>community</category><pubDate>Mon, 15 Jun 2026 01:14:04 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Docs generating don&apos;t respect &quot;extend self&quot; in modules</title><link>https://forum.crystal-lang.org/t/docs-generating-dont-respect-extend-self-in-modules/9141</link><author>GerBra</author><category>community</category><pubDate>Thu, 10 Sep 2026 12:49:59 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Have a minor problem, maybe a “little” bug when generating docs with: crystal docs
+TODO: Write documentation for DocsTest
+module DocsTest
+extend self
+VERSION = "0.1.0"
+
+def self.hello_self
+puts "Hello self"
+end
+
+def hello_extend
+puts "Hello extend"
+end
+end
+
+
+crystal docs generates for namespace DocsTestSo it doesn’t noticed that hello_extent is also a class method (macro extend). It gets documented as an instance method.I’ve looked in issue tracker and not found an open report to this.Don’t know if i could/should create a issue. Therefor i use this as my “first post” instead…//Edit: Typos and provided html output, moved category]]></content:encoded></item><item><title>Multi-valued enum</title><link>https://forum.crystal-lang.org/t/multi-valued-enum/9140</link><author>hutou</author><category>community</category><pubDate>Thu, 10 Sep 2026 08:59:40 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Speaking of AI, I once asked ChatGPT to suggest the best way to code a variable or type that would meet the following conditions: 1) never occur, 2) occur once, 3) repeat  times?
+It suggested the following code:struct Occurrence(T)
+  enum Type
+    Once
+    Never
+    Repeatable(Int32)
+  end
+
+  property value : T
+  property type : Type
+
+  def initialize(@value : T, @type : Type)
+    raise "Invalid type" if @type == Type::Repeatable && @type.arg <= 0
+  end
+
+  def generate
+    case @type
+    when Type::Once
+      [@value]
+    when Type::Never
+      []
+    when Type::Repeatable
+      Array.new(@type.arg, @value)
+    end
+  end
+end
+
+# Examples of use
+once = Occurrence.new("Unique", Occurrence::Type::Once)
+never = Occurrence.new("Never happens", Occurrence::Type::Never)
+three_times = Occurrence.new("Three times", Occurrence::Type::Repeatable(3))
+
+puts once.generate # Output: ["Unique"]
+puts never.generate # Output: []
+puts three_times.generate # Output: ["Three times", "Three times", "Three times"]
+At the time, I think it was version 3.5 of ChatGPT—far from being as powerful as it is today—and the suggested syntax was, of course, incorrect.
+Nevertheless, even though the  here wasn’t directly similar to the concept of an “open enum” we’re discussing, I found the approach of making each item multi-valued to be interesting.
+I didn’t look into it any further, though.]]></content:encoded></item><item><title>Not initialized error</title><link>https://forum.crystal-lang.org/t/not-initialized-error/9139</link><author>1004w</author><category>community</category><pubDate>Wed, 9 Sep 2026 22:35:02 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[# units.cr
+require "./gamedata"
+require "./supports/macros"
+require "./modules"
+require "sdl"
+require "./lib/sdl/src/image"
+require "./lib/sdl/src/mix"
+require "./lib/sdl/src/ttf"
+require "./buildings"
+require "./pathfinder"
+require "set"
+
+class TDEnemy
+  # === Классовые параметры (аналог class-атрибутов питона) ===
+  class_field(moving_type, String, "soil")
+  class_field(display_name, String, "unit_simple_walker")
+  class_field(max_health, Int32, 100)
+  class_field(width, Float64, 0.7)     # размер в КЛЕТКАХ, float — как в питоне
+  class_field(height, Float64, 0.7)
+  class_field(speed, Float64, 1.5)     # клеток в секунду
+  class_field(attack_range, Float64, 8.0)    # пригодится для пулей
+  class_field(attack_cooldown, Float64, 0.5)
+  class_field(damage, Int32, 15)
+
+  class_property registry : Hash(String, TDEnemy.class) = {} of String => TDEnemy.class
+  macro inherited
+    # срабатывает при определении КАЖДОГО подкласса:
+    # класс сам вписывает себя в реестр, ничего руками добавлять не надо
+    TDEnemy.register({{ @type.stringify }}, {{ @type }})
+  end
+
+  # === Состояние экземпляра ===
+  property gamedata : Gamedata
+  property world_x : Float64
+  property world_y : Float64
+  property health : Int32
+  property alive : Bool = true
+  property image : SDL::Texture?
+  property facing_angle : Float64 = 0.0   # куда смотрим (градусы) — пригодится для copy_ex
+  property move_angle : Float64 = 0.0
+  property path : Array({Float64, Float64}) = [] of {Float64, Float64}
+  property current_waypoint : {Float64, Float64}? = nil
+  property target_turret : Building? = nil
+  property current_cell : {Int32, Int32}? = nil
+  property damage_visual_timer : Float64 = 0.0
+
+  property path_recalc_interval : Float64 = 2.0
+  property path_recalc_timer : Float64
+
+  def initialize(@gamedata, x : Int32, y : Int32)
+    @world_x = x.to_f64 + 0.5
+    @world_y = y.to_f64 + 0.5
+
+    # классовые значения читаем ТОЛЬКО через self.class —
+    # @x = @@x в базовом классе всегда видит базовый дефолт (см. max_health)
+    @health = self.class.max_health
+    @image = gamedata.textures[self.class.display_name]?.as?(SDL::Texture)
+
+    # размазываем пересчёты пути по времени, чтобы толпа не считала A* в один кадр
+    @path_recalc_timer = rand(@path_recalc_interval.not_nil!)
+
+    gamedata.units << self
+
+    cell_x = @world_x.to_i
+    cell_y = @world_y.to_i
+    if 0 <= cell_x < gamedata.ширина_сетки && 0 <= cell_y < gamedata.высота_сетки
+      gamedata.grid[cell_x][cell_y].units.add(self)
+      @current_cell = {cell_x, cell_y}
+    end
+  end
+  def self.register(name : String, klass : TDEnemy.class) : Nil
+      registry[name] = klass
+    end
+  def update(dt : Float64) : Nil
+    return unless alive
+
+    if damage_visual_timer > 0
+      @damage_visual_timer -= 300 * dt
+      @damage_visual_timer = 0.0 if @damage_visual_timer < 0
+    end
+
+    @path_recalc_timer -= dt
+    if @path_recalc_timer <= 0
+      @path_recalc_timer = @path_recalc_interval
+      request_new_path
+    end
+
+    update_facing
+    update_movement(dt)
+  end
+
+  def request_new_path : Nil
+    target = find_closest_turret
+    @target_turret = target
+    return unless target
+
+    start = {world_x.to_i, world_y.to_i}
+    # клетка турели непроходима — find_path_multi сам найдет соседнюю
+    target_pos = {target.x + target.width // 2, target.y + target.height // 2}
+
+    path = gamedata.pathfinder.find_path_multi(
+      start, target_pos, moving_type, {world_x, world_y}
+    )
+    unless path.empty?
+      @path = path
+      advance_waypoint
+    end
+  end
+
+  def find_closest_turret : Building?
+    closest : Building? = nil
+    min_dist = Float64::INFINITY
+
+    gamedata.buildings.each do |b|
+      next unless b.alive
+      next unless b.is_a?(Turret)
+
+      dx = world_x - b.x - 0.5
+      dy = world_y - b.y - 0.5
+      dist = Math.sqrt(dx * dx + dy * dy)
+      if dist < min_dist
+        min_dist = dist
+        closest = b
+      end
+    end
+    closest
+  end
+
+  def update_facing : Nil
+    t = target_turret
+    return unless t && t.alive
+
+    dx = (t.x + t.width / 2.0) - world_x
+    dy = (t.y + t.height / 2.0) - world_y
+    @facing_angle = Math.atan2(dy, dx) * 180.0 / Math::PI
+  end
+
+  def update_movement(dt : Float64) : Nil
+    t = target_turret
+    request_new_path if t.nil? || !t.alive || current_waypoint.nil?
+
+    wp = current_waypoint
+    return unless wp
+
+    # Уперлись в стену — стоим (пока не стреляем). Бомбер потом
+    # переопределит on_blocked_by_wall и будет взрываться
+    next_x = wp[0].to_i
+    next_y = wp[1].to_i
+    if 0 <= next_x < gamedata.ширина_сетки && 0 <= next_y < gamedata.высота_сетки
+      b = gamedata.grid[next_x][next_y].building
+      if b && b.is_wall
+        on_blocked_by_wall
+        return
+      end
+    end
+
+    dx = wp[0] - world_x
+    dy = wp[1] - world_y
+    dist = Math.sqrt(dx * dx + dy * dy)
+
+    @move_angle = Math.atan2(dy, dx) * 180.0 / Math::PI if dist > 0.01
+
+    step = speed * dt
+
+    if dist <= step * 2.0
+      # допрыгали — телепорт в waypoint, чтобы не дрожать на микро-дистанциях
+      @world_x = wp[0]
+      @world_y = wp[1]
+      advance_waypoint
+    else
+      @world_x += (dx / dist) * step
+      @world_y += (dy / dist) * step
+    end
+
+    update_cell
+  end
+
+  def on_blocked_by_wall : Nil
+    # пока просто стоим
+  end
+
+  def advance_waypoint : Nil
+    @current_waypoint = path.empty? ? nil : path.shift
+  end
+
+  def update_cell : Nil
+    new_cx = world_x.to_i
+    new_cy = world_y.to_i
+
+    return if current_cell == {new_cx, new_cy}
+
+    grid = gamedata.grid
+    w = gamedata.ширина_сетки
+    h = gamedata.высота_сетки
+
+    if old = current_cell
+      grid[old[0]][old[1]].units.delete(self) if 0 <= old[0] < w && 0 <= old[1] < h
+    end
+
+    if 0 <= new_cx < w && 0 <= new_cy < h
+      grid[new_cx][new_cy].units.add(self)
+      @current_cell = {new_cx, new_cy}
+    else
+      @current_cell = nil
+    end
+  end
+
+  def take_damage(amount : Int32) : Nil
+    return unless alive
+    @health -= amount
+    @damage_visual_timer = 255.0
+    die if health <= 0
+  end
+
+  def die : Nil
+    return unless alive
+    @alive = false
+    if old = current_cell
+      w = gamedata.ширина_сетки
+      h = gamedata.высота_сетки
+      if 0 <= old[0] < w && 0 <= old[1] < h
+        gamedata.grid[old[0]][old[1]].units.delete(self)
+      end
+    end
+    # TODO (когда будут пули): лут, взрыв, звук, удаление из gamedata.units
+    # (удалять из массива во время итерации нельзя — сделаем reject! в конце кадра)
+  end
+
+  def draw : Nil
+    return unless alive
+
+    camera = gamedata.camera
+    csx = gamedata.cellsizex
+    csy = gamedata.cellsizey
+
+    screen_x = (world_x * csx * camera.zoom + camera.dx).to_i
+    screen_y = (world_y * csy * camera.zoom + camera.dy).to_i
+    draw_w = (width * csx * camera.zoom).to_i
+    draw_h = (height * csy * camera.zoom).to_i
+
+    return if screen_x + draw_w < 0 || screen_x > gamedata.screen_x
+    return if screen_y + draw_h < 0 || screen_y > gamedata.screen_y
+
+    tex = image
+    return unless tex
+
+    dst = SDL::Rect.new(screen_x - draw_w // 2, screen_y - draw_h // 2, draw_w, draw_h)
+
+    if damage_visual_timer > 0
+      ratio = (damage_visual_timer / 255.0).clamp(0.0, 1.0)
+      g_val = (255 - 155 * ratio).to_u8
+      tex.color_mod = SDL::Color[255_u8, g_val, g_val]
+      gamedata.renderer.copy(tex, nil, dst)
+      tex.color_mod = SDL::Color[255_u8, 255_u8, 255_u8]
+    else
+      gamedata.renderer.copy(tex, nil, dst)
+    end
+  end
+end
+
+class SimpleWalker < TDEnemy
+  class_field(display_name, String, "unit_simple_walker")
+  class_field(max_health, Int32, 150)
+  class_field(width, Float64, 0.9)
+  class_field(height, Float64, 0.9)
+  class_field(speed, Float64, 1.5)
+
+
+  # явный инициализатор — чтобы дефолты class_field подкласса
+  # гарантированно применились (та же схема, что у зданий)
+  def initialize(gamedata, x, y)
+    super
+  end
+end
+im a noob in crystal came from python for game dev i also used C#: make an instance(?) of SimpleWalker classShowing last frame. Use --error-trace for full trace.Error: instance variable '’ of TDEnemy must be Float64, not NilInstance variable ‘’ was used before it was initialized in one of the ‘initialize’ methods, rendering it nilableBUT i initialized it already:property path_recalc_interval : Float64 = 2.0
+property path_recalc_timer : Float64and here in TDEnemy.initialize i get this error here:@path_recalc_timer = rand(@path_recalc_interval.not_nil!)
+but what it is, i already declared it in class as 2.0. how can i fix this?btw class_field is a macro like this but it is not related to the error:macro class_field(name, type, value)
+class_property {{name}} : {{type}} = {{value}}
+
+property {{name}} : {{type}} = {{value}}
+end
+]]></content:encoded></item><item><title>Crystal JSON Lexer is too strict on single unpaired UTF-16 surrogate for skipped fields</title><link>https://forum.crystal-lang.org/t/crystal-json-lexer-is-too-strict-on-single-unpaired-utf-16-surrogate-for-skipped-fields/9138</link><author>dammer</author><category>community</category><pubDate>Wed, 9 Sep 2026 14:06:52 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[require "json"
+ 
+# raw JSON frame with a lone-surrogate ESCAPE (not raw invalid bytes)
+raw = %q({"post_data":"before\uda41after","x":1})
+
+puts "raw valid_encoding? #{raw.valid_encoding?}" 
+
+struct X
+  include JSON::Serializable
+  
+  @[JSON::Field(ignore: true)]
+  @post_data : String? 
+
+  @x : Int32
+end
+ 
+X.from_json(raw)
+raw valid_encoding? true
+Unhandled exception: Unterminated UTF-16 sequence at line 1, column 27 (JSON::ParseException)
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/lexer.cr:334:5 in 'raise'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/lexer.cr:199:11 in 'consume_string_escape_sequence'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/lexer/string_based.cr:45:18 in 'consume_string_slow_path'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/lexer/string_based.cr:22:16 in 'consume_string'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/lexer.cr:64:37 in 'next_token'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/pull_parser.cr:678:5 in 'next_token'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/pull_parser.cr:554:14 in 'read_next_internal'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/pull_parser.cr:410:5 in 'read_next'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/pull_parser.cr:311:25 in 'read_string'
+  from /home/damir/.asdf/installs/crystal/1.19.2/share/crystal/src/json/pull_parser.cr:179:5 in 'read_object_key'
+  from play:8:3 in 'initialize:__pull_for_json_serializable'
+Actually no way to parse such raw data to get  value without monkey-patch stdlib or scrub data by the hand before parsing. Change the field type or use a converter also does not work, raise is at tokenization, before type handling.I think when field  or not inscluded (same lexer.skip used) Lexer can use relaxed token rules, instead of full checkingBrowsers’ , Go’s , Python’s , and serde_json all accept lone surrogate escapes in input and decode them to U+FFFD (or keep them, in Go’s and Browser case) rather than aborting.JSON.parse('{"post_data":"before\uda41after","x":1}')
+{post_data: 'before\uDA41after', x: 1}
+The JSON spec (RFC 8259 sec. 8.2) explicitly notes that unpaired surrogates are allowed to appear and that behavior is implementation-defined; it does not require rejecting the whole document. Crystal is stricter than the ecosystem here.]]></content:encoded></item></channel></rss>
