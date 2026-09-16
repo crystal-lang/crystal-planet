@@ -1,1 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Project Jules reviewing Crystal</title><link>https://forum.crystal-lang.org/t/project-jules-reviewing-crystal/9015</link><author>renich</author><category>community</category><pubDate>Tue, 16 Jun 2026 04:07:36 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve setup project Jules to review Crystal. It’s been on autonomous mode for a while and it has found many potential issues and it can create PRs for all of those in varying levels of confidence.But, those are just some of the issues/opportunities it found on it’s own. I will include screenshots of the others.A “full wifi signal” evokes a high level of confidence on Jules being able to implement the fix on it’s own; without assistance.Then, there are the two other levels where it thinks it might require some assistance or definitely require assistance.In short, I would like to know if there is any interest in reviewing these and participate with the customization of Jules.I am currently running the 3 pre-defined profiels:So, a specialized profile or two might do us some good. What I’ve done so far is only to provision the machine with the latest crystal.In any case, ask away if interested. If you decide to ignore this, it’s OK. I offer it in good faith.Also, I have access to this Gemini Ultra account for 2 more months only while I finish a project. These are unused resources so I wanted to “waste” them properly. ;D]]></content:encoded></item><item><title>Dirless now handles SSH keys</title><link>https://old.reddit.com/r/crystal_programming/comments/1u62d0l/dirless_now_handles_ssh_keys/</link><author>/u/MallVirtual5236</author><category>community</category><pubDate>Mon, 15 Jun 2026 01:14:04 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Pretty ? print of NamedTuple(s)</title><link>https://forum.crystal-lang.org/t/pretty-print-of-namedtuple-s/9143</link><author>willy610</author><category>community</category><pubDate>Mon, 14 Sep 2026 18:25:38 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Proper place for this contribution  is perhaps somewhere else but…Often one is ‘combining’ data from several different objects in many steps. I used to stick to the  pattern with Selection, Projection, Product and Set Operation on  in order to manage complexity.Quite easy operations to implement in .  I do use  as dataset. At least for temporary result. But  are hard to read (during verification). Or was!! Until now# TESTING
+# Some NamedTuple (as an array First Normal Form 1NF)
+#
+data_as_array = [{row: 0, kind: "NARROW", from_name: "TLSapi", connection_line_nr: 0, to_name: "ClientOrServer", to_col_x: 0},
+                 {row: 0, kind: "NARROW", from_name: "TLSapi", connection_line_nr: 1, to_name: "FeMaleOrMaleConnection", to_col_x: 1},
+                 {row: 0, kind: "NARROW", from_name: "Point", connection_line_nr: 2, to_name: "Inf", to_col_x: 2},
+                 {row: 0, kind: "NARROW", from_name: "HKDF", connection_line_nr: 3, to_name: "HMAC", to_col_x: 3},
+                 {row: 1, kind: "FAR", from_name: "KeyPair", connection_line_nr: 4, to_name: "Curve", to_col_x: 0}]
+# Print it
+puts pretty_named_tuples(data_as_array, "data_as_array")
+
+#
+#  Make a Hash(key,value)
+#
+data_as_hash = data_as_array.group_by { |r| r[:row] }
+# Print it (here just the first 3 lines only)
+puts pretty_named_tuples(data_as_hash.values.flatten[0, 3], "data_as_hash")
+
+# Or with less data and for one certain key
+# 
+less_data = data_as_array
+  .map { |row| {from_name: row[:from_name], to_name: row[:to_name]} }
+  .group_by { |r| r[:from_name] }
+# 
+puts pretty_named_tuples(less_data["TLSapi"], "less_data")
+data_as_array
+=============
+| row: 0 | kind: NARROW | from_name:  TLSapi | connection_line_nr: 0 | to_name:         ClientOrServer | to_col_x: 0 |
+| row: 0 | kind: NARROW | from_name:  TLSapi | connection_line_nr: 1 | to_name: FeMaleOrMaleConnection | to_col_x: 1 |
+| row: 0 | kind: NARROW | from_name:   Point | connection_line_nr: 2 | to_name:                    Inf | to_col_x: 2 |
+| row: 0 | kind: NARROW | from_name:    HKDF | connection_line_nr: 3 | to_name:                   HMAC | to_col_x: 3 |
+| row: 1 | kind:    FAR | from_name: KeyPair | connection_line_nr: 4 | to_name:                  Curve | to_col_x: 0 |
+data_as_hash
+============
+| row: 0 | kind: NARROW | from_name: TLSapi | connection_line_nr: 0 | to_name:         ClientOrServer | to_col_x: 0 |
+| row: 0 | kind: NARROW | from_name: TLSapi | connection_line_nr: 1 | to_name: FeMaleOrMaleConnection | to_col_x: 1 |
+| row: 0 | kind: NARROW | from_name:  Point | connection_line_nr: 2 | to_name:                    Inf | to_col_x: 2 |
+less_data
+=========
+| from_name: TLSapi | to_name:         ClientOrServer |
+| from_name: TLSapi | to_name: FeMaleOrMaleConnection |
+The source itself (like 40 rows only)# Usage here is 'crystal run pretty_named_tuples.cr'
+# ------------------------------------------------------------
+def self.pretty_named_tuples(the_named_tuple_rows, title)
+  ret = IO::Memory.new
+  if the_named_tuple_rows.size == 0
+    return ret << "#{title} (empty)"
+  end
+  total_widths_cols = Array(Int32).new
+  col_names = Array(String).new
+  # Scan all rows! to determine col widths
+  the_named_tuple_rows
+    .each_with_index { |arow, col_nr|
+      widths_in_row = arow
+        .map { |acol|
+          if col_nr == 0
+            col_names << acol.to_s # Pick col names from first row
+          end
+          acol.to_s.size + ((arow[acol].to_s).size) + 1
+        }
+      if total_widths_cols.size == 0
+        total_widths_cols = widths_in_row # First column in first row!
+      end
+      total_widths_cols.each_with_index { |a_col_width, col_index|
+        total_widths_cols[col_index] = [total_widths_cols[col_index], widths_in_row[col_index]].max
+      }
+    }
+  return ret << title << "\n" << title.size.times.map { |i| "=" }.join << "\n" <<
+    the_named_tuple_rows.map { |arow|
+      col_names.map_with_index { |col_name, col_nr|
+        col_content = arow[col_names[col_nr]]
+        if col_nr == 0
+          left_margin = "|"
+        else
+          left_margin = ""
+        end
+        col_name_s = col_name + ":"
+        col_content_s = col_content.to_s
+        spc_cnt : Int32 = total_widths_cols[col_nr] - col_name_s.size - col_content_s.size
+        spacing = ((1..spc_cnt).map { |c| " " }).join
+        left_margin + " " + col_name_s + spacing + " " + col_content_s + " |"
+      }.join # join columns into a row
+    }.join("\n")
+end
+Combine test source and method source into the_thing.crAnd use the very handsome   to understand how to use your own data perhaps]]></content:encoded></item></channel></rss>
