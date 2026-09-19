@@ -1,1 +1,271 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Project Jules reviewing Crystal</title><link>https://forum.crystal-lang.org/t/project-jules-reviewing-crystal/9015</link><author>renich</author><category>community</category><pubDate>Tue, 16 Jun 2026 04:07:36 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[I’ve setup project Jules to review Crystal. It’s been on autonomous mode for a while and it has found many potential issues and it can create PRs for all of those in varying levels of confidence.But, those are just some of the issues/opportunities it found on it’s own. I will include screenshots of the others.A “full wifi signal” evokes a high level of confidence on Jules being able to implement the fix on it’s own; without assistance.Then, there are the two other levels where it thinks it might require some assistance or definitely require assistance.In short, I would like to know if there is any interest in reviewing these and participate with the customization of Jules.I am currently running the 3 pre-defined profiels:So, a specialized profile or two might do us some good. What I’ve done so far is only to provision the machine with the latest crystal.In any case, ask away if interested. If you decide to ignore this, it’s OK. I offer it in good faith.Also, I have access to this Gemini Ultra account for 2 more months only while I finish a project. These are unused resources so I wanted to “waste” them properly. ;D]]></content:encoded></item><item><title>Dirless now handles SSH keys</title><link>https://old.reddit.com/r/crystal_programming/comments/1u62d0l/dirless_now_handles_ssh_keys/</link><author>/u/MallVirtual5236</author><category>community</category><pubDate>Mon, 15 Jun 2026 01:14:04 +0000</pubDate><source url="https://old.reddit.com/r/crystal_programming/">r/crystal_programming</source><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Recent Discussions</title><link>https://planet.crystal-lang.org/</link><description></description><item><title>Help with the Log module and databases</title><link>https://forum.crystal-lang.org/t/help-with-the-log-module-and-databases/9158</link><author>GalactHD</author><category>community</category><pubDate>Sat, 19 Sep 2026 12:56:41 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Hi! Is it possible to use the Log module to get logs about queries/database access? Something like the Active Record logs, but only using the crystal-pg driver.]]></content:encoded></item><item><title>Ld64.lld: undefined symbol: close (and memcpy/memset/etc.) linking on macOS 26 (Xcode 26.2 SDK)</title><link>https://forum.crystal-lang.org/t/ld64-lld-undefined-symbol-close-and-memcpy-memset-etc-linking-on-macos-26-xcode-26-2-sdk/9157</link><author>chikega</author><category>community</category><pubDate>Sat, 19 Sep 2026 01:19:42 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Since updating to macOS 26.6.2 with Xcode 26.2, Crystal fails to link  program — even a trivial  — with undefined symbol errors for basic libc functions.crystal --version
+Crystal 1.21.0 (2026-07-16)
+LLVM: 22.1.8
+Default target: aarch64-apple-macosx26.0
+
+sw_vers
+ProductVersion: 26.6.2
+BuildVersion:   25G83
+
+xcode-select -p
+/Applications/Xcode_26.2.app/Contents/Developer
+
+Installed via Homebrew ().echo 'puts "hello"' > hello.cr
+crystal build hello.cr
+
+ld64.lld: error: undefined symbol: close
+>>> referenced by mach_o.cr:82 (.../crystal/src/crystal/system/unix/mach_o.cr:82)
+>>>               E-xception5858C-allS-tack.o0.o:(symbol *Exception::CallStack::load_debug_info_impl:Nil+0xab8)
+>>> referenced 18 more times
+
+ld64.lld: error: too many errors emitted, stopping now
+clang: error: linker command failed with exit code 1
+
+Undefined symbols also include , , , and  — basically every libc/libunwind symbol the runtime needs, which suggests  isn’t resolving  at all on this SDK version.Forcing Apple’s linker instead of  fixes it:crystal build hello.cr --link-flags="-fuse-ld=ld"
+
+Has anyone else hit this on macOS 26? I couldn’t find it reported here or on the GitHub issue tracker yet. Given ’s history of lagging behind new Xcode SDK TAPI () formats (this bit Rust recently too — rust-lang/rust#162928), my guess is the Homebrew formula’s default  needs to fall back to system  on newer SDKs, or bump its bundled LLVM. Happy to provide more diagnostics if useful.]]></content:encoded></item><item><title>[RFC] crinit: Pluggable filesystem-driven template engine for Crystal (upstream crystal init evolution)</title><link>https://forum.crystal-lang.org/t/rfc-crinit-pluggable-filesystem-driven-template-engine-for-crystal-upstream-crystal-init-evolution/9156</link><author>renich</author><category>community</category><pubDate>Fri, 18 Sep 2026 19:42:09 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[Currently,  and  generate hardcoded skeletons embedded in compiler macros. While fine for getting started, real-world projects invariably require customized scaffolding: domain-segregated layouts, alternative licenses (GPL, Apache, BSD), container recipes, systemd unit files, CI/CD matrices, and static analysis setups (Ameba, Flaw).To address this, we developed  as a prototype and working implementation for an upstream RFC to evolve  into a pluggable, filesystem-driven scaffolding engine.Filesystem Tree Mirroring with Macro Safety:
+A template is simply a directory containing files, directories, and an optional  manifest.Template tokens use double curly braces (, , , , ).Standard Crystal macros (, ) inside generated source code pass through untouched without escaping.:
+Templates resolve deterministically with zero configuration:
+CLI flag: Environment: Workspace: ./.crystal/templates/<name>User directory: $XDG_DATA_HOME/crystal/templates/<name> (Linux/BSD) or OS equivalentSystem directory: /usr/share/crystal/templates/<name>Built-in fallback: Embedded  and  skeletons (100% backward-compatible)Remote Assets with Offline Fallback (ADR-004):
+Templates can declare static external assets (e.g. CSS/JS libraries or licenses) fetched over HTTPS with SHA-256 integrity validation. A 4-tier pipeline guarantees air-gapped/offline reliability: →  → Bundled Template Fallback → .Reference Examples in RepositoryWe’ve added three concrete template implementations to :: OptionParser integration, version module, and isolated specs.: Domain layout (, ), Podman Quadlet container files, RPM , and GPLv3 licensing.: Kemal hypermedia web layout with remote asset declarations (Pico CSS, Datastar) and bundled offline fallbacks.Looking forward to feedback on the resolution order, token conventions, and manifest schema before opening the formal RFC against .]]></content:encoded></item><item><title>Crystal for Agents: v1.21.0 Update, 27 Advanced Recipes &amp; Automated Code Verification</title><link>https://forum.crystal-lang.org/t/crystal-for-agents-v1-21-0-update-27-advanced-recipes-automated-code-verification/9155</link><author>renich</author><category>community</category><pubDate>Fri, 18 Sep 2026 18:53:58 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[A while back, I shared  here; my reference project aimed at keeping LLMs from hallucinating outdated patterns, stale threading APIs, or Rubyisms when working with Crystal.I recently finished updating it for Crystal v1.21.0, auditing semantics against the compiler source and standard library, and adding a dedicated chapter of practical patterns/recipes.Here is a summary of what was updated:1. Crystal v1.21.0 Semantic AuditThe 21 reference sections were cross-checked against Crystal v1.21.0 compiler internals and stdlib:Type Hierarchy & Semantics: Explicit heap vs. value allocations, reference semantics ( and  inheriting from ), and strict nil safety.: Modern Execution Contexts, fiber scheduler behavior,  mechanics, and modern  primitives (, , , ).Inheritance vs. Reopening: Explicit distinction between subclassing () and reopening types (), eliminating hallucinated keywords like .: Modern  APIs, Ameba and Flaw integration, spec guidelines, and E2E testing with /.2. Chapter 20: Advanced RecipesAdded a collection of 27 tested recipes covering common concurrency, metaprogramming, and performance patterns:Fiber Concurrency & Channels: Channel-ring resource pooling, non-blocking channel polling using , concurrent piped process I/O (handling >64KB output without pipe buffer deadlocks), and atomic mutations with .: Deferred AST ivar reflection via , compile-time annotation registries using nested , and zero-allocation dynamic dispatch with  indexing.: Stack buffers via , zero-copy socket transfers with , and target-specific vectorization with .Peak Performance & Micro-Binaries: Host-tuned optimization pipelines with , , , and linker stripping ().3. Automated Code Snippet VerificationTo make sure documentation examples don’t bitrot or break, scripts/verify_code_examples.cr extracts every code block across all 21 RST chapters, formats it with , and checks compilation with crystal build --no-codegen:: 0 format errors, 0 compilation failures.RST linting with  across all sections.Builds into a single PDF book via Pandoc and XeLaTeX ().4. Portable Agent Skill & LLM Benchmark: Updated the agent skill package () with reference cheat-sheets, 27 superpower recipes, and antipattern rules.LLM Benchmark (scripts/llm_benchmark.bash): A test harness to compare baseline model output against documentation-guided prompts to check compliance with modern Crystal concurrency and memory safety.The repository is hosted on GitLab (it uses the Git SHA-256 object format, which GitHub currently doesn’t support):If you’re experimenting with LLMs for Crystal development or just want a quick reference for these patterns, feel free to check it out. Feedback, corrections, and additional recipe ideas are always welcome.]]></content:encoded></item><item><title>Feature Request: add to shard support for manage C/C++ deps</title><link>https://forum.crystal-lang.org/t/feature-request-add-to-shard-support-for-manage-c-c-deps/9154</link><author>synacker</author><category>community</category><pubDate>Fri, 18 Sep 2026 15:37:44 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[The crystal lang provides good way for binding with C, but not provides way to manage a sets of C/C++ deps.For example, I want to create a crystal lib for works with ffmpeg. The ffmpeg has a lot of deps. I can to bind with hope that system lib is exists, but there are next problems:Versions mismatch. I can write crystal lib based on ffmpeg 9, but the system has only ffmpeg 8No way to check that needed libs are exists (postscript don’t provide a way to do this perfectly)From other side, the shard can manage also C/C++ deps with next limits:No binary storage, only a recipes for compilationThe compilation flags cann’t changeThe compiler requirements cann’t change and auto dMy suggestion is add support to shard C/C++ deps in next way:name: ffmpeg_crystal
+version: 0.1.0
+description: Crystal bindings for FFmpeg with self-compiling static dependencies.
+
+# 1. Normal Crystal Shard dependencies
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    version: ~> 1.5.0
+
+# 2. The New Proposed C/C++ Static Dependencies Block
+native_dependencies:
+  # Dependency name used as the linking identifier (e.g., -lopus)
+  opus:
+    git: https://github.com
+    branch: master
+    build_system: autotools
+    # Immutable flags predefined by the shard author for static linking
+    flags:
+      - --enable-static
+      - --disable-shared
+      - --disable-extra-programs
+      - --with-pic
+
+  x264:
+    git: https://videolan.org
+    tag: stable
+    build_system: makefile
+    flags:
+      - --enable-static
+      - --enable-pic
+      - --disable-cli
+
+  # Target library depends on the upstream static libs
+  libavcodec:
+    git: https://github.com
+    tag: n7.0
+    build_system: autotools
+    # Ensures opus and x264 are compiled and paths are mapped BEFORE building ffmpeg
+    requires:
+      - opus
+      - x264
+    flags:
+      - --enable-static
+      - --disable-shared
+      - --enable-pic
+      - --enable-libopus
+      - --enable-libx264
+      - --disable-programs
+      - --disable-doc
+
+What do you think about this proposal?]]></content:encoded></item><item><title>Socket connection error after macOS 26.7 update</title><link>https://forum.crystal-lang.org/t/socket-connection-error-after-macos-26-7-update/9145</link><author>nogginly</author><category>community</category><pubDate>Thu, 17 Sep 2026 23:45:35 +0000</pubDate><source url="https://forum.crystal-lang.org/latest">Forum</source><content:encoded><![CDATA[UPDATE 2026-09-18 - Script connect_refusal_check_v2.cr replaces earlier version below, adding a test without O_NONBLOCK, which turned out to be OK (whew!)I’m looking for folks who are running macOS and have, or are about to, update to macOS 26.7 (still Tahoe) to run a test. Here’s what happened:I have several Crystal apps that use HTTP to talk to local serversThe local servers are accessible via  and Until two days ago, all my apps worked fine talking to  as host.After the macOS point update,  the same apps, not re-compiled, shipped binaries, all failed with a timeout error.Switching to  they worked; but no longer with .But  worked fine with both.Intriguing, I thought! I pulled out my dweeb hat and empty pipe and leaned my unused violin nearby and sat down to some sleuthing. ;-) returns two entries for : an v6 address  and v4 address  gets these two and then calls  which goes through them and is supposed to go past a failing  and land on , which it did in fact do However now it “thinks” it succeeded and returns a socket that then fails immediately when the  tries to write to it.I’m the first person to line up and say “it must be me, can’t be Apple, seems too basic.” (I call this the “Oracle problem”, back in the day when fellow devs ran into SQL problems they blamed it on Oracle, but it was never Oracle.)With help from Claude Opus I learned about how  does something called “happy eyeballs” or RFC 8305. That alone was worth running this issue. But this still didn’t feel right. After some more research I was able to write a test program in Crystal that tries to extract all the different error codes and confirm / deny the issue.Also, since this was affecting shipping software I needed to ship a fix, so I worked out a monkey-patched shard that I was able to use in my projects and ship updates for others using my apps. I wasn’t sure if it affected everyone but I couldn’t take a chance.I’ll paste the test program below, I can’t attach  file. It turns out it’s not just me. A colleague hadn’t updated yet, so he ran the test  and  and boom. So I am now looking for more data. Anyone who is willing to run the program, instructions are in the comment of the program, would be greatly appreciated.If you have the same problem you will get the following verdict:== Verdict
+  FAIL  closed port raises
+  FAIL  localhost falls back
+  FAIL  2nd connect reports refusal
+  AFFECTED: Crystal does not report refused connections on this system.
+If you don’t have the problem you will get this:== Verdict
+  ok    closed port raises
+  ok    localhost falls back
+  ok    2nd connect reports refusal
+  NOT AFFECTED
+Here’s the test script to save and run.# Checks whether Crystal's Socket#connect misses refused connections, as seen
+# on macOS 26.7. Standalone: does not use socket_connect_fix and needs no
+# running server.
+#
+# Usage:
+#   crystal run connect_refusal_check_v2.cr
+#   crystal run -Devloop=libevent connect_refusal_check_v2.cr
+#
+# Check 1 decides the verdict. Check 2 shows the user-visible symptom and needs
+# localhost to resolve another address before 127.0.0.1. Check 3 shows what the
+# kernel returns for a non-blocking connect, and check 4 the same for a
+# blocking one, both independent of Crystal. Exits 1 if affected, 0 if not, 2 if
+# check 1 could not run.
+require "socket"
+
+{% if flag?(:darwin) || flag?(:bsd) %}
+  SO_ERROR = 0x1007
+{% elsif flag?(:linux) %}
+  SO_ERROR = 4
+{% else %}
+  {% raise "SO_ERROR constant unknown for this platform" %}
+{% end %}
+
+# Returns trimmed stdout of *cmd*, or "n/a" if it cannot run.
+def command_output(cmd : String, args : Array(String)) : String
+  io = IO::Memory.new
+  status = Process.run(cmd, args, output: io, error: Process::Redirect::Close)
+  status.success? ? io.to_s.strip.gsub('\n', ' ') : "n/a"
+rescue
+  "n/a"
+end
+
+# Returns the kernel's pending error on *fd* and clears it.
+def pending_error(fd) : Int32
+  value = 0
+  len = LibC::SocklenT.new(sizeof(Int32))
+  LibC.getsockopt(fd, LibC::SOL_SOCKET, SO_ERROR, pointerof(value), pointerof(len))
+  value
+end
+
+# Returns a port on *host* that nothing is listening on.
+def closed_port(host : String) : Int32
+  server = TCPServer.new(host, 0)
+  port = server.local_address.port
+  server.close
+  port
+end
+
+def errno_text(n : Int32) : String
+  n == 0 ? "0" : "#{n} #{Errno.new(n)}"
+end
+
+results = {} of String => Bool?
+
+puts "== Environment"
+puts "  macOS     #{command_output("sw_vers", ["-productVersion"])} (#{command_output("sw_vers", ["-buildVersion"])})"
+puts "  kernel    #{command_output("uname", ["-sr"])}"
+puts "  arch      #{command_output("uname", ["-m"])}"
+puts "  crystal   #{Crystal::VERSION}"
+puts "  evloop    #{Crystal::EventLoop.backend_class}"
+
+puts "\n== Check 1: Socket#connect to a closed 127.0.0.1 port"
+begin
+  port = closed_port("127.0.0.1")
+  sock = TCPSocket.new(Socket::Family::INET)
+  begin
+    sock.connect(Socket::IPAddress.new("127.0.0.1", port))
+    err = pending_error(sock.fd)
+    puts "  connect returned success; SO_ERROR=#{errno_text(err)}"
+    results["closed port raises"] = false
+  rescue ex : Socket::ConnectError
+    puts "  connect raised #{ex.class}: #{ex.message}"
+    results["closed port raises"] = true
+  ensure
+    sock.close
+  end
+rescue ex
+  puts "  could not run: #{ex.class}: #{ex.message}"
+  results["closed port raises"] = nil
+end
+
+puts "\n== Check 2: TCPSocket.new(\"localhost\") with an IPv4-only server"
+begin
+  order = Socket::Addrinfo.tcp("localhost", 80).map(&.ip_address.address)
+  puts "  localhost resolves to #{order.join(", ")}"
+  if order.first? == "127.0.0.1" || !order.includes?("127.0.0.1")
+    puts "  skipped: needs another address before 127.0.0.1"
+    results["localhost falls back"] = nil
+  else
+    server = TCPServer.new("127.0.0.1", 0)
+    begin
+      client = TCPSocket.new("localhost", server.local_address.port, connect_timeout: 3)
+      begin
+        peer = client.remote_address.address
+        puts "  connected to #{peer}"
+        results["localhost falls back"] = true
+      rescue ex
+        puts "  returned a socket that fails on use: #{ex.class}: #{ex.message}"
+        results["localhost falls back"] = false
+      ensure
+        client.close
+      end
+    rescue ex
+      puts "  raised #{ex.class}: #{ex.message}"
+      results["localhost falls back"] = false
+    ensure
+      server.close
+    end
+  end
+rescue ex
+  puts "  could not run: #{ex.class}: #{ex.message}"
+  results["localhost falls back"] = nil
+end
+
+puts "\n== Check 3: raw libc non-blocking connect trace (no Crystal event loop)"
+begin
+  port = closed_port("127.0.0.1")
+  addr = Socket::IPAddress.new("127.0.0.1", port)
+  fd = LibC.socket(LibC::AF_INET, LibC::SOCK_STREAM, 0)
+  raise "socket() failed: #{Errno.value}" if fd == -1
+  LibC.fcntl(fd, LibC::F_SETFL, LibC.fcntl(fd, LibC::F_GETFL, 0) | LibC::O_NONBLOCK)
+
+  ret1 = LibC.connect(fd, addr.to_unsafe, addr.size)
+  e1 = ret1 == -1 ? Errno.value.value : 0
+  sleep 100.milliseconds
+  ret2 = LibC.connect(fd, addr.to_unsafe, addr.size)
+  e2 = ret2 == -1 ? Errno.value.value : 0
+  so = pending_error(fd)
+  LibC.close(fd)
+
+  puts "  1st connect() = #{ret1}, errno #{errno_text(e1)}"
+  puts "  2nd connect() = #{ret2}, errno #{errno_text(e2)}"
+  puts "  SO_ERROR after = #{errno_text(so)}"
+  results["2nd connect reports refusal"] = ret1 == -1 && e1 == Errno::ECONNREFUSED.value || e2 == Errno::ECONNREFUSED.value
+rescue ex
+  puts "  could not run: #{ex.class}: #{ex.message}"
+  results["2nd connect reports refusal"] = nil
+end
+
+puts "\n== Check 4: raw libc blocking connect (no O_NONBLOCK)"
+begin
+  port = closed_port("127.0.0.1")
+  addr = Socket::IPAddress.new("127.0.0.1", port)
+  fd = LibC.socket(LibC::AF_INET, LibC::SOCK_STREAM, 0)
+  raise "socket() failed: #{Errno.value}" if fd == -1
+
+  ret = 0
+  errno = 0
+  elapsed = Time.measure do
+    ret = LibC.connect(fd, addr.to_unsafe, addr.size)
+    errno = ret == -1 ? Errno.value.value : 0
+  end
+  so = pending_error(fd)
+  LibC.close(fd)
+
+  puts "  connect() = #{ret}, errno #{errno_text(errno)}, after #{elapsed.total_milliseconds.round(1)} ms"
+  puts "  SO_ERROR after = #{errno_text(so)}"
+  results["blocking connect reports refusal"] = errno == Errno::ECONNREFUSED.value
+rescue ex
+  puts "  could not run: #{ex.class}: #{ex.message}"
+  results["blocking connect reports refusal"] = nil
+end
+
+puts "\n== Verdict"
+results.each do |name, ok|
+  mark = ok.nil? ? "SKIP" : (ok ? "ok  " : "FAIL")
+  puts "  #{mark}  #{name}"
+end
+
+case results["closed port raises"]
+when false
+  puts "  AFFECTED: Crystal does not report refused connections on this system."
+  exit 1
+when true
+  puts "  NOT AFFECTED"
+  exit 0
+else
+  puts "  INCONCLUSIVE: check 1 could not run."
+  exit 2
+end
+10 posts - 4 participants]]></content:encoded></item></channel></rss>
